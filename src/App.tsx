@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 
+//Lauren Pham
+
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -39,6 +41,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>Lauren Pham </p>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
