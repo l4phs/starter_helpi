@@ -47,6 +47,7 @@ function App() {
         <p>Lauren Pham </p>
         <p>Mantra Yang </p>
         <p>Neil Irungu</p>
+        <p>David Bui</p>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
