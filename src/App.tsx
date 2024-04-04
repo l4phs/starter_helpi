@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Row } from 'react-bootstrap';
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap')
+</style>
 
 //Lauren Pham
 //Mantra Yang
 //David Bui
 //Neil Irungu
+
+
+
+
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -32,31 +40,30 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p>Lauren Pham </p>
-        <p>Mantra Yang </p>
-        <p>Neil Irungu</p>
-        <p>David Bui</p>
+        <div className='TopBar'>
+          logo goes here
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          <button className='TopBar-SignIn'> Sign In </button>
+        </div>
+        <h1>What do I do ?</h1>
       </header>
-      <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
+    <div className='App-body'>
+      <body>
+        #Need to integrate buttons
+        <div className='APIform'>
+          <Form>
+            {/* <Form.Label>API Key:</Form.Label> */}
+            {/* i want to make the buttons and input next to each other but im struggling */}
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control> 
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+          </Form>
+      </div>
+      </body>
+    </div>
+
     </div>
   );
+  
 }
 
 export default App;

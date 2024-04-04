@@ -1,38 +1,130 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/*
+Color pallete
+#cbb19b
+#bd977c
+#9b7960
+#66452a
+#dfe0e0
+https://www.color-hex.com/color-palette/106259
+*/
+*{
+  font-family: 'Montserrat';
+}
+
+.TopBar{
+  width: 100vw;
+  height: 20%;
+  display: inline;
+  background-color: transparent;
+}
+
+.TopBar-SignIn{
+  background-color: #66452a;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: 1%;
+  top: .3vh;
+}
+
 .App {
   text-align: center;
+  /* background: linear-gradient(to right, #cbb19b, #9b7960);  */
+  background: linear-gradient(to bottom, #3c2f2f, #66452a); 
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-top: 0%;
+  /* max-width: 100vh; */
+  font: optional;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 10s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10%;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  font-size: calc(1px + 2vmin);
+  color: 	#dfe0e0;
+  font-family: 'Montserrat';
+}
+
+.App-body{
+  /* background-color: linear-gradient(to bottom, #66452a, #cbb19b ); */
+  background: linear-gradient(to bottom, #dbc6b6, #9b7960 ); 
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  box-sizing: border-box;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  height: 100vh;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ffb2d4;
+}
+.APIform{
+    height: 95vh;
+    display: flex;
+    align-items: flex-end;
+    background-color: transparent;
+    
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.APIform button{
+  background-color: #66452a;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  cursor: pointer;
 }
+.APIform input{
+  background-color: #66452a;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+.APIform input::placeholder{
+  color:#dbc6b6
+}
+
