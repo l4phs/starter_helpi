@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import { Button, Form, Row } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap')
