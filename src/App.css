@@ -10,6 +10,7 @@ Color pallete
 #dfe0e0
 https://www.color-hex.com/color-palette/106259
 */
+
 *{
   font-family: 'Montserrat';
 }
@@ -22,7 +23,7 @@ https://www.color-hex.com/color-palette/106259
 }
 
 .TopBar-SignIn{
-  background-color: #66452a;
+  background-color: #7c6152;
   color: #dbc6b6;
   font-size: 12px;
   padding: 8px 10px;
@@ -89,21 +90,52 @@ https://www.color-hex.com/color-palette/106259
   height: 100vh;
 }
 
-.App-link {
-  color: #ffb2d4;
+.App-body-BQP{
+  background-color: #66452a;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 18px 30px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  /* margin-top: 5px; */
+  cursor: pointer;
+  position: absolute;
+  left: 30%;
+  top: 28%;
 }
+
+.App-body-DQP{
+  background-color: #3c2f2f;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 18px 20px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  /* margin-top: 5px; */
+  cursor: pointer;
+  position: absolute;
+  right: 30%;
+  top: 28%;
+}
+
+
 .APIform{
     height: 95vh;
     display: flex;
     align-items: flex-end;
     background-color: transparent;
-    
 }
 
 .APIform button{
-  background-color: #66452a;
+  background-color: #7c6152;
   color: #dbc6b6;
-  font-size: 12px;
+  font-size: 13px;
   padding: 10px 25px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -112,9 +144,14 @@ https://www.color-hex.com/color-palette/106259
   text-transform: uppercase;
   margin-top: 5px;
   cursor: pointer;
+  position:relative;
+  left: auto;
+  bottom:auto;
+  margin-left: 10px;
 }
+
 .APIform input{
-  background-color: #66452a;
+  background-color: #7c6152;
   border: none;
   margin: 8px 0;
   padding: 10px 15px;
@@ -122,9 +159,14 @@ https://www.color-hex.com/color-palette/106259
   border-radius: 8px;
   width: 100%;
   outline: none;
+  position: relative;
+  left: auto;
+  bottom: auto;
+  width: fit-content;
 }
 
 .APIform input::placeholder{
   color:#dbc6b6
 }
+
 
