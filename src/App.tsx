@@ -12,10 +12,6 @@ import { Button, Form } from 'react-bootstrap';
 //David Bui
 //Neil Irungu
 
-
-
-
-
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -45,11 +41,18 @@ function App() {
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <button className='TopBar-SignIn'> Sign In </button>
         </div>
-        <h1>What do I do ?</h1>
+        <h1>What Do I Do ?</h1>
       </header>
     <div className='App-body'>
       <body>
-        #Need to integrate buttons
+        #some kind of catch? idk
+        <br></br>
+        <Button className='App-body-BQP'>
+          Basic Questions
+        </Button>
+        <Button className='App-body-DQP'>
+          Detailed Questions
+        </Button>
         <div className='APIform'>
           <Form>
             {/* <Form.Label>API Key:</Form.Label> */}
