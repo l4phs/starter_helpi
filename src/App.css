@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 
 /*
 Color pallete
@@ -10,163 +12,156 @@ Color pallete
 #dfe0e0
 https://www.color-hex.com/color-palette/106259
 */
-
-*{
-  font-family: 'Montserrat';
-}
-
-.TopBar{
-  width: 100vw;
-  height: 20%;
-  display: inline;
-  background-color: transparent;
-}
-
-.TopBar-SignIn{
-  background-color: #7c6152;
-  color: #dbc6b6;
-  font-size: 12px;
-  padding: 8px 10px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-top: 5px;
-  cursor: pointer;
-  position: absolute;
-  right: 1%;
-  top: .3vh;
-}
-
-.App {
-  text-align: center;
-  /* background: linear-gradient(to right, #cbb19b, #9b7960);  */
-  background: linear-gradient(to bottom, #3c2f2f, #66452a); 
-  padding-left: 0%;
-  padding-right: 0%;
-  padding-top: 0%;
-  /* max-width: 100vh; */
-  font: optional;
-}
-
-.App-logo {
-  height: 10vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 10s linear;
-  }
-}
-
-.App-header {
-  min-height: 10%;
-  max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-content: center;
-  font-size: calc(1px + 2vmin);
-  color: 	#dbc6b6;
-  font-family: 'Montserrat';
-}
-
-.App-body{
-  /* background-color: linear-gradient(to bottom, #66452a, #cbb19b ); */
-  background: linear-gradient(to bottom, #dbc6b6, #9b7960 ); 
-  margin-left: 5%;
-  margin-right: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  box-sizing: border-box;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+html{
   height: 100vh;
+  overflow: hidden;
 }
 
-.App-body-BQP{
-  background-color: #66452a;
+
+body{
+  width: auto;
+  height: 100vh;
+  margin: 0;
+  background-color: transparent;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.section1, .section2{
+  width: auto;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  transform-style: preserve-3d;
+
+}
+
+.section2{
+  height: 300vh;
+}
+
+
+.section1::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(CoffeeShopBKG.jpg) top center;
+  background-size: cover;
+  transform: translateZ(-1px) scale(2.2);
+  filter: blur(2px);
+}
+
+.section1::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(Table.png) top center;
+  background-size: cover;
+}
+
+.SignInButton{
+  /* display: grid; */
+  display: flex;
+  position: relative;
+  justify-content: right;
+  align-items: right;
+  left: 91%;
+  top: 4vh;
+  background-color: #3c2918;
   color: #dbc6b6;
   font-size: 12px;
-  padding: 18px 30px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  /* margin-top: 5px; */
-  cursor: pointer;
-  position: absolute;
-  left: 30%;
-  top: 28%;
-}
-
-.App-body-DQP{
-  background-color: #3c2f2f;
-  color: #dbc6b6;
-  font-size: 12px;
-  padding: 18px 20px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  /* margin-top: 5px; */
-  cursor: pointer;
-  position: absolute;
-  right: 30%;
-  top: 28%;
-}
-
-
-.APIform{
-    height: 95vh;
-    display: flex;
-    align-items: flex-end;
-    background-color: transparent;
-}
-
-.APIform button{
-  background-color: #7c6152;
-  color: #dbc6b6;
-  font-size: 13px;
   padding: 10px 25px;
   border: 1px solid transparent;
   border-radius: 8px;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-top: 5px;
   cursor: pointer;
-  position:relative;
-  left: auto;
-  bottom:auto;
-  margin-left: 10px;
+}
+
+.section2{
+  background: linear-gradient(to bottom, #000000, #3c2918 );
+}
+
+.text{
+  display: grid;
+  display: flex;
+  position: absolute;
+  font-family: "Lilita One";
+  transform: scale(1,1.1) translate(-50%, 10%);
+}
+
+.section1 .text{
+top: 65%;
+font-size: 10vw;
+font-size: calc(200px + 2vmin);
+transform: translateZ(-1px) scale( 1.5, 1.6) translate(-30%, 30%);
+margin-left: 200px;
+text-align: center;
+align-items: center;
+text-shadow: 2px 2px 5px black, 5px 5px 20px rgb(134, 130, 130);
+color: #fbede1;
+
+}  
+
+.section2 .text{
+  top: 30vh;
+  left: 50%;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  }  
+
+.APIform{
+  /* height: 95vh; */
+  display: grid;
+  display: flex;
+  align-items: flex-end;
+  background-color: transparent;
+  align-content: center;
+  justify-content: left;
+  margin-top: -1.5vh;
+  position: relative;
+}
+
+.APIform button{
+background-color: #3c2918;
+color: #dbc6b6;
+font-size: 13px;
+padding: 10px 25px;
+border: 1px solid transparent;
+border-radius: 8px;
+font-weight: 600;
+letter-spacing: 0.5px;
+text-transform: uppercase;
+cursor: pointer;
+/* position:relative; */
+/* left: auto; */
+margin-left: 10px;
 }
 
 .APIform input{
-  background-color: #7c6152;
-  border: none;
-  margin: 8px 0;
-  padding: 10px 15px;
-  font-size: 13px;
-  border-radius: 8px;
-  width: 100%;
-  outline: none;
-  position: relative;
-  left: auto;
-  bottom: auto;
-  width: fit-content;
+background-color: #3c2918;
+border: none;
+padding: 10px 15px;
+font-size: 13px;
+border-radius: 8px;
+width: 100%;
+outline: none;
+position: relative;
+left: auto;
+width: fit-content;
+margin-left: 5px;
 }
 
 .APIform input::placeholder{
-  color:#dbc6b6
+color:#dbc6b6
 }
+
+
 
 

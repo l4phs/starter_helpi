@@ -34,39 +34,30 @@ function App() {
     setKey(event.target.value);
   }
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className='TopBar'>
-          logo goes here
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <button className='TopBar-SignIn'> Sign In </button>
-        </div>
-        <h1>What Do I Do ?</h1>
-      </header>
-    <div className='App-body'>
-      <body>
-        #some kind of catch? idk
-        <br></br>
-        <Button className='App-body-BQP'>
-          Basic Questions
-        </Button>
-        <Button className='App-body-DQP'>
-          Detailed Questions
-        </Button>
-        <div className='APIform'>
-          <Form>
-            {/* <Form.Label>API Key:</Form.Label> */}
-            {/* i want to make the buttons and input next to each other but im struggling */}
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control> 
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-          </Form>
+    <body>
+      <div className = "section1">
+      <Button className='SignInButton'> Sign In</Button>
+      <div className='APIform'>
+            <Form>  
+              <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control> 
+              <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+            </Form>
+          </div>
+        <div className='text'> What do I do?</div>
       </div>
-      </body>
-    </div>
-
-    </div>
+        <div className='section2'>
+            <div className='text'>
+              <p>
+                Struggling to decide what to do with your life?<br></br> 
+                Take a quiz!
+                </p> 
+            </div>
+          
+        </div>
+    </body>
   );
   
 }
 
 export default App;
+
