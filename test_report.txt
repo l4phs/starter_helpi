@@ -5,8 +5,6 @@
   console.error
     Warning: validateDOMNesting(...): <body> cannot appear as a child of <div>.
         at body
-        at div
-        at div
         at App (/home/runner/work/starter_helpi/starter_helpi/src/App.tsx:24:33)
 
       4 |
@@ -39,7 +37,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (65 ms)
+  ✕ renders learn react link (66 ms)
 
   ● renders learn react link
 
@@ -48,66 +46,55 @@ FAIL src/App.test.tsx
     Ignored nodes: comments, script, style
     [36m<body>[39m
       [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<header[39m
-            [33mclass[39m=[32m"App-header"[39m
+        [36m<body>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"section1"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"SignInButton btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0m Sign In[0m
+            [36m</button>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"APIform"[39m
+            [36m>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m""[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"form-control"[39m
+                  [33mplaceholder[39m=[32m"Insert API Key Here"[39m
+                  [33mtype[39m=[32m"password"[39m
+                [36m/>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mSubmit[0m
+                [36m</button>[39m
+              [36m</form>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text"[39m
+            [36m>[39m
+              [0m What do I do?[0m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"section2"[39m
           [36m>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"TopBar"[39m
+              [33mclass[39m=[32m"text"[39m
             [36m>[39m
-              [0mlogo goes here[0m
-              [36m<button[39m
-                [33mclass[39m=[32m"TopBar-SignIn"[39m
-              [36m>[39m
-                [0m Sign In [0m
-              [36m</button>[39m
+              [36m<p>[39m
+                [0mStruggling to decide what to do with your life?[0m
+                [36m<br />[39m
+                [0mTake a quiz![0m
+              [36m</p>[39m
             [36m</div>[39m
-            [36m<h1>[39m
-              [0mWhat Do I Do ?[0m
-            [36m</h1>[39m
-          [36m</header>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"App-body"[39m
-          [36m>[39m
-            [36m<body>[39m
-              [0m#some kind of catch? idk[0m
-              [36m<br />[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"App-body-BQP btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mBasic Questions[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"App-body-DQP btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mDetailed Questions[0m
-              [36m</button>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"APIform"[39m
-              [36m>[39m
-                [36m<form[39m
-                  [33mclass[39m=[32m""[39m
-                [36m>[39m
-                  [36m<input[39m
-                    [33mclass[39m=[32m"form-control"[39m
-                    [33mplaceholder[39m=[32m"Insert API Key Here"[39m
-                    [33mtype[39m=[32m"password"[39m
-                  [36m/>[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [0mSubmit[0m
-                  [36m</button>[39m
-                [36m</form>[39m
-              [36m</div>[39m
-            [36m</body>[39m
           [36m</div>[39m
-        [36m</div>[39m
+        [36m</body>[39m
       [36m</div>[39m
     [36m</body>[39m
 
@@ -140,7 +127,7 @@ All files           |   31.81 |    16.66 |      20 |   31.81 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.664 s
+Time:        2.684 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
