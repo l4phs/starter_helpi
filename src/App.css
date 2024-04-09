@@ -165,25 +165,40 @@ color:#dbc6b6
   display: grid;
   display: flex;
   position: relative;
-
   left:40vw;
   top: 80vh;
   margin-right: 5px;
 
-  width: 100px;
-
-
+  width: 120px;
+  background-color: #3c2918;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .AdvancedQ{
   display: grid;
   display: flex;
   position: fixed;
-
   left:50vw;
   top: 80vh;
   margin-left: 5px;
 
-  width: auto;
-
+  width: 120px;
+  background-color: #3c2918;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
