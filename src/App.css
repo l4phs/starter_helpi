@@ -15,6 +15,7 @@ https://www.color-hex.com/color-palette/106259
 html{
   height: 100vh;
   overflow: hidden;
+  /* scroll-snap-type: y proximity; */
 }
 
 
@@ -35,6 +36,7 @@ body{
   position: relative;
   margin: 0;
   transform-style: preserve-3d;
+  /* scroll-snap-align: top; */
 }
 .section2{
   background: linear-gradient(to bottom, #000000, #3c2918);
@@ -139,11 +141,8 @@ margin-left: 5px;
 }
 
 .Submit-Button{
-
-  
   position: relative;
   left: auto;
-
 
   background-color: #3c2918;
   color: #dbc6b6;
@@ -160,4 +159,31 @@ margin-left: 5px;
 
 .APIform input::placeholder{
 color:#dbc6b6
+}
+
+.BasicQ{
+  display: grid;
+  display: flex;
+  position: relative;
+
+  left:40vw;
+  top: 80vh;
+  margin-right: 5px;
+
+  width: 100px;
+
+
+}
+
+.AdvancedQ{
+  display: grid;
+  display: flex;
+  position: fixed;
+
+  left:50vw;
+  top: 80vh;
+  margin-left: 5px;
+
+  width: auto;
+
 }
