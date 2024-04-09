@@ -50,9 +50,10 @@ function App() {
               <p>
                 Struggling to decide what to do with your life?<br></br> 
                 Take a quiz!
-                </p> 
+              </p> 
             </div>
-          
+            <button className='BasicQ'>  Basic Questions</button>
+            <button className='AdvancedQ'>Advanced Questions</button>
         </div>
     </body>
   );
