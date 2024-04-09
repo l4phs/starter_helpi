@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
@@ -17,7 +18,6 @@ html{
   overflow: hidden;
   /* scroll-snap-type: y proximity; */
 }
-
 
 body{
   width: auto;
@@ -38,9 +38,10 @@ body{
   transform-style: preserve-3d;
   /* scroll-snap-align: top; */
 }
+
 .section2{
   background: linear-gradient(to bottom, #000000, #3c2918);
-  height: 300vh;
+  height: 200vh;
 }
 
 .section1::before{
@@ -48,7 +49,7 @@ body{
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url(CoffeeShopBKG.jpg) top center;
+  background: url(DCoffeeShop.jpeg) top center;
   background-size: cover;
   transform: translateZ(-1px) scale(2.2);
   filter: blur(2px);
@@ -92,17 +93,16 @@ body{
 }
 
 .section1 .text{
-top: 65%;
-font-size: 10vw;
+top: 30%;
+font-size: 8vw;
 font-size: calc(200px + 2vmin);
 transform: translateZ(-1px) scale( 1.5, 1.6) translate(-30%, 30%);
 margin-left: 200px;
-text-align: center;
-align-items: center;
+/* text-align: center; */
+/* align-items: center; */
 text-shadow: 2px 2px 5px black, 5px 5px 20px rgb(134, 130, 130);
 color: #fbede1;
-
-}  
+} 
 
 .section2 .text{
   top: 30vh;
@@ -162,7 +162,7 @@ color:#dbc6b6
 }
 
 .BasicQ{
-  display: grid;
+  /* display: grid; */
   display: flex;
   position: relative;
   left:40vw;
@@ -202,3 +202,5 @@ color:#dbc6b6
   text-transform: uppercase;
   cursor: pointer;
 }
+
+
