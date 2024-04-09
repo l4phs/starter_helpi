@@ -52,8 +52,8 @@ function App() {
                 Take a quiz!
                 </p> 
             </div>
-          
         </div>
+      <div className='section3'></div>
     </body>
   );
   
