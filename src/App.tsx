@@ -54,6 +54,9 @@ function App() {
             </div>
             <button className='BasicQ'>  Basic Questions</button>
             <button className='AdvancedQ'>Advanced Questions</button>
+          </div>
+          <div className='section3'>
+            <div className='text'> Detailed Questions Page</div>
         </div>
     </body>
   );
