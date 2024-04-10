@@ -22,6 +22,10 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
+  //setting states for each page
+  const [isHome, setHome] = useState<boolean>(true);
+  const [isBasic, setBasic] = useState<boolean>(false);
+  const [isAdvance, setAdvance] = useState<boolean>(false);
   
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -33,6 +37,17 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
+  function updateHome(): void {
+    setHome(!isHome);
+  }
+  function updateBasic(): void {
+    setBasic(!isBasic);
+  }
+  function updateAdvance(): void {
+    setAdvance(!isAdvance);
+  }
+
   return (
     <body>
       <div className = "section1">
@@ -45,6 +60,7 @@ function App() {
           </div>
         <div className='text'> What do I do?</div>
       </div>
+      {isHome ? (
         <div className='section2'>
             <div className='text'>
               <p>
@@ -52,11 +68,18 @@ function App() {
                 Take a quiz!
               </p> 
             </div>
-            <button className='BasicQ'>  Basic Questions</button>
-            <button className='AdvancedQ'>Advanced Questions</button>
-          </div>
+            <button className='BasicQ'
+            id="Basic-mode"
+            onClick={updateBasic}>  Basic Questions</button>
+            <button className='AdvancedQ'
+            id="Advanced-mode"
+            onClick={updateAdvance}>Advanced Questions</button>
+          </div> ) :
+          isAdvance ? (
           <div className='section3'>
             <div className='text'> Detailed Questions Page</div>
+        </div>):
+        isBasic? (<p>This is Basic</p>): isHome }
             <div className='body'>
               <p>
               These questions give a more indepth analysis of the kind of career you would be best suited to! Long, detailed answers are highly encouraged. Onwards!
