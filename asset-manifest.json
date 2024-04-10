@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/starter_helpi/static/css/main.6eab992c.css",
-    "main.js": "/starter_helpi/static/js/main.19d5be4d.js",
+    "main.css": "/starter_helpi/static/css/main.9850aa7c.css",
+    "main.js": "/starter_helpi/static/js/main.50bdd145.js",
     "static/js/453.bad6c33a.chunk.js": "/starter_helpi/static/js/453.bad6c33a.chunk.js",
     "static/media/CoffeeShopBKG.jpg": "/starter_helpi/static/media/CoffeeShopBKG.0c75a383eea676695f84.jpg",
     "static/media/Table.png": "/starter_helpi/static/media/Table.e70b25fa518e0166b7d4.png",
     "index.html": "/starter_helpi/index.html",
-    "main.6eab992c.css.map": "/starter_helpi/static/css/main.6eab992c.css.map",
-    "main.19d5be4d.js.map": "/starter_helpi/static/js/main.19d5be4d.js.map",
+    "main.9850aa7c.css.map": "/starter_helpi/static/css/main.9850aa7c.css.map",
+    "main.50bdd145.js.map": "/starter_helpi/static/js/main.50bdd145.js.map",
     "453.bad6c33a.chunk.js.map": "/starter_helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6eab992c.css",
-    "static/js/main.19d5be4d.js"
+    "static/css/main.9850aa7c.css",
+    "static/js/main.50bdd145.js"
   ]
 }

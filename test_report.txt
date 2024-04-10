@@ -37,7 +37,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (68 ms)
+  ✕ renders learn react link (77 ms)
 
   ● renders learn react link
 
@@ -50,6 +50,25 @@ FAIL src/App.test.tsx
           [36m<div[39m
             [33mclass[39m=[32m"section1"[39m
           [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"allTabs btn btn-primary"[39m
+              [33mid[39m=[32m"Home-Page"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0m Home Page [0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"allTabs"[39m
+              [33mid[39m=[32m"Basic-mode"[39m
+            [36m>[39m
+              [0m  Basic Questions[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"allTabs"[39m
+              [33mid[39m=[32m"Advanced-mode"[39m
+            [36m>[39m
+              [0mAdvanced Questions[0m
+            [36m</button>[39m
             [36m<button[39m
               [33mclass[39m=[32m"SignInButton btn btn-primary"[39m
               [33mtype[39m=[32m"button"[39m
@@ -95,30 +114,16 @@ FAIL src/App.test.tsx
             [36m</div>[39m
             [36m<button[39m
               [33mclass[39m=[32m"BasicQ"[39m
+              [33mid[39m=[32m"Basic-mode"[39m
             [36m>[39m
               [0m  Basic Questions[0m
             [36m</button>[39m
             [36m<button[39m
               [33mclass[39m=[32m"AdvancedQ"[39m
+              [33mid[39m=[32m"Advanced-mode"[39m
             [36m>[39m
               [0mAdvanced Questions[0m
             [36m</button>[39m
-          [36m</div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"section3"[39m
-          [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"text"[39m
-            [36m>[39m
-              [0m Detailed Questions Page[0m
-            [36m</div>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"body"[39m
-            [36m>[39m
-              [36m<p>[39m
-                [0mThese questions give a more indepth analysis of the kind of career you would be best suited to! Long, detailed answers are highly encouraged. Onwards![0m
-              [36m</p>[39m
-            [36m</div>[39m
           [36m</div>[39m
         [36m</body>[39m
       [36m</div>[39m
@@ -145,15 +150,15 @@ FAIL src/App.test.tsx
 --------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------|---------|----------|---------|---------|-------------------
-All files           |   31.81 |    16.66 |      20 |   31.81 |                   
- App.tsx            |   63.63 |       50 |   33.33 |   63.63 | 20,28-34          
+All files           |   23.25 |    16.66 |    12.5 |   23.25 |                   
+ App.tsx            |   31.25 |    19.23 |   16.66 |   31.25 | 20,32-73          
  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
 --------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.631 s
+Time:        2.869 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
