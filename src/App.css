@@ -43,6 +43,7 @@ body{
   height: 300vh;
 }
 
+/* section 3 controls the detailed questions page*/
 .section3{
   background: #fbede1;
   height: 300vh;
@@ -207,7 +208,7 @@ color:#dbc6b6
   cursor: pointer;
 }
 
-.detailedQuestions{
+/* .detailedQuestions{
   display: grid;
   display: flex;
   position: fixed;
@@ -216,7 +217,9 @@ color:#dbc6b6
   margin-left: 5px;
 
   font-size: 10vw;
-  color: #fbede1;}
+  color: #fbede1;} */
+
+ /* section 3 text controls the detailed questions page header text*/
 
 .section3 .text {
   top: 410vh;
@@ -225,6 +228,8 @@ color:#dbc6b6
   font-size: 50px;
   text-align: center;
 }
+
+ /* section 3 body controls the detailed questions page body text*/
 
 .section3 .body{
   position: relative;
