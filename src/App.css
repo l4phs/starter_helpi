@@ -207,6 +207,25 @@ color:#dbc6b6
   text-transform: uppercase;
   cursor: pointer;
 }
+.allTabs{
+  display: flex;
+  position: center-fixed;
+  justify-self: right;
+  right: -10;
+  margin-right: 10px;
+  margin-top: 10px;
+
+  background-color: #3c2918;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
 
 /* .detailedQuestions{
   display: grid;
