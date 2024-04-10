@@ -114,7 +114,11 @@ function App(): JSX.Element {
             onClick={updateAdvance}>Advanced Questions</button>
           </div> )}
         
-      {isAdvance && (<div className='section3'> <div className='text'> Detailed Questions Page</div> </div>)}
+      {isAdvance && (<div className='section3'> <div className='text'> Detailed Questions Page</div> <div className='body'>
+      <p>
+      These questions give a more indepth analysis of the kind of career you would be best suited to! Long, detailed answers are highly encouraged. Onwards!
+        </p>
+    </div></div>)}
       {isBasic && (<div className='section3'> <div className='text'> Basic Questions Page</div> </div>)}
   </body>);
 
