@@ -80,6 +80,12 @@ function App() {
             <div className='text'> Detailed Questions Page</div>
         </div>):
         isBasic? (<p>This is Basic</p>): isHome }
+            <div className='body'>
+              <p>
+              These questions give a more indepth analysis of the kind of career you would be best suited to! Long, detailed answers are highly encouraged. Onwards!
+                </p>
+            </div>
+        </div>
     </body>
   );
   
