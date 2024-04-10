@@ -57,6 +57,11 @@ function App() {
           </div>
           <div className='section3'>
             <div className='text'> Detailed Questions Page</div>
+            <div className='body'>
+              <p>
+              These questions give a more indepth analysis of the kind of career you would be best suited to! Long, detailed answers are highly encouraged. Onwards!
+                </p>
+            </div>
         </div>
     </body>
   );
