@@ -93,7 +93,7 @@ body{
 }
 
 .section1 .text{
-top: 30%;
+top: 10%;
 font-size: 8vw;
 font-size: calc(200px + 2vmin);
 transform: translateZ(-1px) scale( 1.5, 1.6) translate(-30%, 30%);
