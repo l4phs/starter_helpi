@@ -15,6 +15,12 @@ FAIL src/App.test.tsx
         [36m<div[39m
           [33mclass[39m=[32m"section1"[39m
         [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"SignInButton btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0m Sign In[0m
+          [36m</button>[39m
           [36m<div[39m
             [33mclass[39m=[32m"APIform"[39m
           [36m>[39m
@@ -34,12 +40,6 @@ FAIL src/App.test.tsx
               [36m</button>[39m
             [36m</form>[39m
           [36m</div>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"SignInButton btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0m Sign In[0m
-          [36m</button>[39m
           [36m<div[39m
             [33mclass[39m=[32m"text-container"[39m
           [36m>[39m
@@ -107,7 +107,7 @@ All files           |   23.68 |    31.25 |    8.33 |   23.68 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.654 s
+Time:        2.747 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
