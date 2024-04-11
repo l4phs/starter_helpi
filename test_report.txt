@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (40 ms)
+  ✕ renders learn react link (39 ms)
 
   ● renders learn react link
 
@@ -15,12 +15,6 @@ FAIL src/App.test.tsx
         [36m<div[39m
           [33mclass[39m=[32m"section1"[39m
         [36m>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"SignInButton btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0m Sign In[0m
-          [36m</button>[39m
           [36m<div[39m
             [33mclass[39m=[32m"APIform"[39m
           [36m>[39m
@@ -40,6 +34,12 @@ FAIL src/App.test.tsx
               [36m</button>[39m
             [36m</form>[39m
           [36m</div>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"SignInButton btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0m Sign In[0m
+          [36m</button>[39m
           [36m<div[39m
             [33mclass[39m=[32m"text-container"[39m
           [36m>[39m
@@ -96,18 +96,18 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
---------------------|---------|----------|---------|---------|----------------------
-File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
---------------------|---------|----------|---------|---------|----------------------
-All files           |   26.47 |    31.25 |    12.5 |   26.47 |                      
- App.tsx            |   39.13 |    41.66 |   16.66 |   39.13 | 20,30-36,40-51,78-79 
- index.tsx          |       0 |      100 |     100 |       0 | 7-19                 
- reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10                 
---------------------|---------|----------|---------|---------|----------------------
+--------------------|---------|----------|---------|---------|-----------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s     
+--------------------|---------|----------|---------|---------|-----------------------
+All files           |   23.68 |    31.25 |    8.33 |   23.68 |                       
+ App.tsx            |   33.33 |    41.66 |      10 |   33.33 | 20,30-36,40-51,78-100 
+ index.tsx          |       0 |      100 |     100 |       0 | 7-19                  
+ reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10                  
+--------------------|---------|----------|---------|---------|-----------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.696 s
+Time:        2.654 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
