@@ -85,7 +85,7 @@ body{
 }
 
 .section1 .text {
-  top: 50vh;
+  top: 30vh;
   font-size: 8vw;
   font-size: 100px;
   transform: translateZ(-1px) scale( 1.5, 1.6) translate(-30%, 30%);
@@ -98,7 +98,7 @@ body{
 
 .section2 .text{
   top: 30vh;
-  left: 50%;
+  left: 47vw;
   color: white;
   font-size: 30px;
   text-align: center;
@@ -174,10 +174,11 @@ color:#dbc6b6
 }
 
 .BasicQ{
+  /* Button */
   /* display: grid; */
   display: flex;
   position: relative;
-  left:40vw;
+  left:35vw;
   top: 80vh;
   margin-right: 5px;
 
@@ -195,6 +196,7 @@ color:#dbc6b6
 }
 
 .DetailedQ{
+  /* Button */
   display: grid;
   display: flex;
   position: fixed;
@@ -222,7 +224,7 @@ color:#dbc6b6
   font-family: "Lilita One";
   top: 10vh;
   left: 32vw;
-  color: #dbc6b6;
+  color: white;
   font-size: 60px;
   text-align: center;
 }
@@ -247,7 +249,7 @@ color:#dbc6b6
   font-family: "Lilita One";
   top: 10vh;
   left: 29vw;
-  color: #dbc6b6;
+  color: white;
   font-size: 60px;
   text-align: center;
 }
@@ -263,4 +265,72 @@ color:#dbc6b6
   font-size: 30px;
   text-align: center;
   width: 100vw;
+}
+
+.s3HomeP{
+  /* Button */
+  display: grid;
+  display: flex;
+  position: fixed;
+  left:35vw;
+  top: 90vh;
+  margin-left: 0px;
+
+  width: 120px;
+  background-color: #dbc6b6;
+  color: #3c2918;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.s3BasicQ{
+  /* Button */
+  display: grid;
+  display: flex;
+  position: fixed;
+  left:50vw;
+  top: 90vh;
+  margin-left: 0px;
+
+  width: 120px;
+  background-color: #dbc6b6;
+  color: #3c2918;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+}
+
+.s3DetailedQ{
+  /* Button */
+  display: grid;
+  display: flex;
+  position: fixed;
+  left:50vw;
+  top: 90vh;
+  margin-left: 0px;
+
+  width: 120px;
+  background-color: #dbc6b6;
+  color: #3c2918;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+
 }

@@ -55,13 +55,13 @@ function App(): JSX.Element {
   return (
     <React.Fragment>
       <div className="section1">
-        <Button className='SignInButton'> Sign In</Button>
-        <div className='APIform'>
+      <div className='APIform'>
           <Form>  
             <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} />
             <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
           </Form>
         </div>
+        <Button className='SignInButton'> Sign In</Button>
         <div className='text-container'>
         <div className='text'> What do I do?</div>
         </div>
@@ -82,6 +82,8 @@ function App(): JSX.Element {
 
       {currentView === 2 && (
         <div className='section3'>
+          <Button className='s3HomeP' onClick={() => switchScreen('HomePage')}>Home Page</Button>
+          <Button className='s3BasicQ' onClick={() => switchScreen('BasicQ')}>Basic Questions</Button>
           <div className='DQH'>Detailed Questions Page</div>
           <div className='DQB'>
             <p>
@@ -94,6 +96,9 @@ function App(): JSX.Element {
 
       {currentView === 1 && (
         <div className='section3'> 
+          <Button className='s3HomeP' onClick={() => switchScreen('HomePage')}>Home Page</Button>
+          <Button className='s3DetailedQ' onClick={() => switchScreen('DetailedQ')}>Detailed Questions</Button>
+          <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
           <div className='BQH'> Basic Questions Page</div> 
           <div className='BQB'>
             <p>
