@@ -20,8 +20,12 @@ if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
-function App() {
+function App(): JSX.Element {
   const [key, setKey] = useState<string>(keyData); //for api key input
+  //setting states for each page
+  const [isHome, setHome] = useState<boolean>(true);
+  const [isBasic, setBasic] = useState<boolean>(false);
+  const [isAdvance, setAdvance] = useState<boolean>(false);
   
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -33,9 +37,55 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
+  function updateHome(): void {
+    setHome(!isHome);
+
+    if(isHome){
+      if(isBasic === true){
+        setBasic(false);
+      }
+      if(isAdvance === true){
+        setAdvance(false);
+      }
+    }
+  }
+  function updateBasic(): void {
+    setBasic(!isBasic);
+
+    if(isBasic){
+      if(isHome=== true){
+        setHome(false);
+      }
+      if(isAdvance === true){
+        setAdvance(false);
+      }
+    }
+  }
+  function updateAdvance(): void {
+    setAdvance(!isAdvance);
+
+    if(isAdvance){
+      if(isHome === true){
+        setHome(false);
+      }
+      if(isBasic === true){
+        setBasic(false);
+      }
+    }
+  }
+
   return (
     <body>
       <div className = "section1">
+      <Button className='allTabs' id="Home-Page"
+            onClick={updateHome}> Home Page </Button>
+            <button className='allTabs'
+            id="Basic-mode"
+            onClick={updateBasic}>  Basic Questions</button>
+            <button className='allTabs'
+            id="Advanced-mode"
+            onClick={updateAdvance}>Advanced Questions</button>
       <Button className='SignInButton'> Sign In</Button>
       <div className='APIform'>
             <Form>  
@@ -44,7 +94,11 @@ function App() {
             </Form>
           </div>
         <div className='text'> What do I do?</div>
+
       </div>
+      
+      { //if booleans are true then display the page content... still needs to be fixed
+      isHome && (
         <div className='section2'>
             <div className='text'>
               <p>
@@ -55,9 +109,6 @@ function App() {
             <button className='BasicQ'>  Basic Questions</button>
             <button className='AdvancedQ'>Advanced Questions</button>
         </div>
-      <div className='section3'>
-        
-      </div>
     </body>
   );
   
