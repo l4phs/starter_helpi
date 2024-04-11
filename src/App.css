@@ -20,7 +20,7 @@ html{
 }
 
 body{
-  width: auto;
+  width: 100vw;
   height: 100vh;
   margin: 0;
   background-color: transparent;
@@ -30,64 +30,51 @@ body{
   overflow-y: scroll;
 }
 
-.section1, .section2 {
-  width: auto;
-  min-height: 100vh;
+.section1,
+.section2,
+.section3 {
+  width: 100vw;
+  min-height: 100vh; /* Adjust as needed */
   position: relative;
+  overflow: hidden; /* Ensure overflow is set to hidden */
   margin: 0;
-  transform-style: preserve-3d;
-  /* scroll-snap-align: top; */
 }
 
-.section2{
-  background: linear-gradient(to bottom, #000000, #3c2918);
-  height: 200vh;
-}
-
-/* section 3 controls the detailed questions page*/
-.section3{
-  background: #fbede1;
-  height: 300vh;
-}
-.section1::before{
+.section1::before {
   content: "";
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
   background: url(DCoffeeShop.jpeg) top center;
   background-size: cover;
-  transform: translateZ(-1px) scale(2.2);
+  transform: translateZ(-1px) scale(1);
   filter: blur(2px);
 }
 
-.section1::after{
+.section1::after {
   content: "";
+  position: absolute;
+  /* position: sticky; */
   width: 100%;
   height: 100%;
-  position: absolute;
   background: url(Table.png) top center;
   background-size: cover;
 }
 
-.SignInButton{
-  display: grid;
-  position: fixed;
-  justify-self: right;
-  right: 0;
-  margin-right: 10px;
-  margin-top: 10px;
-
-  background-color: #3c2918;
-  color: #dbc6b6;
-  font-size: 12px;
-  padding: 10px 25px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
+.section2, .section3{
+  background: linear-gradient(to bottom, #000000, #3c2918);
+  height: 200vh;
 }
+
+
+/* Add parallax effect
+.section1::before,
+.section1::after,
+.section2,
+.section3,
+.text{
+  background-attachment: fixed;
+} */
 
 .text{
   display: grid;
@@ -97,17 +84,17 @@ body{
   transform: scale(1,1.1) translate(-50%, 10%);
 }
 
-.section1 .text{
-top: 10%;
-font-size: 8vw;
-font-size: calc(200px + 2vmin);
-transform: translateZ(-1px) scale( 1.5, 1.6) translate(-30%, 30%);
-margin-left: 200px;
-/* text-align: center; */
-/* align-items: center; */
-text-shadow: 2px 2px 5px black, 5px 5px 20px rgb(134, 130, 130);
-color: #fbede1;
-} 
+.section1 .text {
+  top: 50vh;
+  font-size: 8vw;
+  font-size: 100px;
+  transform: translateZ(-1px) scale( 1.5, 1.6) translate(-30%, 30%);
+  margin-left: 47vw;
+  /* text-align: center; */
+  /* align-items: center; */
+  text-shadow: 2px 2px 5px black, 5px 5px 20px rgb(134, 130, 130);
+  color: #fbede1;
+}
 
 .section2 .text{
   top: 30vh;
@@ -166,6 +153,26 @@ margin-left: 5px;
 color:#dbc6b6
 }
 
+.SignInButton{
+  display: grid;
+  position: fixed;
+  justify-self: right;
+  right: 0;
+  margin-right: 10px;
+  margin-top: 10px;
+
+  background-color: #3c2918;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 .BasicQ{
   /* display: grid; */
   display: flex;
@@ -187,12 +194,12 @@ color:#dbc6b6
   cursor: pointer;
 }
 
-.AdvancedQ{
+.DetailedQ{
   display: grid;
   display: flex;
   position: fixed;
   left:50vw;
-  top: 80vh;
+  top: 180vh;
   margin-left: 5px;
 
   width: 120px;
@@ -206,4 +213,54 @@ color:#dbc6b6
   letter-spacing: 0.5px;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.BQH{
+  display: grid;
+  display: flex;
+  position: absolute;
+  font-family: "Lilita One";
+  top: 10vh;
+  left: 32vw;
+  color: #dbc6b6;
+  font-size: 60px;
+  text-align: center;
+}
+
+.BQB{
+  display: grid;
+  display: flex;
+  position: absolute;
+  font-family: "Lilita One";
+  top: 20vh;
+  left: 10vw;
+  color: #dbc6b6;
+  font-size: 30px;
+  text-align: center;
+  width: 100vw;
+}
+
+.DQH{
+  display: grid;
+  display: flex;
+  position: absolute;
+  font-family: "Lilita One";
+  top: 10vh;
+  left: 29vw;
+  color: #dbc6b6;
+  font-size: 60px;
+  text-align: center;
+}
+
+.DQB{
+  display: grid;
+  display: flex;
+  position: absolute;
+  font-family: "Lilita One";
+  top: 20vh;
+  left: 10vw;
+  color: #dbc6b6;
+  font-size: 30px;
+  text-align: center;
+  width: 100vw;
 }
