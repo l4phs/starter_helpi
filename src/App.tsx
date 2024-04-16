@@ -23,9 +23,7 @@ if (prevKey !== null) {
 function App(): JSX.Element {
   const [key, setKey] = useState<string>(keyData); //for api key input
   //setting states for each page
-  const [isHome, setHome] = useState<boolean>(true);
-  const [isBasic, setBasic] = useState<boolean>(false);
-  const [isAdvance, setAdvance] = useState<boolean>(false);
+  const [currentView, setCurrentView] = useState<number>(0); // for managing the current page
   
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -38,94 +36,81 @@ function App(): JSX.Element {
     setKey(event.target.value);
   }
 
-  function updateHome(): void {
-    setHome(!isHome);
-
-    if(isHome){
-      if(isBasic === true){
-        setBasic(false);
-      }
-      if(isAdvance === true){
-        setAdvance(false);
-      }
+  const switchScreen = (view: string): void => {
+    switch (view) {
+      case "HomePage":
+        setCurrentView(0);
+        break;
+      case "BasicQ":
+        setCurrentView(1);
+        break;
+      case "DetailedQ":
+        setCurrentView(2);
+        break;
+      default:
+        setCurrentView(0); // Set a default view if none matches
     }
-  }
-  function updateBasic(): void {
-    setBasic(!isBasic);
-
-    if(isBasic){
-      if(isHome=== true){
-        setHome(false);
-      }
-      if(isAdvance === true){
-        setAdvance(false);
-      }
-    }
-  }
-  function updateAdvance(): void {
-    setAdvance(!isAdvance);
-
-    if(isAdvance){
-      if(isHome === true){
-        setHome(false);
-      }
-      if(isBasic === true){
-        setBasic(false);
-      }
-    }
-  }
+  };
 
   return (
-    <body>
-      <div className = "section1">
-      <Button className='allTabs' id="Home-Page"
-            onClick={updateHome}> Home Page </Button>
-            <button className='allTabs'
-            id="Basic-mode"
-            onClick={updateBasic}>  Basic Questions</button>
-            <button className='allTabs'
-            id="Advanced-mode"
-            onClick={updateAdvance}>Advanced Questions</button>
+    <React.Fragment>
+      <div className="section1">
       <Button className='SignInButton'> Sign In</Button>
       <div className='APIform'>
-            <Form>  
-              <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control> 
-              <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-            </Form>
-          </div>
+          <Form>  
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} />
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+          </Form>
+        </div>
+        <div className='text-container'>
         <div className='text'> What do I do?</div>
-
+        </div>
       </div>
-      
-      { //if booleans are true then display the page content... still needs to be fixed
-      isHome && (
-        <div className='section2'>
-            <div className='text'>
-              <p>
-                Struggling to decide what to do with your life?<br></br> 
-                Take a quiz!
-              </p> 
-            </div>
-            <button className='BasicQ'
-            id="Basic-mode"
-            onClick={updateBasic}>  Basic Questions</button>
-            <button className='AdvancedQ'
-            id="Advanced-mode"
-            onClick={updateAdvance}>Advanced Questions</button>
-          </div> )}
-        
-      {isAdvance && (<div className='section3'> 
-      <div className='text'> Detailed Questions Page</div> <div className='body'>
-      <p>
-      These questions give a more indepth analysis of the kind of career you would be best suited to! Long, detailed answers are highly encouraged. Onwards!
-        </p>
-    </div></div>)}
-      {isBasic && (<div className='section3'> <div className='text'> Basic Questions Page</div> </div>)}
-  </body>);
 
-  
-  
+      {currentView === 0 && (
+        <div className='section2'>
+          <div className='text'>
+            <p>
+              Struggling to decide what to do with your life?<br></br> 
+              Take a quiz!
+            </p> 
+          </div>
+          <Button className='BasicQ' onClick={() => switchScreen('BasicQ')}> Basic Questions</Button>
+          <Button className='DetailedQ' onClick={() => switchScreen('DetailedQ')}> Detailed Questions</Button>
+        </div>
+      )}
+
+      {currentView === 2 && (
+        <div className='section3'>
+          <Button className='s3HomeP' onClick={() => switchScreen('HomePage')}>Home Page</Button>
+          <Button className='s3BasicQ' onClick={() => switchScreen('BasicQ')}>Basic Questions</Button>
+          <div className='DQH'>Detailed Questions Page</div>
+          <div className='DQB'>
+            <p>
+            These questions give a more IN-DEPTH analysis of the kind of career you would be best suited to! 
+              <br></br>
+              Long, detailed answers are highly encouraged. Onwards!            </p>
+          </div>
+        </div>
+      )}
+
+      {currentView === 1 && (
+        <div className='section3'> 
+          <Button className='s3HomeP' onClick={() => switchScreen('HomePage')}>Home Page</Button>
+          <Button className='s3DetailedQ' onClick={() => switchScreen('DetailedQ')}>Detailed Questions</Button>
+          <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+          <div className='BQH'> Basic Questions Page</div> 
+          <div className='BQB'>
+            <p>
+              These questions give a more BASIC analysis of the kind of career you would be best suited to! 
+              <br></br>
+              Short asnwers are highly encouraged. Onwards!
+            </p>
+          </div>
+        </div>
+      )}
+    </React.Fragment>
+  );
 }
 
 export default App;
-
