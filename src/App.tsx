@@ -55,7 +55,9 @@ function App(): JSX.Element {
   return (
     <React.Fragment>
       <div className="section1">
-      <Button className='TaskBar'></Button>
+      <div className='TaskBarRectangle'>
+        
+      </div>
       <Button className='TBBasicQ' onClick={() => switchScreen('BasicQ')}> Basic Questions</Button>
       <Button className='TBDetailedQ' onClick={() => switchScreen('DetailedQ')}> Detailed Questions</Button>
       <Button className='TBHomeP' onClick={() => switchScreen('HomePage')}>Home Page</Button>
