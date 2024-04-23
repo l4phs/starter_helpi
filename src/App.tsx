@@ -91,6 +91,42 @@ function App(): JSX.Element {
               <br></br>
               Long, detailed answers are highly encouraged. Onwards!            </p>
           </div>
+          <div>
+            <div className='DetailedQuestions-List'>
+              <div className='Det-Question'> Question 1
+              <div className='body' > What is your favorite color?</div>
+              </div>
+              <div className='Det-Question'> Question 2
+              <div className='body' > What is your favorite color?</div>
+              </div>
+              <div className='Det-Question'> Question 3
+              <div className='body' > What is your favorite color?</div>
+              </div>
+              <div className='Det-Question'> Question 4
+              <div className='body' > What is your favorite color?</div>
+              </div>
+              <div className='Det-Question'> Question 5
+              <div className='body' > What is your favorite color?</div>
+              </div>
+              <div className='Det-Question'> Question 6
+              <div className='body' > What is your favorite color?</div>
+              </div>
+              <div className='Det-Question'> Question 7
+              <div className='body' > What is your favorite color?</div>
+              </div>
+              <div className='Det-Question'> Question 8
+              <div className='body' > What is your favorite color?</div>
+              </div>
+              <div className='Det-Question'> Question 9
+              <div className='body' > What is your favorite color?</div>
+              </div>
+              <div className='Det-Question'> Question 10
+              <div className='body' > What is your favorite color?</div>
+              </div>
+
+
+            </div>
+          </div>
         </div>
       )}
 
@@ -106,6 +142,18 @@ function App(): JSX.Element {
               <br></br>
               Short asnwers are highly encouraged. Onwards!
             </p>
+          </div>
+          <div className = 'BasicQuestions-List'>
+            <span className="Question">Question 1</span>
+            <span className="Question">Question 2</span>
+            <span className="Question">Question 3</span>
+            <span className="Question">Question 4</span>
+            <span className="Question">Question 5</span>
+            <span className="Question">Question 6</span>
+            <span className="Question">Question 7</span>
+            <span className="Question">Question 8</span>
+            <span className="Question">Question 9</span>
+            <span className="Question">Question 10</span>
           </div>
         </div>
       )}
