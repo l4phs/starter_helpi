@@ -109,6 +109,22 @@ function App(): JSX.Element {
           </div>
         </div>
       )}
+      {currentView === 3 && (//this section will be the results page. Do we want to save previous results?
+        <div className='section3'> 
+          <Button className='s3HomeP' onClick={() => switchScreen('HomePage')}>Home Page</Button>
+          <Button className='s3DetailedQ' onClick={() => switchScreen('DetailedQ')}>Detailed Questions</Button>
+          <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+          <div className='BQH'> Results from your Quiz:</div> 
+          <div className='BQB'>
+            <p>
+               Below are the top 5 careers you'd be best fit in with small descriptions on each. 
+               You are welcome to save a pdf of your results and leave your email down below to get it emailed to you instead.
+              <br></br>
+              
+            </p>
+          </div>
+        </div>
+      )}
     </React.Fragment>
   );
 }
