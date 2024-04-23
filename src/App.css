@@ -63,7 +63,7 @@ body{
 
 .section2, .section3{
   background: linear-gradient(to bottom, #000000, #3c2918);
-  height: 200vh;
+  height: 300vh;
 }
 
 .text{
@@ -410,6 +410,10 @@ color:#dbc6b6
   text-transform: uppercase;
   cursor: pointer;
 }
+.s3HomeP:hover{
+  background-color:#3c2918;
+  color: #dbc6b6 ;
+}
 
 /* Table buttons ie beige buttons */
 .s3BasicQ{
@@ -434,6 +438,10 @@ color:#dbc6b6
   cursor: pointer;
 
 }
+.s3BasicQ:hover{
+  background-color:#3c2918;
+  color: #dbc6b6 ;
+}
 
 /* Table buttons ie beige buttons */
 .s3DetailedQ{
@@ -456,6 +464,11 @@ color:#dbc6b6
   letter-spacing: 0.5px;
   text-transform: uppercase;
   cursor: pointer;
+  
+}
+.s3DetailedQ:hover{
+  background-color:#3c2918;
+  color: #dbc6b6 ;
 }
 
 .BasicQuestions-List{
