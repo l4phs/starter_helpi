@@ -21,10 +21,12 @@ if (prevKey !== null) {
 }
 
 
+
 function App(): JSX.Element {
   const [key, setKey] = useState<string>(keyData); //for api key input
   //setting states for each page
   const [currentView, setCurrentView] = useState<number>(0); // for managing the current page
+  const[project, setProject] = useState<string[]>(["creative roles", "analytical roles", "leadership roles", "hands-on roles", "customer service roles"]) //options for detailed question #4
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -35,6 +37,17 @@ function App(): JSX.Element {
   //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
+  }
+
+  //function for the checkboxes for detailed question #4
+  function updateProject (event: React.ChangeEvent<HTMLInputElement>){
+    const proj = event.target.value;
+    if (project.includes(proj)){
+      setProject(project.filter((e) => e !== proj));
+    } else {
+      setProject([...project, proj]);
+    }
+
   }
 
 
@@ -110,6 +123,7 @@ function App(): JSX.Element {
               </div>
               <div className='Det-Question'> Question 4
               <div className='body' > What kind of roles or projects do you most enjoy?</div> 
+
               </div>
               <div className='Det-Question'> Question 5
               <div className='body' > How often do you rely on data and facts when making decisions?</div>
