@@ -52,6 +52,17 @@ function App(): JSX.Element {
 
   }
 
+//data structure for the questions in the basic question page
+
+interface basicQuestion {
+    question: string;
+    options: string [];
+  }
+
+//data structure for the question array in the basic question page
+interface basicQuestionsArray {
+  quizData: basicQuestion [];
+}
 
 
   const switchScreen = (view: string): void => {
