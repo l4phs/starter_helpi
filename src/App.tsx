@@ -73,13 +73,19 @@ function App(): JSX.Element {
   return (
     <React.Fragment>
       <div className="section1">
+      <div className='TaskBarRectangle'>
+        
+      </div>
+      <Button className='TBBasicQ' onClick={() => switchScreen('BasicQ')}> Basic Questions</Button>
+      <Button className='TBDetailedQ' onClick={() => switchScreen('DetailedQ')}> Detailed Questions</Button>
+      <Button className='TBHomeP' onClick={() => switchScreen('HomePage')}>Home Page</Button>
       <Button className='SignInButton'> Sign In</Button>
-      <div className='APIform'>
-          <Form>  
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} />
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-          </Form>
-        </div>
+        <div className='APIform'>
+            <Form>  
+              <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} />
+              <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+            </Form>
+          </div>
         <div className='text-container'>
         <div className='text'> What do I do?</div>
         </div>
