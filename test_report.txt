@@ -99,15 +99,15 @@ FAIL src/App.test.tsx
 --------------------|---------|----------|---------|---------|-----------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s     
 --------------------|---------|----------|---------|---------|-----------------------
-All files           |   23.68 |    31.25 |    8.33 |   23.68 |                       
- App.tsx            |   33.33 |    41.66 |      10 |   33.33 | 20,30-36,40-51,78-136 
+All files           |   22.72 |    27.77 |    7.14 |   23.25 |                       
+ App.tsx            |    30.3 |    35.71 |    8.33 |   31.25 | 22,35-50,58-69,96-183 
  index.tsx          |       0 |      100 |     100 |       0 | 7-19                  
  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10                  
 --------------------|---------|----------|---------|---------|-----------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.052 s
+Time:        3.038 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
