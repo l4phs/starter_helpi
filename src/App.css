@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 
 /*
@@ -63,7 +64,7 @@ body{
 
 .section2, .section3{
   background: linear-gradient(to bottom, #000000, #3c2918);
-  height: 200vh;
+  height: 300vh;
 }
 
 
@@ -194,6 +195,8 @@ color:#dbc6b6
   text-transform: uppercase;
   cursor: pointer;
 }
+
+
 
 .DetailedQ{
   /* Button */
@@ -332,6 +335,7 @@ color:#dbc6b6
   letter-spacing: 0.5px;
   text-transform: uppercase;
   cursor: pointer;
+  
 }
 
 .BasicQuestions-List{
@@ -341,7 +345,16 @@ color:#dbc6b6
   position: absolute;
 }
 
-.Question{
+.DetailedQuestions-List{
+  /* padding: 16px; */
+  margin-top: 45vh; 
+  width: 100%;
+  /* left: 10vw; */
+  position: absolute;
+
+}
+
+.Det-Question{
   padding: 25px;
   display: block;
   /* display: flex; */
@@ -351,5 +364,39 @@ color:#dbc6b6
   /* top: 40vh; */
   color: white;
   font-size: 25px;
+  text-align: center;
+}
+
+.Det-Question .body {
+  margin-top: 8px;
+  font-size: 25px;
+}
+
+.Det-Question .options{
+  margin-top: 8px;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Josefin Sans";
+
+}
+.Question{
+  padding: 25px;
+  display: block;
+  /* display: flex; */
+  margin-bottom: 16px;
+  /* position: absolute; */
+  font-family: "Lilita One";
+  /* top: 40vh; */
+  color: white;
+  font-size: 30px;
   text-align: left;
+}
+
+.textboxclass {
+  margin-top: 10px;
+  height: 40px;
+  width: 60vh;
+  font-size: 20px;
+  font-family: "Josefin Sans";
+
 }
