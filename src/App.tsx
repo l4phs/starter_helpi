@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+
+// eslint-disable-next-line
+import React, { useRef, useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-// import axios from "axios";
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap')
@@ -21,11 +22,14 @@ if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
+
+
 function App(): JSX.Element {
   const [key, setKey] = useState<string>(keyData); //for api key input
   //setting states for each page
   const [currentView, setCurrentView] = useState<number>(0); // for managing the current page
-  
+  const[project, setProject] = useState<string[]>(["creative roles", "analytical roles", "leadership roles", "hands-on roles", "customer service roles"]) //options for detailed question #4
+
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
@@ -35,6 +39,17 @@ function App(): JSX.Element {
   //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
+  }
+
+  //function for the checkboxes for detailed question #4
+  function updateProject (event: React.ChangeEvent<HTMLInputElement>){
+    const proj = event.target.value;
+    if (project.includes(proj)){
+      setProject(project.filter((e) => e !== proj));
+    } else {
+      setProject([...project, proj]);
+    }
+
   }
 
 
@@ -58,19 +73,13 @@ function App(): JSX.Element {
   return (
     <React.Fragment>
       <div className="section1">
-      <div className='TaskBarRectangle'>
-        
-      </div>
-      <Button className='TBBasicQ' onClick={() => switchScreen('BasicQ')}> Basic Questions</Button>
-      <Button className='TBDetailedQ' onClick={() => switchScreen('DetailedQ')}> Detailed Questions</Button>
-      <Button className='TBHomeP' onClick={() => switchScreen('HomePage')}>Home Page</Button>
       <Button className='SignInButton'> Sign In</Button>
-        <div className='APIform'>
-            <Form>  
-              <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} />
-              <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-            </Form>
-          </div>
+      <div className='APIform'>
+          <Form>  
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} />
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+          </Form>
+        </div>
         <div className='text-container'>
         <div className='text'> What do I do?</div>
         </div>
@@ -103,34 +112,63 @@ function App(): JSX.Element {
           <div>
             <div className='DetailedQuestions-List'>
               <div className='Det-Question'> Question 1
-              <div className='body' > What is your favorite color?</div>
+              <div className='body' > What kind of work environment do you prefer? Describe your ideal workplace.</div>
+              <input type='text' className = 'textboxclass'></input>
               </div>
               <div className='Det-Question'> Question 2
-              <div className='body' > What is your favorite color?</div>
+              <div className='body' > What values are most important to you in your career? (e.g., creativity, financial stability, work-life balance)</div>
+              <input type='text' className = 'textboxclass'></input>
               </div>
               <div className='Det-Question'> Question 3
-              <div className='body' > What is your favorite color?</div>
+              <div className='body' > Is job stability important to you?</div>
+              <input type='text' className = 'textboxclass'></input>
               </div>
               <div className='Det-Question'> Question 4
-              <div className='body' > What is your favorite color?</div>
+              <div className='body' > What kind of roles or projects do you most enjoy?</div> 
+              <div className='options'>
+              <Form.Check
+              inline
+              type='checkbox'
+              id='project-check-creative'
+              label = 'Creative Projects'
+              name = 'project'
+              value= 'creative projects'
+              checked = {project.includes ("creative projects")}
+              onChange={updateProject} 
+              />
+              <Form.Check
+              inline
+              type='checkbox'
+              id='project-check-creative'
+              label = 'Creative Projects'
+              name = 'project'
+              value= 'creative projects'
+              checked = {project.includes ("creative projects")}
+              onChange={updateProject} 
+              />
+              </div>
               </div>
               <div className='Det-Question'> Question 5
-              <div className='body' > What is your favorite color?</div>
+              <div className='body' > How often do you rely on data and facts when making decisions?</div>
               </div>
               <div className='Det-Question'> Question 6
-              <div className='body' > What is your favorite color?</div>
+              <div className='body' > How do you feel about public speaking and/or presenting ideas to groups?</div>
               </div>
               <div className='Det-Question'> Question 7
-              <div className='body' > What is your favorite color?</div>
+              <div className='body' > What skills do you enjoy most in your work? Select all that apply. </div>
+              <input type='text' className = 'textboxclass'></input>
               </div>
               <div className='Det-Question'> Question 8
-              <div className='body' > What is your favorite color?</div>
+              <div className='body' > Describe a professional goal you've set for yourself and the plans you are currently taking to achieve it. </div>
+              <input type='text' className = 'textboxclass'></input>
               </div>
               <div className='Det-Question'> Question 9
-              <div className='body' > What is your favorite color?</div>
+              <div className='body' > What career fields intrest you the most? Select all that apply. </div>
+              <input type='text' className = 'textboxclass'></input>
               </div>
               <div className='Det-Question'> Question 10
-              <div className='body' > What is your favorite color?</div>
+              <div className='body' > How open are you to trying new methods or approaches to your work?</div>
+              <input type='text' className = 'textboxclass'></input>
               </div>
 
 
