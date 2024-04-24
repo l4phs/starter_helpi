@@ -108,7 +108,7 @@ function App(): JSX.Element {
             </p>
           </div>
           <div className = 'BasicQuestions-List'>
-            <span className="Question">Question 1</span>
+            <span className="Question"> Would you prefer working from home, in an office / on site, or hybrid? (pick one) </span>
             <span className="Question">Question 2</span>
             <span className="Question">Question 3</span>
             <span className="Question">Question 4</span>
