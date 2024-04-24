@@ -1,3 +1,5 @@
+
+// eslint-disable-next-line
 import React, { useRef, useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
@@ -125,6 +127,17 @@ function App(): JSX.Element {
               <div className='body' > What kind of roles or projects do you most enjoy?</div> 
               <div className='options'>
               <Form.Check
+              inline
+              type='checkbox'
+              id='project-check-creative'
+              label = 'Creative Projects'
+              name = 'project'
+              value= 'creative projects'
+              checked = {project.includes ("creative projects")}
+              onChange={updateProject} 
+              />
+              <Form.Check
+              inline
               type='checkbox'
               id='project-check-creative'
               label = 'Creative Projects'
