@@ -371,6 +371,14 @@ color:#dbc6b6
   margin-top: 8px;
   font-size: 25px;
 }
+
+.Det-Question .options{
+  margin-top: 8px;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Josefin Sans";
+
+}
 .Question{
   padding: 25px;
   display: block;

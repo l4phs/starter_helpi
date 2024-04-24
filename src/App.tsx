@@ -123,7 +123,17 @@ function App(): JSX.Element {
               </div>
               <div className='Det-Question'> Question 4
               <div className='body' > What kind of roles or projects do you most enjoy?</div> 
-
+              <div className='options'>
+              <Form.Check
+              type='checkbox'
+              id='project-check-creative'
+              label = 'Creative Projects'
+              name = 'project'
+              value= 'creative projects'
+              checked = {project.includes ("creative projects")}
+              onChange={updateProject} 
+              />
+              </div>
               </div>
               <div className='Det-Question'> Question 5
               <div className='body' > How often do you rely on data and facts when making decisions?</div>
