@@ -59,23 +59,13 @@ body{
   width: 100%;
   height: 100%;
   background: url(Table.png) top center;
-  background-size: cover;
+  background-size: cover; 
 }
 
 .section2, .section3{
   background: linear-gradient(to bottom, #000000, #3c2918);
   height: 500vh;
 }
-
-
-/* Add parallax effect
-.section1::before,
-.section1::after,
-.section2,
-.section3,
-.text{
-  background-attachment: fixed;
-} */
 
 .text{
   display: grid;
@@ -105,21 +95,57 @@ body{
   text-align: center;
   }  
 
+.TaskBarRectangle{
+  display: grid;
+  position: sticky;
+  left: 0vw;
+  top: 0px;
+  z-index: 1;
+
+  height: 6vh;
+  width: 100vw;
+  background-color: #3c2918;
+}
+
+Button{
+  background-color: #3c2918;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 0px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 5px;
+}
+Button:hover{
+  background-color:#dbc6b6;
+  color: #3c2918 ;
+}
+
 .APIform{
   display: grid;
+  position: fixed;
+  left: 2vw;
+  top: 4px;
+  z-index: 2;
+
   color: #dbc6b6;
   font-size: 13px;
-  padding: 10px 25px;
   border: 1px solid transparent;
   border-radius: 8px;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   cursor: pointer;
-  margin-left: 10px;
 }
 
 .APIform input{
+max-height: 33px;
+color: #dbc6b6;
+
 background-color: #3c2918;
 border: none;
 padding: 10px 15px;
@@ -127,21 +153,25 @@ font-size: 13px;
 border-radius: 8px;
 width: 100%;
 outline: none;
-position: relative;
+position: fixed;
 left: auto;
 width: fit-content;
 margin-left: 5px;
 }
 
-.Submit-Button{
-  position: relative;
-  left: auto;
+.APIform .Submit-Button  {
+  display: grid;
+  position: fixed;
+  left: 14vw;
+  top: 2px;
+  z-index: 2;
+
 
   background-color: #3c2918;
   color: #dbc6b6;
   font-size: 12px;
   padding: 10px 25px;
-  border: 1px solid transparent;
+  border: 0px;
   border-radius: 8px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -150,17 +180,21 @@ margin-left: 5px;
   margin-left: 5px;
 }
 
+.Submit-Button:hover{
+  background-color:#dbc6b6;
+  color: #3c2918 ;
+}
+
 .APIform input::placeholder{
 color:#dbc6b6
 }
 
-.SignInButton{
+.SignInButton {
   display: grid;
   position: fixed;
-  justify-self: right;
-  right: 0;
-  margin-right: 10px;
-  margin-top: 10px;
+  right: 2vw;
+  top: 1px;
+  z-index: 2;
 
   background-color: #3c2918;
   color: #dbc6b6;
@@ -173,10 +207,85 @@ color:#dbc6b6
   text-transform: uppercase;
   cursor: pointer;
 }
+.SignInButton:hover{
+  background-color:#dbc6b6;
+  color: #3c2918 ;
+}
 
+/* TaskBar Buttons */
+.section1 .TBBasicQ{
+  display: grid;
+  position: fixed;
+  right: 21.5vw;
+  top: 1px;
+  z-index: 2;
+
+  background-color: #3c2918;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.TBBasicQ:hover{
+  background-color:#dbc6b6;
+  color: #3c2918 ;
+}
+
+/* TaskBar Buttons */
+.section1 .TBDetailedQ{
+  display: grid;
+  position: fixed;
+  right: 9.5vw;
+  top: 1px;
+  z-index: 2;
+
+  background-color: #3c2918;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.TBDetailedQ:hover{
+  background-color:#dbc6b6;
+  color: #3c2918 ;
+}
+
+/* TaskBar Buttons */
+.section1 .TBHomeP{
+  display: grid;
+  position: fixed;
+  right: 32vw;
+  top: 1px;
+  z-index: 2;
+
+  background-color: #3c2918;
+  color: #dbc6b6;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.TBHomeP:hover{
+  background-color:#dbc6b6;
+  color: #3c2918 ;
+}
+
+/* Home Page Buttons */
 .BasicQ{
-  /* Button */
-  /* display: grid; */
   display: flex;
   position: relative;
   left:26vw;
@@ -195,11 +304,13 @@ color:#dbc6b6
   text-transform: uppercase;
   cursor: pointer;
 }
+.BasicQ:hover{
+  background-color:#dbc6b6;
+  color: #3c2918 ;
+}
 
-
-
+/* Home Page Buttons */
 .DetailedQ{
-  /* Button */
   display: grid;
   display: flex;
   position: relative;
@@ -219,7 +330,12 @@ color:#dbc6b6
   text-transform: uppercase;
   cursor: pointer;
 }
+.DetailedQ:hover{
+  background-color:#dbc6b6;
+  color: #3c2918 ;
+}
 
+/* Basic Question Header */
 .BQH{
   display: grid;
   display: flex;
@@ -232,12 +348,13 @@ color:#dbc6b6
   text-align: center;
 }
 
+/* Basic Question Body */
 .BQB{
   display: grid;
   display: flex;
   position: absolute;
   font-family: "Lilita One";
-  top: 20vh;
+  top: 30vh;
   left: 10vw;
   color: #dbc6b6;
   font-size: 30px;
@@ -245,18 +362,20 @@ color:#dbc6b6
   width: 100vw;
 }
 
+/* Detailed Question Header */
 .DQH{
   display: grid;
   display: flex;
   position: absolute;
   font-family: "Lilita One";
-  top: 10vh;
+  top: 5vh;
   left: 29vw;
   color: white;
   font-size: 60px;
   text-align: center;
 }
 
+/* Detailed Question Body */
 .DQB{
   display: grid;
   display: flex;
@@ -270,13 +389,14 @@ color:#dbc6b6
   width: 100vw;
 }
 
+/* Table buttons ie beige buttons */
 .s3HomeP{
   /* Button */
   display: grid;
   display: flex;
   position: fixed;
   left:35vw;
-  top: 90vh;
+  top: 87.5vh;
   margin-left: 0px;
 
   width: 120px;
@@ -291,14 +411,19 @@ color:#dbc6b6
   text-transform: uppercase;
   cursor: pointer;
 }
+.s3HomeP:hover{
+  background-color:#3c2918;
+  color: #dbc6b6 ;
+}
 
+/* Table buttons ie beige buttons */
 .s3BasicQ{
   /* Button */
   display: grid;
   display: flex;
   position: fixed;
   left:50vw;
-  top: 90vh;
+  top: 87.5vh;
   margin-left: 0px;
 
   width: 120px;
@@ -314,14 +439,19 @@ color:#dbc6b6
   cursor: pointer;
 
 }
+.s3BasicQ:hover{
+  background-color:#3c2918;
+  color: #dbc6b6 ;
+}
 
+/* Table buttons ie beige buttons */
 .s3DetailedQ{
   /* Button */
   display: grid;
   display: flex;
   position: fixed;
   left:50vw;
-  top: 90vh;
+  top: 87.5vh;
   margin-left: 0px;
 
   width: 120px;
@@ -337,6 +467,10 @@ color:#dbc6b6
   cursor: pointer;
   
 }
+.s3DetailedQ:hover{
+  background-color:#3c2918;
+  color: #dbc6b6 ;
+}
 
 .BasicQuestions-List{
   /* padding: 16px; */
@@ -344,6 +478,9 @@ color:#dbc6b6
   left: 10vw;
   position: absolute;
 }
+
+
+/* Basic Question Classes */
 
 .DetailedQuestions-List{
   /* padding: 16px; */
