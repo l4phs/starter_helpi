@@ -492,7 +492,7 @@ color:#dbc6b6
 }
 
 .Det-Question{
-  padding: 25px;
+  padding: 20px;
   display: block;
   /* display: flex; */
   margin-bottom: 16px;
@@ -510,11 +510,10 @@ color:#dbc6b6
 }
 
 .Det-Question .options{
-  margin-top: 8px;
+  margin-top: 15px;
   font-size: 20px;
   text-align: center;
   font-family: "Josefin Sans";
-
 }
 .Question{
   padding: 25px;

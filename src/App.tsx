@@ -193,11 +193,41 @@ function App(): JSX.Element {
               <Form.Check
               inline
               type='checkbox'
-              id='project-check-creative'
-              label = 'Creative Projects'
+              id='project-check-analytical'
+              label = 'Analytical Projects'
               name = 'project'
-              value= 'creative projects'
-              checked = {project.includes ("creative projects")}
+              value= 'analytical projects'
+              checked = {project.includes ("analytical projects")}
+              onChange={updateProject} 
+              />
+              <Form.Check
+              inline
+              type='checkbox'
+              id='project-check-leadership'
+              label = 'Leadership Projects'
+              name = 'project'
+              value= 'leadership projects'
+              checked = {project.includes ("leadership projects")}
+              onChange={updateProject} 
+              />
+              <Form.Check
+              inline
+              type='checkbox'
+              id='project-check-handson'
+              label = 'Hands-on Projects'
+              name = 'project'
+              value= 'hands-on projects'
+              checked = {project.includes ("hands-on projects")}
+              onChange={updateProject} 
+              />
+              <Form.Check
+              inline
+              type='checkbox'
+              id='project-check-customerservice'
+              label = 'Customer Service Projects'
+              name = 'project'
+              value= 'customer service projects'
+              checked = {project.includes ("customer service projects")}
               onChange={updateProject} 
               />
               </div>
