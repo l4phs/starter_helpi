@@ -64,6 +64,8 @@ interface basicQuestionsArray {
   quizData: basicQuestion [];
 }
 
+//const basicQuestionsArray: = 
+
 
   const switchScreen = (view: string): void => {
     switch (view) {
@@ -202,16 +204,16 @@ interface basicQuestionsArray {
             </p>
           </div>
           <div className = 'BasicQuestions-List'>
-            <span className="Question"> Would you prefer working from home, in an office / on site, or hybrid? (pick one) </span>
-            <span className="Question">Question 2</span>
-            <span className="Question">Question 3</span>
-            <span className="Question">Question 4</span>
-            <span className="Question">Question 5</span>
-            <span className="Question">Question 6</span>
-            <span className="Question">Question 7</span>
-            <span className="Question">Question 8</span>
-            <span className="Question">Question 9</span>
-            <span className="Question">Question 10</span>
+            <span className="Question">Would you prefer working from home, in an office / on site, or hybrid? (pick one)</span>
+            <span className="Question">What salary would you not feel comfortable earning less than?</span>
+            <span className="Question">Do you prefer to do work individually, in a small group (2-4 people), or a team (more than 4 people)?</span>
+            <span className="Question">How would you describe your ideal work environment in one word?</span>
+            <span className="Question">How can you describe yourself in one word?</span>
+            <span className="Question">What are you the best at?</span>
+            <span className="Question">How would you rate your ability to learn new skills? (pick one)</span>
+            <span className="Question">I work well in fast paced environments.</span>
+            <span className="Question">What is most important to you in a job?</span>
+            <span className="Question">Would you enjoy traveling for work?</span>
           </div>
         </div>
       )}
