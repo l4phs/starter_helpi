@@ -233,15 +233,10 @@ function App(): JSX.Element {
               id='project-check-analytical'
               label = 'Analytical Projects'
               name = 'project'
-
-              value= 'creative projects'
-              checked = {project.includes ("creative projects")}
               //onChange={updateProject} 
               onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-
-              value= 'analytical projects'
-              checked = {project.includes ("analytical projects")}
-              onChange={updateProject} 
+              value = 'analytical-project'
+              checked = {project.includes ("analytical project")}
               />
               <Form.Check
               inline
