@@ -73,13 +73,19 @@ function App(): JSX.Element {
   return (
     <React.Fragment>
       <div className="section1">
+      <div className='TaskBarRectangle'>
+        
+      </div>
+      <Button className='TBBasicQ' onClick={() => switchScreen('BasicQ')}> Basic Questions</Button>
+      <Button className='TBDetailedQ' onClick={() => switchScreen('DetailedQ')}> Detailed Questions</Button>
+      <Button className='TBHomeP' onClick={() => switchScreen('HomePage')}>Home Page</Button>
       <Button className='SignInButton'> Sign In</Button>
-      <div className='APIform'>
-          <Form>  
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} />
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-          </Form>
-        </div>
+        <div className='APIform'>
+            <Form>  
+              <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} />
+              <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+            </Form>
+          </div>
         <div className='text-container'>
         <div className='text'> What do I do?</div>
         </div>
@@ -93,7 +99,49 @@ function App(): JSX.Element {
               Take a quiz!
             </p> 
           </div>
+          <h4 className='Boxie'>
+          <br></br>
+          Discover your ideal career path with our basic Career Path Quiz! 
+          <br></br>
+          <br></br>
+          Tailored for those beginning their career journey, this quiz helps you explore your interests, strengths, and preferences. 
+          <br></br>
+          <br></br>
+          Quick and easy to understand and results are immediate following the completion of the quiz.
+          <br></br>
+          <br></br>
+          Uncover potential career paths aligned with your aspirations, whether you're a recent graduate or considering a change. 
+          <br></br>
+          <br></br>
+          Start your exploration today and take the first step toward a fulfilling career!
+          <br></br>
+          <br></br>
+          An example of a question you may see:
+          <br></br>
+          <br></br>
+          </h4>
           <Button className='BasicQ' onClick={() => switchScreen('BasicQ')}> Basic Questions</Button>
+          <h4 className='Boxie2'>
+          <br></br>
+          Discover your ideal career path with our basic Career Path Quiz! 
+          <br></br>
+          <br></br>
+          Tailored for those beginning their career journey, this quiz helps you explore your interests, strengths, and preferences. 
+          <br></br>
+          <br></br>
+          Quick and easy to understand and results are immediate following the completion of the quiz.
+          <br></br>
+          <br></br>
+          Uncover potential career paths aligned with your aspirations, whether you're a recent graduate or considering a change. 
+          <br></br>
+          <br></br>
+          Start your exploration today and take the first step toward a fulfilling career!
+          <br></br>
+          <br></br>
+          An example of a question you may see:
+          <br></br>
+          <br></br>
+          </h4>
           <Button className='DetailedQ' onClick={() => switchScreen('DetailedQ')}> Detailed Questions</Button>
         </div>
       )}
@@ -110,10 +158,16 @@ function App(): JSX.Element {
               Long, detailed answers are highly encouraged. Onwards!            </p>
           </div>
           <div>
+            <br></br>
+            <div className='ProgressBar'>
+            <div className='ActiveProgress'></div>
+              <p></p>
+            </div>
+            <br></br>
             <div className='DetailedQuestions-List'>
               <div className='Det-Question'> Question 1
               <div className='body' > What kind of work environment do you prefer? Describe your ideal workplace.</div>
-              <input type='text' className = 'textboxclass'></input>
+              <input type='text'  className = 'textboxclass'></input>
               </div>
               <div className='Det-Question'> Question 2
               <div className='body' > What values are most important to you in your career? (e.g., creativity, financial stability, work-life balance)</div>
@@ -220,6 +274,13 @@ function App(): JSX.Element {
               Short asnwers are highly encouraged. Onwards!
             </p>
           </div>
+          <br></br>
+          <br></br>
+            <div className='ProgressBar'>
+            <div className='ActiveProgress'></div>
+              <p></p>
+            </div>
+            <br></br>
           <div className = 'BasicQuestions-List'>
             <span className="Question">Question 1</span>
             <span className="Question">Question 2</span>
