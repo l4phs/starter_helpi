@@ -64,7 +64,7 @@ body{
 
 .section2, .section3{
   background: linear-gradient(to bottom, #000000, #3c2918);
-  height: 300vh;
+  height: 500vh;
 }
 
 
@@ -82,7 +82,7 @@ body{
   display: flex;
   position: absolute;
   font-family: "Lilita One";
-  transform: scale(1,1.1) translate(-50%, 10%);
+  transform: scale(1,1.1) translate(-40%, 10%);
 }
 
 .section1 .text {
@@ -202,8 +202,8 @@ color:#dbc6b6
   /* Button */
   display: grid;
   display: flex;
-  position: fixed;
-  left:50vw;
+  position: relative;
+  left:60vw;
   top: 180vh;
   margin-left: 5px;
 
@@ -399,4 +399,46 @@ color:#dbc6b6
   font-size: 20px;
   font-family: "Josefin Sans";
 
+}
+
+.Boxie{
+  /* homepage desc for basic */
+  display: flex;
+  position: relative;
+  left:30vw;
+  top: 60vh;
+  margin-right: 5px;
+
+  width: 300px;
+  background-color: #dbc6b6;
+  color: #3c2918;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.Boxie2{
+  /* homepage desc for detailed */
+  display: flex;
+  position: relative;
+  left:60vw;
+  top: 30vh;
+  margin-right: 5px;
+
+  width: 300px;
+  background-color: #dbc6b6;
+  color: #3c2918;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
 }

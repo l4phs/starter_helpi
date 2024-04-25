@@ -93,7 +93,49 @@ function App(): JSX.Element {
               Take a quiz!
             </p> 
           </div>
+          <h4 className='Boxie'>
+          <br></br>
+          Discover your ideal career path with our basic Career Path Quiz! 
+          <br></br>
+          <br></br>
+          Tailored for those beginning their career journey, this quiz helps you explore your interests, strengths, and preferences. 
+          <br></br>
+          <br></br>
+          Quick and easy to understand and results are immediate following the completion of the quiz.
+          <br></br>
+          <br></br>
+          Uncover potential career paths aligned with your aspirations, whether you're a recent graduate or considering a change. 
+          <br></br>
+          <br></br>
+          Start your exploration today and take the first step toward a fulfilling career!
+          <br></br>
+          <br></br>
+          An example of a question you may see:
+          <br></br>
+          <br></br>
+          </h4>
           <Button className='BasicQ' onClick={() => switchScreen('BasicQ')}> Basic Questions</Button>
+          <h4 className='Boxie2'>
+          <br></br>
+          Discover your ideal career path with our basic Career Path Quiz! 
+          <br></br>
+          <br></br>
+          Tailored for those beginning their career journey, this quiz helps you explore your interests, strengths, and preferences. 
+          <br></br>
+          <br></br>
+          Quick and easy to understand and results are immediate following the completion of the quiz.
+          <br></br>
+          <br></br>
+          Uncover potential career paths aligned with your aspirations, whether you're a recent graduate or considering a change. 
+          <br></br>
+          <br></br>
+          Start your exploration today and take the first step toward a fulfilling career!
+          <br></br>
+          <br></br>
+          An example of a question you may see:
+          <br></br>
+          <br></br>
+          </h4>
           <Button className='DetailedQ' onClick={() => switchScreen('DetailedQ')}> Detailed Questions</Button>
         </div>
       )}
