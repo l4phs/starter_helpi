@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
+import axios from 'axios';
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap')
@@ -29,6 +30,29 @@ function App(): JSX.Element {
   //setting states for each page
   const [currentView, setCurrentView] = useState<number>(0); // for managing the current page
   const[project, setProject] = useState<string[]>(["creative roles", "analytical roles", "leadership roles", "hands-on roles", "customer service roles"]) //options for detailed question #4
+  const [detailedAnswers, setDetailedAnswers] = useState({});
+
+   // Function to handle submission of detailed answers
+   const handleSubmitDetailedAnswers = () => {
+    // Make a POST request to the API endpoint with the detailed answers
+    axios.post('API_ENDPOINT_URL', detailedAnswers)
+      .then((response: { data: any; }) => {
+        // Handle the API response, e.g., update UI with results
+        console.log(response.data);
+      })
+      .catch((error: any) => {
+        // Handle errors
+        console.error('Error submitting detailed answers:', error);
+      });
+  };
+
+  // Function to update detailed answers when input changes
+  const handleDetailedAnswerChange = (questionNumber: any, answer: any) => {
+    setDetailedAnswers(prevState => ({
+      ...prevState,
+      [questionNumber]: answer
+    }));
+  };
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -119,28 +143,40 @@ function App(): JSX.Element {
           An example of a question you may see:
           <br></br>
           <br></br>
+          Question 1:
+          <br></br>
+          <br></br>
+          What location would you prefer to live in?
+          <br></br>
+          <br></br>
+          - Suburban -Urban
+          <br></br>
+          <br></br>
+          - City         -Coastal/Beach
+          <br></br>
           </h4>
           <Button className='BasicQ' onClick={() => switchScreen('BasicQ')}> Basic Questions</Button>
           <h4 className='Boxie2'>
           <br></br>
-          Discover your ideal career path with our basic Career Path Quiz! 
+          Take your career exploration to new heights with our Advanced Career Path Quiz! 
           <br></br>
           <br></br>
-          Tailored for those beginning their career journey, this quiz helps you explore your interests, strengths, and preferences. 
+          Designed for those seeking in-depth insights, this quiz assesses your skills, values, and goals. 
           <br></br>
           <br></br>
-          Quick and easy to understand and results are immediate following the completion of the quiz.
+          Navigate through complex scenarios and uncover opportunities aligned with your ambitions. 
           <br></br>
           <br></br>
-          Uncover potential career paths aligned with your aspirations, whether you're a recent graduate or considering a change. 
+          Whether you're a seasoned professional or a student planning your future, empower yourself to make informed decisions and pursue your dream career. 
           <br></br>
           <br></br>
-          Start your exploration today and take the first step toward a fulfilling career!
+          Start navigating your future today!
           <br></br>
           <br></br>
           An example of a question you may see:
           <br></br>
           <br></br>
+
           </h4>
           <Button className='DetailedQ' onClick={() => switchScreen('DetailedQ')}> Detailed Questions</Button>
         </div>
@@ -167,15 +203,15 @@ function App(): JSX.Element {
             <div className='DetailedQuestions-List'>
               <div className='Det-Question'> Question 1
               <div className='body' > What kind of work environment do you prefer? Describe your ideal workplace.</div>
-              <input type='text'  className = 'textboxclass'></input>
+              <input type='text'  className = 'textboxclass' onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}></input>
               </div>
               <div className='Det-Question'> Question 2
               <div className='body' > What values are most important to you in your career? (e.g., creativity, financial stability, work-life balance)</div>
-              <input type='text' className = 'textboxclass'></input>
+              <input type='text' className = 'textboxclass' onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}></input>
               </div>
               <div className='Det-Question'> Question 3
               <div className='body' > Is job stability important to you?</div>
-              <input type='text' className = 'textboxclass'></input>
+              <input type='text' className = 'textboxclass' onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}></input>
               </div>
               <div className='Det-Question'> Question 4
               <div className='body' > What kind of roles or projects do you most enjoy?</div> 
@@ -188,7 +224,8 @@ function App(): JSX.Element {
               name = 'project'
               value= 'creative projects'
               checked = {project.includes ("creative projects")}
-              onChange={updateProject} 
+              //onChange={updateProject} 
+              onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
               />
               <Form.Check
               inline
@@ -196,6 +233,12 @@ function App(): JSX.Element {
               id='project-check-analytical'
               label = 'Analytical Projects'
               name = 'project'
+
+              value= 'creative projects'
+              checked = {project.includes ("creative projects")}
+              //onChange={updateProject} 
+              onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
+
               value= 'analytical projects'
               checked = {project.includes ("analytical projects")}
               onChange={updateProject} 
@@ -253,6 +296,8 @@ function App(): JSX.Element {
               <div className='Det-Question'> Question 10
               <div className='body' > How open are you to trying new methods or approaches to your work?</div>
               <input type='text' className = 'textboxclass'></input>
+
+              <button className="Submit-Button" onClick={handleSubmitDetailedAnswers}>Submit Detailed Answers</button>
               </div>
 
 
@@ -282,16 +327,37 @@ function App(): JSX.Element {
             </div>
             <br></br>
           <div className = 'BasicQuestions-List'>
-            <span className="Question">Question 1</span>
-            <span className="Question">Question 2</span>
-            <span className="Question">Question 3</span>
-            <span className="Question">Question 4</span>
-            <span className="Question">Question 5</span>
-            <span className="Question">Question 6</span>
-            <span className="Question">Question 7</span>
-            <span className="Question">Question 8</span>
-            <span className="Question">Question 9</span>
-            <span className="Question">Question 10</span>
+            <span className="Question">Question 1
+            <div className='body' > List three activities you enjoy doing?</div>
+            </span>
+            <span className="Question">Question 2
+            <div className='body' > What is your ideal shift time?</div>
+            </span>
+            <span className="Question">Question 3
+            <div className='body' > Would you enjoy traveling for work?</div>
+            </span>
+            <span className="Question">Question 4
+            <div className='body' > What subject are you the best at?</div>
+            </span>
+            <span className="Question">Question 5
+            <div className='body' > I work well in fast paced environments</div>
+            </span>
+            <span className="Question">Question 6
+            <div className='body' > Would you prefer to be relatively sedentary or active at work?</div>
+            </span>
+            <span className="Question">Question 7
+            <div className='body' > Would you prefer working from home, in an office / on site, or hybrid?</div>
+            </span>
+            <span className="Question">Question 8
+            <div className='body' > Do you prefer to do work individually, in a small group (2-4 people), or a team (more than 4 people)?</div>
+            </span>
+            <span className="Question">Question 9
+            <div className='body' > What kind of learner are you?</div>
+            </span>
+            <span className="Question">Question 10
+            <div className='body' > Do you prefer consistent work hours over a flexible schedule?</div>
+            <button className="Submit-Button" onClick={handleSubmitDetailedAnswers}>Submit Basic Answers</button>
+            </span>
           </div>
         </div>
       )}
