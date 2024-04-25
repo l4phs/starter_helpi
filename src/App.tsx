@@ -119,23 +119,55 @@ function App(): JSX.Element {
           An example of a question you may see:
           <br></br>
           <br></br>
+          Question 1:
+          <br></br>
+          <br></br>
+          What location would you prefer to live in?
+          <br></br>
+          <div>
+          <Form.Check
+                type="radio"
+                name="emotions"
+                label="Suburban"
+                value="suburban"
+            />
+            </div>
+          <br></br>
+          <div>
+          <Form.Check
+                type="radio"
+                name="emotions"
+                label="Suburban"
+                value="suburban"
+            />
+            </div>
+            <br></br>
+            <div>
+            <Form.Check
+                type="radio"
+                name="emotions"
+                label="Suburban"
+                value="suburban"
+            />
+            </div>
+            <br></br>
           </h4>
           <Button className='BasicQ' onClick={() => switchScreen('BasicQ')}> Basic Questions</Button>
           <h4 className='Boxie2'>
           <br></br>
-          Discover your ideal career path with our basic Career Path Quiz! 
+          Take your career exploration to new heights with our Advanced Career Path Quiz! 
           <br></br>
           <br></br>
-          Tailored for those beginning their career journey, this quiz helps you explore your interests, strengths, and preferences. 
+          Designed for those seeking in-depth insights, this quiz assesses your skills, values, and goals. 
           <br></br>
           <br></br>
-          Quick and easy to understand and results are immediate following the completion of the quiz.
+          Navigate through complex scenarios and uncover opportunities aligned with your ambitions. 
           <br></br>
           <br></br>
-          Uncover potential career paths aligned with your aspirations, whether you're a recent graduate or considering a change. 
+          Whether you're a seasoned professional or a student planning your future, empower yourself to make informed decisions and pursue your dream career. 
           <br></br>
           <br></br>
-          Start your exploration today and take the first step toward a fulfilling career!
+          Start navigating your future today!
           <br></br>
           <br></br>
           An example of a question you may see:
