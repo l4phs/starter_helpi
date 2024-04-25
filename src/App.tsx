@@ -190,10 +190,16 @@ function App(): JSX.Element {
               Long, detailed answers are highly encouraged. Onwards!            </p>
           </div>
           <div>
+            <br></br>
+            <div className='ProgressBar'>
+            <div className='ActiveProgress'></div>
+              <p></p>
+            </div>
+            <br></br>
             <div className='DetailedQuestions-List'>
               <div className='Det-Question'> Question 1
               <div className='body' > What kind of work environment do you prefer? Describe your ideal workplace.</div>
-              <input type='text' className = 'textboxclass'></input>
+              <input type='text'  className = 'textboxclass'></input>
               </div>
               <div className='Det-Question'> Question 2
               <div className='body' > What values are most important to you in your career? (e.g., creativity, financial stability, work-life balance)</div>
@@ -270,6 +276,13 @@ function App(): JSX.Element {
               Short asnwers are highly encouraged. Onwards!
             </p>
           </div>
+          <br></br>
+          <br></br>
+            <div className='ProgressBar'>
+            <div className='ActiveProgress'></div>
+              <p></p>
+            </div>
+            <br></br>
           <div className = 'BasicQuestions-List'>
             <span className="Question">Question 1</span>
             <span className="Question">Question 2</span>
