@@ -179,8 +179,8 @@ color:#dbc6b6
   /* display: grid; */
   display: flex;
   position: relative;
-  left:35vw;
-  top: 80vh;
+  left:26vw;
+  top: 72vh;
   margin-right: 5px;
 
   width: 120px;
@@ -203,8 +203,8 @@ color:#dbc6b6
   display: grid;
   display: flex;
   position: relative;
-  left:60vw;
-  top: 180vh;
+  left:67vw;
+  top: 65vh;
   margin-left: 5px;
 
   width: 120px;
@@ -405,7 +405,7 @@ color:#dbc6b6
   /* homepage desc for basic */
   display: flex;
   position: relative;
-  left:30vw;
+  left:20vw;
   top: 60vh;
   margin-right: 5px;
 
@@ -414,7 +414,7 @@ color:#dbc6b6
   color: #3c2918;
   font-size: 12px;
   padding: 10px 25px;
-  border: 1px solid transparent;
+  border: 10px solid transparent;
   border-radius: 8px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -425,9 +425,9 @@ color:#dbc6b6
 .Boxie2{
   /* homepage desc for detailed */
   display: flex;
-  position: relative;
+  position: absolute;
   left:60vw;
-  top: 30vh;
+  top: 60vh;
   margin-right: 5px;
 
   width: 300px;
@@ -435,7 +435,7 @@ color:#dbc6b6
   color: #3c2918;
   font-size: 12px;
   padding: 10px 25px;
-  border: 1px solid transparent;
+  border: 10px solid transparent;
   border-radius: 8px;
   font-weight: 600;
   letter-spacing: 0.5px;
