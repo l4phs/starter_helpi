@@ -355,7 +355,7 @@ color:#dbc6b6
   position: absolute;
   font-family: "Lilita One";
   top: 30vh;
-  left: 10vw;
+  left: 5vw;
   color: #dbc6b6;
   font-size: 30px;
   text-align: center;
@@ -382,7 +382,7 @@ color:#dbc6b6
   position: absolute;
   font-family: "Lilita One";
   top: 20vh;
-  left: 10vw;
+  left: 3vw;
   color: #dbc6b6;
   font-size: 30px;
   text-align: center;
@@ -578,6 +578,30 @@ color:#dbc6b6
   letter-spacing: 0.5px;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.Submit-Button{
+  display: flex;
+  position: relative;
+  left:26vw;
+  top: 40vh;
+  margin-right: 5px;
+
+  width: 200px;
+  color: #3c2920;
+  background-color: #dbc6b6;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.Submit-Button:hover{
+  color:#dbc6b6;
+  background-color: #ad846f ;
 }
 
 .ProgressBar{
