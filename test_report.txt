@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (41 ms)
+  ✕ renders learn react link (50 ms)
 
   ● renders learn react link
 
@@ -83,12 +83,58 @@ FAIL src/App.test.tsx
               [0mTake a quiz![0m
             [36m</p>[39m
           [36m</div>[39m
+          [36m<h4[39m
+            [33mclass[39m=[32m"Boxie"[39m
+          [36m>[39m
+            [36m<br />[39m
+            [0mDiscover your ideal career path with our basic Career Path Quiz![0m
+            [36m<br />[39m
+            [36m<br />[39m
+            [0mTailored for those beginning their career journey, this quiz helps you explore your interests, strengths, and preferences.[0m
+            [36m<br />[39m
+            [36m<br />[39m
+            [0mQuick and easy to understand and results are immediate following the completion of the quiz.[0m
+            [36m<br />[39m
+            [36m<br />[39m
+            [0mUncover potential career paths aligned with your aspirations, whether you're a recent graduate or considering a change.[0m
+            [36m<br />[39m
+            [36m<br />[39m
+            [0mStart your exploration today and take the first step toward a fulfilling career![0m
+            [36m<br />[39m
+            [36m<br />[39m
+            [0mAn example of a question you may see:[0m
+            [36m<br />[39m
+            [36m<br />[39m
+          [36m</h4>[39m
           [36m<button[39m
             [33mclass[39m=[32m"BasicQ btn btn-primary"[39m
             [33mtype[39m=[32m"button"[39m
           [36m>[39m
             [0m Basic Questions[0m
           [36m</button>[39m
+          [36m<h4[39m
+            [33mclass[39m=[32m"Boxie2"[39m
+          [36m>[39m
+            [36m<br />[39m
+            [0mDiscover your ideal career path with our basic Career Path Quiz![0m
+            [36m<br />[39m
+            [36m<br />[39m
+            [0mTailored for those beginning their career journey, this quiz helps you explore your interests, strengths, and preferences.[0m
+            [36m<br />[39m
+            [36m<br />[39m
+            [0mQuick and easy to understand and results are immediate following the completion of the quiz.[0m
+            [36m<br />[39m
+            [36m<br />[39m
+            [0mUncover potential career paths aligned with your aspirations, whether you're a recent graduate or considering a change.[0m
+            [36m<br />[39m
+            [36m<br />[39m
+            [0mStart your exploration today and take the first step toward a fulfilling career![0m
+            [36m<br />[39m
+            [36m<br />[39m
+            [0mAn example of a question you may see:[0m
+            [36m<br />[39m
+            [36m<br />[39m
+          [36m</h4>[39m
           [36m<button[39m
             [33mclass[39m=[32m"DetailedQ btn btn-primary"[39m
             [33mtype[39m=[32m"button"[39m
@@ -121,14 +167,14 @@ FAIL src/App.test.tsx
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s     
 --------------------|---------|----------|---------|---------|-----------------------
 All files           |   21.27 |    27.77 |    5.88 |   21.73 |                       
- App.tsx            |   27.77 |    35.71 |    6.66 |   28.57 | 22,35-50,58-69,79-189 
+ App.tsx            |   27.77 |    35.71 |    6.66 |   28.57 | 22,35-50,58-69,79-231 
  index.tsx          |       0 |      100 |     100 |       0 | 7-19                  
  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10                  
 --------------------|---------|----------|---------|---------|-----------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.738 s
+Time:        2.911 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
