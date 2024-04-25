@@ -3,179 +3,52 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (46 ms)
+  ● Test suite failed to run
 
-  ● renders learn react link
+    Jest encountered an unexpected token
 
-    TestingLibraryElementError: Unable to find an element with the text: /learn react/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
 
-    Ignored nodes: comments, script, style
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"section1"[39m
-        [36m>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"TaskBarRectangle"[39m
-          [36m/>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"TBBasicQ btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0m Basic Questions[0m
-          [36m</button>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"TBDetailedQ btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0m Detailed Questions[0m
-          [36m</button>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"TBHomeP btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mHome Page[0m
-          [36m</button>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"SignInButton btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0m Sign In[0m
-          [36m</button>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"APIform"[39m
-          [36m>[39m
-            [36m<form[39m
-              [33mclass[39m=[32m""[39m
-            [36m>[39m
-              [36m<input[39m
-                [33mclass[39m=[32m"form-control"[39m
-                [33mplaceholder[39m=[32m"Insert API Key Here"[39m
-                [33mtype[39m=[32m"password"[39m
-              [36m/>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mSubmit[0m
-              [36m</button>[39m
-            [36m</form>[39m
-          [36m</div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"text-container"[39m
-          [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"text"[39m
-            [36m>[39m
-              [0m What do I do?[0m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"section2"[39m
-        [36m>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"text"[39m
-          [36m>[39m
-            [36m<p>[39m
-              [0mStruggling to decide what to do with your life?[0m
-              [36m<br />[39m
-              [0mTake a quiz![0m
-            [36m</p>[39m
-          [36m</div>[39m
-          [36m<h4[39m
-            [33mclass[39m=[32m"Boxie"[39m
-          [36m>[39m
-            [36m<br />[39m
-            [0mDiscover your ideal career path with our basic Career Path Quiz![0m
-            [36m<br />[39m
-            [36m<br />[39m
-            [0mTailored for those beginning their career journey, this quiz helps you explore your interests, strengths, and preferences.[0m
-            [36m<br />[39m
-            [36m<br />[39m
-            [0mQuick and easy to understand and results are immediate following the completion of the quiz.[0m
-            [36m<br />[39m
-            [36m<br />[39m
-            [0mUncover potential career paths aligned with your aspirations, whether you're a recent graduate or considering a change.[0m
-            [36m<br />[39m
-            [36m<br />[39m
-            [0mStart your exploration today and take the first step toward a fulfilling career![0m
-            [36m<br />[39m
-            [36m<br />[39m
-            [0mAn example of a question you may see:[0m
-            [36m<br />[39m
-            [36m<br />[39m
-          [36m</h4>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"BasicQ btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0m Basic Questions[0m
-          [36m</button>[39m
-          [36m<h4[39m
-            [33mclass[39m=[32m"Boxie2"[39m
-          [36m>[39m
-            [36m<br />[39m
-            [0mDiscover your ideal career path with our basic Career Path Quiz![0m
-            [36m<br />[39m
-            [36m<br />[39m
-            [0mTailored for those beginning their career journey, this quiz helps you explore your interests, strengths, and preferences.[0m
-            [36m<br />[39m
-            [36m<br />[39m
-            [0mQuick and easy to understand and results are immediate following the completion of the quiz.[0m
-            [36m<br />[39m
-            [36m<br />[39m
-            [0mUncover potential career paths aligned with your aspirations, whether you're a recent graduate or considering a change.[0m
-            [36m<br />[39m
-            [36m<br />[39m
-            [0mStart your exploration today and take the first step toward a fulfilling career![0m
-            [36m<br />[39m
-            [36m<br />[39m
-            [0mAn example of a question you may see:[0m
-            [36m<br />[39m
-            [36m<br />[39m
-          [36m</h4>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"DetailedQ btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0m Detailed Questions[0m
-          [36m</button>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
 
-       5 | test('renders learn react link', () => {
-       6 |   render(<App />);
-    >  7 |   const linkElement = screen.getByText(/learn react/i);
-         |                              ^
-       8 |   expect(linkElement).toBeInTheDocument();
-       9 | });
-      10 |
+    By default "node_modules" folder is ignored by transformers.
 
-      at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
-      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
-      at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
-      at getByText (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
-      at Object.<anonymous> (src/App.test.tsx:7:30)
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    /home/runner/work/starter_helpi/starter_helpi/node_modules/axios/index.js:1
+    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){import axios from './lib/axios.js';
+                                                                                      ^^^^^^
+
+    SyntaxError: Cannot use import statement outside a module
+
+       5 | import './App.css';
+       6 | import { Button, Form } from 'react-bootstrap';
+    >  7 | import axios from 'axios';
+         | ^
+       8 |
+       9 | <style>
+      10 | @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap')
+
+      at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
+      at Object.<anonymous> (src/App.tsx:7:1)
+      at Object.<anonymous> (src/App.test.tsx:3:1)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
       at runJest (node_modules/@jest/core/build/runJest.js:404:19)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
---------------------|---------|----------|---------|---------|-----------------------
-File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s     
---------------------|---------|----------|---------|---------|-----------------------
-All files           |   21.27 |    27.77 |    5.88 |   21.73 |                       
- App.tsx            |   27.77 |    35.71 |    6.66 |   28.57 | 22,35-50,58-69,79-267 
- index.tsx          |       0 |      100 |     100 |       0 | 7-19                  
- reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10                  
---------------------|---------|----------|---------|---------|-----------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        2.782 s
-Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -188,3 +61,16 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+--------------------|---------|----------|---------|---------|-------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------|---------|----------|---------|---------|-------------------
+All files           |       0 |        0 |       0 |       0 |                   
+ App.tsx            |       0 |        0 |       0 |       0 | 9-307             
+ index.tsx          |       0 |      100 |     100 |       0 | 7-19              
+ reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
+--------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        3.508 s
+Ran all test suites.
