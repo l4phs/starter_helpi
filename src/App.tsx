@@ -1,5 +1,16 @@
-
 // eslint-disable-next-line
+import React, { useRef, useState } from "react";
+import "./App.css";
+import { Form } from "react-bootstrap";
+import HomePage from "./Pages/HomePage";
+import BQPage from "./Pages/BQPage";
+import DQPage from "./Pages/DQPage";
+
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap')
+</style>;
+
 import React, { useRef, useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
@@ -23,11 +34,11 @@ if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
-
-
 function App(): JSX.Element {
   const [key, setKey] = useState<string>(keyData); //for api key input
   //setting states for each page
+  // const[project, setProject] = useState<string[]>(["creative roles", "analytical roles", "leadership roles", "hands-on roles", "customer service roles"]) //options for detailed question #4
+
   const [currentView, setCurrentView] = useState<number>(0); // for managing the current page
   const[project, setProject] = useState<string[]>(["creative roles", "analytical roles", "leadership roles", "hands-on roles", "customer service roles"]) //options for detailed question #4
   const [detailedAnswers, setDetailedAnswers] = useState({});
@@ -65,55 +76,46 @@ function App(): JSX.Element {
     setKey(event.target.value);
   }
 
-  //function for the checkboxes for detailed question #4
-  function updateProject (event: React.ChangeEvent<HTMLInputElement>){
-    const proj = event.target.value;
-    if (project.includes(proj)){
-      setProject(project.filter((e) => e !== proj));
-    } else {
-      setProject([...project, proj]);
-    }
-
-  }
-
-
-
-  const switchScreen = (view: string): void => {
-    switch (view) {
-      case "HomePage":
-        setCurrentView(0);
-        break;
-      case "BasicQ":
-        setCurrentView(1);
-        break;
-      case "DetailedQ":
-        setCurrentView(2);
-        break;
-      default:
-        setCurrentView(0); // Set a default view if none matches
-    }
-  };
+  const [page, setPage] = useState("HomePage");
 
   return (
     <React.Fragment>
-      <div className="section1">
-      <div className='TaskBarRectangle'>
-        
-      </div>
-      <Button className='TBBasicQ' onClick={() => switchScreen('BasicQ')}> Basic Questions</Button>
-      <Button className='TBDetailedQ' onClick={() => switchScreen('DetailedQ')}> Detailed Questions</Button>
-      <Button className='TBHomeP' onClick={() => switchScreen('HomePage')}>Home Page</Button>
-      <Button className='SignInButton'> Sign In</Button>
-        <div className='APIform'>
-            <Form>  
-              <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} />
-              <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-            </Form>
+      <div>
+        <ul className="TB-ul">
+          <div className="TaskBar">
+            <li className="TB-li"> Sign In </li>
+            <li className="TB-li" onClick={() => setPage("DQPage")}>
+              {" "}
+              Detailed Questions{" "}
+            </li>
+            <li className="TB-li" onClick={() => setPage("BQPage")}>
+              {" "}
+              Basic Questions{" "}
+            </li>
+            <li className="TB-li" onClick={() => setPage("HomePage")}>
+              {" "}
+              Home{" "}
+            </li>
+            <li className="APIform">
+              <Form>
+                <Form.Control
+                  type="password"
+                  placeholder="Insert API Key Here"
+                  onChange={changeKey}
+                />
+              </Form>
+            </li>
+            <li className="SubmitButton" onClick={handleSubmit}>
+              Submit
+            </li>
           </div>
-        <div className='text-container'>
-        <div className='text'> What do I do?</div>
-        </div>
+          <li className="TaskbarHeader" onClick={() => setPage("HomePage")}>
+            What Do I Do?
+          </li>
+        </ul>
       </div>
+
+      {page === "HomePage" && <HomePage setPage={setPage} />}
 
       {currentView === 0 && (
         <div className='section2'>
@@ -296,10 +298,9 @@ function App(): JSX.Element {
               </div>
 
 
-            </div>
-          </div>
-        </div>
-      )}
+      {page === "BQPage" && <BQPage setPage={setPage} />}
+
+      {page === "DQPage" && <DQPage setPage={setPage} />}
 
       {currentView === 1 && (
         <div className='section3'> 

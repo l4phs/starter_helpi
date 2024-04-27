@@ -1,9 +1,6 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
 /*
 Color pallete
@@ -14,339 +11,80 @@ Color pallete
 #dfe0e0
 https://www.color-hex.com/color-palette/106259
 */
-html{
-  height: 100vh;
+
+.TB-ul {
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
   overflow: hidden;
-  /* scroll-snap-type: y proximity; */
-}
-
-body{
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  background-color: transparent;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.section1,
-.section2,
-.section3 {
-  width: 100vw;
-  min-height: 100vh; /* Adjust as needed */
-  position: relative;
-  overflow: hidden; /* Ensure overflow is set to hidden */
-  margin: 0;
-}
-
-.section1::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url(DCoffeeShop.jpeg) top center;
-  background-size: cover;
-  transform: translateZ(-1px) scale(1);
-  filter: blur(2px);
-}
-
-.section1::after {
-  content: "";
-  position: absolute;
-  /* position: sticky; */
-  width: 100%;
-  height: 100%;
-  background: url(Table.png) top center;
-  background-size: cover; 
-}
-
-.section2, .section3{
-  background: linear-gradient(to bottom, #000000, #3c2918);
-  height: 500vh;
-}
-
-.text{
-  display: grid;
-  display: flex;
-  position: absolute;
-  font-family: "Lilita One";
-  transform: scale(1,1.1) translate(-40%, 10%);
-}
-
-.section1 .text {
-  top: 30vh;
-  font-size: 8vw;
-  font-size: 100px;
-  transform: translateZ(-1px) scale( 1.5, 1.6) translate(-30%, 30%);
-  margin-left: 47vw;
-  /* text-align: center; */
-  /* align-items: center; */
-  text-shadow: 2px 2px 5px black, 5px 5px 20px rgb(134, 130, 130);
-  color: #fbede1;
-}
-
-.section2 .text{
-  top: 30vh;
-  left: 47vw;
-  color: white;
-  font-size: 30px;
-  text-align: center;
-  }  
-
-.TaskBarRectangle{
-  display: grid;
-  position: sticky;
-  left: 0vw;
+  background-color: #3c2918;
+  position: fixed;
   top: 0px;
+  width: 100%;
   z-index: 1;
-
-  height: 6vh;
-  width: 100vw;
-  background-color: #3c2918;
 }
 
-Button{
-  background-color: #3c2918;
+.TB-li {
+  float: right;
+  display: block;
   color: #dbc6b6;
-  font-size: 12px;
-  padding: 10px 25px;
-  border: 0px;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-left: 5px;
-}
-Button:hover{
-  background-color:#dbc6b6;
-  color: #3c2918 ;
-}
-
-.APIform{
-  display: grid;
-  position: fixed;
-  left: 2vw;
-  top: 4px;
-  z-index: 2;
-
-  color: #dbc6b6;
-  font-size: 13px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.APIform input{
-max-height: 33px;
-color: #dbc6b6;
-
-background-color: #3c2918;
-border: none;
-padding: 10px 15px;
-font-size: 13px;
-border-radius: 8px;
-width: 100%;
-outline: none;
-position: fixed;
-left: auto;
-width: fit-content;
-margin-left: 5px;
-}
-
-.APIform .Submit-Button  {
-  display: grid;
-  position: fixed;
-  left: 14vw;
-  top: 2px;
-  z-index: 2;
-
-
-  background-color: #3c2918;
-  color: #dbc6b6;
-  font-size: 12px;
-  padding: 10px 25px;
-  border: 0px;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-left: 5px;
-}
-
-.Submit-Button:hover{
-  background-color:#dbc6b6;
-  color: #3c2918 ;
-}
-
-.APIform input::placeholder{
-color:#dbc6b6
-}
-
-.SignInButton {
-  display: grid;
-  position: fixed;
-  right: 2vw;
-  top: 1px;
-  z-index: 2;
-
-  background-color: #3c2918;
-  color: #dbc6b6;
-  font-size: 12px;
-  padding: 10px 25px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.SignInButton:hover{
-  background-color:#dbc6b6;
-  color: #3c2918 ;
-}
-
-/* TaskBar Buttons */
-.section1 .TBBasicQ{
-  display: grid;
-  position: fixed;
-  right: 21.5vw;
-  top: 1px;
-  z-index: 2;
-
-  background-color: #3c2918;
-  color: #dbc6b6;
-  font-size: 12px;
-  padding: 10px 25px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.TBBasicQ:hover{
-  background-color:#dbc6b6;
-  color: #3c2918 ;
-}
-
-/* TaskBar Buttons */
-.section1 .TBDetailedQ{
-  display: grid;
-  position: fixed;
-  right: 9.5vw;
-  top: 1px;
-  z-index: 2;
-
-  background-color: #3c2918;
-  color: #dbc6b6;
-  font-size: 12px;
-  padding: 10px 25px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.TBDetailedQ:hover{
-  background-color:#dbc6b6;
-  color: #3c2918 ;
-}
-
-/* TaskBar Buttons */
-.section1 .TBHomeP{
-  display: grid;
-  position: fixed;
-  right: 32vw;
-  top: 1px;
-  z-index: 2;
-
-  background-color: #3c2918;
-  color: #dbc6b6;
-  font-size: 12px;
-  padding: 10px 25px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.TBHomeP:hover{
-  background-color:#dbc6b6;
-  color: #3c2918 ;
-}
-
-/* Home Page Buttons */
-.BasicQ{
-  display: flex;
-  position: relative;
-  left:26vw;
-  top: 72vh;
-  margin-right: 5px;
-
-  width: 120px;
-  background-color: #3c2918;
-  color: #dbc6b6;
-  font-size: 12px;
-  padding: 10px 25px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.BasicQ:hover{
-  background-color:#dbc6b6;
-  color: #3c2918 ;
-}
-
-/* Home Page Buttons */
-.DetailedQ{
-  display: grid;
-  display: flex;
-  position: relative;
-  left:67vw;
-  top: 65vh;
-  margin-left: 5px;
-
-  width: 120px;
-  background-color: #3c2918;
-  color: #dbc6b6;
-  font-size: 12px;
-  padding: 10px 25px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.DetailedQ:hover{
-  background-color:#dbc6b6;
-  color: #3c2918 ;
-}
-
-/* Basic Question Header */
-.BQH{
-  display: grid;
-  display: flex;
-  position: absolute;
-  font-family: "Lilita One";
-  top: 10vh;
-  left: 32vw;
-  color: white;
-  font-size: 60px;
   text-align: center;
+  text-decoration: none;
+  padding: 19px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
+
+.TB-li:hover {
+  background-color: #dbc6b6;
+  color: #3c2918;
+}
+
+.Taskbar {
+  margin: auto;
+  color: #dbc6b6;
+}
+
+.APIform {
+  float: left;
+  color: #dbc6b6;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 10px 5px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.APIform input {
+  max-height: 33px;
+  color: #dbc6b6;
+  background-color: #3c2918;
+  border: none;
+}
+.APIform input::placeholder {
+  color: #dbc6b6;
+}
+.APIform input:focus {
+  background-color: #dbc6b6;
+  color: #3c2918;
+}
+.APIform:hover {
+  background-color: #3c2918;
+}
+.SubmitButton {
+
 
 /* Basic Question Body */
 .BQB{
@@ -357,22 +95,10 @@ color:#dbc6b6
   top: 30vh;
   left: 5vw;
   color: #dbc6b6;
-  font-size: 30px;
   text-align: center;
-  width: 100vw;
-}
+  text-decoration: none;
+  padding: 19px 10px;
 
-/* Detailed Question Header */
-.DQH{
-  display: grid;
-  display: flex;
-  position: absolute;
-  font-family: "Lilita One";
-  top: 5vh;
-  left: 29vw;
-  color: white;
-  font-size: 60px;
-  text-align: center;
 }
 
 /* Detailed Question Body */
@@ -458,13 +184,14 @@ color:#dbc6b6
   background-color: #dbc6b6;
   color: #3c2918;
   font-size: 12px;
-  padding: 10px 25px;
-  border: 1px solid transparent;
   border-radius: 8px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   cursor: pointer;
+  float: left;
   
 }
 .s3DetailedQ:hover{
@@ -515,37 +242,7 @@ color:#dbc6b6
   text-align: center;
   font-family: "Josefin Sans";
 }
-.Question{
-  padding: 25px;
-  display: block;
-  /* display: flex; */
-  margin-bottom: 16px;
-  /* position: absolute; */
-  font-family: "Lilita One";
-  /* top: 40vh; */
-  color: white;
-  font-size: 30px;
-  text-align: left;
-}
-
-.textboxclass {
-  margin-top: 10px;
-  height: 40px;
-  width: 60vh;
-  font-size: 20px;
-  font-family: "Josefin Sans";
-
-}
-
-.Boxie{
-  /* homepage desc for basic */
-  display: flex;
-  position: relative;
-  left:20vw;
-  top: 60vh;
-  margin-right: 5px;
-
-  width: 300px;
+.SubmitButton:hover {
   background-color: #dbc6b6;
   color: #3c2918;
   font-size: 16px;
@@ -558,10 +255,15 @@ color:#dbc6b6
   cursor: pointer;
 }
 
-.Boxie2{
-  /* homepage desc for detailed */
-  display: flex;
+.TaskbarHeader {
+  color: #dbc6b6;
   position: absolute;
+  left: 42vw;
+  font-size: 35px;
+  margin: 0px;
+  top: 0px;
+  padding-top: 0vh;
+
   left:60vw;
   top: 60vh;
   margin-right: 5px;
@@ -617,20 +319,8 @@ color:#dbc6b6
   width: 90vw;
   background-color: #3c2918;
 }
-
-.ActiveProgress{
-  display: grid;
-  position: relative;
-  align-self: center;
-  z-index: 2;
-  border-radius: 1.5em;
-
-  left: 0.2vw;
-  top: 1vh;
-  z-index: 1;
-  height: 4vh;
-  width: 2vw;
-  max-width: 98vw;
-  background-color: #dbc6b6;
+.TaskbarHeader:hover {
+  background-color: transparent;
+  color: #dbc6b6;
+  cursor: default;
 }
-
