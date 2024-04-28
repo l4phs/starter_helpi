@@ -1,5 +1,5 @@
 .Dbody {
-  height: 250vh;
+  height: 300vh;
   width: 100vw;
   background-color: #dbc6b6;
 }
@@ -16,29 +16,27 @@
 }
 
 .DetailedQuestions-List {
-  /* padding: 16px; */
   margin-top: 45vh;
   width: 100%;
-  /* left: 10vw; */
   position: absolute;
 }
 
 .Det-Question {
+  position: relative;
   padding: 20px;
-  display: block;
-  /* display: flex; */
   margin-bottom: 16px;
-  /* position: absolute; */
   font-family: "Lilita One";
-  /* top: 40vh; */
-  color: white;
   font-size: 25px;
-  text-align: center;
+  color: #3c2918;
+  top: 15vh;
+  left:5vw;
 }
 
-.Det-Question .body {
+.det-body {
   margin-top: 8px;
   font-size: 25px;
+  color: #3c2918;
+  top: 25vh;
 }
 
 .Det-Question .options {
@@ -50,12 +48,8 @@
 .Question {
   padding: 25px;
   display: block;
-  /* display: flex; */
   margin-bottom: 16px;
-  /* position: absolute; */
   font-family: "Lilita One";
-  /* top: 40vh; */
-  color: white;
   font-size: 30px;
   text-align: left;
 }
@@ -66,4 +60,13 @@
   width: 60vh;
   font-size: 20px;
   font-family: "Josefin Sans";
+}
+
+.DQH {
+  position: absolute;
+  top: 10vh;
+  left: 39vw;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }

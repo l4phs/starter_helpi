@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import axios from "axios";
+import "./BQPage.css"
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
 }
 
 function BQPage({ setPage }: Props): JSX.Element {
-  const [detailedAnswers, setDetailedAnswers] = useState({});
+  const [detailedAnswers] = useState({});
 
   const handleSubmitDetailedAnswers = () => {
     axios
@@ -22,8 +23,8 @@ function BQPage({ setPage }: Props): JSX.Element {
 
   return (
     <div className="Bbody">
-      <h1> Basic Questions Page</h1>
-      <p>
+      <h1 className="BQH"> Basic Questions Page</h1>
+      <p className="BQB">
         These questions give a more BASIC analysis of the kind of career you
         would be best suited to!
         <br></br>
@@ -64,14 +65,14 @@ function BQPage({ setPage }: Props): JSX.Element {
           Question 10
           <br></br> Do you prefer consistent work hours over a flexible
           schedule?
-          <Button
-            className="Submit-Button"
+        </li>
+      </ul>
+      <Button
+            className="BQ-SubmitButton"
             onClick={handleSubmitDetailedAnswers}
           >
             Submit Basic Answers
           </Button>
-        </li>
-      </ul>
     </div>
   );
 }
