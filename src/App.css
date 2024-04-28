@@ -84,10 +84,105 @@ https://www.color-hex.com/color-palette/106259
   background-color: #3c2918;
 }
 .SubmitButton {
+
+
+/* Basic Question Body */
+.BQB{
+  display: grid;
+  display: flex;
+  position: absolute;
+  font-family: "Lilita One";
+  top: 30vh;
+  left: 5vw;
   color: #dbc6b6;
   text-align: center;
   text-decoration: none;
   padding: 19px 10px;
+
+}
+
+/* Detailed Question Body */
+.DQB{
+  display: grid;
+  display: flex;
+  position: absolute;
+  font-family: "Lilita One";
+  top: 20vh;
+  left: 3vw;
+  color: #dbc6b6;
+  font-size: 30px;
+  text-align: center;
+  width: 100vw;
+}
+
+/* Table buttons ie beige buttons */
+.s3HomeP{
+  /* Button */
+  display: grid;
+  display: flex;
+  position: fixed;
+  left:35vw;
+  top: 87.5vh;
+  margin-left: 0px;
+
+  width: 120px;
+  background-color: #dbc6b6;
+  color: #3c2918;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.s3HomeP:hover{
+  background-color:#3c2918;
+  color: #dbc6b6 ;
+}
+
+/* Table buttons ie beige buttons */
+.s3BasicQ{
+  /* Button */
+  display: grid;
+  display: flex;
+  position: fixed;
+  left:50vw;
+  top: 87.5vh;
+  margin-left: 0px;
+
+  width: 120px;
+  background-color: #dbc6b6;
+  color: #3c2918;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+}
+.s3BasicQ:hover{
+  background-color:#3c2918;
+  color: #dbc6b6 ;
+}
+
+/* Table buttons ie beige buttons */
+.s3DetailedQ{
+  /* Button */
+  display: grid;
+  display: flex;
+  position: fixed;
+  left:50vw;
+  top: 87.5vh;
+  margin-left: 0px;
+
+  width: 120px;
+  background-color: #dbc6b6;
+  color: #3c2918;
   font-size: 12px;
   border-radius: 8px;
   border-bottom-left-radius: 0px;
@@ -97,10 +192,67 @@ https://www.color-hex.com/color-palette/106259
   text-transform: uppercase;
   cursor: pointer;
   float: left;
+  
+}
+.s3DetailedQ:hover{
+  background-color:#3c2918;
+  color: #dbc6b6 ;
+}
+
+.BasicQuestions-List{
+  /* padding: 16px; */
+  margin-top: 45vh; 
+  left: 10vw;
+  position: absolute;
+}
+
+
+/* Basic Question Classes */
+
+.DetailedQuestions-List{
+  /* padding: 16px; */
+  margin-top: 45vh; 
+  width: 100%;
+  /* left: 10vw; */
+  position: absolute;
+
+}
+
+.Det-Question{
+  padding: 20px;
+  display: block;
+  /* display: flex; */
+  margin-bottom: 16px;
+  /* position: absolute; */
+  font-family: "Lilita One";
+  /* top: 40vh; */
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+.Det-Question .body {
+  margin-top: 8px;
+  font-size: 25px;
+}
+
+.Det-Question .options{
+  margin-top: 15px;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Josefin Sans";
 }
 .SubmitButton:hover {
   background-color: #dbc6b6;
   color: #3c2918;
+  font-size: 16px;
+  padding: 10px 25px;
+  border: 10px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .TaskbarHeader {
@@ -111,6 +263,61 @@ https://www.color-hex.com/color-palette/106259
   margin: 0px;
   top: 0px;
   padding-top: 0vh;
+
+  left:60vw;
+  top: 60vh;
+  margin-right: 5px;
+
+  width: 300px;
+  background-color: #dbc6b6;
+  color: #3c2918;
+  font-size: 16px;
+  padding: 10px 25px;
+  border: 10px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.Submit-Button{
+  display: flex;
+  position: relative;
+  left:26vw;
+  top: 40vh;
+  margin-right: 5px;
+
+  width: 200px;
+  color: #3c2920;
+  background-color: #dbc6b6;
+  font-size: 12px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.Submit-Button:hover{
+  color:#dbc6b6;
+  background-color: #ad846f ;
+}
+
+.ProgressBar{
+  display: grid;
+  position: relative;
+  z-index: 1;
+  border-radius: 1.5em;
+
+  
+  left: 5vw;
+  top: 40vh;
+  z-index: 1;
+  height: 6vh;
+  width: 90vw;
+  background-color: #3c2918;
 }
 .TaskbarHeader:hover {
   background-color: transparent;
