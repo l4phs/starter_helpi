@@ -1,3 +1,10 @@
+
+body{
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-x: hidden;
+}
+
 .Hbody {
   height: 187vh;
   width: 100vw;
@@ -9,9 +16,9 @@
   position: absolute;
   font-family: "Lilita One";
   text-align: center;
-  top: 20vh;
+  top: 100vh;
   font-size: 30px;
-  left: 28vw;
+  left: 31vw;
   color: #3c2918;
 }
 
@@ -19,9 +26,9 @@
   display: block;
   position: absolute;
   width: 70vh;
-  height: 74vh;
-  top: 45vh;
-  left: 13vw;
+  height: fit-content;
+  top: 115vh;
+  left: 14vw;
   text-align: center;
   background-color: #3c2918;
   border: 5px solid transparent;
@@ -37,8 +44,8 @@
   display: block;
   position: absolute;
   width: 70vh;
-  height: 74vh;
-  top: 45vh;
+  height: fit-content;
+  top: 115vh;
   right: 14vw;
   text-align: center;
   background-color: #3c2918;
@@ -52,7 +59,7 @@
 .BQButton {
   display: block;
   position: absolute;
-  top: 115vh;
+  top: 178vh;
   left: 25.5vw;
   background-color: #3c2918;
   color: #dbc6b6;
@@ -66,7 +73,7 @@
 .DQButton {
   display: block;
   position: absolute;
-  top: 115vh;
+  top: 178vh;
   right: 25.5vw;
   background-color: #3c2918;
   color: #dbc6b6;
