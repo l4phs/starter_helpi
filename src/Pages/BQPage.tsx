@@ -49,10 +49,12 @@ function BQPage({ setPage }: Props): JSX.Element {
         setQuestionView(QuestionView);
     }
   }
+
   return (
     <div className="Bbody">
       <h1 className="BQH"> Basic Questions Page</h1>
       <div className="ProgressBarBQ">
+        <p>{QuestionView}</p>
         <div
           className="ActiveProgressBQ"
           style={{ width: `${QuestionView * 10}%` }}
@@ -87,6 +89,7 @@ function BQPage({ setPage }: Props): JSX.Element {
         <div className="Meow">
           <div className="BQQuestionNum">Question 2</div>
           <div className="BQQuestion">What is your ideal shift time?</div>
+          <p>{QuestionView}</p>
           <input
             type="text"
             className="textboxclassBQ"
@@ -110,6 +113,7 @@ function BQPage({ setPage }: Props): JSX.Element {
         <div className="Meow">
           <div className="BQQuestionNum">Question 3</div>
           <div className="BQQuestion">Would you enjoy traveling for work?</div>
+          <p>{QuestionView}</p>
           <input
             type="text"
             className="textboxclassBQ"
@@ -133,6 +137,7 @@ function BQPage({ setPage }: Props): JSX.Element {
         <div className="Meow">
           <div className="BQQuestionNum">Question 4</div>
           <div className="BQQuestion">What subject are you the best at?</div>
+          <p>{QuestionView}</p>
           <input
             type="text"
             className="textboxclassBQ"
@@ -158,6 +163,7 @@ function BQPage({ setPage }: Props): JSX.Element {
           <div className="BQQuestion">
             I work well in fast paced environments
           </div>
+          <p>{QuestionView}</p>
           <input
             type="text"
             className="textboxclassBQ"
@@ -183,6 +189,8 @@ function BQPage({ setPage }: Props): JSX.Element {
           <div className="BQQuestion">
             Would you prefer to be relatively sedentary or active at work?
           </div>
+          <p>{QuestionView}</p>
+
           <input
             type="text"
             className="textboxclassBQ"
@@ -209,6 +217,8 @@ function BQPage({ setPage }: Props): JSX.Element {
             Would you prefer working from home, in an office / on site, or
             hybrid?
           </div>
+          <p>{QuestionView}</p>
+
           <input
             type="text"
             className="textboxclassBQ"
@@ -235,6 +245,8 @@ function BQPage({ setPage }: Props): JSX.Element {
             Do you prefer to do work inbridually, in a small group (2-4 people),
             or a team (more than 4 people)?
           </div>
+          <p>{QuestionView}</p>
+
           <input
             type="text"
             className="textboxclassBQ"
@@ -258,6 +270,8 @@ function BQPage({ setPage }: Props): JSX.Element {
         <div className="Meow">
           <div className="BQQuestionNum">Question 9</div>
           <div className="BQQuestion">What kind of learner are you?</div>
+          <p>{QuestionView}</p>
+
           <input
             type="text"
             className="textboxclassBQ"
@@ -283,6 +297,8 @@ function BQPage({ setPage }: Props): JSX.Element {
           <div className="BQQuestion">
             Do you prefer consistent work hours over a flexible schedule?
           </div>
+          <p>{QuestionView}</p>
+
           <input
             type="text"
             className="textboxclassBQ"
