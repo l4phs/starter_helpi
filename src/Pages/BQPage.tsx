@@ -7,7 +7,43 @@ interface Props {
   setPage: (page: string) => void;
 }
 
+  // interface Question {
+  //   question: string;
+  //   answers:string[] | null;
+  //   type: "short answer" | "multiple choice";
+  //   answer?: string;
+  // }
+
+
 function BQPage({ setPage }: Props): JSX.Element {
+
+  // function QuizC() {
+  //   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  //   const [userSelection, setUserSelection] = useState < string | null > (null);
+  
+  //   const questions1: Question [] = [
+  //     {
+  //       question: "List three activities you enjoy:"
+  //       type: "short answer";
+  //     }
+  //     {
+  //       question: "What is your ideal shift time?";
+  //       type:"multiple choice";
+  //     }
+  //     {
+  //       question:"Would you enjoy traveling for work?";
+  //       type: "short answer";
+  //     }
+  //     {
+  //       question: "What subject are you the best at?";
+  //       type:"multiple choice";
+  //     }
+  //     {
+  //       question: "Do you agree or disagree with the following statement: "
+  //       type:
+  //     }
+  //   ]
+  // }
 
   const questions = [
     "List three activities you enjoy doing?",
@@ -40,7 +76,7 @@ function BQPage({ setPage }: Props): JSX.Element {
     }
   };
 
-  const [detailedAnswers, setDetailedAnswers] = useState({});
+  //const [detailedAnswers, setDetailedAnswers] = useState({});
   const [QuestionView, setQuestionView] = useState<number>(1); // for managing the current page
 
 
