@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./BQPage.css";
@@ -31,6 +32,7 @@ function BQPage({ setPage }: Props): JSX.Element {
       ...prevState,
       [questionNumber]: answer,
     }));
+    return 0;
   };
 
   function QuestionController(QstNum: string) {
@@ -57,7 +59,7 @@ function BQPage({ setPage }: Props): JSX.Element {
         <p>{QuestionView}</p>
         <div
           className="ActiveProgressBQ"
-          style={{ width: "${QuestionView * 10}%" }}
+          style={{ width: `${QuestionView * 10}%` }}
         ></div>
       </div>
       <p className="BQB">
