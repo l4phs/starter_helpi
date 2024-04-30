@@ -33,16 +33,16 @@ FAIL src/App.test.tsx
 
     SyntaxError: Cannot use import statement outside a module
 
-      1 | import React, { useState } from "react";
-      2 | import { Button} from "react-bootstrap";
-    > 3 | import axios from "axios";
+      2 | import { Button } from "react-bootstrap";
+      3 |
+    > 4 | import axios from "axios";
         | ^
-      4 |
-      5 | interface Props {
-      6 |   setPage: (page: string) => void; // Define the type of setPage prop
+      5 | import "./BQPage.css"
+      6 |
+      7 | interface Props {
 
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
-      at Object.<anonymous> (src/Pages/BQPage.tsx:3:1)
+      at Object.<anonymous> (src/Pages/BQPage.tsx:4:1)
       at Object.<anonymous> (src/App.tsx:6:1)
       at Object.<anonymous> (src/App.test.tsx:3:1)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
@@ -50,6 +50,24 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |       0 |        0 |       0 |       0 |                   
+ src                 |       0 |        0 |       0 |       0 |                   
+  App.tsx            |       0 |        0 |       0 |       0 | 9-76              
+  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
+ src/Pages           |       0 |        0 |       0 |       0 |                   
+  BQPage.tsx         |       0 |      100 |       0 |       0 | 12-25             
+  DQPage.tsx         |       0 |        0 |       0 |       0 | 11-116            
+  HomePage.tsx       |       0 |      100 |       0 |       0 | 9-67              
+---------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        3.233 s
+Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -62,21 +80,3 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
----------------------|---------|----------|---------|---------|-------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------|---------|----------|---------|---------|-------------------
-All files            |       0 |        0 |       0 |       0 |                   
- src                 |       0 |        0 |       0 |       0 |                   
-  App.tsx            |       0 |        0 |       0 |       0 | 9-76              
-  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
-  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/Pages           |       0 |        0 |       0 |       0 |                   
-  BQPage.tsx         |       0 |      100 |       0 |       0 | 10-23             
-  DQPage.tsx         |       0 |        0 |       0 |       0 | 10-90             
-  HomePage.tsx       |       0 |      100 |       0 |       0 | 9-67              
----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       0 total
-Snapshots:   0 total
-Time:        3.373 s
-Ran all test suites.
