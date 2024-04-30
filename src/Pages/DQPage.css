@@ -1,5 +1,5 @@
 .Dbody {
-  height: 300vh;
+  height: 100vh;
   width: 100vw;
   background-color: #dbc6b6;
 }
@@ -23,50 +23,115 @@
 
 .Det-Question {
   position: relative;
-  padding: 20px;
-  margin-bottom: 16px;
+  padding: 0px;
+  margin-bottom: 0px;
   font-family: "Lilita One";
   font-size: 25px;
   color: #3c2918;
   top: 15vh;
-  left:5vw;
+  width: 100vw;
+  text-align: center;
 }
 
 .det-body {
-  margin-top: 8px;
+  position: absolute;
+  margin-top: 0vh;
   font-size: 25px;
   color: #3c2918;
-  top: 25vh;
-}
-
-.Det-Question .options {
-  margin-top: 15px;
-  font-size: 20px;
+  top: 9vh;
+  left: auto;
+  width: 100vw;
+  top: 30vh;
+  margin: auto;
   text-align: center;
-  font-family: "Josefin Sans";
-}
-.Question {
-  padding: 25px;
-  display: block;
-  margin-bottom: 16px;
-  font-family: "Lilita One";
-  font-size: 30px;
-  text-align: left;
 }
 
-.textboxclass {
+.textboxclassDQ{
+  position: absolute;
   margin-top: 10px;
+  top: 38vh;
   height: 40px;
   width: 60vh;
   font-size: 20px;
   font-family: "Josefin Sans";
+  left: 36vw;
 }
 
 .DQH {
   position: absolute;
   top: 10vh;
-  left: 39vw;
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 0.5px;
+  width: 100vw;
+  margin: auto;
+  text-align: center;
+}
+
+.NextButton {
+  position: absolute;
+  top: 50vh;
+  background-color: #3c2918;
+  color: #dbc6b6;
+  left: 55vw;
+}
+.NextButton:hover {
+  background-color: #dbc6b6;
+  color: #3c2918;
+}
+
+.PrevButton {
+  position: absolute;
+  top: 50vh;
+  background-color: #3c2918;
+  color: #dbc6b6;
+  right: 55vw;
+}
+.PrevButton:hover {
+  background-color: #dbc6b6;
+  color: #3c2918;
+}
+
+.options {
+  position: absolute;
+  top: 40vh;
+  width: 100vw;
+  text-align: center;
+  font-size: 20px;
+}
+
+.Submit-Button {
+  position: absolute;
+  top: 50vh;
+  background-color: #3c2918;
+  color: #dbc6b6;
+  left: 48vw;
+}
+.Submit-Button:hover {
+  background-color: #dbc6b6;
+  color: #3c2918;
+}
+
+.ProgressBar {
+  position: absolute;
+  border-radius: 1.5em;
+
+  left: 5vw;
+  top: 17vh;
+  height: 6vh;
+  width: 90vw;
+  background-color: #3c2918;
+}
+
+.ActiveProgress {
+  position: absolute;
+  align-self: center;
+  border-radius: 1.5em;
+  transition: width 0.3s ease-in-out; /* Adjust the duration and timing function as needed */
+  left: 0.6vw;
+  top: 1vh;
+  height: 4vh;
+  max-width: 98.5%;
+  min-width: 0.5%;
+  background-color: #dbc6b6;
 }
