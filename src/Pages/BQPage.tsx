@@ -18,13 +18,13 @@ function BQPage({ setPage }: Props): JSX.Element {
         console.log(response.data);
       })
       .catch((error) => {
-        console.error("Error submitting detailed answers:", error);
+        console.error("Error submitting detailed answers: " + error); // Concatenate error message
       });
   };
 
   const handleDetailedAnswerChange = (
     questionNumber: number,
-    answer: string,
+    answer: string
   ) => {
     setDetailedAnswers((prevState) => ({
       ...prevState,
