@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import "./BQPage.css";
 import axios from "axios";
 
+
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
 }
@@ -56,7 +57,7 @@ function BQPage({ setPage }: Props): JSX.Element {
         <p>{QuestionView}</p>
         <div
           className="ActiveProgressBQ"
-          style={{ width: `${QuestionView * 10}%` }}
+          style={{ width: "${QuestionView * 10}%" }}
         ></div>
       </div>
       <p className="BQB">
