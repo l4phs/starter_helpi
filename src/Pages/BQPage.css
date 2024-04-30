@@ -32,8 +32,12 @@
 .BQB{
   position:absolute;
   top: 20vh;
-  left: 28vw;
+  left: 20vw;
   text-align: center;
+  font-size: 20px;
+  font-family: "arial";
+  font-weight: bold;
+
 }
 
 .BQ-SubmitButton{
@@ -61,11 +65,13 @@
 
 .QuestionContainer {
   text-align: center;
+  font-size: 20px;
+  font-family: "Lilita One";
 }
 
 .QuestionText {
   font-size: 20px;
-  font-weight: bold;
+
 }
 
 .AnswerInput {

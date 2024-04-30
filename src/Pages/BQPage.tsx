@@ -49,9 +49,11 @@ function BQPage({ setPage }: Props): JSX.Element {
     const updatedAnswers = [...answers];
     updatedAnswers[currentQuestionIndex] = event.target.value;
     setAnswers(updatedAnswers);
-
-    // Update progress when answering a question
-    const percentage = calculateProgress();
+  
+    // Update progress based on the number of answered questions
+    const answeredCount = updatedAnswers.filter((answer) => answer.trim() !== "").length;
+    const totalQuestions = questions.length;
+    const percentage = (answeredCount / totalQuestions) * 100;
     setProgress(percentage);
   };
 
