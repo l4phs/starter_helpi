@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./BQPage.css";
-import { stringify } from "querystring";
+
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
