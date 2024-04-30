@@ -3,6 +3,8 @@
   height: 100vh;
   width: 100vw;
   background-color: #dbc6b6;
+  /* background-image: url("BKGBase.png"); */
+
 }
 
 
@@ -14,8 +16,6 @@
   top: 10vh;
   font-size: 30px;
   left: 11vw;
-  color: #3c2918;
-  background-color: #dbc6b6;
 }
 
 .BasicQuestions-List {
@@ -24,16 +24,19 @@
   position: absolute;
   text-align: center;
   list-style-type: none;
-  background-color: #dbc6b6;
+  background-color: #3c2918;
   left: -1vw;
 }
 
 .BQH {
   display: block;
   position: absolute;
-  top: 10vh;
-  left: 38vw;
+  top: 8vh;
+  left: 35vw;
   color: #3c2918;
+  background-color: #dbc6b6;
+  width: auto;
+  padding: 5px 15px;
 }
 
 .BQB{
@@ -204,6 +207,9 @@
   font-size: 20px;
   font-family: "Josefin Sans";
   left: 36vw;
+  background-color: #3c2918;
+  color: #dbc6b6;
+  text-align: center;
 }
 
 .ProgressBarBQ {

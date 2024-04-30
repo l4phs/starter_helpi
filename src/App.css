@@ -17,7 +17,7 @@ https://www.color-hex.com/color-palette/106259
   margin: auto;
   padding: 0;
   overflow: hidden;
-  background-color: #3c2918;
+  background-color: #dbc6b6;
   position: fixed;
   top: 0px;
   width: 100%;
@@ -27,7 +27,7 @@ https://www.color-hex.com/color-palette/106259
 .TB-li {
   float: right;
   display: block;
-  color: #dbc6b6;
+  color: #3c2918;
   text-align: center;
   text-decoration: none;
   padding: 19px 10px;
@@ -42,13 +42,13 @@ https://www.color-hex.com/color-palette/106259
 }
 
 .TB-li:hover {
-  background-color: #dbc6b6;
-  color: #3c2918;
+  background-color: #3c2918;
+  color: #dbc6b6;
 }
 
 .Taskbar {
   margin: auto;
-  color: #dbc6b6;
+  color: #3c2918;
 }
 
 .APIform {
@@ -81,10 +81,10 @@ https://www.color-hex.com/color-palette/106259
   color: #3c2918;
 }
 .APIform:hover {
-  background-color: #3c2918;
+  background-color: #dbc6b6;
 }
 .SubmitButton {
-  color: #dbc6b6;
+  color: #3c2918;
   text-align: center;
   text-decoration: none;
   padding: 19px 10px;
@@ -99,12 +99,12 @@ https://www.color-hex.com/color-palette/106259
   float: left;
 }
 .SubmitButton:hover {
-  background-color: #dbc6b6;
-  color: #3c2918;
+  background-color: #3c2918;
+  color: #dbc6b6;
 }
 
 .TaskbarHeader {
-  color: #dbc6b6;
+  color: #3c2918;
   position: absolute;
   left: 42vw;
   font-size: 35px;
@@ -114,6 +114,6 @@ https://www.color-hex.com/color-palette/106259
 }
 .TaskbarHeader:hover {
   background-color: transparent;
-  color: #dbc6b6;
+  color: #3c2918;
   cursor: default;
 }
