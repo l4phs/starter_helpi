@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "./DQPage.css";
+import axios from "axios";
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
@@ -16,14 +17,13 @@ function DQPage({ setPage }: Props): JSX.Element {
     "customer service roles",
   ]);
   const [detailedAnswers, setDetailedAnswers] = useState({});
-  const axios = require("axios");
   const handleSubmitDetailedAnswers = () => {
     axios
       .post("API_ENDPOINT_URL", detailedAnswers)
-      .then((response:string) => {
+      .then((response) => {
         console.log(response);
       })
-      .catch((error:string) => {
+      .catch((error) => {
         console.error("Error submitting detailed answers:", error);
       });
   };
