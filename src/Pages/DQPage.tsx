@@ -104,8 +104,7 @@ function DQPage({ setPage }: Props): JSX.Element {
           className="textboxclass"
           onChange={(e) => handleDetailedAnswerChange(2, e.target.value)}
         />
-                  <Button className='NextButton' onClick={() => QuestionController('next')}> next </Button>
-
+        <Button className='NextButton' onClick={() => QuestionController('next')}> next </Button>
       </div>
       )}
       <div className="Det-Question">
