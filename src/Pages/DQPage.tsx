@@ -68,6 +68,12 @@ function DQPage({ setPage }: Props): JSX.Element {
   return (
     <div className="Dbody">
       <div className="DQH">Detailed Questions Page</div>
+      <div className="ProgressBar">
+        <div
+          className="ActiveProgress"
+          style={{ width: `${QuestionView * 10}%` }}
+        ></div>
+      </div>
       <div className="DQB">
         <p>
           These questions give a more IN-DEPTH analysis of the kind of career
@@ -86,12 +92,13 @@ function DQPage({ setPage }: Props): JSX.Element {
           </div>
           <input
             type="text"
-            className="textboxclass"
+            className="textboxclassDQ"
             onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
           />
           <Button
             className="NextButton"
             onClick={() => QuestionController("next")}
+            style={{ position: 'absolute', left: '48vw' }}
           >
             next
           </Button>
@@ -106,7 +113,7 @@ function DQPage({ setPage }: Props): JSX.Element {
           </div>
           <input
             type="text"
-            className="textboxclass"
+            className="textboxclassDQ"
             onChange={(e) => handleDetailedAnswerChange(2, e.target.value)}
           />
           <Button
@@ -129,7 +136,7 @@ function DQPage({ setPage }: Props): JSX.Element {
           <div className="det-body">Is job stability important to you?</div>
           <input
             type="text"
-            className="textboxclass"
+            className="textboxclassDQ"
             onChange={(e) => handleDetailedAnswerChange(3, e.target.value)}
           />
           <Button
@@ -226,7 +233,7 @@ function DQPage({ setPage }: Props): JSX.Element {
           </div>
           <input
             type="text"
-            className="textboxclass"
+            className="textboxclassDQ"
             onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
           />
           <Button
@@ -252,7 +259,7 @@ function DQPage({ setPage }: Props): JSX.Element {
           </div>
           <input
             type="text"
-            className="textboxclass"
+            className="textboxclassDQ"
             onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
           />
           <Button
@@ -275,7 +282,7 @@ function DQPage({ setPage }: Props): JSX.Element {
           <div className="det-body">
             What skills do you enjoy most in your work? Select all that apply.
           </div>
-          <input type="text" className="textboxclass" />
+          <input type="text" className="textboxclassDQ" />
           <Button
             className="NextButton"
             onClick={() => QuestionController("next")}
@@ -297,7 +304,7 @@ function DQPage({ setPage }: Props): JSX.Element {
             Describe a professional goal you've set for yourself and the plans
             you are currently taking to achieve it.
           </div>
-          <input type="text" className="textboxclass" />
+          <input type="text" className="textboxclassDQ" />
           <Button
             className="NextButton"
             onClick={() => QuestionController("next")}
@@ -318,7 +325,7 @@ function DQPage({ setPage }: Props): JSX.Element {
           <div className="det-body">
             What career fields intrest you the most? Select all that apply.
           </div>
-          <input type="text" className="textboxclass" />
+          <input type="text" className="textboxclassDQ" />
           <Button
             className="NextButton"
             onClick={() => QuestionController("next")}
@@ -339,7 +346,7 @@ function DQPage({ setPage }: Props): JSX.Element {
           <div className="det-body">
             How open are you to trying new methods or approaches to your work?
           </div>
-          <input type="text" className="textboxclass" />
+          <input type="text" className="textboxclassDQ" />
           <Button
             className="Submit-Button"
             onClick={handleSubmitDetailedAnswers}

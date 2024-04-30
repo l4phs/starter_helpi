@@ -40,14 +40,13 @@
   color: #3c2918;
   top: 9vh;
   left: auto;
-  width:100vw;
+  width: 100vw;
   top: 30vh;
   margin: auto;
   text-align: center;
 }
 
-
-.textboxclass {
+.textboxclassDQ{
   position: absolute;
   margin-top: 10px;
   top: 38vh;
@@ -69,31 +68,31 @@
   text-align: center;
 }
 
-.NextButton{
+.NextButton {
   position: absolute;
-  top:50vh;
+  top: 50vh;
   background-color: #3c2918;
   color: #dbc6b6;
   left: 55vw;
 }
-.NextButton:hover{
+.NextButton:hover {
   background-color: #dbc6b6;
   color: #3c2918;
 }
 
-.PrevButton{
+.PrevButton {
   position: absolute;
-  top:50vh;
+  top: 50vh;
   background-color: #3c2918;
   color: #dbc6b6;
   right: 55vw;
 }
-.PrevButton:hover{
+.PrevButton:hover {
   background-color: #dbc6b6;
   color: #3c2918;
 }
 
-.options{
+.options {
   position: absolute;
   top: 40vh;
   width: 100vw;
@@ -101,14 +100,38 @@
   font-size: 20px;
 }
 
-.Submit-Button{
-position: absolute;
-top: 50vh;
-background-color: #3c2918;
-color: #dbc6b6;
-left: 48vw;
+.Submit-Button {
+  position: absolute;
+  top: 50vh;
+  background-color: #3c2918;
+  color: #dbc6b6;
+  left: 48vw;
 }
-.Submit-Button:hover{
+.Submit-Button:hover {
   background-color: #dbc6b6;
   color: #3c2918;
+}
+
+.ProgressBar {
+  position: absolute;
+  border-radius: 1.5em;
+
+  left: 5vw;
+  top: 17vh;
+  height: 6vh;
+  width: 90vw;
+  background-color: #3c2918;
+}
+
+.ActiveProgress {
+  position: absolute;
+  align-self: center;
+  border-radius: 1.5em;
+  transition: width 0.3s ease-in-out; /* Adjust the duration and timing function as needed */
+  left: 0.6vw;
+  top: 1vh;
+  height: 4vh;
+  max-width: 98.5%;
+  min-width: 0.5%;
+  background-color: #dbc6b6;
 }

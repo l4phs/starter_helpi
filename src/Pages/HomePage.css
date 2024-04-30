@@ -1,3 +1,10 @@
+
+body{
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-x: hidden;
+}
+
 .Hbody {
   height: 187vh;
   width: 100vw;
