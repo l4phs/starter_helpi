@@ -16,6 +16,20 @@ import DQPage from "./Pages/DQPage";
 //David Bui
 //Neil Irungu
 
+            /*
+            This is previously used questions bfore 4/25 merge
+            <span className="Question">Would you prefer working from home, in an office / on site, or hybrid? (pick one)</span>
+            <span className="Question">What salary would you not feel comfortable earning less than?</span>
+            <span className="Question">Do you prefer to do work individually, in a small group (2-4 people), or a team (more than 4 people)?</span>
+            <span className="Question">How would you describe your ideal work environment in one word?</span>
+            <span className="Question">How can you describe yourself in one word?</span>
+            <span className="Question">What are you the best at?</span>
+            <span className="Question">How would you rate your ability to learn new skills? (pick one)</span>
+            <span className="Question">I work well in fast paced environments.</span>
+            <span className="Question">What is most important to you in a job?</span>
+            <span className="Question">Would you enjoy traveling for work?</span>
+            */
+
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -40,7 +54,9 @@ function App(): JSX.Element {
     setKey(event.target.value);
   }
 
+
   const [page, setPage] = useState("HomePage");
+
 
   return (
     <React.Fragment>
