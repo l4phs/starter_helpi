@@ -1,31 +1,30 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./BQPage.css";
-import { stringify } from "querystring";
+import axios from "axios";
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
 }
 
 function BQPage({ setPage }: Props): JSX.Element {
-  const axios = require("axios");
   const [detailedAnswers, setDetailedAnswers] = useState({});
   const [QuestionView, setQuestionView] = useState<number>(1); // for managing the current page
 
   const handleSubmitDetailedAnswers = () => {
     axios
       .post("API_ENDPOINT_URL", detailedAnswers)
-      .then((response:string) => {
-        console.log(response);
+      .then((response) => {
+        console.log(response.data);
       })
-      .catch((error:string) => {
+      .catch((error) => {
         console.error("Error submitting detailed answers:", error);
       });
   };
 
   const handleDetailedAnswerChange = (
     questionNumber: number,
-    answer: string
+    answer: string,
   ) => {
     setDetailedAnswers((prevState) => ({
       ...prevState,
