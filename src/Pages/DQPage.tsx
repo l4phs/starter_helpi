@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
+import "./DQPage.css";
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
 }
 
 function DQPage({ setPage }: Props): JSX.Element {
+  const [QuestionView, setQuestionView] = useState<number>(1); // for managing the current page
   const [project, setProject] = useState<string[]>([
     "creative roles",
     "analytical roles",
@@ -46,6 +48,23 @@ function DQPage({ setPage }: Props): JSX.Element {
     }
   }
 
+  function QuestionController(QstNum: string) {
+    switch (QstNum) {
+      case "next":
+        if (QuestionView < 10) {
+          setQuestionView(QuestionView + 1);
+        }
+        break;
+      case "prev":
+        if (QuestionView > 0) {
+          setQuestionView(QuestionView - 1);
+        }
+        break;
+      default:
+        setQuestionView(QuestionView);
+    }
+  }
+
   return (
     <div className="Dbody">
       <div className="DQH">Detailed Questions Page</div>
@@ -58,21 +77,25 @@ function DQPage({ setPage }: Props): JSX.Element {
         </p>
       </div>
       {/* Detailed questions and input fields */}
-      <div className="Det-Question">
-        Question 1
-        <div className="body">
-          What kind of work environment do you prefer? Describe your ideal
-          workplace.
+      {QuestionView === 1 && (
+        <div className="Det-Question">
+          Question 1
+          <div className="det-body">
+            What kind of work environment do you prefer? Describe your ideal
+            workplace.
+          </div>
+          <input
+            type="text"
+            className="textboxclass"
+            onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
+          />
+          <Button className='NextButton' onClick={() => QuestionController('next')}> next </Button>
         </div>
-        <input
-          type="text"
-          className="textboxclass"
-          onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-        />
-      </div>
+      )}
+      {QuestionView === 2 && (
       <div className="Det-Question">
         Question 2
-        <div className="body">
+        <div className="det-body">
           What values are most important to you in your career? (e.g.,
           creativity, financial stability, work-life balance)
         </div>
@@ -81,9 +104,12 @@ function DQPage({ setPage }: Props): JSX.Element {
           className="textboxclass"
           onChange={(e) => handleDetailedAnswerChange(2, e.target.value)}
         />
+        <Button className='NextButton' onClick={() => QuestionController('next')}> next </Button>
       </div>
+      )}
       <div className="Det-Question">
-        Question 3<div className="body">Is job stability important to you?</div>
+        Question 3
+        <div className="det-body">Is job stability important to you?</div>
         <input
           type="text"
           className="textboxclass"
@@ -92,7 +118,7 @@ function DQPage({ setPage }: Props): JSX.Element {
       </div>
       <div className="Det-Question">
         Question 4
-        <div className="body">
+        <div className="det-body">
           What kind of roles or projects do you most enjoy?
         </div>
         <div className="options">
@@ -150,27 +176,27 @@ function DQPage({ setPage }: Props): JSX.Element {
       </div>
       <div className="Det-Question">
         Question 5
-        <div className="body">
+        <div className="det-body">
           How often do you rely on data and facts when making decisions?
         </div>
       </div>
       <div className="Det-Question">
         Question 6
-        <div className="body">
+        <div className="det-body">
           How do you feel about public speaking and/or presenting ideas to
           groups?
         </div>
       </div>
       <div className="Det-Question">
         Question 7
-        <div className="body">
+        <div className="det-body">
           What skills do you enjoy most in your work? Select all that apply.
         </div>
         <input type="text" className="textboxclass" />
       </div>
       <div className="Det-Question">
         Question 8
-        <div className="body">
+        <div className="det-body">
           Describe a professional goal you've set for yourself and the plans you
           are currently taking to achieve it.
         </div>
@@ -178,14 +204,14 @@ function DQPage({ setPage }: Props): JSX.Element {
       </div>
       <div className="Det-Question">
         Question 9
-        <div className="body">
+        <div className="det-body">
           What career fields intrest you the most? Select all that apply.
         </div>
         <input type="text" className="textboxclass" />
       </div>
       <div className="Det-Question">
         Question 10
-        <div className="body">
+        <div className="det-body">
           How open are you to trying new methods or approaches to your work?
         </div>
         <input type="text" className="textboxclass" />
