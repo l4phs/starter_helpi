@@ -385,7 +385,7 @@ function BQPage({ setPage }: Props): JSX.Element {
           </Button>
           <Button
             className="Submit-Button"
-            onClick={handleSubmitDetailedAnswers}
+            onClick={handleSubmitAnswers}
           >
             Submit Detailed Answers
           </Button>
