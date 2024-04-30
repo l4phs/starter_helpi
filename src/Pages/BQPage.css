@@ -39,10 +39,12 @@
   padding: 5px 15px;
 }
 
-.BQB{
-  position:absolute;
-  top: 20vh;
-  left: 20vw;
+.BQB {
+  position: absolute;
+  top: 18vh;
+  left: 28vw;
+  text-align: center;
+}
 
 .BQB {
   position: absolute;
