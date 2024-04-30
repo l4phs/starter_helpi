@@ -1,8 +1,3 @@
-.Bbody {
-  height: 500vh;
-  width: 100vw;
-  background-color: #dbc6b6;
-}
 
 .Bbody .text {
   display: block;
@@ -62,14 +57,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.BQH {
-  color: #3c2918;
-}
-
-.BQB {
-  text-align: center;
 }
 
 .QuestionContainer {
