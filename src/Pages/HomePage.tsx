@@ -19,12 +19,15 @@ const HomePage: React.FC<Props> = ({ setPage }) => {
         <h1>Basic Quiz!</h1>
         <p className="BQDiscriptionBox">
           Discover your ideal career path with our basic career path quiz!
+          <br></br>
           Tailored for those beginning their career journey, this quiz helps you
-          explore your interests, strengths, and preferences. Quick and easy to
+          explore your interests, strengths, and preferences. 
+          <br></br>
+          Quick and easy to
           understand and results are immediate following the completion of the
-          quiz. Uncover potential career paths aligned with your aspirations,
-          whether you're a recent graduate or considering a change. Start your
-          exploration today and take the first step toward a fulfilling career!
+          quiz.
+          <br></br>
+          Start your exploration today and take the first step toward a fulfilling career!
         </p>
         An example of a question you may see:
         <br></br>

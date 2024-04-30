@@ -9,9 +9,9 @@
   position: absolute;
   font-family: "Lilita One";
   text-align: center;
-  top: 100vh;
+  top: 20vh;
   font-size: 30px;
-  left: 31vw;
+  left: 28vw;
   color: #3c2918;
 }
 
@@ -20,8 +20,8 @@
   position: absolute;
   width: 70vh;
   height: fit-content;
-  top: 115vh;
-  left: 14vw;
+  top: 45vh;
+  left: 13vw;
   text-align: center;
   background-color: #3c2918;
   border: 5px solid transparent;
@@ -38,7 +38,7 @@
   position: absolute;
   width: 70vh;
   height: fit-content;
-  top: 115vh;
+  top: 45vh;
   right: 14vw;
   text-align: center;
   background-color: #3c2918;
@@ -52,7 +52,7 @@
 .BQButton {
   display: block;
   position: absolute;
-  top: 178vh;
+  top: 115vh;
   left: 25.5vw;
   background-color: #3c2918;
   color: #dbc6b6;
@@ -66,7 +66,7 @@
 .DQButton {
   display: block;
   position: absolute;
-  top: 178vh;
+  top: 115vh;
   right: 25.5vw;
   background-color: #3c2918;
   color: #dbc6b6;
