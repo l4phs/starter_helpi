@@ -55,7 +55,7 @@ function BQPage({ setPage }: Props): JSX.Element {
       <div className="ProgressBarBQ">
         <div
           className="ActiveProgressBQ"
-          style={{ width: `${QuestionView * 10}%` }}
+          style={{ width: "${QuestionView * 10}%" }}
         ></div>
       </div>
       <p className="BQB">
