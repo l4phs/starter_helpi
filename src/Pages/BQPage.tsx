@@ -1,10 +1,12 @@
+/* eslint-disable no-template-curly-in-string */
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import axios from "axios";
 import "./BQPage.css";
+import axios from "axios";
+
 
 interface Props {
-  setPage: (page: string) => void;
+  setPage: (page: string) => void; // Define the type of setPage prop
 }
 
   // interface Question {
@@ -44,76 +46,18 @@ function BQPage({ setPage }: Props): JSX.Element {
   //     }
   //   ]
   // }
-
-  const questions = [
-    "List three activities you enjoy doing?",
-    "What is your ideal shift time?",
-    "Would you enjoy traveling for work?",
-    "What subject are you the best at?",
-    "I work well in fast-paced environments.",
-    "Would you prefer to be relatively sedentary or active at work?",
-    "Would you prefer working from home, in an office/on site, or hybrid?",
-    "Do you prefer to work individually, in a small group (2-4 people), or a team (more than 4 people)?",
-    "What kind of learner are you?",
-    "Do you prefer consistent work hours over a flexible schedule?",
-  ];
-
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill(""));
-  const [progress, setProgress] = useState(0);
-
-  // Calculate progress based on the number of questions answered
-  const calculateProgress = () => {
-    const answeredCount = answers.filter((answer) => answer.trim() !== "").length;
-    const totalQuestions = questions.length;
-    const percentage = (answeredCount / totalQuestions) * 100;
-    return percentage;
-  };
-
-  const handleNext = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    }
-  };
-
   //const [detailedAnswers, setDetailedAnswers] = useState({});
   const [QuestionView, setQuestionView] = useState<number>(1); // for managing the current page
 
-
-  const handlePrevious = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
-    }
-  };
-
-  const handleAnswerChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const updatedAnswers = [...answers];
-    updatedAnswers[currentQuestionIndex] = event.target.value;
-    setAnswers(updatedAnswers);
-  
-    // Update progress based on the number of answered questions
-    const answeredCount = updatedAnswers.filter((answer) => answer.trim() !== "").length;
-    const totalQuestions = questions.length;
-    const percentage = (answeredCount / totalQuestions) * 100;
-    setProgress(percentage);
-  };
-
-  const handleSubmitAnswers = () => {
-    const basicAnswers = answers.filter((answer) => answer.trim() !== "");
-    if (basicAnswers.length === questions.length) {
-      const data = { basicAnswers };
-      axios
-        .post("API_ENDPOINT_URL", data)
-        .then((response) => {
-          console.log(response.data);
-          // Handle any further actions after successful submission
-        })
-        .catch((error) => {
-          console.error("Error submitting basic answers:", error);
-        });
-    } else {
-      alert("Please answer all questions before submitting.");
-    }
+  const handleSubmitDetailedAnswers = () => {
+    axios
+      .post("API_ENDPOINT_URL", detailedAnswers)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error submitting detailed answers: " + error); // Concatenate error message
+      });
   };
 
   const handleDetailedAnswerChange = (
@@ -124,6 +68,7 @@ function BQPage({ setPage }: Props): JSX.Element {
       ...prevState,
       [questionNumber]: answer,
     }));
+    return 0;
   };
 
   function QuestionController(QstNum: string) {
@@ -142,53 +87,23 @@ function BQPage({ setPage }: Props): JSX.Element {
         setQuestionView(QuestionView);
     }
   }
+
   return (
     <div className="Bbody">
-
-      <h1 className="BQH">Basic Questions Page</h1>
-
       <h1 className="BQH"> Basic Questions Page</h1>
       <div className="ProgressBarBQ">
+        <p>{QuestionView}</p>
         <div
           className="ActiveProgressBQ"
           style={{ width: `${QuestionView * 10}%` }}
         ></div>
       </div>
-
       <p className="BQB">
-        These questions give a more BASIC analysis of the kind of career you would be best suited to! <br />
-        Short answers are highly encouraged. Onwards!
+        These questions give a more BASIC analysis of the kind of career you
+        would be best suited to!
+        <br></br>
+        Short asnwers are highly encouraged. Onwards!
       </p>
-
-      <br />
-      <div className="QuestionContainer">
-        <p>Question {currentQuestionIndex + 1}</p>
-        <p className="QuestionText">{questions[currentQuestionIndex]}</p>
-        <input
-          type="text"
-          value={answers[currentQuestionIndex]}
-          onChange={handleAnswerChange}
-          className="AnswerInput"
-        />
-      </div>
-      <div className="ProgressBarContainer">
-        <div className="ProgressBar" style={{ width: `${progress}%` }}></div>
-      </div>
-      <div className="ButtonContainer">
-        <Button className="BQ-PreviousButton" onClick={handlePrevious}>
-          Previous
-        </Button>
-        {currentQuestionIndex < questions.length - 1 ? (
-          <Button className="BQ-NextButton" onClick={handleNext}>
-            Next
-          </Button>
-        ) : (
-          <Button className="BQ-SubmitButton" onClick={handleSubmitAnswers}>
-            Submit Basic Answers
-          </Button>
-        )}
-      </div>
-
       <br></br>
       {QuestionView === 1 && (
         <div className="Meow">
@@ -212,6 +127,7 @@ function BQPage({ setPage }: Props): JSX.Element {
         <div className="Meow">
           <div className="BQQuestionNum">Question 2</div>
           <div className="BQQuestion">What is your ideal shift time?</div>
+          <p>{QuestionView}</p>
           <input
             type="text"
             className="textboxclassBQ"
@@ -235,6 +151,7 @@ function BQPage({ setPage }: Props): JSX.Element {
         <div className="Meow">
           <div className="BQQuestionNum">Question 3</div>
           <div className="BQQuestion">Would you enjoy traveling for work?</div>
+          <p>{QuestionView}</p>
           <input
             type="text"
             className="textboxclassBQ"
@@ -258,6 +175,7 @@ function BQPage({ setPage }: Props): JSX.Element {
         <div className="Meow">
           <div className="BQQuestionNum">Question 4</div>
           <div className="BQQuestion">What subject are you the best at?</div>
+          <p>{QuestionView}</p>
           <input
             type="text"
             className="textboxclassBQ"
@@ -283,6 +201,7 @@ function BQPage({ setPage }: Props): JSX.Element {
           <div className="BQQuestion">
             I work well in fast paced environments
           </div>
+          <p>{QuestionView}</p>
           <input
             type="text"
             className="textboxclassBQ"
@@ -308,6 +227,8 @@ function BQPage({ setPage }: Props): JSX.Element {
           <div className="BQQuestion">
             Would you prefer to be relatively sedentary or active at work?
           </div>
+          <p>{QuestionView}</p>
+
           <input
             type="text"
             className="textboxclassBQ"
@@ -334,6 +255,8 @@ function BQPage({ setPage }: Props): JSX.Element {
             Would you prefer working from home, in an office / on site, or
             hybrid?
           </div>
+          <p>{QuestionView}</p>
+
           <input
             type="text"
             className="textboxclassBQ"
@@ -360,6 +283,8 @@ function BQPage({ setPage }: Props): JSX.Element {
             Do you prefer to do work inbridually, in a small group (2-4 people),
             or a team (more than 4 people)?
           </div>
+          <p>{QuestionView}</p>
+
           <input
             type="text"
             className="textboxclassBQ"
@@ -383,6 +308,8 @@ function BQPage({ setPage }: Props): JSX.Element {
         <div className="Meow">
           <div className="BQQuestionNum">Question 9</div>
           <div className="BQQuestion">What kind of learner are you?</div>
+          <p>{QuestionView}</p>
+
           <input
             type="text"
             className="textboxclassBQ"
@@ -408,6 +335,8 @@ function BQPage({ setPage }: Props): JSX.Element {
           <div className="BQQuestion">
             Do you prefer consistent work hours over a flexible schedule?
           </div>
+          <p>{QuestionView}</p>
+
           <input
             type="text"
             className="textboxclassBQ"
@@ -421,13 +350,12 @@ function BQPage({ setPage }: Props): JSX.Element {
           </Button>
           <Button
             className="Submit-Button"
-            onClick={handleSubmitAnswers}
+            onClick={handleSubmitDetailedAnswers}
           >
             Submit Detailed Answers
           </Button>
         </div>
       )}
-
     </div>
   );
 }

@@ -1,4 +1,3 @@
-
 .Dbody {
   height: 100vh;
   width: 100vw;
@@ -6,11 +5,11 @@
   /* background-image: url("BKGBase.png"); */
 }
 
-
 .Dbody .text {
   display: block;
   position: absolute;
   font-family: "Lilita One";
+  text-align: center;
   top: 10vh;
   font-size: 30px;
   left: 11vw;
@@ -140,72 +139,4 @@
   max-width: 98.5%;
   min-width: 0.5%;
   background-color: #dbc6b6;
-}
-
-.Dbody {
-  height: 300vh;
-  width: 100vw;
-  background-color: #dbc6b6;
-}
-
-.DQH {
-  position: absolute;
-  top: 10vh;
-  left: 39vw;
-  font-size: 30px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.DQH,
-.DQB {
-  text-align: center;
-}
-
-.det-body {
-  margin-top: 8px;
-  font-size: 20px;
-  color: #3c2918;
-}
-
-.Det-Question {
-  padding: 20px;
-  margin-bottom: 16px;
-  font-family: "Lilita One";
-  font-size: 25px;
-  color: #3c2918;
-}
-
-.options {
-  margin-top: 15px;
-  font-size: 20px;
-  text-align: center;
-  font-family: "Josefin Sans";
-}
-
-.textboxclass {
-  margin-top: 10px;
-  height: 40px;
-  width: 60vh;
-  font-size: 20px;
-  font-family: "Josefin Sans";
-}
-
-.ProgressBarContainer {
-  margin-top: 20px;
-  width: 80vw;
-  height: 20px;
-  background-color: #ccc;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.ProgressBar {
-  height: 100%;
-  background-color: #3c2918;
-}
-
-.ButtonContainer {
-  margin-top: 20px;
-  text-align: center;
 }
