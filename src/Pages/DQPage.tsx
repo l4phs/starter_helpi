@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import axios from "axios";
 import "./DQPage.css";
 
 interface Props {
@@ -17,14 +16,14 @@ function DQPage({ setPage }: Props): JSX.Element {
     "customer service roles",
   ]);
   const [detailedAnswers, setDetailedAnswers] = useState({});
-
+  const axios = require("axios");
   const handleSubmitDetailedAnswers = () => {
     axios
       .post("API_ENDPOINT_URL", detailedAnswers)
-      .then((response) => {
-        console.log(response.data);
+      .then((response:string) => {
+        console.log(response);
       })
-      .catch((error) => {
+      .catch((error:string) => {
         console.error("Error submitting detailed answers:", error);
       });
   };
@@ -68,6 +67,7 @@ function DQPage({ setPage }: Props): JSX.Element {
   return (
     <div className="Dbody">
       <div className="DQH">Detailed Questions Page</div>
+      <p>{QuestionView}</p>
       <div className="ProgressBar">
         <div
           className="ActiveProgress"
