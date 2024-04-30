@@ -2,6 +2,7 @@
   height: 100vh;
   width: 100vw;
   background-color: #dbc6b6;
+  /* background-image: url("BKGBase.png"); */
 }
 
 .Dbody .text {
@@ -46,7 +47,7 @@
   text-align: center;
 }
 
-.textboxclassDQ{
+.textboxclassDQ {
   position: absolute;
   margin-top: 10px;
   top: 38vh;
@@ -55,6 +56,9 @@
   font-size: 20px;
   font-family: "Josefin Sans";
   left: 36vw;
+  background-color: #3c2918;
+  color: #dbc6b6;
+  text-align: center;
 }
 
 .DQH {
@@ -66,6 +70,7 @@
   width: 100vw;
   margin: auto;
   text-align: center;
+  color: #3c2918;
 }
 
 .NextButton {
