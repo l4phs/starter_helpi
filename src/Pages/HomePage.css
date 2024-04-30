@@ -1,0 +1,78 @@
+.Hbody {
+  height: 187vh;
+  width: 100vw;
+  background-color: #dbc6b6;
+}
+
+.Hbody .text {
+  display: block;
+  position: absolute;
+  font-family: "Lilita One";
+  text-align: center;
+  top: 100vh;
+  font-size: 30px;
+  left: 31vw;
+  color: #3c2918;
+}
+
+.BQDiscriptions {
+  display: block;
+  position: absolute;
+  width: 70vh;
+  height: fit-content;
+  top: 115vh;
+  left: 14vw;
+  text-align: center;
+  background-color: #3c2918;
+  border: 5px solid transparent;
+  border-radius: 8px;
+  padding: 5px 15px;
+  color: #dbc6b6;
+}
+.BQDiscriptionBox {
+  text-align: left;
+}
+
+.DQDiscriptions {
+  display: block;
+  position: absolute;
+  width: 70vh;
+  height: fit-content;
+  top: 115vh;
+  right: 14vw;
+  text-align: center;
+  background-color: #3c2918;
+  border: 5px solid transparent;
+  border-radius: 8px;
+  padding: 5px 15px;
+  color: #dbc6b6;
+}
+
+/* Home Page Buttons */
+.BQButton {
+  display: block;
+  position: absolute;
+  top: 178vh;
+  left: 25.5vw;
+  background-color: #3c2918;
+  color: #dbc6b6;
+  border: 1px transparent;
+}
+.BQButton:hover {
+  background-color: #dbc6b6;
+  color: #3c2918;
+}
+
+.DQButton {
+  display: block;
+  position: absolute;
+  top: 178vh;
+  right: 25.5vw;
+  background-color: #3c2918;
+  color: #dbc6b6;
+  border: 1px transparent;
+}
+.DQButton:hover {
+  background-color: #dbc6b6;
+  color: #3c2918;
+}

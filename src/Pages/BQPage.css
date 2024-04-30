@@ -1,0 +1,55 @@
+.Bbody {
+  height: 500vh;
+  width: 100vw;
+  background-color: #dbc6b6;
+}
+
+.Bbody .text {
+  display: block;
+  position: absolute;
+  font-family: "Lilita One";
+  text-align: center;
+  top: 10vh;
+  font-size: 30px;
+  left: 11vw;
+  color: #3c2918;
+  background-color: #dbc6b6;
+}
+
+.BasicQuestions-List {
+  top: 15vw;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  list-style-type: none;
+  background-color: #dbc6b6;
+  left: -1vw;
+}
+
+.BQH{
+  display: block;
+  position: absolute;
+  top: 10vh;
+  left: 38vw;
+  color: #3c2918;
+}
+
+.BQB{
+  position:absolute;
+  top: 20vh;
+  left: 28vw;
+  text-align: center;
+}
+
+.BQ-SubmitButton{
+  position: absolute;
+  top:103vh;
+  left: 44vw;
+  background-color: #3c2918;
+  color: #dbc6b6;
+}
+.BQ-SubmitButton:hover{
+  background-color: #dbc6b6;
+  color: #3c2918;
+
+}
