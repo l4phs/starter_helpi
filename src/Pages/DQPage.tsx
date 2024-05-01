@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "./DQPage.css";
-import axios from "axios";
+import axios from "axios"; //install this in terminal
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
@@ -66,7 +66,7 @@ function DQPage({ setPage }: Props): JSX.Element {
 
   return (
     <div className="Dbody">
-      <div className="DQH">Detailed Questions Page</div>
+      <div className="DQH">Detailed Questions</div>
       <p>{QuestionView}</p>
       <div className="ProgressBar">
         <div
@@ -126,7 +126,7 @@ function DQPage({ setPage }: Props): JSX.Element {
             className="PrevButton"
             onClick={() => QuestionController("prev")}
           >
-            Previous
+            previous
           </Button>
         </div>
       )}
@@ -149,7 +149,7 @@ function DQPage({ setPage }: Props): JSX.Element {
             className="PrevButton"
             onClick={() => QuestionController("prev")}
           >
-            Previous
+            previous
           </Button>
         </div>
       )}
@@ -221,7 +221,7 @@ function DQPage({ setPage }: Props): JSX.Element {
             className="PrevButton"
             onClick={() => QuestionController("prev")}
           >
-            Previous
+            previous
           </Button>
         </div>
       )}
@@ -246,7 +246,7 @@ function DQPage({ setPage }: Props): JSX.Element {
             className="PrevButton"
             onClick={() => QuestionController("prev")}
           >
-            Previous
+            previous
           </Button>
         </div>
       )}
@@ -272,7 +272,7 @@ function DQPage({ setPage }: Props): JSX.Element {
             className="PrevButton"
             onClick={() => QuestionController("prev")}
           >
-            Previous
+            previous
           </Button>
         </div>
       )}
@@ -293,7 +293,7 @@ function DQPage({ setPage }: Props): JSX.Element {
             className="PrevButton"
             onClick={() => QuestionController("prev")}
           >
-            Previous
+            previous
           </Button>
         </div>
       )}
@@ -315,7 +315,7 @@ function DQPage({ setPage }: Props): JSX.Element {
             className="PrevButton"
             onClick={() => QuestionController("prev")}
           >
-            Previous
+            previous
           </Button>
         </div>
       )}
@@ -336,7 +336,7 @@ function DQPage({ setPage }: Props): JSX.Element {
             className="PrevButton"
             onClick={() => QuestionController("prev")}
           >
-            Previous
+            previous
           </Button>
         </div>
       )}
@@ -357,7 +357,7 @@ function DQPage({ setPage }: Props): JSX.Element {
             className="PrevButton"
             onClick={() => QuestionController("prev")}
           >
-            Previous
+            previous
           </Button>
         </div>
       )}
