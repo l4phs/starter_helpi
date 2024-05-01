@@ -1,5 +1,6 @@
 import { Button } from "react-bootstrap";
 // import React, { useEffect, useState } from "react";
+
 import "./HomePage.css";
 
 interface Props {
@@ -33,6 +34,7 @@ function HomePage({ setPage }: Props): JSX.Element {
             a fulfilling career!
           </p>
           An example of a question you may see:
+
           <br></br>
           <p className="BQDiscriptionBox">
             Question 1:

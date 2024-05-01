@@ -76,6 +76,7 @@ body {
   font-family: "Lilita One";
   text-align: center;
   top: 0vh;
+
   font-size: 30px;
 
   color: #3c2918;
@@ -104,6 +105,7 @@ body {
   width: 70vh;
   height: fit-content;
   top: 25vh;
+
   left: 14vw;
   text-align: center;
   background-color: #dbc6b6;
@@ -121,10 +123,11 @@ body {
 .DQDiscriptions {
   display: block;
   position: absolute;
-  width: 70vh;
+  width: 64vh;
   height: fit-content;
   top: 25vh;
   right: 14vw;
+
   text-align: center;
   background-color: #dbc6b6;
   border: 5px solid transparent;
@@ -139,6 +142,7 @@ body {
   display: block;
   position: absolute;
   top: 88vh;
+
   left: 25.5vw;
   background-color: #dbc6b6;
   color: #3c2918;
@@ -153,6 +157,7 @@ body {
   display: block;
   position: absolute;
   top: 88vh;
+
   right: 25.5vw;
   background-color: #dbc6b6;
   color: #3c2918;
