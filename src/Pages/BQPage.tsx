@@ -1,8 +1,8 @@
 /* eslint-disable no-template-curly-in-string */
-import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+//import React, { useState } from "react";
+//import { Button } from "react-bootstrap";
 import "./BQPage.css";
-import axios from "axios";
+//import axios from "axios";
 
 //Code written with the assistance of Gemini AI.
 
@@ -20,8 +20,8 @@ interface Question {
 
 function BQPage({ setPage }: Props): JSX.Element {
 
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [userSelection, setUserSelection] = useState < string | null > (null);
+    // const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    // const [userSelection, setUserSelection] = useState < string | null > (null);
   
     const questions1: Question [] = [
       //25 questions total
@@ -173,8 +173,8 @@ function BQPage({ setPage }: Props): JSX.Element {
       }
     ]
   
-  //const [detailedAnswers, setDetailedAnswers] = useState({});
-  const [QuestionView, setQuestionView] = useState<number>(1); // for managing the current page
+  // //const [detailedAnswers, setDetailedAnswers] = useState({});
+  // const [QuestionView, setQuestionView] = useState<number>(1); // for managing the current page
 
   // const handleSubmitDetailedAnswers = () => {
   //   axios
@@ -198,24 +198,24 @@ function BQPage({ setPage }: Props): JSX.Element {
   //   return 0;
   // };
 
-  function QuestionController(QstNum: string) {
-    switch (QstNum) {
-      case "next":
-        if (QuestionView < 10) {
-          setQuestionView(QuestionView + 1);
-        }
-        break;
-      case "prev":
-        if (QuestionView > 0) {
-          setQuestionView(QuestionView - 1);
-        }
-        break;
-      default:
-        setQuestionView(QuestionView);
-    }
-  }
+  // function QuestionController(QstNum: string) {
+  //   switch (QstNum) {
+  //     case "next":
+  //       if (QuestionView < 10) {
+  //         setQuestionView(QuestionView + 1);
+  //       }
+  //       break;
+  //     case "prev":
+  //       if (QuestionView > 0) {
+  //         setQuestionView(QuestionView - 1);
+  //       }
+  //       break;
+  //     default:
+  //       setQuestionView(QuestionView);
+  //   }
+  // }
 
-  const currentQ = questions1[currentQuestionIndex];
+  // const currentQ = questions1[currentQuestionIndex];
 
   return (
     <div className="Bbody">
