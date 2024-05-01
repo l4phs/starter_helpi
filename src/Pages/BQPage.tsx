@@ -4,6 +4,8 @@ import { Button } from "react-bootstrap";
 import "./BQPage.css";
 import axios from "axios";
 
+//Code written with the assistance of Gemini AI.
+
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
