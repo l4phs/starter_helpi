@@ -219,7 +219,7 @@ function BQPage({ setPage }: Props): JSX.Element {
 
   return (
     <div className="Bbody">
-      <h1 className="BQH"> Basic Questions Page</h1>
+      <h1 className="BQH"> Basic Questions</h1>
       <div className="ProgressBarBQ">
         <p>{QuestionView}</p>
         <div
