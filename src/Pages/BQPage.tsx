@@ -221,10 +221,10 @@ function BQPage({ setPage }: Props): JSX.Element {
     <div className="Bbody">
       <h1 className="BQH"> Basic Questions</h1>
       <div className="ProgressBarBQ">
-        <p>{QuestionView}</p>
+        {/* //<p>{QuestionView}</p> */}
         <div
           className="ActiveProgressBQ"
-          style={{ width: `${QuestionView * 10}%` }}
+          // style={{ width: `${QuestionView * 10}%` }}
         ></div>
       </div>
       <p className="BQB">
@@ -248,7 +248,7 @@ function BQPage({ setPage }: Props): JSX.Element {
                 id={answer} 
                 name="answer" 
                 value={answer}
-                checked={userSelection === answer} 
+                //checked={userSelection === answer} 
                 //onChange={handleAnswerChange}
               />
               <label htmlFor = {answer}>{answer}</label>
@@ -257,7 +257,7 @@ function BQPage({ setPage }: Props): JSX.Element {
           </ul>
         ) : (
           <textarea
-          value={userSelection || ""} 
+          //value={userSelection || ""} 
           //onChange={handleAnswerChange}
           placeholder="Please enter your answer here."
         />
