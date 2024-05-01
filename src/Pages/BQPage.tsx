@@ -14,21 +14,15 @@ interface Question {
   answers:string[] | null;
   type: "short answer" | "multiple choice";
 }
-// ,
-//       {
-//         question:
-//         answers:
-//         type:
-//       }
 
 
 function BQPage({ setPage }: Props): JSX.Element {
 
-  function QuizC() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [userSelection, setUserSelection] = useState < string | null > (null);
   
     const questions1: Question [] = [
+      //25 questions total
       {
         question: "Would you prefer working from home, in an office / on site, or hybrid? (pick one)",
         answers: ["Working from home", "In an office / on site", "Hybrid"],
@@ -176,7 +170,7 @@ function BQPage({ setPage }: Props): JSX.Element {
         type: "multiple choice"
       }
     ]
-}
+  
   //const [detailedAnswers, setDetailedAnswers] = useState({});
   const [QuestionView, setQuestionView] = useState<number>(1); // for managing the current page
 
@@ -219,6 +213,8 @@ function BQPage({ setPage }: Props): JSX.Element {
     }
   }
 
+  const currentQ = questions1[currentQuestionIndex];
+
   return (
     <div className="Bbody">
       <h1 className="BQH"> Basic Questions Page</h1>
@@ -233,262 +229,49 @@ function BQPage({ setPage }: Props): JSX.Element {
         These questions give a more BASIC analysis of the kind of career you
         would be best suited to!
         <br></br>
-        Short asnwers are highly encouraged. Onwards!
+        Short answers are highly encouraged. Onwards!
       </p>
       <br></br>
-      {QuestionView === 1 && (
-        <div className="Meow">
-          <div className="BQQuestionNum">Question 1</div>
-          <div className="BQQuestion">List three activities you enjoy</div>
-          <input
-            type="text"
-            className="textboxclassBQ"
-            //onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-            style={{ position: "absolute", left: "48vw" }}
-          >
-            next
-          </Button>
+      <div style={{ height: "300px" }}></div>
+      <div>
+        {questions1.map((question) => (
+            <div key={question.question} className="question-container">
+        <h2>{question.question}</h2>
+        {question?.type === "multiple choice" ? (
+          <ul>
+            {question.answers?.map((answer) => (
+              <li key={answer}>
+              <input
+                type="radio"
+                id={answer} 
+                name="answer" 
+                value={answer}
+                checked={userSelection === answer} 
+                //onChange={handleAnswerChange}
+              />
+              <label htmlFor = {answer}>{answer}</label>
+            </li>
+            ))}
+          </ul>
+        ) : (
+          <textarea
+          value={userSelection || ""} 
+          //onChange={handleAnswerChange}
+          placeholder="Please enter your answer here."
+        />
+        )}
         </div>
-      )}
-      {QuestionView === 2 && (
-        <div className="Meow">
-          <div className="BQQuestionNum">Question 2</div>
-          <div className="BQQuestion">What is your ideal shift time?</div>
-          <p>{QuestionView}</p>
-          <input
-            type="text"
-            className="textboxclassBQ"
-            //onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            Previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 3 && (
-        <div className="Meow">
-          <div className="BQQuestionNum">Question 3</div>
-          <div className="BQQuestion">Would you enjoy traveling for work?</div>
-          <p>{QuestionView}</p>
-          <input
-            type="text"
-            className="textboxclassBQ"
-            //onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            Previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 4 && (
-        <div className="Meow">
-          <div className="BQQuestionNum">Question 4</div>
-          <div className="BQQuestion">What subject are you the best at?</div>
-          <p>{QuestionView}</p>
-          <input
-            type="text"
-            className="textboxclassBQ"
-            //onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            Previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 5 && (
-        <div className="Meow">
-          <div className="BQQuestionNum">Question 5</div>
-          <div className="BQQuestion">
-            I work well in fast paced environments
-          </div>
-          <p>{QuestionView}</p>
-          <input
-            type="text"
-            className="textboxclassBQ"
-            //onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            Previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 6 && (
-        <div className="Meow">
-          <div className="BQQuestionNum">Question 6</div>
-          <div className="BQQuestion">
-            Would you prefer to be relatively sedentary or active at work?
-          </div>
-          <p>{QuestionView}</p>
-
-          <input
-            type="text"
-            className="textboxclassBQ"
-            //onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            Previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 7 && (
-        <div className="Meow">
-          <div className="BQQuestionNum">Question 7</div>
-          <div className="BQQuestion">
-            Would you prefer working from home, in an office / on site, or
-            hybrid?
-          </div>
-          <p>{QuestionView}</p>
-
-          <input
-            type="text"
-            className="textboxclassBQ"
-            //onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            Previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 8 && (
-        <div className="Meow">
-          <div className="BQQuestionNum">Question 8</div>
-          <div className="BQQuestion">
-            Do you prefer to do work inbridually, in a small group (2-4 people),
-            or a team (more than 4 people)?
-          </div>
-          <p>{QuestionView}</p>
-
-          <input
-            type="text"
-            className="textboxclassBQ"
-            //onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            Previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 9 && (
-        <div className="Meow">
-          <div className="BQQuestionNum">Question 9</div>
-          <div className="BQQuestion">What kind of learner are you?</div>
-          <p>{QuestionView}</p>
-
-          <input
-            type="text"
-            className="textboxclassBQ"
-            //onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            Previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 10 && (
-        <div className="Meow">
-          <div className="BQQuestionNum">Question 10</div>
-          <div className="BQQuestion">
-            Do you prefer consistent work hours over a flexible schedule?
-          </div>
-          <p>{QuestionView}</p>
-
-          <input
-            type="text"
-            className="textboxclassBQ"
-            //onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            Previous
-          </Button>
-          <Button
-            className="Submit-Button"
-            //onClick={handleSubmitDetailedAnswers}
-          >
-            Submit Detailed Answers
-          </Button>
-        </div>
-      )}
+        ))}
+        {/* <button disabled={!currentQuestion} onClick={handleNextQuestion}>
+          Next Question
+        </button>
+      </div>
+    ); */}
     </div>
+  </div>
   );
 }
+
+      
 
 export default BQPage;
