@@ -27,14 +27,15 @@
 }
 
 .BQH {
-  display: block;
   position: absolute;
-  top: 8vh;
-  left: 35vw;
+  top: 10vh;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: 100vw;
+  margin: auto;
+  text-align: center;
   color: #3c2918;
-  background-color: #dbc6b6;
-  width: auto;
-  padding: 5px 15px;
 }
 
 .BQB {
@@ -63,7 +64,7 @@
   font-family: "Lilita One";
   font-size: 25px;
   color: #3c2918;
-  top: 29vh;
+  top: 30vh;
   width: 100vw;
   text-align: center;
 }
@@ -112,7 +113,7 @@
   width: 60vh;
   font-size: 20px;
   font-family: "Josefin Sans";
-  left: 36vw;
+  left: 35vw;
   background-color: #3c2918;
   color: #dbc6b6;
   text-align: center;
