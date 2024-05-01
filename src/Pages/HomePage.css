@@ -1,13 +1,73 @@
+html {
+  height: 100vh;
+  overflow: hidden;
+}
 body {
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background: #3c2918;
+  perspective: 1px;
+  transform-style: preserve-3d;
   overflow-x: hidden;
+  overflow-y: scroll;
+}
+.section1,
+.section2 {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.section1::before {
+  content: "";
+  width: 100%;
+  height: 250%;
+  position: absolute;
+  background: url("BKGBase.png") top center;
+  background-size: cover;
+  transform: translateZ(-1px) scale(2.2);
+  filter: blur(1px);
+}
+.section1::after {
+  content: "";
+  width: 100%;
+  height: 300%;
+  position: absolute;
+  background: url("BKGTop.png") top center;
+  background-size: cover;
+}
+
+.section1 .text {
+  top: 10%;
+  transform: translateZ(-0.5px) scale(1.5, 1.6) translate(-33%, 10%);
+  /* width: 100vh; */
+  text-align: center;
+}
+.section2 {
+  top: 290vh;
+  background: transparent;
+  /* background: url("BKGBase.png") top center; */
+}
+
+.text {
+  top: 30%;
+  left: 50%;
+  position: absolute;
+  font-size: 15vw;
+  color: white;
+  text-shadow: 2px 2px 5px #3c2918, 5px 5px 70px #dbc6b6;
+  transform: scale(1, 1.1) translate(-50%, 10%);
+  -webkit-text-fill-color: whitesmoke;
+  -webkit-text-stroke-color: whitesmoke;
+  -webkit-text-stroke-width: 10px;
 }
 
 .Hbody {
-  height: 187vh;
+  height: 80vh;
   width: 100vw;
-  background-image: url("BKGBase.png");
+  background-color: transparent;
 }
 
 .Hbody .text {
@@ -15,9 +75,10 @@ body {
   position: absolute;
   font-family: "Lilita One";
   text-align: center;
-  top: 80vh;
+  top: 0vh;
+
   font-size: 30px;
-  left: 14vw;
+
   color: #3c2918;
   background-color: #dbc6b6;
   width: 70.9vw;
@@ -26,14 +87,25 @@ body {
   border-bottom-right-radius: 0px;
   border: 15px;
   padding: 5px 15px;
+  left: 14vw;
+  top: 4vw;
+
+  position: absolute;
+  color: #3c2918;
+  transform: none;
+  text-shadow: 0px 0px 0px #3c2918, 0px 0px 0px #dbc6b6;
+  -webkit-text-fill-color: #3c2918;
+  -webkit-text-stroke-color: #3c2918;
+  -webkit-text-stroke-width: 0px;
 }
 
 .BQDiscriptions {
   display: block;
   position: absolute;
   width: 70vh;
-  height: 70vh;
-  top: 95vh;
+  height: fit-content;
+  top: 25vh;
+
   left: 14vw;
   text-align: center;
   background-color: #dbc6b6;
@@ -53,8 +125,9 @@ body {
   position: absolute;
   width: 64vh;
   height: fit-content;
-  top: 95vh;
-  right: 15vw;
+  top: 25vh;
+  right: 14vw;
+
   text-align: center;
   background-color: #dbc6b6;
   border: 5px solid transparent;
@@ -65,12 +138,11 @@ body {
   border-top-left-radius: 0px;
 }
 
-/* Home Page Buttons */
 .BQButton {
   display: block;
   position: absolute;
-  height: 8vh;
-  top: 162vh;
+  top: 88vh;
+
   left: 25.5vw;
   background-color: #dbc6b6;
   color: #3c2918;
@@ -84,8 +156,8 @@ body {
 .DQButton {
   display: block;
   position: absolute;
-  height: 8vh;
-  top: 162vh;
+  top: 88vh;
+
   right: 25.5vw;
   background-color: #dbc6b6;
   color: #3c2918;
