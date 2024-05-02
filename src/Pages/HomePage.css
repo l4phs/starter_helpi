@@ -25,7 +25,7 @@
   animation: movecoffee 100s linear infinite;
   z-index: 2;
   transform: translateY(var(--coffee1-translateY));
-  filter: blur(1.5px);
+  filter: blur(2px);
 }
 
 #coffee2 {
@@ -65,12 +65,12 @@
   top: 403vh;
   overflow-x: hidden;
   font-size: 30px;
-  background-color: #3c2918;
+  background-color: #3d2a19;
   width: 100vw;
   border: 15px;
   padding: 5px 15px;
   position: absolute;
-  color: #dbc6b6;
+  color: #fee4c3;
   transform: none;
 
   z-index: 8;
@@ -86,11 +86,11 @@
 
   left: 14vw;
   text-align: center;
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   border: 5px solid transparent;
   border-radius: 8px;
   padding: 5px 15px;
-  color: #3c2918;
+  color: #3d2a19;
 
   z-index: 8;
 }
@@ -108,11 +108,11 @@
   right: 14vw;
 
   text-align: center;
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   border: 5px solid transparent;
   border-radius: 8px;
   padding: 5px 15px;
-  color: #3c2918;
+  color: #3d2a19;
 
   z-index: 8;
 }
@@ -123,14 +123,14 @@
   top: 545vh;
 
   left: 25.5vw;
-  background-color: #dbc6b6;
-  color: #3c2918;
+  background-color: #fee4c3;
+  color: #3d2a19;
   border: 1px transparent;
   z-index: 9;
 }
 .BQButton:hover {
-  background-color: #3c2918;
-  color: #dbc6b6;
+  background-color: #3d2a19;
+  color: #fee4c3;
   z-index: 9;
 
 }
@@ -142,11 +142,11 @@
   z-index: 8;
 
   right: 25.5vw;
-  background-color: #dbc6b6;
-  color: #3c2918;
+  background-color: #fee4c3;
+  color: #3d2a19;
   border: 1px transparent;
 }
 .DQButton:hover {
-  background-color: #3c2918;
-  color: #dbc6b6;
+  background-color: #3d2a19;
+  color: #fee4c3;
 }

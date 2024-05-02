@@ -17,7 +17,7 @@ https://www.color-hex.com/color-palette/106259
   margin: auto;
   padding: 0;
   overflow: hidden;
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   position: fixed;
   top: 0px;
   width: 100%;
@@ -27,7 +27,7 @@ https://www.color-hex.com/color-palette/106259
 .TB-li {
   float: right;
   display: block;
-  color: #3c2918;
+  color: #3d2a19;
   text-align: center;
   text-decoration: none;
   padding: 19px 10px;
@@ -42,18 +42,18 @@ https://www.color-hex.com/color-palette/106259
 }
 
 .TB-li:hover {
-  background-color: #3c2918;
-  color: #dbc6b6;
+  background-color: #3d2a19;
+  color: #fee4c3;
 }
 
 .Taskbar {
   margin: auto;
-  color: #3c2918;
+  color: #3d2a19;
 }
 
 .APIform {
   float: left;
-  color: #dbc6b6;
+  color: #fee4c3;
   text-align: center;
   text-decoration: none;
   font-size: 12px;
@@ -69,22 +69,22 @@ https://www.color-hex.com/color-palette/106259
 
 .APIform input {
   max-height: 33px;
-  color: #dbc6b6;
-  background-color: #3c2918;
+  color: #fee4c3;
+  background-color: #3d2a19;
   border: none;
 }
 .APIform input::placeholder {
-  color: #dbc6b6;
+  color: #fee4c3;
 }
 .APIform input:focus {
-  background-color: #dbc6b6;
-  color: #3c2918;
+  background-color: #fee4c3;
+  color: #3d2a19;
 }
 .APIform:hover {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
 }
 .SubmitButton {
-  color: #3c2918;
+  color: #3d2a19;
   text-align: center;
   text-decoration: none;
   padding: 19px 10px;
@@ -99,12 +99,12 @@ https://www.color-hex.com/color-palette/106259
   float: left;
 }
 .SubmitButton:hover {
-  background-color: #3c2918;
-  color: #dbc6b6;
+  background-color: #3d2a19;
+  color: #fee4c3;
 }
 
 .TaskbarHeader {
-  color: #3c2918;
+  color: #3d2a19;
   position: absolute;
   left: 42vw;
   font-size: 35px;
@@ -114,6 +114,6 @@ https://www.color-hex.com/color-palette/106259
 }
 .TaskbarHeader:hover {
   background-color: transparent;
-  color: #3c2918;
+  color: #3d2a19;
   cursor: default;
 }
