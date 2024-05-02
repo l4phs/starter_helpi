@@ -1,7 +1,7 @@
 .Dbody {
   height: 100vh;
   width: 100vw;
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   /* background-image: url("BKGBase.png"); */
 }
 
@@ -56,7 +56,7 @@
   font-family: "Josefin Sans";
   left: 35vw;
   background-color: #3c2918;
-  color: #dbc6b6;
+  color: #fee4c3;
   text-align: center;
 }
 
@@ -89,11 +89,11 @@
   position: absolute;
   top: 50vh;
   background-color: #3c2918;
-  color: #dbc6b6;
+  color: #fee4c3;
   left: 53vw;
 }
 .NextButton:hover {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 
@@ -101,11 +101,11 @@
   position: absolute;
   top: 50vh;
   background-color: #3c2918;
-  color: #dbc6b6;
+  color: #fee4c3;
   right: 53vw;
 }
 .PrevButton:hover {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 
@@ -121,11 +121,11 @@
   position: absolute;
   top: 50vh;
   background-color: #3c2918;
-  color: #dbc6b6;
+  color: #fee4c3;
   left: 48vw;
 }
 .Submit-Button:hover {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 
@@ -150,5 +150,5 @@
   height: 4vh;
   max-width: 98.5%;
   min-width: 0.5%;
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
 }
