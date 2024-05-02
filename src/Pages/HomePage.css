@@ -1,73 +1,60 @@
-html {
-  height: 100vh;
-  overflow: hidden;
-}
-body {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  background: #3c2918;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-.section1,
-.section2 {
-  width: 100%;
-  min-height: 100vh;
+.parallax-scrolling {
   position: relative;
-  transform-style: preserve-3d;
+  overflow: hidden;
+  overflow-x: hidden;
+  height: 550vh;
+  z-index: 1;
 }
 
-.section1::before {
-  content: "";
+.parallax-coffee-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 250%;
-  position: absolute;
-  background: url("BKGBase.png") top center;
-  background-size: cover;
-  transform: translateZ(-1px) scale(2.2);
+  height: 3000px;
+  z-index: 0;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  pointer-events: none;
+}
+
+#coffee1 {
+  background-image: url("BASE.png");
+  animation: movecoffee 100s linear infinite;
+  z-index: 2;
+  transform: translateY(var(--coffee1-translateY));
+  filter: blur(1.5px);
+}
+
+#coffee2 {
+  background-image: url("MID.png");
+  animation: movecoffee 150s linear infinite;
+  z-index: 3;
+  transform: translateY(var(--coffee2-translateY));
   filter: blur(1px);
 }
-.section1::after {
-  content: "";
-  width: 100%;
-  height: 300%;
-  position: absolute;
-  background: url("BKGTop.png") top center;
-  background-size: cover;
+
+#coffee3 {
+  perspective: 20px;
+  top: -200px;
+  background-image: url("TOP.png");
+  animation: movecoffee 2s linear infinite;
+  z-index: 3;
+  transform: translateY(var(--coffee3-translateY));
 }
 
-.section1 .text {
-  top: 10%;
-  transform: translateZ(-0.5px) scale(1.5, 1.6) translate(-33%, 10%);
-  /* width: 100vh; */
-  text-align: center;
-}
-.section2 {
-  top: 290vh;
-  background: transparent;
-  /* background: url("BKGBase.png") top center; */
-}
-
-.text {
-  top: 30%;
-  left: 50%;
-  position: absolute;
-  font-size: 15vw;
-  color: white;
-  text-shadow: 2px 2px 5px #3c2918, 5px 5px 70px #dbc6b6;
-  transform: scale(1, 1.1) translate(-50%, 10%);
-  -webkit-text-fill-color: whitesmoke;
-  -webkit-text-stroke-color: whitesmoke;
-  -webkit-text-stroke-width: 10px;
+.parallax-coffee-layer {
+  background-size: 100% 100%;
+  /* Other properties remain the same */
 }
 
 .Hbody {
   height: 80vh;
   width: 100vw;
-  background-color: transparent;
+  z-index: 8;
+  overflow-x: hidden;
 }
 
 .Hbody .text {
@@ -75,28 +62,19 @@ body {
   position: absolute;
   font-family: "Lilita One";
   text-align: center;
-  top: 0vh;
-
+  top: 403vh;
+  overflow-x: hidden;
   font-size: 30px;
-
-  color: #3c2918;
-  background-color: #dbc6b6;
-  width: 70.9vw;
-  border-radius: 80px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  background-color: #3c2918;
+  width: 100vw;
   border: 15px;
   padding: 5px 15px;
-  left: 14vw;
-  top: 4vw;
-
   position: absolute;
-  color: #3c2918;
+  color: #dbc6b6;
   transform: none;
-  text-shadow: 0px 0px 0px #3c2918, 0px 0px 0px #dbc6b6;
-  -webkit-text-fill-color: #3c2918;
-  -webkit-text-stroke-color: #3c2918;
-  -webkit-text-stroke-width: 0px;
+
+  z-index: 8;
+  height: 100vh;
 }
 
 .BQDiscriptions {
@@ -104,7 +82,7 @@ body {
   position: absolute;
   width: 70vh;
   height: fit-content;
-  top: 25vh;
+  top: 420vh;
 
   left: 14vw;
   text-align: center;
@@ -113,11 +91,12 @@ body {
   border-radius: 8px;
   padding: 5px 15px;
   color: #3c2918;
-  border-top-right-radius: 0px;
-  border-top-left-radius: 0px;
+
+  z-index: 8;
 }
 .BQDiscriptionBox {
   text-align: left;
+  z-index: 8;
 }
 
 .DQDiscriptions {
@@ -125,7 +104,7 @@ body {
   position: absolute;
   width: 64vh;
   height: fit-content;
-  top: 25vh;
+  top: 420vh;
   right: 14vw;
 
   text-align: center;
@@ -134,29 +113,33 @@ body {
   border-radius: 8px;
   padding: 5px 15px;
   color: #3c2918;
-  border-top-right-radius: 0px;
-  border-top-left-radius: 0px;
+
+  z-index: 8;
 }
 
 .BQButton {
   display: block;
   position: absolute;
-  top: 88vh;
+  top: 545vh;
 
   left: 25.5vw;
   background-color: #dbc6b6;
   color: #3c2918;
   border: 1px transparent;
+  z-index: 9;
 }
 .BQButton:hover {
   background-color: #3c2918;
   color: #dbc6b6;
+  z-index: 9;
+
 }
 
 .DQButton {
   display: block;
   position: absolute;
-  top: 88vh;
+  top: 545vh;
+  z-index: 8;
 
   right: 25.5vw;
   background-color: #dbc6b6;
