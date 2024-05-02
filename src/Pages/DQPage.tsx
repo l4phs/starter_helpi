@@ -7,90 +7,164 @@ interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
 }
 
+interface Question {
+  id: number;
+  question: string;
+  answers:string[] | null;
+  type: "short answer" | "multiple choice" | "checkbox";
+}
+
 function DQPage({ setPage }: Props): JSX.Element {
   const [QuestionView, setQuestionView] = useState<number>(1); // for managing the current page
-  const [project, setProject] = useState<string[]>([
-    "creative roles",
-    "analytical roles",
-    "leadership roles",
-    "hands-on roles",
-    "customer service roles",
-  ]);
-  const [fiveOptions, setFiveOptions] = useState<string>();
 
-  const [opinion, setOpinion] = useState<string>();
 
-  const [skills, setSkill] = useState<string[]>([
-    "communication and writing",
-    "critical thinking and analysis",
-    "time management and organization",
-    "technical skills",
-    "creative skills",
-  ]);
+const detailedQuestions: Question [] = [
 
-  const [detailedAnswers, setDetailedAnswers] = useState({});
-  const handleSubmitDetailedAnswers = () => {
-    axios
-      .post("API_ENDPOINT_URL", detailedAnswers)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error("Error submitting detailed answers:", error);
-      });
-  };
+{
+  id: 1,
+  question: "What kind of work environment do you prefer? Describe your ideal workplace.",
+  answers: null,
+  type: "short answer"
+}, 
+{
+  id: 2,
+  question: "What values are most important to you in your career? (E.G., creativity, financial stability, work-life balance",
+  answers: null,
+  type: "short answer"
+},
+{
+  id: 3,
+  question: "How important is job stability to you?",
+  answers: ["1. Not at all", "2. Slighly important", "3. Neutral about it", "4. Somewhat important", "5. Extremely important"],
+  type: "multiple choice"
+}, 
+{
+  id: 4,
+  question: "What kind of roles or projects do you enjoy the most?",
+  answers: ["Creative roles", "Analytical roles", "Leadership roles", "Hands-on roles", "Customer Service roles"],
+  type: "multiple choice"
+}, 
+{
+  id: 5,
+  question: "How often do you rely on data and facts when making a decision?",
+  answers: ["1. Never", "2. Some of the time", "3. Half of the time", "4. Most of the time", "5. Almost exclusively"],
+  type: "multiple choice"
+},
+{
+  id: 6,
+  question: "How do you feel about presenting to groups?",
+  answers: ["1. Extremely uncomfortable", "2. Mostly uncomfortable", "3. Neutral about it", "4. Mostly comfortable ", "Extremely comfortable"],
+  type: "multiple choice"
+},
+{
+  id: 7,
+  question: "What skills do you enjoy using the most in your work?",
+  answers: ["Communication and Writing", "Critical Thinking and Analysis", "Time management and organization", "Technical skills (i.e, coding or engineering", "Creative skills (i.e, design, art, music)"],
+  type: "multiple choice"
+},
+{
+  id: 8,
+  question: "Describe a professional goal that you have set for yourself. What steps are you taking to achieve it?",
+  answers: null,
+  type: "short answer"
+},
+{
+  id: 9,
+  question: "What types of jobs or career fields interest you the most? Select all that apply",
+  answers: ["Working with animals", "Medical and healthcare fields", "Mathematics and analytics", "Engineering and technology", "Creative and artistic fields", "Science and research", "Businesss and finance", "Education and teaching", "Writing and communication", "Law and legal professions", "Social services and advocacy", "Trades and skilled labor", "Hospitality and tourism", "Sales and customer service"],
+  type: "checkbox"
+},
+{
+  id: 10,
+  question: "How open are you to trying new methods and approaches to your work?",
+  answers: ["1. Not open at all", "2. Slightly open", "3. Neutral about it", "4. Mostly open ", "Extremely open"],
+  type: "multiple choice"
+},
 
-  const handleDetailedAnswerChange = (
-    questionNumber: number,
-    answer: string
-  ) => {
-    setDetailedAnswers((prevState) => ({
-      ...prevState,
-      [questionNumber]: answer,
-    }));
-  };
+]
 
-  function updateProject(event: React.ChangeEvent<HTMLInputElement>) {
-    const proj = event.target.value;
-    if (project.includes(proj)) {
-      setProject(project.filter((e) => e !== proj));
-    } else {
-      setProject([...project, proj]);
-    }
-  }
+  // const [project, setProject] = useState<string[]>([
+  //   "creative roles",
+  //   "analytical roles",
+  //   "leadership roles",
+  //   "hands-on roles",
+  //   "customer service roles",
+  // ]);
+  // const [fiveOptions, setFiveOptions] = useState<number>(); 
 
-  function updateFiveOptions(event: React.ChangeEvent<HTMLInputElement>) {
-    setFiveOptions(event.target.value);
-  }
-  function updateOpinion(event: React.ChangeEvent<HTMLInputElement>) {
-    setOpinion(event.target.value);
-  }
+  // const [opinion, setOpinion] = useState<string>();
 
-  function updateSkills(event: React.ChangeEvent<HTMLInputElement>) {
-    const skill = event.target.value;
-    if (skills.includes(skill)) {
-      setSkill(skills.filter((e) => e !== skill));
-    } else {
-      setProject([...skills, skill]);
-    }
-  }
+  // const [skills, setSkill] = useState<string[]>([
+  //   "communication and writing",
+  //   "critical thinking and analysis",
+  //   "time management and organization",
+  //   "technical skills",
+  //   "creative skills",
+  // ]);
 
-  function QuestionController(QstNum: string) {
-    switch (QstNum) {
-      case "next":
-        if (QuestionView < 10) {
-          setQuestionView(QuestionView + 1);
-        }
-        break;
-      case "prev":
-        if (QuestionView > 0) {
-          setQuestionView(QuestionView - 1);
-        }
-        break;
-      default:
-        setQuestionView(QuestionView);
-    }
-  }
+  // const [detailedAnswers, setDetailedAnswers] = useState({});
+  // const handleSubmitDetailedAnswers = () => {
+  //   axios
+  //     .post("API_ENDPOINT_URL", detailedAnswers)
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error submitting detailed answers:", error);
+  //     });
+  // };
+
+  // const handleDetailedAnswerChange = (
+  //   questionNumber: number,
+  //   answer: string
+  // ) => {
+  //   setDetailedAnswers((prevState) => ({
+  //     ...prevState,
+  //     [questionNumber]: answer,
+  //   }));
+  // };
+
+  // function updateProject(event: React.ChangeEvent<HTMLInputElement>) {
+  //   const proj = event.target.value;
+  //   if (project.includes(proj)) {
+  //     setProject(project.filter((e) => e !== proj));
+  //   } else {
+  //     setProject([...project, proj]);
+  //   }
+  // }
+
+  // function updateFiveOptions(event: React.ChangeEvent<HTMLInputElement>) {
+  //   setFiveOptions(event.target.value);
+  // }
+  // function updateOpinion(event: React.ChangeEvent<HTMLInputElement>) {
+  //   setOpinion(event.target.value);
+  // }
+
+  // function updateSkills(event: React.ChangeEvent<HTMLInputElement>) {
+  //   const skill = event.target.value;
+  //   if (skills.includes(skill)) {
+  //     setSkill(skills.filter((e) => e !== skill));
+  //   } else {
+  //     setProject([...skills, skill]);
+  //   }
+  // }
+
+  // function QuestionController(QstNum: string) {
+  //   switch (QstNum) {
+  //     case "next":
+  //       if (QuestionView < 10) {
+  //         setQuestionView(QuestionView + 1);
+  //       }
+  //       break;
+  //     case "prev":
+  //       if (QuestionView > 0) {
+  //         setQuestionView(QuestionView - 1);
+  //       }
+  //       break;
+  //     default:
+  //       setQuestionView(QuestionView);
+  //   }
+  // }
 
   return (
     <div className="Dbody">
@@ -110,422 +184,35 @@ function DQPage({ setPage }: Props): JSX.Element {
           Long, detailed answers are highly encouraged. Onwards!
         </p>
       </div>
-      {/* Detailed questions and input fields */}
-      {QuestionView === 1 && (
-        <div className="Meow">
-          <div className="Det-Question">Question 1</div>
-          <div className="det-body">
-            What kind of work environment do you prefer? Describe your ideal
-            workplace.
-          </div>
-          <input
-            type="text"
-            className="textboxclassDQ"
-            onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-            style={{ position: 'absolute', left: '48vw' }}
-          >
-            next
-          </Button>
+      {detailedQuestions.map((question) => (
+            <div key={question.question} className="question-container">
+        <h2>{question.question}</h2>
+        {question?.type === "multiple choice" ? (
+          <ul>
+            {question.answers?.map((answer) => (
+              <li key={answer}>
+              <input
+                type="radio"
+                id={answer} 
+                name="answer" 
+                value={answer}
+                //checked={userSelection === answer} 
+                //onChange={handleAnswerChange}
+              />
+              <label htmlFor = {answer}>{answer}</label>
+            </li>
+            ))}
+          </ul>
+        ) : (
+          <textarea
+          //value={userSelection || ""} 
+          //onChange={handleAnswerChange}
+          placeholder="Please enter your answer here."
+        />
+        )}
         </div>
-      )}
-      {QuestionView === 2 && (
-        <div className="Meow">
-          <div className="Det-Question">Question 2 </div>
-          <div className="det-body">
-            What values are most important to you in your career? (e.g.,
-            creativity, financial stability, work-life balance)
-          </div>
-          <input
-            type="text"
-            className="textboxclassDQ"
-            onChange={(e) => handleDetailedAnswerChange(2, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            previous
-          </Button>
+       ))}
         </div>
-      )}
-      {QuestionView === 3 && (
-        <div className="Meow">
-          <div className="Det-Question">Question 3 </div>
-          <div className="det-body">Is job stability important to you?</div>
-          <input
-            type="text"
-            className="textboxclassDQ"
-            onChange={(e) => handleDetailedAnswerChange(3, e.target.value)}
-          />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 4 && (
-        <div className="Meow">
-          <div className="Det-Question">Question 4 </div>
-          <div className="det-body">
-            What kind of roles or projects do you most enjoy?
-          </div>
-          <div className="options">
-            <Form.Check
-              inline
-              type="checkbox"
-              id="project-check-creative"
-              label="Creative Projects"
-              name="project"
-              value="creative projects"
-              checked={project.includes("creative projects")}
-              onChange={updateProject}
-            />
-            <Form.Check
-              inline
-              type="checkbox"
-              id="project-check-analytical"
-              label="Analytical Projects"
-              name="project"
-              value="analytical project"
-              checked={project.includes("analytical project")}
-              onChange={updateProject}
-            />
-            <Form.Check
-              inline
-              type="checkbox"
-              id="project-check-leadership"
-              label="Leadership Projects"
-              name="project"
-              value="leadership projects"
-              checked={project.includes("leadership projects")}
-              onChange={updateProject}
-            />
-            <Form.Check
-              inline
-              type="checkbox"
-              id="project-check-handson"
-              label="Hands-on Projects"
-              name="project"
-              value="hands-on projects"
-              checked={project.includes("hands-on projects")}
-              onChange={updateProject}
-            />
-            <Form.Check
-              inline
-              type="checkbox"
-              id="project-check-customerservice"
-              label="Customer Service Projects"
-              name="project"
-              value="customer service projects"
-              checked={project.includes("customer service projects")}
-              onChange={updateProject}
-            />
-          </div>
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 5 && (
-        <div className="Meow">
-          <div className="Det-Question">Question 5 </div>
-          <div className="det-body">
-            How often do you rely on data and facts when making decisions?
-          </div>
-          <div className="options">
-            <Form.Check 
-            inline
-            type = "radio"
-            name = "options"
-            onChange={updateFiveOptions}
-            id="options-check-never"
-            label="Never"
-            value="never"
-            checked={fiveOptions === "never"} />
-             <Form.Check 
-            inline
-            type = "radio"
-            name = "options"
-            onChange={updateFiveOptions}
-            id="options-check-sometimes"
-            label="Smetimes"
-            value="sometimes"
-            checked={fiveOptions === "sometimes"} />
-             <Form.Check 
-            inline
-            type = "radio"
-            name = "options"
-            onChange={updateFiveOptions}
-            id="options-check-half-of-the-time"
-            label="Half of the time"
-            value="half of the time"
-            checked={fiveOptions === "half of the time"} />
-             <Form.Check 
-            inline
-            type = "radio"
-            name = "options"
-            onChange={updateFiveOptions}
-            id="options-check-most-of-the-time"
-            label="Most of the time"
-            value="most of the time"
-            checked={fiveOptions === "most of the time"} />
-             <Form.Check 
-            inline
-            type = "radio"
-            name = "options"
-            onChange={updateFiveOptions}
-            id="options-check-always"
-            label="Always"
-            value="always"
-            checked={fiveOptions === "always"} />
-
-            </div>
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 6 && (
-        <div className="Meow">
-          <div className="Det-Question">Question 6 </div>
-          <div className="det-body">
-            How do you feel about public speaking and/or presenting ideas to
-            groups?
-          </div>
-          <div className="options">
-            <Form.Check 
-            inline
-            type = "radio"
-            name = "opinions"
-            onChange={updateOpinion}
-            id="opinions-check-strongly-dislike"
-            label="Strongly dislike"
-            value="strongly dislike"
-            checked={opinion === "strongly dislike"} />
-            <Form.Check 
-            inline
-            type = "radio"
-            name = "opinions"
-            onChange={updateOpinion}
-            id="opinions-check-dislike"
-            label="Dislike"
-            value="dislike"
-            checked={opinion === "dislike"} />
-            <Form.Check 
-            inline
-            type = "radio"
-            name = "opinions"
-            onChange={updateOpinion}
-            id="opinions-check-neutral"
-            label="Neutral"
-            value="neutral"
-            checked={opinion === "neutral"} />
-            <Form.Check 
-            inline
-            type = "radio"
-            name = "opinions"
-            onChange={updateOpinion}
-            id="opinions-check-like"
-            label="Like"
-            value="like"
-            checked={opinion === "like"} />
-            <Form.Check 
-            inline
-            type = "radio"
-            name = "opinions"
-            onChange={updateOpinion}
-            id="opinions-check-strongly-like"
-            label="Strongly like"
-            value="strongly like"
-            checked={opinion === "strongly like"} />
-            </div>
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 7 && (
-        <div className="Meow">
-          <div className="Det-Question">Question 7 </div>
-          <div className="det-body">
-            What skills do you enjoy most in your work? Select all that apply.
-          </div>
-          <div className="options">
-            <Form.Check
-              inline
-              type="checkbox"
-              id="skills-check-communication"
-              label="Communication and Writing"
-              name="skills"
-              value= "communication and writing"
-              checked={skills.includes("communication and writing")}
-              onChange={updateSkills}
-            />
-            <Form.Check
-              inline
-              type="checkbox"
-              id="skills-check-communication"
-              label="Communication and Writing"
-              name="skills"
-              value= "communication and writing"
-              checked={skills.includes("communication and writing")}
-              onChange={updateSkills}
-            />
-            <Form.Check
-              inline
-              type="checkbox"
-              id="skills-check-communication"
-              label="Communication and Writing"
-              name="skills"
-              value= "communication and writing"
-              checked={skills.includes("communication and writing")}
-              onChange={updateSkills}
-            />
-            <Form.Check
-              inline
-              type="checkbox"
-              id="skills-check-communication"
-              label="Communication and Writing"
-              name="skills"
-              value= "communication and writing"
-              checked={skills.includes("communication and writing")}
-              onChange={updateSkills}
-            />
-            <Form.Check
-              inline
-              type="checkbox"
-              id="skills-check-communication"
-              label="Communication and Writing"
-              name="skills"
-              value= "communication and writing"
-              checked={skills.includes("communication and writing")}
-              onChange={updateSkills}
-            />
-            </div>
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 8 && (
-        <div className="Meow">
-          <div className="Det-Question">Question 8 </div>
-          <div className="det-body">
-            Describe a professional goal you've set for yourself and the plans
-            you are currently taking to achieve it.
-          </div>
-          <input type="text" className="textboxclassDQ" />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 9 && (
-        <div className="Meow">
-          <div className="Det-Question">Question 9 </div>
-          <div className="det-body">
-            What career fields intrest you the most? Select all that apply.
-          </div>
-          <input type="text" className="textboxclassDQ" />
-          <Button
-            className="NextButton"
-            onClick={() => QuestionController("next")}
-          >
-            next
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            previous
-          </Button>
-        </div>
-      )}
-      {QuestionView === 10 && (
-        <div className="Meow">
-          <div className="Det-Question">Question 10 </div>
-          <div className="det-body">
-            How open are you to trying new methods or approaches to your work?
-          </div>
-          <input type="text" className="textboxclassDQ" />
-          <Button
-            className="Submit-Button"
-            onClick={handleSubmitDetailedAnswers}
-          >
-            Submit Detailed Answers
-          </Button>
-          <Button
-            className="PrevButton"
-            onClick={() => QuestionController("prev")}
-          >
-            previous
-          </Button>
-        </div>
-      )}
-    </div>
   );
 }
 
