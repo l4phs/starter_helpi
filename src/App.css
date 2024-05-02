@@ -21,7 +21,7 @@ https://www.color-hex.com/color-palette/106259
   position: fixed;
   top: 0px;
   width: 100%;
-  z-index: 1;
+  z-index: 9;
 }
 
 .TB-li {
