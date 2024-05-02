@@ -73,10 +73,10 @@ All files            |       0 |        0 |       0 |       0 |
  src/Pages           |       0 |        0 |       0 |       0 |                   
   BQPage.tsx         |       0 |        0 |       0 |       0 | 26-245            
   DQPage.tsx         |       0 |        0 |       0 |       0 | 11-358            
-  HomePage.tsx       |       0 |      100 |       0 |       0 | 11-75             
+  HomePage.tsx       |       0 |        0 |       0 |       0 | 11-105            
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.448 s
+Time:        3.8 s
 Ran all test suites.
