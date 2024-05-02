@@ -16,6 +16,18 @@ function DQPage({ setPage }: Props): JSX.Element {
     "hands-on roles",
     "customer service roles",
   ]);
+  const [fiveOptions, setFiveOptions] = useState<string>();
+
+  const [opinion, setOpinion] = useState<string>();
+
+  const [skills, setSkill] = useState<string[]>([
+    "communication and writing",
+    "critical thinking and analysis",
+    "time management and organization",
+    "technical skills",
+    "creative skills",
+  ]);
+
   const [detailedAnswers, setDetailedAnswers] = useState({});
   const handleSubmitDetailedAnswers = () => {
     axios
@@ -44,6 +56,22 @@ function DQPage({ setPage }: Props): JSX.Element {
       setProject(project.filter((e) => e !== proj));
     } else {
       setProject([...project, proj]);
+    }
+  }
+
+  function updateFiveOptions(event: React.ChangeEvent<HTMLInputElement>) {
+    setFiveOptions(event.target.value);
+  }
+  function updateOpinion(event: React.ChangeEvent<HTMLInputElement>) {
+    setOpinion(event.target.value);
+  }
+
+  function updateSkills(event: React.ChangeEvent<HTMLInputElement>) {
+    const skill = event.target.value;
+    if (skills.includes(skill)) {
+      setSkill(skills.filter((e) => e !== skill));
+    } else {
+      setProject([...skills, skill]);
     }
   }
 
@@ -231,11 +259,54 @@ function DQPage({ setPage }: Props): JSX.Element {
           <div className="det-body">
             How often do you rely on data and facts when making decisions?
           </div>
-          <input
-            type="text"
-            className="textboxclassDQ"
-            onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
+          <div className="options">
+            <Form.Check 
+            inline
+            type = "radio"
+            name = "options"
+            onChange={updateFiveOptions}
+            id="options-check-never"
+            label="Never"
+            value="never"
+            checked={fiveOptions === "never"} />
+             <Form.Check 
+            inline
+            type = "radio"
+            name = "options"
+            onChange={updateFiveOptions}
+            id="options-check-sometimes"
+            label="Smetimes"
+            value="sometimes"
+            checked={fiveOptions === "sometimes"} />
+             <Form.Check 
+            inline
+            type = "radio"
+            name = "options"
+            onChange={updateFiveOptions}
+            id="options-check-half-of-the-time"
+            label="Half of the time"
+            value="half of the time"
+            checked={fiveOptions === "half of the time"} />
+             <Form.Check 
+            inline
+            type = "radio"
+            name = "options"
+            onChange={updateFiveOptions}
+            id="options-check-most-of-the-time"
+            label="Most of the time"
+            value="most of the time"
+            checked={fiveOptions === "most of the time"} />
+             <Form.Check 
+            inline
+            type = "radio"
+            name = "options"
+            onChange={updateFiveOptions}
+            id="options-check-always"
+            label="Always"
+            value="always"
+            checked={fiveOptions === "always"} />
+
+            </div>
           <Button
             className="NextButton"
             onClick={() => QuestionController("next")}
@@ -257,11 +328,53 @@ function DQPage({ setPage }: Props): JSX.Element {
             How do you feel about public speaking and/or presenting ideas to
             groups?
           </div>
-          <input
-            type="text"
-            className="textboxclassDQ"
-            onChange={(e) => handleDetailedAnswerChange(1, e.target.value)}
-          />
+          <div className="options">
+            <Form.Check 
+            inline
+            type = "radio"
+            name = "opinions"
+            onChange={updateOpinion}
+            id="opinions-check-strongly-dislike"
+            label="Strongly dislike"
+            value="strongly dislike"
+            checked={opinion === "strongly dislike"} />
+            <Form.Check 
+            inline
+            type = "radio"
+            name = "opinions"
+            onChange={updateOpinion}
+            id="opinions-check-dislike"
+            label="Dislike"
+            value="dislike"
+            checked={opinion === "dislike"} />
+            <Form.Check 
+            inline
+            type = "radio"
+            name = "opinions"
+            onChange={updateOpinion}
+            id="opinions-check-neutral"
+            label="Neutral"
+            value="neutral"
+            checked={opinion === "neutral"} />
+            <Form.Check 
+            inline
+            type = "radio"
+            name = "opinions"
+            onChange={updateOpinion}
+            id="opinions-check-like"
+            label="Like"
+            value="like"
+            checked={opinion === "like"} />
+            <Form.Check 
+            inline
+            type = "radio"
+            name = "opinions"
+            onChange={updateOpinion}
+            id="opinions-check-strongly-like"
+            label="Strongly like"
+            value="strongly like"
+            checked={opinion === "strongly like"} />
+            </div>
           <Button
             className="NextButton"
             onClick={() => QuestionController("next")}
@@ -282,7 +395,58 @@ function DQPage({ setPage }: Props): JSX.Element {
           <div className="det-body">
             What skills do you enjoy most in your work? Select all that apply.
           </div>
-          <input type="text" className="textboxclassDQ" />
+          <div className="options">
+            <Form.Check
+              inline
+              type="checkbox"
+              id="skills-check-communication"
+              label="Communication and Writing"
+              name="skills"
+              value= "communication and writing"
+              checked={skills.includes("communication and writing")}
+              onChange={updateSkills}
+            />
+            <Form.Check
+              inline
+              type="checkbox"
+              id="skills-check-communication"
+              label="Communication and Writing"
+              name="skills"
+              value= "communication and writing"
+              checked={skills.includes("communication and writing")}
+              onChange={updateSkills}
+            />
+            <Form.Check
+              inline
+              type="checkbox"
+              id="skills-check-communication"
+              label="Communication and Writing"
+              name="skills"
+              value= "communication and writing"
+              checked={skills.includes("communication and writing")}
+              onChange={updateSkills}
+            />
+            <Form.Check
+              inline
+              type="checkbox"
+              id="skills-check-communication"
+              label="Communication and Writing"
+              name="skills"
+              value= "communication and writing"
+              checked={skills.includes("communication and writing")}
+              onChange={updateSkills}
+            />
+            <Form.Check
+              inline
+              type="checkbox"
+              id="skills-check-communication"
+              label="Communication and Writing"
+              name="skills"
+              value= "communication and writing"
+              checked={skills.includes("communication and writing")}
+              onChange={updateSkills}
+            />
+            </div>
           <Button
             className="NextButton"
             onClick={() => QuestionController("next")}
