@@ -81,7 +81,7 @@
   display: block;
   position: absolute;
   width: 70vh;
-  height: fit-content;
+  height: 64vh;
   top: 420vh;
 
   left: 14vw;
@@ -103,7 +103,7 @@
   display: block;
   position: absolute;
   width: 64vh;
-  height: fit-content;
+  height: 64vh;
   top: 420vh;
   right: 14vw;
 
