@@ -48,7 +48,6 @@
 
 .textboxclassDQ {
   position: absolute;
-  margin-top: 10px;
   top: 43vh;
   height: 40px;
   width: 60vh;
@@ -78,8 +77,6 @@
 
 .DQB {
   position: absolute;
-  border-radius: 1.5em;
-
   top: 18vh;
   left: 28vw;
   text-align: center;
