@@ -242,7 +242,7 @@ function BQPage({ setPage }: Props): JSX.Element {
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const questions2 = [...questions1];
-  const [selectedAnswers, setSelectedAnswers] = useState({});
+  //const [selectedAnswers, setSelectedAnswers] = useState({});
 
   const nextQuestion = () => {
     if (currentQuestionIndex < questions2.length - 1) {
