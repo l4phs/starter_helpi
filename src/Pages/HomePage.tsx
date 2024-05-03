@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import React, { useEffect } from "react";
 import "./HomePage.css";
 
@@ -48,51 +48,69 @@ function HomePage({ setPage }: Props): JSX.Element {
                 </p>
               </div>
               <div className="BQDiscriptions">
-                <h1>Basic Quiz!</h1>
-                <p className="BQDiscriptionBox">
-                  Discover your ideal career path with our basic career path
-                  quiz! Tailored for those beginning their career journey, this
-                  quiz helps you explore your interests, strengths, and
-                  preferences. Quick and easy to understand and results are
-                  immediate following the completion of the quiz. Uncover
-                  potential career paths aligned with your aspirations, whether
-                  you're a recent graduate or considering a change. Start your
-                  exploration today and take the first step toward a fulfilling
-                  career!
-                </p>
-                An example of a question you may see:
-                <br></br>
-                <p className="BQDiscriptionBox">
-                  Question 1:
-                  <br></br>
-                  What location would you prefer to live in?
-                  <br></br>
-                  <br></br>
-                  •Suburban •Urban •City •Costal Town
-                </p>
-              </div>
+        <h1>Basic Quiz!</h1>
+          Discover your ideal career path with our basic career path quiz!
+          <br></br>
+          Tailored for those beginning their career journey, this quiz helps you
+          explore your interests, strengths, and preferences. 
+          <br></br>
+          Quick and easy to
+          understand and results are immediate following the completion of the
+          quiz.
+          <br></br>
+          Start your exploration today and take the first step toward a fulfilling career!
+      <br></br>
+      <br></br>
+        <b>An example of a question you may see:</b>
+          <br></br>
+          What location would you prefer to live in?
+          <br></br>
+          <input type="radio" 
+          value={"Suburban"}
+          name="Suburban"
+            />
+          <br></br>
+          <input type="radio" 
+          value={"Suburban"}
+          name="Suburban"
+            />
+          City 
+          <input type="radio" 
+          value={"Suburban"}
+          name="Suburban"
+            />
+          Coastal Town
+      </div>
 
               <div className="DQDiscriptions">
                 <h1>Detailed Quiz!</h1>
                 Take your career exploration to new heights with our Advanced
-                Career Path Quiz! Designed for those seeking in-depth insights,
-                this quiz assesses your skills, values, and goals.
+                Career Path Quiz! 
                 <br></br>
-                Navigate through complex scenarios and uncover opportunities
-                aligned with your ambitions.
-                <br></br>
-                <br></br>
-                Whether you're a seasoned professional or a student planning
-                your future, empower yourself to make informed decisions and
-                pursue your dream career.
-                <br></br>
+                Designed for those seeking in-depth insights, this quiz
+        assesses your skills, values, and goals.
+        <br></br>
+        <br></br>
+        Whether you're a seasoned professional or a student planning your
+        future, empower yourself to make informed decisions and pursue your dreams!
                 <br></br>
                 Start navigating your future today!
+              
                 <br></br>
                 <br></br>
-                An example of a question you may see:
-                <br></br>
-              </div>
+                <b>An example of a question you may see:</b>
+        <br></br>
+        What kind of work environment do you prefer?
+        <br></br>
+        <div>
+        <Form.Group>
+        <Form.Control
+        as="textarea"
+        rows={2} />
+        </Form.Group>
+    </div>
+        <br></br>
+      </div>
             </div>
           </div>
           <div className="container"></div>
