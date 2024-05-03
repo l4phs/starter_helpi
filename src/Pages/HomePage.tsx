@@ -79,7 +79,7 @@ function HomePage({ setPage }: Props): JSX.Element {
           value={"Suburban"}
           name="Suburban"
             />
-          Costal Town
+          Coastal Town
       </div>
 
               <div className="DQDiscriptions">
