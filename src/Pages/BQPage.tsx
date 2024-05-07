@@ -206,7 +206,7 @@ function BQPage({ setPage }: Props): JSX.Element {
 
   return (
     <div className="BQPage">
-      <h1 className="BQHeader">Basic Questions</h1>
+      <div className="BQHeader">Basic Questions</div> 
       {submitted ? (
         // Display submitted answers if submitted is true
         <div className="SubmittedAnswers">
