@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./DQPage.css";
-import axios from "axios"; //install this in terminal
+import OpenAI from "openai";
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
@@ -15,7 +15,6 @@ interface Question {
 }
 
 function DQPage({ setPage }: Props): JSX.Element {
-  const [QuestionView, setQuestionView] = useState<number>(1); // for managing the current page
 
 
 const detailedQuestions: Question [] = [
@@ -83,6 +82,68 @@ const detailedQuestions: Question [] = [
 
 ]
 
+const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [answers, setAnswers] = useState<(string | null)[]>(Array(detailedQuestions.length).fill(null));
+    const [progress, setProgress] = useState(0);
+    // const [submitted, setSubmitted] = useState(false); // State to track if answers have been submitted
+
+    const openai = new OpenAI({ apiKey: 'key', dangerouslyAllowBrowser: true });
+
+    const handleNext = () => {
+      if (currentQuestionIndex < detailedQuestions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+      }
+    };
+  
+    const handlePrevious = () => {
+      if (currentQuestionIndex > 0) {
+        setCurrentQuestionIndex(currentQuestionIndex - 1);
+      }
+    };
+  
+    const handleAnswerChange = (selectedAnswer: string) => {
+      const updatedAnswers = [...answers];
+      updatedAnswers[currentQuestionIndex] = selectedAnswer;
+      setAnswers(updatedAnswers);
+  
+      const answeredCount = updatedAnswers.filter((answer) => answer !== null).length;
+      const totalQuestions = detailedQuestions.length;
+      const percentage = (answeredCount / totalQuestions) * 100;
+      setProgress(percentage);
+    };
+
+    const handleSubmitBasicAnswers = async () => {
+      const userContent = answers.map((answer, index) => `${detailedQuestions[index].question}: ${answer}`).join('\n');
+  
+      try {
+        const response = await openai.chat.completions.create({
+          model: 'gpt-4-turbo',
+          messages: [
+            {
+              role: 'system',
+              content: 'You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices with descriptions and why these jobs were a good match. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee',
+            },
+            {
+              role: 'user',
+              content: userContent,
+            },
+          ],
+          temperature: 1,
+          max_tokens: 1000,
+          top_p: 1,
+          frequency_penalty: 0,
+          presence_penalty: 0,
+        });
+  
+        const careerReport = response.choices[0].message.content || '';
+      console.log('Career Report:', careerReport);
+
+      // setSubmitted(true); // Update state to indicate answers have been submitted
+    } catch (error) {
+      console.error('Error generating career insights:', error);
+      // Handle error or display error message
+    }
+  };
   // const [project, setProject] = useState<string[]>([
   //   "creative roles",
   //   "analytical roles",
@@ -169,50 +230,58 @@ const detailedQuestions: Question [] = [
   return (
     <div className="Dbody">
       <div className="DQH">Detailed Questions</div>
-      <p>{QuestionView}</p>
-      <div className="ProgressBar">
-        <div
-          className="ActiveProgress"
-          style={{ width: `${QuestionView * 10}%` }}
-        ></div>
+      <div className="ProgressBarBQ">
+        <div className="ActiveProgressBQ" style={{ width: `${progress}%` }}></div>
       </div>
-      <div className="DQB">
-        <p>
-          These questions give a more IN-DEPTH analysis of the kind of career
-          you would be best suited to!
-          <br></br>
-          Long, detailed answers are highly encouraged. Onwards!
-        </p>
-      </div>
-      {detailedQuestions.map((question) => (
-            <div key={question.question} className="question-container">
-        <h2>{question.question}</h2>
-        {question?.type === "multiple choice" ? (
-          <ul>
-            {question.answers?.map((answer) => (
-              <li key={answer}>
-              <input
-                type="radio"
-                id={answer} 
-                name="answer" 
-                value={answer}
-                //checked={userSelection === answer} 
-                //onChange={handleAnswerChange}
-              />
-              <label htmlFor = {answer}>{answer}</label>
-            </li>
-            ))}
-          </ul>
-        ) : (
-          <textarea
-          //value={userSelection || ""} 
-          //onChange={handleAnswerChange}
-          placeholder="Please enter your answer here."
-        />
-        )}
-        </div>
-       ))}
-        </div>
+      <div className="QuestionHeader">
+     <br></br>
+     <br></br>
+     <h2>Question {currentQuestionIndex + 1} of {detailedQuestions.length}</h2>
+     <div className="QuestionContainer">
+       <h3>{detailedQuestions[currentQuestionIndex].question}</h3>
+       {detailedQuestions[currentQuestionIndex].type === 'multiple choice' ? (
+         <ul>
+           {detailedQuestions[currentQuestionIndex].answers?.map((answer) => (
+             <li key={answer}>
+               <input
+                 type="radio"
+                 id={answer}
+                 name={`question${currentQuestionIndex}`}
+                 value={answer}
+                 checked={answers[currentQuestionIndex] === answer}
+                 onChange={() => handleAnswerChange(answer)}
+               />
+               <label htmlFor={answer}>{answer}</label>
+             </li>
+           ))}
+         </ul>
+       ) : (
+         <textarea
+           value={answers[currentQuestionIndex] || ''}
+           onChange={(e) => handleAnswerChange(e.target.value)}
+           placeholder="Please enter your answer here."
+         />
+       )}
+     </div>
+     <div className="ButtonContainer">
+       <Button className="PrevButton" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
+         Previous
+       </Button>
+       {currentQuestionIndex < detailedQuestions.length - 1 ? (
+         <Button className="NextButton" onClick={handleNext}>
+           Next
+         </Button>
+       ) : (
+         <Button className="BasicSubmitButton" onClick={handleSubmitBasicAnswers}>
+           Submit Basic Answers
+         </Button>
+       )}
+     </div>
+   </div>
+     </div>
+     
+     
+
   );
 }
 
