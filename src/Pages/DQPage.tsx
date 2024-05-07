@@ -138,7 +138,7 @@ const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
         const careerReport = response.choices[0].message.content || '';
       console.log('Career Report:', careerReport);
 
-      setSubmitted(true); // Update state to indicate answers have been submitted
+      // setSubmitted(true); // Update state to indicate answers have been submitted
     } catch (error) {
       console.error('Error generating career insights:', error);
       // Handle error or display error message
