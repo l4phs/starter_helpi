@@ -23,7 +23,6 @@ function BQPage({ setPage }: Props): JSX.Element {
 
   
     const questions: Question [] = [
-      //25 questions total
       {
         question: "Would you prefer working from home, in an office / on site, or hybrid? (pick one)",
         answers: ["Working from home", "In an office / on site", "Hybrid"],
@@ -112,35 +111,11 @@ function BQPage({ setPage }: Props): JSX.Element {
       }
       ,
       {
-        question: "What kind of learner are you?",
-        answers: ["Visual", "Auditory", "Read/Write", "Kindaesthetic"],
-        type: "multiple choice"
-      }
-      ,
-      {
-        question: "Favorite activity? (one word answer)",
-        answers: null,
-        type: "short answer"
-      }
-      ,
-      {
         question: "What is your dreamjob? (one to two word answer)",
         answers: null,
         type: "short answer"
       }
       ,
-      {
-        question: "How do you prefer to spend your workday?",
-        answers: ["Solving problems","Meeting with colleagues","Creating new ideas","Following established procedures"],
-        type: "multiple choice"
-      }
-      ,
-      {
-        question: "Please select your level of agreement with the following statement: I prefer working independently rather than with a team.",
-        answers: ["True", "False"],
-        type: "multiple choice"
-      },
-
       {
         question: "Do you enjoy helping others?",
         answers: ["Yes", "No"],
@@ -162,12 +137,6 @@ function BQPage({ setPage }: Props): JSX.Element {
       {
         question: "Please select your level of agreement with the following statement: I prefer consistent work hours over a flexible schedule.",
         answers: ["True", "False"],
-        type: "multiple choice"
-      }
-      ,
-      {
-        question: "How do you approach decision-making?",
-        answers: ["Analyze data and facts","Trust your intuition","Consult with others for advice","Take time to weigh all options"],
         type: "multiple choice"
       }
     ]
