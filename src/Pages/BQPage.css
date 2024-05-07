@@ -1,9 +1,8 @@
 .Bbody {
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   /* background-image: url("BKGBase.png"); */
-
 }
 
 .Bbody .text {
@@ -26,7 +25,7 @@
   left: -1vw;
 }
 .question-container {
-  padding: 10px 0; 
+  padding: 10px 0;
 }
 
 .BQH {
@@ -53,14 +52,14 @@
   top: 103vh;
   left: 44vw;
   background-color: #3c2918;
-  color: #dbc6b6;
+  color: #fee4c3;
 }
 .BQ-SubmitButton:hover {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 
-.BQQuestionNum{
+.BQQuestionNum {
   position: relative;
   padding: 0px;
   margin-bottom: 0px;
@@ -72,7 +71,7 @@
   text-align: center;
 }
 
-.BQQuestion{
+.BQQuestions {
   position: absolute;
   margin-top: 0vh;
   font-size: 25px;
@@ -84,31 +83,33 @@
   text-align: center;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .NextButton {
   position: absolute;
-  top: 50vh;
+  top: 108vh;
   background-color: #3c2918;
-  color: #dbc6b6;
-  left: 55vw;
+  color: #fee4c3;
 }
 .NextButton:hover {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 
 .PrevButton {
   position: absolute;
-  top: 50vh;
+  top: 1vh;
   background-color: #3c2918;
-  color: #dbc6b6;
-  right: 55vw;
+  color: #fee4c3;
 }
 .PrevButton:hover {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 
-.textboxclassBQ{
+.textboxclassBQ {
   position: absolute;
   margin-top: 10px;
   top: 41vh;
@@ -118,7 +119,7 @@
   font-family: "Josefin Sans";
   left: 35vw;
   background-color: #3c2918;
-  color: #dbc6b6;
+  color: #fee4c3;
   text-align: center;
 }
 
@@ -137,11 +138,11 @@
   position: absolute;
   align-self: center;
   border-radius: 1.5em;
-  transition: width 0.3s ease-in-out; /* Adjust the duration and timing function as needed */
+  transition: width 0.3s ease-in-out;
   left: 0.6vw;
   top: 1vh;
   height: 4vh;
   max-width: 98.5%;
   min-width: 0.5%;
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
 }
