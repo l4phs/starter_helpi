@@ -1,7 +1,7 @@
 .Bbody {
   height: 100vh;
   width: 100vw;
-  background-color: #fee4c3;
+  background-color: #dbc6b6;
   /* background-image: url("BKGBase.png"); */
 
 }
@@ -220,8 +220,6 @@
   font-size: 20px;
   font-family: "Lilita One";
   text-align: center;
-  background-color: #fee4c3;
-
 }
 
 .QuestionContainer {
