@@ -10,6 +10,8 @@ import { Button } from "react-bootstrap";
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
+  apiKey: string; // Add apiKey as a prop
+
 }
 
 interface Question {
@@ -19,9 +21,10 @@ interface Question {
 }
 
 
-function BQPage({ setPage }: Props): JSX.Element {
+function BQPage(props: Props): JSX.Element {
 
-  
+    console.log("API Key:", props.apiKey);
+
     const questions: Question [] = [
       //25 questions total
       {
@@ -177,9 +180,9 @@ function BQPage({ setPage }: Props): JSX.Element {
     const [progress, setProgress] = useState(0);
     const [submitted, setSubmitted] = useState(false); // State to track if answers have been submitted
   
-    const openai = new OpenAI({ apiKey: 'key', dangerouslyAllowBrowser: true });
+    const openai = new OpenAI({ apiKey: props.apiKey, dangerouslyAllowBrowser: true });
   
-    const handleNext = () => {
+    const handleNext = () => {  
       if (currentQuestionIndex < questions.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       }
