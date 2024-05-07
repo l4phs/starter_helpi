@@ -7,7 +7,7 @@ import "./BQPage.css";
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
-  apiKey: string;
+  // apiKey: string;
 }
 
 interface Question {
