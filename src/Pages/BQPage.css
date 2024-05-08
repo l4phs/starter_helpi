@@ -1,7 +1,7 @@
 .Bbody {
   height: 100vh;
   width: 100vw;
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   /* background-image: url("BKGBase.png"); */
 
 }
@@ -49,10 +49,10 @@
   top: 103vh;
   left: 44vw;
   background-color: #3c2918;
-  color: #dbc6b6;
+  color: #fee4c3;
 }
 .BQ-SubmitButton:hover {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 
@@ -86,21 +86,21 @@
   width: 100px; /* Adjust the width as needed */
   padding: 10px;
   background-color: #3c2918;
-  color: #dbc6b6;
+  color: #fee4c3;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 .NextButton:hover {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 .NextButton:visted {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 .NextButton:focus {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 
@@ -110,30 +110,32 @@
   width: 100px; /* Adjust the width as needed */
   padding: 2px;
   background-color: #3c2918;
-  color: #dbc6b6;
+  color: #fee4c3;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 .PrevButton:hover {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 .PrevButton:visited {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 .PrevButton:focus {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 
 .PrevButton:disabled {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 .ButtonContainer {
   translate: 0vh;
+  background-color: #fee4c3;
+
 }
 
 .BasicSubmitButton {
@@ -145,21 +147,21 @@
   width: 30vh; /* Adjust the width as needed */
   padding: 10px;
   background-color: #3c2918;
-  color: #dbc6b6;
+  color: #fee4c3;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 .BasicSubmitButton:hover {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 .BasicSubmitButton:visted {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 .BasicSubmitButton:focus {
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   color: #3c2918;
 }
 
@@ -173,7 +175,7 @@
   font-family: "Josefin Sans";
   left: 35vw;
   background-color: #3c2918;
-  color: #dbc6b6;
+  color: #fee4c3;
   text-align: center;
 }
 
@@ -198,7 +200,7 @@
   height: 4vh;
   max-width: 98.5%;
   min-width: 0.5%;
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
 }
 
 /*
@@ -208,7 +210,7 @@
 .Bbody {
   height: 100vh;
   width: 100vw;
-  background-color: #dbc6b6;
+  background-color: #fee4c3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -219,6 +221,8 @@
   font-size: 20px;
   font-family: "Lilita One";
   text-align: center;
+  background-color: #fee4c3;
+
 }
 
 .QuestionContainer {
@@ -229,7 +233,8 @@
   top: 35vh; /* Adjust this value to move the container downward */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%);
-  width: 100vh;
+  width: 100vw;
+  background-color: #fee4c3;
   height: 80vh;
 }
 
@@ -243,4 +248,14 @@
   height: 30px;
   margin-top: 10px;
   padding: 5px;
+}
+
+.SubmittedAnswers{
+  background-color: #fee4c3;
+}
+
+.QuestionWrapper{
+  height: 100vh;
+  width: 100vw;
+  background-color: #fee4c3;
 }
