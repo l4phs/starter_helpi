@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+//import { Button, Form } from "react-bootstrap";
 import "./DQPage.css";
-import axios from "axios"; //install this in terminal
+//import axios from "axios"; //install this in terminal
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop

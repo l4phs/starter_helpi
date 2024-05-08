@@ -1,5 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
-//import { Button } from "react-bootstrap";
 import { useState } from "react";
 import "./BQPage.css";
 import OpenAI from "openai";
