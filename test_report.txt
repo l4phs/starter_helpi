@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (56 ms)
+  ✕ renders learn react link (55 ms)
 
   ● renders learn react link
 
@@ -224,25 +224,6 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
----------------------|---------|----------|---------|---------|-------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------|---------|----------|---------|---------|-------------------
-All files            |   11.96 |    10.86 |   10.25 |   12.72 |                   
- src                 |   29.62 |    41.66 |   11.11 |   29.62 |                   
-  App.tsx            |      50 |     62.5 |   14.28 |      50 | 24,34-41,52-77    
-  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
-  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/Pages           |    6.66 |        0 |      10 |    7.22 |                   
-  BQPage.tsx         |       0 |        0 |       0 |       0 | 26-286            
-  DQPage.tsx         |       0 |        0 |       0 |       0 | 20-261            
-  HomePage.tsx       |   33.33 |        0 |      50 |      40 | 13-21,119-123     
-  ResultPage.tsx     |       0 |        0 |       0 |       0 | 7-18              
----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        3.236 s
-Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -255,3 +236,22 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |   11.96 |    10.86 |   10.25 |   12.61 |                   
+ src                 |   29.62 |    41.66 |   11.11 |   29.62 |                   
+  App.tsx            |      50 |     62.5 |   14.28 |      50 | 24,34-41,52-77    
+  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
+ src/Pages           |    6.66 |        0 |      10 |    7.14 |                   
+  BQPage.tsx         |       0 |        0 |       0 |       0 | 22-314            
+  DQPage.tsx         |       0 |        0 |       0 |       0 | 20-261            
+  HomePage.tsx       |   33.33 |        0 |      50 |      40 | 13-21,119-123     
+  ResultPage.tsx     |       0 |        0 |       0 |       0 | 7-18              
+---------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.497 s
+Ran all test suites.
