@@ -59,6 +59,11 @@
   text-align: center;
 }
 
+.QuestionHeader{
+  font-family: "Lilita One";
+
+}
+
 .DQH {
 
   position: absolute;
