@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (52 ms)
+  ✕ renders learn react link (54 ms)
 
   ● renders learn react link
 
@@ -136,6 +136,13 @@ FAIL src/App.test.tsx
                     [33mtype[39m=[32m"radio"[39m
                     [33mvalue[39m=[32m"Suburban"[39m
                   [36m/>[39m
+                  [0mSuburban[0m
+                  [36m<input[39m
+                    [33mname[39m=[32m"Suburban"[39m
+                    [33mtype[39m=[32m"radio"[39m
+                    [33mvalue[39m=[32m"Suburban"[39m
+                  [36m/>[39m
+                  [0mUrban[0m
                   [36m<br />[39m
                   [36m<input[39m
                     [33mname[39m=[32m"Suburban"[39m
@@ -224,6 +231,25 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |   11.76 |    10.86 |   10.25 |   12.38 |                   
+ src                 |   29.62 |    41.66 |   11.11 |   29.62 |                   
+  App.tsx            |      50 |     62.5 |   14.28 |      50 | 24,34-41,52-77    
+  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
+ src/Pages           |    6.52 |        0 |      10 |    6.97 |                   
+  BQPage.tsx         |       0 |        0 |       0 |       0 | 20-306            
+  DQPage.tsx         |       0 |        0 |       0 |       0 | 20-260            
+  HomePage.tsx       |   33.33 |        0 |      50 |      40 | 13-21,125-129     
+  ResultPage.tsx     |       0 |        0 |       0 |       0 | 7-18              
+---------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.24 s
+Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -236,22 +262,3 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
----------------------|---------|----------|---------|---------|-------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------|---------|----------|---------|---------|-------------------
-All files            |   11.76 |    10.86 |   10.25 |   12.38 |                   
- src                 |   29.62 |    41.66 |   11.11 |   29.62 |                   
-  App.tsx            |      50 |     62.5 |   14.28 |      50 | 24,34-41,52-77    
-  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
-  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/Pages           |    6.52 |        0 |      10 |    6.97 |                   
-  BQPage.tsx         |       0 |        0 |       0 |       0 | 20-306            
-  DQPage.tsx         |       0 |        0 |       0 |       0 | 20-260            
-  HomePage.tsx       |   33.33 |        0 |      50 |      40 | 13-21,119-123     
-  ResultPage.tsx     |       0 |        0 |       0 |       0 | 7-18              
----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        3.371 s
-Ran all test suites.
