@@ -260,7 +260,7 @@ function BQPage(props: Props): JSX.Element {
 
   return (
     <div className="BQPage">
-      <h1 className="BQHeader">Basic Questions</h1>
+      <h1 className="BQH">Basic Questions</h1>
       {submitted ? (
         // Display submitted answers if submitted is true
         <div className="SubmittedAnswers">
@@ -275,38 +275,11 @@ function BQPage(props: Props): JSX.Element {
         </div>
       ) : (
         <div>
-      <div className="ProgressBarBQ">
-        <div className="ActiveProgressBQ" style={{ width: `${progress}%` }}></div>
-      </div>
-        <div className="QuestionHeader">
-          <br></br>
-          <br></br>
-          <h2>Question {currentQuestionIndex + 1} of {questions.length}</h2>
-          <div className="QuestionContainer">
-            <h3>{questions[currentQuestionIndex].question}</h3>
-            {questions[currentQuestionIndex].type === 'multiple choice' ? (
-              <ul>
-                {questions[currentQuestionIndex].answers?.map((answer) => (
-                  <ul key={answer}>
-                    <input
-                      type="radio"
-                      id={answer}
-                      name= {`question${currentQuestionIndex}`}
-                      value={answer}
-                      checked={answers[currentQuestionIndex] === answer}
-                      onChange={() => handleAnswerChange(answer)}
-                    />
-                    <label htmlFor={answer}>{answer}</label>
-                  </ul>
-                ))}
-              </ul>
-            ) : (
-              <textarea
-                value={answers[currentQuestionIndex] || ''}
-                onChange={(e) => handleAnswerChange(e.target.value)}
-                placeholder="Please enter your answer here."
-              />
-            )}
+          <div className="ProgressBarBQ">
+            <div
+              className="ActiveProgressBQ"
+              style={{ width: `${progress}%` }}
+            ></div>
           </div>
           <div className="QuestionWrapper">
             <div className="QuestionHeader">
@@ -365,7 +338,7 @@ function BQPage(props: Props): JSX.Element {
             </div>
           </div>
         </div>
-      </div>)}
+      )}
     </div>
   );
 }

@@ -27,8 +27,8 @@
 }
 
 .BQH {
-  position: absolute;
-  top: 10vh;
+  position: relative;
+  top: 100vh;
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -50,6 +50,7 @@
   left: 44vw;
   background-color: #3c2918;
   color: #fee4c3;
+  text-align: center;
 }
 .BQ-SubmitButton:hover {
   background-color: #fee4c3;
