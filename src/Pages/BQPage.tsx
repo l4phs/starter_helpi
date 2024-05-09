@@ -365,7 +365,7 @@ function BQPage(props: Props): JSX.Element {
             </div>
           </div>
         </div>
-      )}
+      </div>)}
     </div>
   );
 }
