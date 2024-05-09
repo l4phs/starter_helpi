@@ -242,17 +242,17 @@ const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
        {detailedQuestions[currentQuestionIndex].type === 'multiple choice' ? (
          <ul>
            {detailedQuestions[currentQuestionIndex].answers?.map((answer) => (
-             <li key={answer}>
+             <ul key={answer}>
                <input
                  type="radio"
                  id={answer}
-                 name={`question${currentQuestionIndex}`}
+                 name={' ' + `question${currentQuestionIndex}`}
                  value={answer}
                  checked={answers[currentQuestionIndex] === answer}
                  onChange={() => handleAnswerChange(answer)}
                />
                <label htmlFor={answer}>{answer}</label>
-             </li>
+             </ul>
            ))}
          </ul>
        ) : (
