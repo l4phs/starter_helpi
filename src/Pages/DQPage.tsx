@@ -271,8 +271,8 @@ const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
            Next
          </Button>
        ) : (
-         <Button className="BasicSubmitButton" onClick={handleSubmitBasicAnswers}>
-           Submit Basic Answers
+         <Button className="Submit-Button" onClick={handleSubmitBasicAnswers}>
+           Submit Answers
          </Button>
        )}
      </div>
