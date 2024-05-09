@@ -85,7 +85,7 @@ const detailedQuestions: Question [] = [
 const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState<(string | null)[]>(Array(detailedQuestions.length).fill(null));
     const [progress, setProgress] = useState(0);
-    const [submitted, setSubmitted] = useState(false); // State to track if answers have been submitted
+    // const [submitted, setSubmitted] = useState(false); // State to track if answers have been submitted
 
     const openai = new OpenAI({ apiKey: 'key', dangerouslyAllowBrowser: true });
 
@@ -138,7 +138,7 @@ const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
         const careerReport = response.choices[0].message.content || '';
       console.log('Career Report:', careerReport);
 
-      setSubmitted(true); // Update state to indicate answers have been submitted
+      // setSubmitted(true); // Update state to indicate answers have been submitted
     } catch (error) {
       console.error('Error generating career insights:', error);
       // Handle error or display error message
