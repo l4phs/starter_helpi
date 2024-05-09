@@ -85,7 +85,7 @@ const detailedQuestions: Question [] = [
 const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState<(string | null)[]>(Array(detailedQuestions.length).fill(null));
     const [progress, setProgress] = useState(0);
-    const [submitted, setSubmitted] = useState(false); // State to track if answers have been submitted
+    const [, setSubmitted] = useState(false); // State to track if answers have been submitted
 
     const openai = new OpenAI({ apiKey: 'key', dangerouslyAllowBrowser: true });
 
@@ -271,8 +271,8 @@ const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
            Next
          </Button>
        ) : (
-         <Button className="BasicSubmitButton" onClick={handleSubmitBasicAnswers}>
-           Submit Basic Answers
+         <Button className="Submit-Button" onClick={handleSubmitBasicAnswers}>
+           Submit Answers
          </Button>
        )}
      </div>
