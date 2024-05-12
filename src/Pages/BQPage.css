@@ -1,4 +1,4 @@
-.BQPage {
+.Bbody {
   height: 100vh;
   width: 100vw;
   background-color: #fee4c3;
@@ -26,26 +26,15 @@
   left: -1vw;
 }
 
-label {
-  margin-left: 10px;
-}
-ul{
-  text-align: center;
-}
-
 .BQH {
- 
   position: absolute;
-  border-radius: 1.5em;
-
-  top: 15vh;
+  top: 10vh;
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 0.5px;
   width: 100vw;
   margin: auto;
   text-align: center;
-  font-family: "Lilita One";
   color: #3c2918;
 }
 
@@ -53,17 +42,15 @@ ul{
   position: absolute;
   top: 18vh;
   left: 28vw;
+  text-align: center;
 }
 
 .BQ-SubmitButton {
   position: absolute;
-  top: 60vh;
-  width: auto; /* Adjust the width as needed */
-  height: 68px;
-
+  top: 103vh;
+  left: 44vw;
   background-color: #3c2918;
   color: #fee4c3;
-  left: 52vw;
 }
 .BQ-SubmitButton:hover {
   background-color: #fee4c3;
@@ -152,14 +139,13 @@ ul{
 
 }
 
-/* NOT USED */
-/* .BasicSubmitButton {
+.BasicSubmitButton {
   height: 55px;
   left: 15vh;
   top:50vh;
   position:relative;
-  bottom: 20px; 
-  width: 30vh; 
+  bottom: 20px; /* Adjust the vertical position from the bottom */
+  width: 30vh; /* Adjust the width as needed */
   padding: 10px;
   background-color: #3c2918;
   color: #fee4c3;
@@ -178,7 +164,7 @@ ul{
 .BasicSubmitButton:focus {
   background-color: #fee4c3;
   color: #3c2918;
-} */
+}
 
 .textboxclassBQ{
   position: absolute;
@@ -233,19 +219,10 @@ ul{
 }
 
 .QuestionHeader {
-  position: absolute;
-  border-radius: 1.5em;
-
-  top: 20vh;
-  font-size: 25px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  width: 100vw;
-  margin: auto;
+  font-size: 20px;
+  font-family: "Lilita One";
   text-align: center;
-  font-family: "Josefin Sans";
-  color: #3c2918;
-
+  background-color: #fee4c3;
 
 }
 
@@ -263,7 +240,7 @@ ul{
 }
 
 .QuestionText {
-  font-size: 10px;
+  font-size: 20px;
 
 }
 
