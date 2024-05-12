@@ -1,9 +1,7 @@
 .Bbody {
   height: 100vh;
   width: 100vw;
-  background-color: #fee4c3;
   /* background-image: url("BKGBase.png"); */
-
 }
 
 .Bbody .text {
@@ -14,6 +12,11 @@
   top: 10vh;
   font-size: 30px;
   left: 11vw;
+}
+
+.BQPage{
+  height: 100vh;
+  background-color: #fee4c3;
 }
 
 .BasicQuestions-List {
@@ -36,6 +39,7 @@
   margin: auto;
   text-align: center;
   color: #3c2918;
+  /* background-color: red; */
 }
 
 .BQB {
@@ -45,19 +49,7 @@
   text-align: center;
 }
 
-.BQ-SubmitButton {
-  position: absolute;
-  top: 103vh;
-  left: 44vw;
-  background-color: #3c2918;
-  color: #fee4c3;
-}
-.BQ-SubmitButton:hover {
-  background-color: #fee4c3;
-  color: #3c2918;
-}
-
-.BQQuestionNum{
+.BQQuestionNum {
   position: relative;
   padding: 0px;
   margin-bottom: 0px;
@@ -69,7 +61,7 @@
   text-align: center;
 }
 
-.BQQuestion{
+.BQQuestion {
   position: absolute;
   margin-top: 0vh;
   font-size: 25px;
@@ -82,9 +74,10 @@
 }
 
 .NextButton {
+  margin-top: 8vh;
   height: 8vh;
-  bottom: 20px; /* Adjust the vertical position from the bottom */
-  width: 100px; /* Adjust the width as needed */
+  bottom: 20px;
+  width: 100px; 
   padding: 10px;
   background-color: #3c2918;
   color: #fee4c3;
@@ -106,6 +99,7 @@
 }
 
 .PrevButton {
+  margin-top: 8vh;
   height: 8vh;
   bottom: 0px; /* Adjust the vertical position from the bottom */
   width: 100px; /* Adjust the width as needed */
@@ -133,17 +127,13 @@
   background-color: #fee4c3;
   color: #3c2918;
 }
-.ButtonContainer {
-  translate: 0vh;
-  background-color: #fee4c3;
-
-}
 
 .BasicSubmitButton {
+  position: relative;
   height: 55px;
-  left: 15vh;
-  top:50vh;
-  position:relative;
+  left: 55vw;
+  top: 68vh;
+  /* margin-top: 8vh; */
   bottom: 20px; /* Adjust the vertical position from the bottom */
   width: 30vh; /* Adjust the width as needed */
   padding: 10px;
@@ -166,7 +156,7 @@
   color: #3c2918;
 }
 
-.textboxclassBQ{
+.textboxclassBQ {
   position: absolute;
   margin-top: 10px;
   top: 41vh;
@@ -219,11 +209,20 @@
 }
 
 .QuestionHeader {
-  font-size: 20px;
-  font-family: "Lilita One";
+  position: absolute;
+  border-radius: 1.5em;
+  /* height: ; */
+  top: 20vh;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: 100vw;
+  margin: auto;
   text-align: center;
-  background-color: #fee4c3;
-
+  font-family: "Josefin Sans";
+  color: #3c2918;
+  /* background-color: ; */
+  /* background-color: red; */
 }
 
 .QuestionContainer {
@@ -241,7 +240,6 @@
 
 .QuestionText {
   font-size: 20px;
-
 }
 
 .AnswerInput {
@@ -251,12 +249,23 @@
   padding: 5px;
 }
 
-.SubmittedAnswers{
-  background-color: #fee4c3;
+.QCount {
+  position: absolute;
+  top: -5vh;
+  left: 42vw;
 }
 
-.QuestionWrapper{
-  height: 100vh;
+.BQH {
+  position: absolute;
+  border-radius: 1.5em;
+
+  top: 15vh;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   width: 100vw;
-  background-color: #fee4c3;
+  margin: auto;
+  text-align: center;
+  font-family: "Lilita One";
+  color: #3c2918;
 }
