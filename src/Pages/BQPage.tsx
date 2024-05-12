@@ -1,3 +1,5 @@
+/* eslint-disable no-template-curly-in-string */
+//import { Button } from "react-bootstrap";
 import { useState } from "react";
 import "./BQPage.css";
 import OpenAI from "openai";
@@ -260,7 +262,7 @@ function BQPage(props: Props): JSX.Element {
 
   return (
     <div className="BQPage">
-      <div className="BQH">Basic Questions</div>
+      <h1 className="BQHeader">Basic Questions</h1>
       {submitted ? (
         // Display submitted answers if submitted is true
         <div className="SubmittedAnswers">
@@ -275,40 +277,46 @@ function BQPage(props: Props): JSX.Element {
         </div>
       ) : (
         <div>
-      <div className="ProgressBarBQ">
-        <div className="ActiveProgressBQ" style={{ width: `${progress}%` }}></div>
-      </div>
-        <div className="QuestionHeader"> 
-        <div>Question {currentQuestionIndex + 1} of {questions.length}</div>
-        </div>
-          
-        <div className="QuestionContainer">
-            <h3>{questions[currentQuestionIndex].question}</h3>
-              {questions[currentQuestionIndex].type === 'multiple choice' ? (
-                <ul>
-                {questions[currentQuestionIndex].answers?.map((answer) => (
-                  <ul key={answer}>
-                    <input
-                      type="radio"
-                      id={answer}
-                      name= {`question${currentQuestionIndex}`}
-                      value={answer}
-                      checked={answers[currentQuestionIndex] === answer}
-                      onChange={() => handleAnswerChange(answer)}
-                    />
-                    <label htmlFor={answer}>{answer}</label>
-                  </ul>
-                ))}
-              </ul>
-            ) : (
-              <textarea
-                value={answers[currentQuestionIndex] || ''}
-                onChange={(e) => handleAnswerChange(e.target.value)}
-                placeholder="Please enter your answer here."
-              />
-            )}
+          <div className="ProgressBarBQ">
+            <div
+              className="ActiveProgressBQ"
+              style={{ width: `${progress}%` }}
+            ></div>
           </div>
-          <div className="ButtonContainer">
+          <div className="QuestionWrapper">
+            <div className="QuestionHeader">
+              <br></br>
+              <br></br>
+              <h2>
+                Question {currentQuestionIndex + 1} of {questions.length}
+              </h2>
+              <div className="QuestionContainer">
+                <h3>{questions[currentQuestionIndex].question}</h3>
+                {questions[currentQuestionIndex].type === "multiple choice" ? (
+                  <ul style={{ listStyleType: "none" }}>
+                    {questions[currentQuestionIndex].answers?.map((answer) => (
+                      <li key={answer}>
+                        <input
+                          type="radio"
+                          id={answer}
+                          name={`question${currentQuestionIndex}`}
+                          value={answer}
+                          checked={answers[currentQuestionIndex] === answer}
+                          onChange={() => handleAnswerChange(answer)}
+                        />
+                        <label htmlFor={answer}>{answer}</label>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <textarea
+                    value={answers[currentQuestionIndex] || ""}
+                    onChange={(e) => handleAnswerChange(e.target.value)}
+                    placeholder="Please enter your answer here."
+                  />
+                )}
+              </div>
+              <div className="ButtonContainer">
                 <Button
                   className="PrevButton"
                   onClick={handlePrevious}
@@ -322,14 +330,17 @@ function BQPage(props: Props): JSX.Element {
                   </Button>
                 ) : (
                   <Button
-                    className="BQ-SubmitButton"
+                    className="BasicSubmitButton"
                     onClick={handleSubmitBasicAnswers}
                   >
                     Submit Basic Answers
                   </Button>
                 )}
               </div>
-            </div>)}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
