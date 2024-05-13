@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./DQPage.css";
 import OpenAI from "openai";
+//commiting all changes
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
@@ -246,7 +247,7 @@ const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
                <input
                  type="radio"
                  id={answer}
-                 name={' ' + `question${currentQuestionIndex}`}
+                 name={` question${currentQuestionIndex}`}
                  value={answer}
                  checked={answers[currentQuestionIndex] === answer}
                  onChange={() => handleAnswerChange(answer)}
