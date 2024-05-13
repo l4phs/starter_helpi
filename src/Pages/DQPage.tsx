@@ -86,7 +86,7 @@ const detailedQuestions: Question [] = [
 const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState<(string | null)[]>(Array(detailedQuestions.length).fill(null));
     const [progress, setProgress] = useState(0);
-    // const [submitted, setSubmitted] = useState(false); // State to track if answers have been submitted
+    const [, setSubmitted] = useState(false); // State to track if answers have been submitted
 
     const openai = new OpenAI({ apiKey: 'key', dangerouslyAllowBrowser: true });
 
@@ -139,7 +139,7 @@ const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
         const careerReport = response.choices[0].message.content || '';
       console.log('Career Report:', careerReport);
 
-      // setSubmitted(true); // Update state to indicate answers have been submitted
+      setSubmitted(true); // Update state to indicate answers have been submitted
     } catch (error) {
       console.error('Error generating career insights:', error);
       // Handle error or display error message
@@ -235,9 +235,8 @@ const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
         <div className="ActiveProgressBQ" style={{ width: `${progress}%` }}></div>
       </div>
       <div className="QuestionHeader">
-     <br></br>
-     <br></br>
-     <h2>Question {currentQuestionIndex + 1} of {detailedQuestions.length}</h2>
+      <div>Question {currentQuestionIndex + 1} of {detailedQuestions.length}</div>
+      </div>
      <div className="QuestionContainer">
        <h3>{detailedQuestions[currentQuestionIndex].question}</h3>
        {detailedQuestions[currentQuestionIndex].type === 'multiple choice' ? (
@@ -247,7 +246,7 @@ const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
                <input
                  type="radio"
                  id={answer}
-                 name={` question${currentQuestionIndex}`}
+                 name={`question${currentQuestionIndex}`}
                  value={answer}
                  checked={answers[currentQuestionIndex] === answer}
                  onChange={() => handleAnswerChange(answer)}
@@ -273,13 +272,12 @@ const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
            Next
          </Button>
        ) : (
-         <Button className="BasicSubmitButton" onClick={handleSubmitBasicAnswers}>
-           Submit Basic Answers
+         <Button className="Submit-Button" onClick={handleSubmitBasicAnswers}>
+           Submit Answers
          </Button>
        )}
      </div>
    </div>
-     </div>
      
      
 

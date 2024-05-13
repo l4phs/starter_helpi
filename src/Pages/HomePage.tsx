@@ -69,6 +69,12 @@ function HomePage({ setPage }: Props): JSX.Element {
           value={"Suburban"}
           name="Suburban"
             />
+            Suburban
+            <input type="radio" 
+          value={"Suburban"}
+          name="Suburban"
+            />
+            Urban
           <br></br>
           <input type="radio" 
           value={"Suburban"}

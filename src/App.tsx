@@ -81,7 +81,7 @@ function App(): JSX.Element {
 
       {page === "HomePage" && <HomePage setPage={setPage} />}
 
-      {page === "BQPage" && <BQPage setPage={setPage} apiKey={key} />}
+      {page === "BQPage" && <BQPage setPage={setPage} apiKey={key}/>} 
 
       {page === "DQPage" && <DQPage setPage={setPage} />}
     </React.Fragment>

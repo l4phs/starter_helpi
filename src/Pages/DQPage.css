@@ -53,14 +53,25 @@
   width: 60vh;
   font-size: 20px;
   font-family: "Josefin Sans";
-  left: 35vw;
+  left: 50vw;
   background-color: #3c2918;
   color: #fee4c3;
   text-align: center;
 }
 
-.QuestionHeader{
-  font-family: "Lilita One";
+.QuestionHeader {
+  position: absolute;
+  border-radius: 1.5em;
+
+  top: 20vh;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: 100vw;
+  margin: auto;
+  text-align: center;
+  font-family: "Josefin Sans";
+  color: #3c2918;
 
 }
 
@@ -69,13 +80,14 @@
   position: absolute;
   border-radius: 1.5em;
 
-  top: 10vh;
+  top: 15vh;
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 0.5px;
   width: 100vw;
   margin: auto;
   text-align: center;
+  font-family: "Lilita One";
   color: #3c2918;
 }
 
@@ -89,10 +101,10 @@
 
 .NextButton {
   position: absolute;
-  top: 50vh;
+  top: 60vh;
   background-color: #3c2918;
   color: #fee4c3;
-  left: 53vw;
+  left: 55vw;
 }
 .NextButton:hover {
   background-color: #fee4c3;
@@ -101,10 +113,10 @@
 
 .PrevButton {
   position: absolute;
-  top: 50vh;
+  top: 60vh;
   background-color: #3c2918;
   color: #fee4c3;
-  right: 53vw;
+  right: 50vw;
 }
 .PrevButton:hover {
   background-color: #fee4c3;
@@ -121,10 +133,13 @@
 
 .Submit-Button {
   position: absolute;
-  top: 50vh;
+  top: 60vh;
+  width: auto; /* Adjust the width as needed */
+  height: 68px;
+
   background-color: #3c2918;
   color: #fee4c3;
-  left: 48vw;
+  left: 55vw;
 }
 .Submit-Button:hover {
   background-color: #fee4c3;
@@ -153,4 +168,11 @@
   max-width: 98.5%;
   min-width: 0.5%;
   background-color: #dbc6b6;
+}
+
+label {
+  margin-left: 10px;
+}
+ul{
+  text-align: center;
 }
