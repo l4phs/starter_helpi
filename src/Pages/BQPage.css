@@ -74,7 +74,7 @@
 }
 
 .NextButton {
-  margin-top: 8vh;
+  margin-top: 20vh;
   height: 8vh;
   bottom: 20px;
   width: 100px; 
@@ -84,6 +84,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  z-index: 3;
 }
 .NextButton:hover {
   background-color: #fee4c3;
@@ -99,7 +100,7 @@
 }
 
 .PrevButton {
-  margin-top: 8vh;
+  margin-top: 20vh;
   height: 8vh;
   bottom: 0px; /* Adjust the vertical position from the bottom */
   width: 100px; /* Adjust the width as needed */
@@ -109,6 +110,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  z-index: 3;
 }
 .PrevButton:hover {
   background-color: #fee4c3;
@@ -133,7 +135,7 @@
   height: 55px;
   left: 55vw;
   top: 68vh;
-  /* margin-top: 8vh; */
+  margin-top: 12vh; 
   bottom: 20px; /* Adjust the vertical position from the bottom */
   width: 30vh; /* Adjust the width as needed */
   padding: 10px;
@@ -143,6 +145,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
 .BasicSubmitButton:hover {
   background-color: #fee4c3;
   color: #3c2918;
@@ -221,8 +224,6 @@
   text-align: center;
   font-family: "Josefin Sans";
   color: #3c2918;
-  /* background-color: ; */
-  /* background-color: red; */
 }
 
 .QuestionContainer {
@@ -230,12 +231,14 @@
   font-size: 20px;
   font-family: "Lilita One";
   position: absolute;
-  top: 35vh; /* Adjust this value to move the container downward */
+  top: 40vh; /* Adjust this value to move the container downward */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%);
-  width: 100vw;
-  background-color: #fee4c3;
-  height: 80vh;
+  width: 85%;
+  background-color: #fff3e4;
+  height: 50vh;
+  border-radius: 1.5em;
+  padding-top: 10px;
 }
 
 .QuestionText {
@@ -269,3 +272,4 @@
   font-family: "Lilita One";
   color: #3c2918;
 }
+
