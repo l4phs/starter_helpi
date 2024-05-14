@@ -16,8 +16,10 @@
 
 .BQPage{
   height: 100vh;
-  background-color: #fee4c3;
+  background-image: url(MatchaBQ.jpg);
+  /* filter: blur(1px); */
 }
+
 
 .BasicQuestions-List {
   top: 15vw;
