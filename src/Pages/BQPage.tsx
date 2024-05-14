@@ -262,6 +262,7 @@ function BQPage(props: Props): JSX.Element {
 
   return (
     <div className="BQPage">
+      <div className="Background"></div>
       <h1 className="BQH">Basic Questions</h1>
       {submitted ? (
         // Display submitted answers if submitted is true
@@ -284,9 +285,7 @@ function BQPage(props: Props): JSX.Element {
             ></div>
           </div>
           <div className="QuestionHeader">
-            <div>
-              Question {currentQuestionIndex + 1} of {questions.length}
-            </div>
+            Question {currentQuestionIndex + 1} of {questions.length}
           </div>
           <div className="QuestionContainer">
             <h3>{questions[currentQuestionIndex].question}</h3>

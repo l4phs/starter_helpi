@@ -14,10 +14,12 @@
   left: 11vw;
 }
 
-.BQPage{
+.Background{
   height: 100vh;
   background-image: url(MatchaBQ.jpg);
-  /* filter: blur(1px); */
+  filter: blur(5px);
+  background-size: cover;
+  z-index: 10;
 }
 
 
@@ -41,6 +43,7 @@
   margin: auto;
   text-align: center;
   color: #3c2918;
+  text-shadow:1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
   /* background-color: red; */
 }
 
@@ -226,6 +229,8 @@
   text-align: center;
   font-family: "Josefin Sans";
   color: #3c2918;
+  text-shadow:1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
+
 }
 
 .QuestionContainer {
