@@ -1,9 +1,7 @@
-.BQPage {
+.Bbody {
   height: 100vh;
   width: 100vw;
-  background-color: #fee4c3;
   /* background-image: url("BKGBase.png"); */
-
 }
 
 .Bbody .text {
@@ -16,6 +14,13 @@
   left: 11vw;
 }
 
+.BQPage{
+  height: 100vh;
+  background-image: url(MatchaBQ.jpg);
+  /* filter: blur(1px); */
+}
+
+
 .BasicQuestions-List {
   top: 15vw;
   width: 100%;
@@ -26,51 +31,27 @@
   left: -1vw;
 }
 
-label {
-  margin-left: 10px;
-}
-ul{
-  text-align: center;
-}
-
 .BQH {
- 
-  position: relative;
-  border-radius: 1.5em;
-
-  top: 150vh;
+  position: absolute;
+  top: 10vh;
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 0.5px;
   width: 100vw;
   margin: auto;
   text-align: center;
-  font-family: "Lilita One";
   color: #3c2918;
+  /* background-color: red; */
 }
 
 .BQB {
   position: absolute;
   top: 18vh;
   left: 28vw;
+  text-align: center;
 }
 
-.BQ-SubmitButton {
-  position: absolute;
-  top: 60vh;
-  width: auto; /* Adjust the width as needed */
-  height: 68px;
-
-  background-color: #3c2918;
-  color: #fee4c3;
-  left: 52vw;
-}
-.BQ-SubmitButton:hover {
-  background-color: #fee4c3;
-  color: #3c2918;
-}
-
-.BQQuestionNum{
+.BQQuestionNum {
   position: relative;
   padding: 0px;
   margin-bottom: 0px;
@@ -82,7 +63,7 @@ ul{
   text-align: center;
 }
 
-.BQQuestion{
+.BQQuestion {
   position: absolute;
   margin-top: 0vh;
   font-size: 25px;
@@ -95,15 +76,17 @@ ul{
 }
 
 .NextButton {
+  margin-top: 20vh;
   height: 8vh;
-  bottom: 20px; /* Adjust the vertical position from the bottom */
-  width: 100px; /* Adjust the width as needed */
+  bottom: 20px;
+  width: 100px; 
   padding: 10px;
   background-color: #3c2918;
   color: #fee4c3;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  z-index: 3;
 }
 .NextButton:hover {
   background-color: #fee4c3;
@@ -119,6 +102,7 @@ ul{
 }
 
 .PrevButton {
+  margin-top: 20vh;
   height: 8vh;
   bottom: 0px; /* Adjust the vertical position from the bottom */
   width: 100px; /* Adjust the width as needed */
@@ -128,6 +112,7 @@ ul{
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  z-index: 3;
 }
 .PrevButton:hover {
   background-color: #fee4c3;
@@ -146,20 +131,15 @@ ul{
   background-color: #fee4c3;
   color: #3c2918;
 }
-.ButtonContainer {
-  translate: 0vh;
-  background-color: #fee4c3;
 
-}
-
-/* NOT USED */
-/* .BasicSubmitButton {
+.BasicSubmitButton {
+  position: relative;
   height: 55px;
-  left: 15vh;
-  top:50vh;
-  position:relative;
-  bottom: 20px; 
-  width: 30vh; 
+  left: 55vw;
+  top: 68vh;
+  margin-top: 12vh; 
+  bottom: 20px; /* Adjust the vertical position from the bottom */
+  width: 30vh; /* Adjust the width as needed */
   padding: 10px;
   background-color: #3c2918;
   color: #fee4c3;
@@ -167,6 +147,7 @@ ul{
   border-radius: 5px;
   cursor: pointer;
 }
+
 .BasicSubmitButton:hover {
   background-color: #fee4c3;
   color: #3c2918;
@@ -178,9 +159,9 @@ ul{
 .BasicSubmitButton:focus {
   background-color: #fee4c3;
   color: #3c2918;
-} */
+}
 
-.textboxclassBQ{
+.textboxclassBQ {
   position: absolute;
   margin-top: 10px;
   top: 41vh;
@@ -235,7 +216,7 @@ ul{
 .QuestionHeader {
   position: absolute;
   border-radius: 1.5em;
-
+  /* height: ; */
   top: 20vh;
   font-size: 25px;
   font-weight: 600;
@@ -245,8 +226,6 @@ ul{
   text-align: center;
   font-family: "Josefin Sans";
   color: #3c2918;
-
-
 }
 
 .QuestionContainer {
@@ -254,17 +233,18 @@ ul{
   font-size: 20px;
   font-family: "Lilita One";
   position: absolute;
-  top: 35vh; /* Adjust this value to move the container downward */
+  top: 40vh; /* Adjust this value to move the container downward */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%);
-  width: 100vw;
-  background-color: #fee4c3;
-  height: 80vh;
+  width: 85%;
+  background-color: #fff3e4;
+  height: 50vh;
+  border-radius: 1.5em;
+  padding-top: 10px;
 }
 
 .QuestionText {
-  font-size: 10px;
-
+  font-size: 20px;
 }
 
 .AnswerInput {
@@ -274,12 +254,24 @@ ul{
   padding: 5px;
 }
 
-.SubmittedAnswers{
-  background-color: #fee4c3;
+.QCount {
+  position: absolute;
+  top: -5vh;
+  left: 42vw;
 }
 
-.QuestionWrapper{
-  height: 100vh;
+.BQH {
+  position: absolute;
+  border-radius: 1.5em;
+
+  top: 15vh;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   width: 100vw;
-  background-color: #fee4c3;
+  margin: auto;
+  text-align: center;
+  font-family: "Lilita One";
+  color: #3c2918;
 }
+
