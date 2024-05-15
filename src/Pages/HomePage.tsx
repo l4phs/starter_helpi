@@ -51,12 +51,8 @@ function HomePage({ setPage }: Props): JSX.Element {
         <h1>Basic Quiz!</h1>
           Discover your ideal career path with our basic career path quiz!
           <br></br>
-          Tailored for those beginning their career journey, this quiz helps you
+          This quiz helps you lightly
           explore your interests, strengths, and preferences. 
-          <br></br>
-          Quick and easy to
-          understand and results are immediate following the completion of the
-          quiz.
           <br></br>
           Start your exploration today and take the first step toward a fulfilling career!
       <br></br>
@@ -96,10 +92,6 @@ function HomePage({ setPage }: Props): JSX.Element {
                 Designed for those seeking in-depth insights, this quiz
         assesses your skills, values, and goals.
         <br></br>
-        <br></br>
-        Whether you're a seasoned professional or a student planning your
-        future, empower yourself to make informed decisions and pursue your dreams!
-                <br></br>
                 Start navigating your future today!
               
                 <br></br>
