@@ -120,7 +120,7 @@
 .BQButton{
   display: block;
   position: absolute;
-  top: 548vh;
+  top: 549vh;
   /* top: 0vh; */
   left: auto;
   left: 25.5vw;
@@ -128,26 +128,33 @@
   color: #3d2a19;
   border: 1px transparent;
   z-index: 9;
+  transition: all 0.3s ease; 
+
 }
 .BQButton:hover {
   background-color: #3d2a19;
   color: #fee4c3;
   z-index: 9;
+  transform: scale(1.1); 
+
 
 }
 
 .DQButton{
   display: block;
   position: absolute;
-  top: 548vh;
+  top: 549vh;
   z-index: 8;
 
   right: 23.5vw;
   background-color: #fee4c3;
   color: #3d2a19;
   border: 1px transparent;
+  transition: all 0.3s ease; 
 }
 .DQButton:hover {
   background-color: #3d2a19;
+  /* color: #3d2a19; */
   color: #fee4c3;
+  transform: scale(1.1); 
 }

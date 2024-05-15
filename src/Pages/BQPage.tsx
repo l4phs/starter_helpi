@@ -292,7 +292,7 @@ function BQPage(props: Props): JSX.Element {
           <div className="QuestionContainer">
             <h3>{questions[currentQuestionIndex].question}</h3>
             {questions[currentQuestionIndex].type === "multiple choice" ? (
-              <ul style={{ listStyleType: "none", paddingLeft: "0px"}}>
+              <ul className="Ul-BQ" style={{ listStyleType: "none", paddingLeft: "0px"}}>
                 {questions[currentQuestionIndex].answers?.map((answer) => (
                   <li key={answer}>
                     <input
