@@ -263,7 +263,9 @@ function BQPage(props: Props): JSX.Element {
   return (
     <div className="BQPage">
       <div className="Background"></div>
-      <h1 className="BQH">Basic Questions</h1>
+      <h1 className="BQH">Basic Questions</h1> 
+      <h3 className = "Description"> Tailored for those beginning their career journey, this quiz helps you
+        explore your interests, strengths, and preferences. </h3>
       {submitted ? (
         // Display submitted answers if submitted is true
         <div className="SubmittedAnswers">
@@ -290,7 +292,7 @@ function BQPage(props: Props): JSX.Element {
           <div className="QuestionContainer">
             <h3>{questions[currentQuestionIndex].question}</h3>
             {questions[currentQuestionIndex].type === "multiple choice" ? (
-              <ul style={{ listStyleType: "none" }}>
+              <ul style={{ listStyleType: "none", paddingLeft: "0px"}}>
                 {questions[currentQuestionIndex].answers?.map((answer) => (
                   <li key={answer}>
                     <input

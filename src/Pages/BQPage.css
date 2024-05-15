@@ -110,6 +110,7 @@
   bottom: 0px; /* Adjust the vertical position from the bottom */
   width: 100px; /* Adjust the width as needed */
   padding: 2px;
+  padding-left: 100px;
   background-color: #3c2918;
   color: #fee4c3;
   border: none;
@@ -183,7 +184,7 @@
   border-radius: 1.5em;
 
   left: 5vw;
-  top: 26vh;
+  top: 40vh;
   height: 6vh;
   width: 90vw;
   background-color: #3c2918;
@@ -220,7 +221,7 @@
   position: absolute;
   border-radius: 1.5em;
   /* height: ; */
-  top: 20vh;
+  top: 50vh;
   font-size: 25px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -238,7 +239,7 @@
   font-size: 20px;
   font-family: "Lilita One";
   position: absolute;
-  top: 40vh; /* Adjust this value to move the container downward */
+  top: 50vh; /* Adjust this value to move the container downward */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%);
   width: 85%;
@@ -270,7 +271,7 @@
   border-radius: 1.5em;
 
   top: 15vh;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 600;
   letter-spacing: 0.5px;
   width: 100vw;
@@ -278,5 +279,22 @@
   text-align: center;
   font-family: "Lilita One";
   color: #3c2918;
+}
+
+.Description {
+  position: absolute;
+  border-radius: 1.5em;
+
+  top: 23vh;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: 100vw;
+  margin: auto;
+  text-align: center;
+  font-family: "Lilita One";
+  color: #000000;
+  text-shadow:1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
+
 }
 

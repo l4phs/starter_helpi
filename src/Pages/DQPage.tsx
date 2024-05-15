@@ -72,7 +72,7 @@ const detailedQuestions: Question [] = [
   id: 9,
   question: "What types of jobs or career fields interest you the most? Select all that apply",
   answers: ["Working with animals", "Medical and healthcare fields", "Mathematics and analytics", "Engineering and technology", "Creative and artistic fields", "Science and research", "Businesss and finance", "Education and teaching", "Writing and communication", "Law and legal professions", "Social services and advocacy", "Trades and skilled labor", "Hospitality and tourism", "Sales and customer service"],
-  type: "checkbox"
+  type: "multiple choice"
 },
 {
   id: 10,
