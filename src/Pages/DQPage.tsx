@@ -107,17 +107,9 @@ const detailedQuestions: Question [] = [
   ],
   type: "multiple choice",
 },
-
-]
-
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState<(string | null)[]>(
-    Array(detailedQuestions.length).fill(null)
-  );
-  const [progress, setProgress] = useState(0);
-  const [, setSubmitted] = useState(false); // State to track if answers have been submitted
-
+=========
   const openai = new OpenAI({ apiKey: "key", dangerouslyAllowBrowser: true });
+>>>>>>>>> Temporary merge branch 2
 
   const handleNext = () => {
     if (currentQuestionIndex < detailedQuestions.length - 1) {
