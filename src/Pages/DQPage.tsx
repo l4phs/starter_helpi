@@ -310,8 +310,7 @@ function DQPage(props: Props): JSX.Element {
         {detailedQuestions[currentQuestionIndex].type === "multiple choice" ? (
           <ul className="Ul-DQ">
             {detailedQuestions[currentQuestionIndex].answers?.map((answer) => (
-              <ul 
-              key={answer}>
+              <ul key={answer}>
                 <input
                   type="radio"
                   id={answer}
