@@ -15,7 +15,7 @@
 }
 
 .Background{
-  height: 100vh;
+  height: 125vh;
   background-image: url(MatchaBQ.jpg);
   filter: blur(5px);
   background-size: cover;
@@ -116,7 +116,6 @@
   bottom: 0px; /* Adjust the vertical position from the bottom */
   width: 100px; /* Adjust the width as needed */
   padding: 2px;
-  padding-left: 100px;
   background-color: #3c2918;
   color: #fee4c3;
   border: none;
@@ -143,10 +142,10 @@
 }
 
 .BasicSubmitButton {
-  position: relative;
+  position: absolute;
   height: 55px;
   left: 55vw;
-  top: 50vh;
+  top: 83.5vh;
   margin-top: 12vh; 
   bottom: 20px; /* Adjust the vertical position from the bottom */
   width: 30vh; /* Adjust the width as needed */
@@ -190,7 +189,7 @@
   border-radius: 1.5em;
 
   left: 5vw;
-  top: 40vh;
+  top: 45vh;
   height: 6vh;
   width: 90vw;
   background-color: #3c2918;
@@ -245,7 +244,7 @@
   font-size: 20px;
   font-family: "Lilita One";
   position: absolute;
-  top: 50vh; /* Adjust this value to move the container downward */
+  top: 55vh; /* Adjust this value to move the container downward */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%);
   width: 85%;

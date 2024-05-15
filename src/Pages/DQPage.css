@@ -6,7 +6,7 @@
 }
 
 .background{
-  height: 100vh;
+  height: 125vh;
   background-image: url("SageCoffee.png");
   filter:blur(5px);
 }
@@ -76,7 +76,7 @@
   position: absolute;
   border-radius: 1.5em;
 
-  top: 32vh;
+  top: 40vh;
   font-size: 25px;
   font-weight: 625;
   letter-spacing: 0.5px;
@@ -116,7 +116,7 @@
 
 .NextButton {
   position: absolute;
-  top: 65vh;
+  top: 75vh;
   background-color: #3c2918;
   color: #fee4c3;
   left: 55vw;
@@ -131,7 +131,7 @@
 
 .PrevButton {
   position: absolute;
-  top: 65vh;
+  top: 75vh;
   background-color: #3c2918;
   color: #fee4c3;
   right: 55vw;
@@ -153,7 +153,7 @@
 
 .Submit-Button {
   position: absolute;
-  top: 80vh;
+  top: 95vh;
   width: auto; /* Adjust the width as needed */
   height: 61px;
   background-color: #3c2918;
