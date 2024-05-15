@@ -76,9 +76,9 @@
   position: absolute;
   border-radius: 1.5em;
 
-  top: 20vh;
+  top: 32vh;
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 625;
   letter-spacing: 0.5px;
   width: 100vw;
   margin: auto;
@@ -116,7 +116,7 @@
 
 .NextButton {
   position: absolute;
-  top: 60vh;
+  top: 65vh;
   background-color: #3c2918;
   color: #fee4c3;
   left: 55vw;
@@ -131,7 +131,7 @@
 
 .PrevButton {
   position: absolute;
-  top: 60vh;
+  top: 65vh;
   background-color: #3c2918;
   color: #fee4c3;
   right: 55vw;
