@@ -113,9 +113,7 @@ FAIL src/App.test.tsx
                   [36m</h1>[39m
                   [0mDiscover your ideal career path with our basic career path quiz![0m
                   [36m<br />[39m
-                  [0mTailored for those beginning their career journey, this quiz helps you explore your interests, strengths, and preferences.[0m
-                  [36m<br />[39m
-                  [0mQuick and easy to understand and results are immediate following the completion of the quiz.[0m
+                  [0mThis quiz helps you lightly explore your interests, strengths, and preferences.[0m
                   [36m<br />[39m
                   [0mStart your exploration today and take the first step toward a fulfilling career![0m
                   [36m<br />[39m
@@ -161,9 +159,6 @@ FAIL src/App.test.tsx
                   [0mTake your career exploration to new heights with our Advanced Career Path Quiz![0m
                   [36m<br />[39m
                   [0mDesigned for those seeking in-depth insights, this quiz assesses your skills, values, and goals.[0m
-                  [36m<br />[39m
-                  [36m<br />[39m
-                  [0mWhether you're a seasoned professional or a student planning your future, empower yourself to make informed decisions and pursue your dreams![0m
                   [36m<br />[39m
                   [0mStart navigating your future today![0m
                   [36m<br />[39m
@@ -226,6 +221,25 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |   11.96 |    11.36 |   10.81 |    12.5 |                   
+ src                 |   29.62 |    41.66 |   11.11 |   29.62 |                   
+  App.tsx            |      50 |     62.5 |   14.28 |      50 | 24,34-41,52-77    
+  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
+ src/Pages           |    6.66 |        0 |   10.71 |    7.05 |                   
+  BQPage.tsx         |       0 |        0 |       0 |       0 | 23-261            
+  DQPage.tsx         |       0 |        0 |       0 |       0 | 20-220            
+  HomePage.tsx       |   33.33 |        0 |      50 |      40 | 13-21,117-121     
+  ResultPage.tsx     |       0 |      100 |       0 |       0 | 35                
+---------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.172 s
+Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -238,22 +252,3 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
----------------------|---------|----------|---------|---------|-------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------|---------|----------|---------|---------|-------------------
-All files            |   11.66 |    10.86 |   10.25 |   12.17 |                   
- src                 |   29.62 |    41.66 |   11.11 |   29.62 |                   
-  App.tsx            |      50 |     62.5 |   14.28 |      50 | 24,34-41,52-77    
-  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
-  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/Pages           |    6.45 |        0 |      10 |    6.81 |                   
-  BQPage.tsx         |       0 |        0 |       0 |       0 | 22-311            
-  DQPage.tsx         |       0 |        0 |       0 |       0 | 20-330            
-  HomePage.tsx       |   33.33 |        0 |      50 |      40 | 13-21,125-129     
-  ResultPage.tsx     |       0 |        0 |       0 |       0 | 7-18              
----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        3.301 s
-Ran all test suites.
