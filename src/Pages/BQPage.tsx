@@ -264,8 +264,7 @@ function BQPage(props: Props): JSX.Element {
     <div className="BQPage">
       <div className="Background"></div>
       <h1 className="BQH">Basic Questions</h1> 
-      <h3 className = "Description"> Tailored for those beginning their career journey, this quiz helps you
-        explore your interests, strengths, and preferences. </h3>
+      <h3 className = "Description"> Welcome to the Basic Quiz!  </h3>
       {submitted ? (
         // Display submitted answers if submitted is true
         <div className="SubmittedAnswers">
