@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-template-curly-in-string */
 //import { Button } from "react-bootstrap";
 import { useState } from "react";
