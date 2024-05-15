@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/starter_helpi/static/css/main.3dab63d6.css",
-    "main.js": "/starter_helpi/static/js/main.f6ba5b02.js",
+    "main.css": "/starter_helpi/static/css/main.89494847.css",
+    "main.js": "/starter_helpi/static/js/main.05bb664f.js",
     "static/js/453.bad6c33a.chunk.js": "/starter_helpi/static/js/453.bad6c33a.chunk.js",
     "static/media/BASE.png": "/starter_helpi/static/media/BASE.40ea2844ba59b9244640.png",
     "static/media/MatchaBQ.jpg": "/starter_helpi/static/media/MatchaBQ.eb2e3f6f4c3467fee444.jpg",
-    "static/media/TOP.png": "/starter_helpi/static/media/TOP.1a584727b195fe630f84.png",
+    "static/media/TOP.png": "/starter_helpi/static/media/TOP.c606b099113a3a3a16a0.png",
     "static/media/MID.png": "/starter_helpi/static/media/MID.b9d85a881dd164d141cc.png",
     "static/media/SageCoffee.png": "/starter_helpi/static/media/SageCoffee.40e9334ff6cf493378d0.png",
     "index.html": "/starter_helpi/index.html",
-    "main.3dab63d6.css.map": "/starter_helpi/static/css/main.3dab63d6.css.map",
-    "main.f6ba5b02.js.map": "/starter_helpi/static/js/main.f6ba5b02.js.map",
+    "main.89494847.css.map": "/starter_helpi/static/css/main.89494847.css.map",
+    "main.05bb664f.js.map": "/starter_helpi/static/js/main.05bb664f.js.map",
     "453.bad6c33a.chunk.js.map": "/starter_helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3dab63d6.css",
-    "static/js/main.f6ba5b02.js"
+    "static/css/main.89494847.css",
+    "static/js/main.05bb664f.js"
   ]
 }
