@@ -1,8 +1,14 @@
 .Dbody {
   height: 100vh;
   width: 100vw;
-  background-color: #fee4c3;
-  /* background-image: url("BKGBase.png"); */
+  /* background-color: red; */
+
+}
+
+.background{
+  height: 100vh;
+  background-image: url("SageCoffee.png");
+  filter:blur(5px);
 }
 
 .Dbody .text {
@@ -89,6 +95,8 @@
   text-align: center;
   font-family: "Lilita One";
   color: #3c2918;
+  text-shadow:1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
+
 }
 
 
