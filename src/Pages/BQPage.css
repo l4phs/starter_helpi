@@ -253,6 +253,8 @@
   height: 50vh;
   border-radius: 1.5em;
   padding-top: 10px;
+  color: #3c2918;
+  /* margin: auto; */
 }
 
 .QuestionText {

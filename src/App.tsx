@@ -74,7 +74,7 @@ function App(): JSX.Element {
               Submit
             </li>
           </div>
-          <li className="TaskbarHeader" onClick={() => setPage("HomePage")}> What Do I Do?
+          <li className="TaskbarHeader" onClick={() => setPage("HomePage")}> Jobspresso
           </li>
         </ul>
       </div>

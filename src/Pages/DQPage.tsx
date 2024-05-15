@@ -18,7 +18,11 @@ interface Question {
 
 function DQPage(props: Props): JSX.Element {
   console.log("API Key:", props.apiKey);
-
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [gptReport, setGptReport] = useState("");
+ 
+  const [progress, setProgress] = useState(0);
+  const [check, setCheck] = useState(false);
 
 const detailedQuestions: Question [] = [
 
@@ -107,9 +111,12 @@ const detailedQuestions: Question [] = [
   ],
   type: "multiple choice",
 },
-=========
+];
+
+const [answers, setAnswers] = useState<(string | null)[]>(
+  Array(detailedQuestions.length).fill(null)
+);
   const openai = new OpenAI({ apiKey: "key", dangerouslyAllowBrowser: true });
->>>>>>>>> Temporary merge branch 2
 
   const handleNext = () => {
     if (currentQuestionIndex < detailedQuestions.length - 1) {
@@ -137,7 +144,7 @@ const detailedQuestions: Question [] = [
 
   const handleSubmitDetailAnswers = async () => {
     const userContent = answers
-      .map((answer, index) => `${questions[index].question}: ${answer}`)
+      .map((answer, index) => `${detailedQuestions[index].question}: ${answer}`)
       .join("\n");
 
     try {
@@ -192,8 +199,7 @@ const detailedQuestions: Question [] = [
         {detailedQuestions[currentQuestionIndex].type === "multiple choice" ? (
           <ul className="Ul-DQ">
             {detailedQuestions[currentQuestionIndex].answers?.map((answer) => (
-              <ul 
-              key={answer}>
+              <ul key={answer}>
                 <input
                   type="radio"
                   id={answer}
@@ -227,7 +233,7 @@ const detailedQuestions: Question [] = [
             Next
           </Button>
         ) : (
-          <Button className="Submit-Button" onClick={handleSubmitBasicAnswers}>
+          <Button className="Submit-Button" onClick={handleSubmitDetailAnswers}>
             Submit Answers
           </Button>
         )}
