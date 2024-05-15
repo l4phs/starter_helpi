@@ -35,7 +35,7 @@ const detailedQuestions: Question [] = [
 {
   id: 3,
   question: "How important is job stability to you?",
-  answers: ["1. Not at all", "2. Slighly important", "3. Neutral about it", "4. Somewhat important", "5. Extremely important"],
+  answers: ["Not at all", "Slighly important", "Neutral about it", "Somewhat important", "Extremely important"],
   type: "multiple choice"
 }, 
 {
@@ -47,13 +47,13 @@ const detailedQuestions: Question [] = [
 {
   id: 5,
   question: "How often do you rely on data and facts when making a decision?",
-  answers: ["1. Never", "2. Some of the time", "3. Half of the time", "4. Most of the time", "5. Almost exclusively"],
+  answers: ["Never", "Some of the time", "Half of the time", "Most of the time", "Almost exclusively"],
   type: "multiple choice"
 },
 {
   id: 6,
   question: "How do you feel about presenting to groups?",
-  answers: ["1. Extremely uncomfortable", "2. Mostly uncomfortable", "3. Neutral about it", "4. Mostly comfortable ", "Extremely comfortable"],
+  answers: ["Extremely uncomfortable", "Mostly uncomfortable", "Neutral about it", "Mostly comfortable ", "Extremely comfortable"],
   type: "multiple choice"
 },
 {
@@ -77,8 +77,33 @@ const detailedQuestions: Question [] = [
 {
   id: 10,
   question: "How open are you to trying new methods and approaches to your work?",
-  answers: ["1. Not open at all", "2. Slightly open", "3. Neutral about it", "4. Mostly open ", "Extremely open"],
+  answers: ["Not open at all", "Slightly open", "Neutral about it", "Mostly open ", "Extremely open"],
   type: "multiple choice"
+},
+{
+  id: 11,
+  question:
+    "How would you rate your ability to learn new skills? (pick one)",
+  answers: ["Excellent", "Good", "Average", "Below average", "Poor"],
+  type: "multiple choice",
+},
+{
+  id: 12,
+  question: "List three activities you enjoy:",
+  answers: null,
+  type: "short answer",
+},
+{
+  id: 13,
+  question: "How do you prefer to spend your workday?",
+  answers: [
+    "Solving problems",
+    "Meeting with colleagues",
+    "Creating new ideas",
+    "Following established procedures",
+    "Completing designated tasks"
+  ],
+  type: "multiple choice",
 },
 
 ]
@@ -145,88 +170,6 @@ const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
       // Handle error or display error message
     }
   };
-  // const [project, setProject] = useState<string[]>([
-  //   "creative roles",
-  //   "analytical roles",
-  //   "leadership roles",
-  //   "hands-on roles",
-  //   "customer service roles",
-  // ]);
-  // const [fiveOptions, setFiveOptions] = useState<number>(); 
-
-  // const [opinion, setOpinion] = useState<string>();
-
-  // const [skills, setSkill] = useState<string[]>([
-  //   "communication and writing",
-  //   "critical thinking and analysis",
-  //   "time management and organization",
-  //   "technical skills",
-  //   "creative skills",
-  // ]);
-
-  // const [detailedAnswers, setDetailedAnswers] = useState({});
-  // const handleSubmitDetailedAnswers = () => {
-  //   axios
-  //     .post("API_ENDPOINT_URL", detailedAnswers)
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error submitting detailed answers:", error);
-  //     });
-  // };
-
-  // const handleDetailedAnswerChange = (
-  //   questionNumber: number,
-  //   answer: string
-  // ) => {
-  //   setDetailedAnswers((prevState) => ({
-  //     ...prevState,
-  //     [questionNumber]: answer,
-  //   }));
-  // };
-
-  // function updateProject(event: React.ChangeEvent<HTMLInputElement>) {
-  //   const proj = event.target.value;
-  //   if (project.includes(proj)) {
-  //     setProject(project.filter((e) => e !== proj));
-  //   } else {
-  //     setProject([...project, proj]);
-  //   }
-  // }
-
-  // function updateFiveOptions(event: React.ChangeEvent<HTMLInputElement>) {
-  //   setFiveOptions(event.target.value);
-  // }
-  // function updateOpinion(event: React.ChangeEvent<HTMLInputElement>) {
-  //   setOpinion(event.target.value);
-  // }
-
-  // function updateSkills(event: React.ChangeEvent<HTMLInputElement>) {
-  //   const skill = event.target.value;
-  //   if (skills.includes(skill)) {
-  //     setSkill(skills.filter((e) => e !== skill));
-  //   } else {
-  //     setProject([...skills, skill]);
-  //   }
-  // }
-
-  // function QuestionController(QstNum: string) {
-  //   switch (QstNum) {
-  //     case "next":
-  //       if (QuestionView < 10) {
-  //         setQuestionView(QuestionView + 1);
-  //       }
-  //       break;
-  //     case "prev":
-  //       if (QuestionView > 0) {
-  //         setQuestionView(QuestionView - 1);
-  //       }
-  //       break;
-  //     default:
-  //       setQuestionView(QuestionView);
-  //   }
-  // }
 
   return (
     <div className="Dbody">

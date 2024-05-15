@@ -51,7 +51,7 @@
 }
 
 .Hbody {
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
   z-index: 8;
   overflow-x: hidden;
@@ -74,7 +74,7 @@
   transform: none;
 
   z-index: 8;
-  height: 100vh;
+  height: 120vh;
 }
 
 .BQDiscriptions {
