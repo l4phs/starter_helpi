@@ -35,17 +35,23 @@ https://www.color-hex.com/color-palette/106259
   padding: 19px 10px;
   font-size: 12px;
   border-radius: 8px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  /* border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px; */
+  transition: all 0.3s ease; 
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   cursor: pointer;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-right: 5px;
 }
 
 .TB-li:hover {
   background-color: #3d2a19;
   color: #fee4c3;
+  transform: scale(1.1); 
+
 }
 
 .Taskbar {
@@ -92,17 +98,23 @@ https://www.color-hex.com/color-palette/106259
   padding: 19px 10px;
   font-size: 12px;
   border-radius: 8px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  /* border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px; */
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   cursor: pointer;
   float: left;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  transition: all 0.3s ease; 
+
 }
 .SubmitButton:hover {
   background-color: #3d2a19;
   color: #fee4c3;
+  transform: scale(1.1); 
+
 }
 
 .TaskbarHeader {
