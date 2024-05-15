@@ -48,7 +48,7 @@ function App(): JSX.Element {
       <div>
         <ul className="TB-ul">
           <div className="TaskBar">
-            <li className="TB-li"> Sign In </li>
+            {/* <li className="TB-li"> Sign In </li> */}
             <li className="TB-li" onClick={() => setPage("DQPage")}>
               {" "}
               Detailed Questions{" "}
@@ -83,7 +83,7 @@ function App(): JSX.Element {
 
       {page === "BQPage" && <BQPage setPage={setPage} apiKey={key}/>} 
 
-      {page === "DQPage" && <DQPage setPage={setPage} />}
+      {page === "DQPage" && <DQPage setPage={setPage} apiKey={key} />}
     </React.Fragment>
   );
 }

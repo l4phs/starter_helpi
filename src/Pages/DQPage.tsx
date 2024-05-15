@@ -6,16 +6,18 @@ import OpenAI from "openai";
 
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
+  apiKey: string;
 }
 
 interface Question {
   id: number;
   question: string;
-  answers:string[] | null;
+  answers: string[] | null;
   type: "short answer" | "multiple choice" | "checkbox";
 }
 
-function DQPage({ setPage }: Props): JSX.Element {
+function DQPage(props: Props): JSX.Element {
+  console.log("API Key:", props.apiKey);
 
 
 const detailedQuestions: Question [] = [
@@ -108,122 +110,135 @@ const detailedQuestions: Question [] = [
 
 ]
 
-const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [answers, setAnswers] = useState<(string | null)[]>(Array(detailedQuestions.length).fill(null));
-    const [progress, setProgress] = useState(0);
-    const [, setSubmitted] = useState(false); // State to track if answers have been submitted
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [answers, setAnswers] = useState<(string | null)[]>(
+    Array(detailedQuestions.length).fill(null)
+  );
+  const [progress, setProgress] = useState(0);
+  const [, setSubmitted] = useState(false); // State to track if answers have been submitted
 
-    const openai = new OpenAI({ apiKey: 'key', dangerouslyAllowBrowser: true });
+  const openai = new OpenAI({ apiKey: "key", dangerouslyAllowBrowser: true });
 
-    const handleNext = () => {
-      if (currentQuestionIndex < detailedQuestions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
-      }
-    };
-  
-    const handlePrevious = () => {
-      if (currentQuestionIndex > 0) {
-        setCurrentQuestionIndex(currentQuestionIndex - 1);
-      }
-    };
-  
-    const handleAnswerChange = (selectedAnswer: string) => {
-      const updatedAnswers = [...answers];
-      updatedAnswers[currentQuestionIndex] = selectedAnswer;
-      setAnswers(updatedAnswers);
-  
-      const answeredCount = updatedAnswers.filter((answer) => answer !== null).length;
-      const totalQuestions = detailedQuestions.length;
-      const percentage = (answeredCount / totalQuestions) * 100;
-      setProgress(percentage);
-    };
+  const handleNext = () => {
+    if (currentQuestionIndex < detailedQuestions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }
+  };
 
-    const handleSubmitBasicAnswers = async () => {
-      const userContent = answers.map((answer, index) => `${detailedQuestions[index].question}: ${answer}`).join('\n');
-  
-      try {
-        const response = await openai.chat.completions.create({
-          model: 'gpt-4-turbo',
-          messages: [
-            {
-              role: 'system',
-              content: 'You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices with descriptions and why these jobs were a good match. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee',
-            },
-            {
-              role: 'user',
-              content: userContent,
-            },
-          ],
-          temperature: 1,
-          max_tokens: 1000,
-          top_p: 1,
-          frequency_penalty: 0,
-          presence_penalty: 0,
-        });
-  
-        const careerReport = response.choices[0].message.content || '';
-      console.log('Career Report:', careerReport);
+  const handlePrevious = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+  };
+
+  const handleAnswerChange = (selectedAnswer: string) => {
+    const updatedAnswers = [...answers];
+    updatedAnswers[currentQuestionIndex] = selectedAnswer;
+    setAnswers(updatedAnswers);
+
+    const answeredCount = updatedAnswers.filter((answer) => answer !== null)
+      .length;
+    const totalQuestions = detailedQuestions.length;
+    const percentage = (answeredCount / totalQuestions) * 100;
+    setProgress(percentage);
+  };
+
+  const handleSubmitBasicAnswers = async () => {
+    const userContent = answers
+      .map((answer, index) => `${detailedQuestions[index].question}: ${answer}`)
+      .join("\n");
+
+    try {
+      const response = await openai.chat.completions.create({
+        model: "gpt-4-turbo",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices with descriptions and why these jobs were a good match. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",
+          },
+          {
+            role: "user",
+            content: userContent,
+          },
+        ],
+        temperature: 1,
+        max_tokens: 1000,
+        top_p: 1,
+        frequency_penalty: 0,
+        presence_penalty: 0,
+      });
+
+      const careerReport = response.choices[0].message.content || "";
+      console.log("Career Report:", careerReport);
 
       setSubmitted(true); // Update state to indicate answers have been submitted
     } catch (error) {
-      console.error('Error generating career insights:', error);
+      console.error("Error generating career insights:", error);
       // Handle error or display error message
     }
   };
 
   return (
     <div className="Dbody">
+      <div className="background"></div>
       <div className="DQH">Detailed Questions</div>
       <div className="ProgressBarBQ">
-        <div className="ActiveProgressBQ" style={{ width: `${progress}%` }}></div>
+        <div
+          className="ActiveProgressBQ"
+          style={{ width: `${progress}%` }}
+        ></div>
       </div>
       <div className="QuestionHeader">
-      <div>Question {currentQuestionIndex + 1} of {detailedQuestions.length}</div>
+        <div>
+          Question {currentQuestionIndex + 1} of {detailedQuestions.length}
+        </div>
       </div>
-     <div className="QuestionContainer">
-       <h3>{detailedQuestions[currentQuestionIndex].question}</h3>
-       {detailedQuestions[currentQuestionIndex].type === 'multiple choice' ? (
-         <ul>
-           {detailedQuestions[currentQuestionIndex].answers?.map((answer) => (
-             <ul key={answer}>
-               <input
-                 type="radio"
-                 id={answer}
-                 name={`question${currentQuestionIndex}`}
-                 value={answer}
-                 checked={answers[currentQuestionIndex] === answer}
-                 onChange={() => handleAnswerChange(answer)}
-               />
-               <label htmlFor={answer}>{answer}</label>
-             </ul>
-           ))}
-         </ul>
-       ) : (
-         <textarea
-           value={answers[currentQuestionIndex] || ''}
-           onChange={(e) => handleAnswerChange(e.target.value)}
-           placeholder="Please enter your answer here."
-         />
-       )}
-     </div>
-     <div className="ButtonContainer">
-       <Button className="PrevButton" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
-         Previous
-       </Button>
-       {currentQuestionIndex < detailedQuestions.length - 1 ? (
-         <Button className="NextButton" onClick={handleNext}>
-           Next
-         </Button>
-       ) : (
-         <Button className="Submit-Button" onClick={handleSubmitBasicAnswers}>
-           Submit Answers
-         </Button>
-       )}
-     </div>
-   </div>
-     
-     
-
+      <div className="QuestionContainer">
+        <h3>{detailedQuestions[currentQuestionIndex].question}</h3>
+        {detailedQuestions[currentQuestionIndex].type === "multiple choice" ? (
+          <ul>
+            {detailedQuestions[currentQuestionIndex].answers?.map((answer) => (
+              <ul key={answer}>
+                <input
+                  type="radio"
+                  id={answer}
+                  name={`question${currentQuestionIndex}`}
+                  value={answer}
+                  checked={answers[currentQuestionIndex] === answer}
+                  onChange={() => handleAnswerChange(answer)}
+                />
+                <label htmlFor={answer}>{answer}</label>
+              </ul>
+            ))}
+          </ul>
+        ) : (
+          <textarea
+            value={answers[currentQuestionIndex] || ""}
+            onChange={(e) => handleAnswerChange(e.target.value)}
+            placeholder="Please enter your answer here."
+          />
+        )}
+      </div>
+      <div className="ButtonContainer">
+        <Button
+          className="PrevButton"
+          onClick={handlePrevious}
+          disabled={currentQuestionIndex === 0}
+        >
+          Previous
+        </Button>
+        {currentQuestionIndex < detailedQuestions.length - 1 ? (
+          <Button className="NextButton" onClick={handleNext}>
+            Next
+          </Button>
+        ) : (
+          <Button className="Submit-Button" onClick={handleSubmitBasicAnswers}>
+            Submit Answers
+          </Button>
+        )}
+      </div>
+    </div>
   );
 }
 
