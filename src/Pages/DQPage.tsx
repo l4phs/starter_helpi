@@ -19,8 +19,10 @@ interface Question {
 function DQPage(props: Props): JSX.Element {
   console.log("API Key:", props.apiKey);
 
-  const detailedQuestions: Question[] = [
-   {
+
+const detailedQuestions: Question [] = [
+
+{
   id: 1,
   question: "What kind of work environment do you prefer? Describe your ideal workplace.",
   answers: null,
@@ -105,20 +107,9 @@ function DQPage(props: Props): JSX.Element {
   ],
   type: "multiple choice",
 },
-  ];
-
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState<(string | null)[]>(
-    Array(detailedQuestions.length).fill(null)
-  );
-  const [progress, setProgress] = useState(0);
-  const [, setSubmitted] = useState(false); // State to track if answers have been submitted
-
-
-
-
+=========
   const openai = new OpenAI({ apiKey: "key", dangerouslyAllowBrowser: true });
-
+>>>>>>>>> Temporary merge branch 2
 
   const handleNext = () => {
     if (currentQuestionIndex < detailedQuestions.length - 1) {
@@ -144,9 +135,9 @@ function DQPage(props: Props): JSX.Element {
     setProgress(percentage);
   };
 
-  const handleSubmitBasicAnswers = async () => {
+  const handleSubmitDetailAnswers = async () => {
     const userContent = answers
-      .map((answer, index) => `${detailedQuestions[index].question}: ${answer}`)
+      .map((answer, index) => `${questions[index].question}: ${answer}`)
       .join("\n");
 
     try {
@@ -156,8 +147,7 @@ function DQPage(props: Props): JSX.Element {
           {
             role: "system",
             content:
-              "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices with descriptions and why these jobs were a good match. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",
-          },
+            "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices formatted as follows: job name,pay rate, description, and why matched. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",          },
           {
             role: "user",
             content: userContent,
@@ -172,8 +162,10 @@ function DQPage(props: Props): JSX.Element {
 
       const careerReport = response.choices[0].message.content || "";
       console.log("Career Report:", careerReport);
+      setGptReport(careerReport);
 
-      setSubmitted(true); // Update state to indicate answers have been submitted
+     // Update state to indicate answers have been submitted
+     setCheck(true);
     } catch (error) {
       console.error("Error generating career insights:", error);
       // Handle error or display error message

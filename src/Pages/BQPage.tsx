@@ -144,6 +144,8 @@ function BQPage(props: Props): JSX.Element {
   );
   const [progress, setProgress] = useState(0);
   const [submitted, setSubmitted] = useState(false); // State to track if answers have been submitted
+  const [check, setCheck] = useState(false);
+  const [gptReport, setGptReport] = useState("");
 
   const openai = new OpenAI({
     apiKey: props.apiKey,
@@ -174,6 +176,14 @@ function BQPage(props: Props): JSX.Element {
     setProgress(percentage);
   };
 
+  const handleReturn = () => {
+    setSubmitted(false);
+  }
+
+  const handleResponseCheck = () => {
+    setSubmitted(true);
+  }
+
   const handleSubmitBasicAnswers = async () => {
     const userContent = answers
       .map((answer, index) => `${questions[index].question}: ${answer}`)
@@ -186,8 +196,7 @@ function BQPage(props: Props): JSX.Element {
           {
             role: "system",
             content:
-              "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices with descriptions and why these jobs were a good match. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",
-          },
+            "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices formatted as follows: job name,pay rate, description, and why matched. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",          },
           {
             role: "user",
             content: userContent,
@@ -202,8 +211,10 @@ function BQPage(props: Props): JSX.Element {
 
       const careerReport = response.choices[0].message.content || "";
       console.log("Career Report:", careerReport);
+      setGptReport(careerReport);
 
-      setSubmitted(true); // Update state to indicate answers have been submitted
+     // Update state to indicate answers have been submitted
+     setCheck(true);
     } catch (error) {
       console.error("Error generating career insights:", error);
       // Handle error or display error message
@@ -221,10 +232,24 @@ function BQPage(props: Props): JSX.Element {
           <ul>
             {questions.map((question, index) => (
               <li key={question.question}>
-                <strong>{question.question}</strong>: {answers[index]}
+                <strong>{question.question}</strong>
+                <br></br>
+                 {answers[index]}
               </li>
             ))}
           </ul>
+          <div>
+            <br></br>
+            <p>{gptReport}</p>
+          <Button
+                className="Return to Quiz"
+                onClick={handleReturn}
+              >Return to Quiz </Button>
+              <Button
+                className="getResponse"
+                onClick={handleSubmitBasicAnswers}
+              >Get My Results </Button>
+              </div>
         </div>
       ) : (
         <div>
@@ -278,14 +303,14 @@ function BQPage(props: Props): JSX.Element {
             ) : (
               <Button
                 className="BasicSubmitButton"
-                onClick={handleSubmitBasicAnswers}
-              >
-                Submit Basic Answers
+                onClick={handleResponseCheck}
+              >Submit Basic Answers
               </Button>
             )}
           </div>
         </div>
       )}
+
     </div>
   );
 }
