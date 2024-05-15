@@ -143,9 +143,9 @@ const detailedQuestions: Question [] = [
     setProgress(percentage);
   };
 
-  const handleSubmitBasicAnswers = async () => {
+  const handleSubmitDetailAnswers = async () => {
     const userContent = answers
-      .map((answer, index) => `${detailedQuestions[index].question}: ${answer}`)
+      .map((answer, index) => `${questions[index].question}: ${answer}`)
       .join("\n");
 
     try {
@@ -155,8 +155,7 @@ const detailedQuestions: Question [] = [
           {
             role: "system",
             content:
-              "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices with descriptions and why these jobs were a good match. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",
-          },
+            "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices formatted as follows: job name,pay rate, description, and why matched. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",          },
           {
             role: "user",
             content: userContent,
@@ -171,8 +170,10 @@ const detailedQuestions: Question [] = [
 
       const careerReport = response.choices[0].message.content || "";
       console.log("Career Report:", careerReport);
+      setGptReport(careerReport);
 
-      setSubmitted(true); // Update state to indicate answers have been submitted
+     // Update state to indicate answers have been submitted
+     setCheck(true);
     } catch (error) {
       console.error("Error generating career insights:", error);
       // Handle error or display error message
