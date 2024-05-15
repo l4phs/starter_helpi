@@ -184,6 +184,10 @@ const [answers, setAnswers] = useState<(string | null)[]>(
     <div className="Dbody">
       <div className="background"></div>
       <div className="DQH">Detailed Questions</div>
+      <h3 className = "Description"> 
+      <p>Welcome to the Detailed Questions! There are 13 total questions but you can answer as many or as few as you would like!</p>
+      <p> The more questions you answer, the more accurate your results will be!</p>
+      <p>You will be able to review your answers and go back and change any of them before you submit your results.</p> </h3>
       <div className="ProgressBarBQ">
         <div
           className="ActiveProgressBQ"
