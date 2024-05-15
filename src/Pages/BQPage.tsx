@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-template-curly-in-string */
 //import { Button } from "react-bootstrap";
 import { useState } from "react";
 import "./BQPage.css";
 import OpenAI from "openai";
 import { Button } from "react-bootstrap";
+
 
 //Code written with the assistance of Gemini AI.
 
@@ -32,7 +34,7 @@ function BQPage(props: Props): JSX.Element {
     {
       question:
         "What salary would you not feel comfortable earning less than? (pick one)",
-      answers: ["50K", "70K", "90K", "130K", "160K", "200K"],
+      answers: ["50K", "70K","100K", "160K", "200K"],
       type: "multiple choice",
     },
     {
@@ -63,12 +65,6 @@ function BQPage(props: Props): JSX.Element {
     },
     {
       question:
-        "How would you rate your ability to learn new skills? (pick one)",
-      answers: ["Excellent", "Good", "Average", "Below average", "Poor"],
-      type: "multiple choice",
-    },
-    {
-      question:
         "Please select your response to the following statement: I work well in fast paced environments",
       answers: ["Yes", "No"],
       type: "multiple choice",
@@ -81,7 +77,6 @@ function BQPage(props: Props): JSX.Element {
     {
       question: "What is the maximum amount of hours you would prefer to work?",
       answers: [
-        "15 Hrs",
         "30 Hrs",
         "40 Hrs",
         "60 Hrs",
@@ -92,19 +87,12 @@ function BQPage(props: Props): JSX.Element {
     {
       question: "What is your ideal shift time?",
       answers: [
-        "7am - 3pm",
-        "9am - 5pm",
-        "11am-4pm",
-        "4pm-10pm",
-        "11pm-6am",
+        "Early Bird (7am - 3pm)",
+        "Regular Hours (9am - 5pm)",
+        "Overnight (7pm - 7am)",
         "I want to work when I want.",
       ],
       type: "multiple choice",
-    },
-    {
-      question: "List three activities you enjoy:",
-      answers: null,
-      type: "short answer",
     },
     {
       question:
@@ -118,16 +106,6 @@ function BQPage(props: Props): JSX.Element {
       type: "multiple choice",
     },
     {
-      question: "What location would you prefer to live in?",
-      answers: ["City", "Suburban", "Coastal/Beach", "Urban"],
-      type: "multiple choice",
-    },
-    {
-      question: "What kind of learner are you?",
-      answers: ["Visual", "Auditory", "Read/Write", "Kindaesthetic"],
-      type: "multiple choice",
-    },
-    {
       question: "Favorite activity? (one word answer)",
       answers: null,
       type: "short answer",
@@ -137,23 +115,6 @@ function BQPage(props: Props): JSX.Element {
       answers: null,
       type: "short answer",
     },
-    {
-      question: "How do you prefer to spend your workday?",
-      answers: [
-        "Solving problems",
-        "Meeting with colleagues",
-        "Creating new ideas",
-        "Following established procedures",
-      ],
-      type: "multiple choice",
-    },
-    {
-      question:
-        "Please select your level of agreement with the following statement: I prefer working independently rather than with a team.",
-      answers: ["True", "False"],
-      type: "multiple choice",
-    },
-
     {
       question: "Do you enjoy helping others?",
       answers: ["Yes", "No"],
@@ -176,16 +137,6 @@ function BQPage(props: Props): JSX.Element {
       answers: ["True", "False"],
       type: "multiple choice",
     },
-    {
-      question: "How do you approach decision-making?",
-      answers: [
-        "Analyze data and facts",
-        "Trust your intuition",
-        "Consult with others for advice",
-        "Take time to weigh all options",
-      ],
-      type: "multiple choice",
-    },
   ];
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -194,6 +145,8 @@ function BQPage(props: Props): JSX.Element {
   );
   const [progress, setProgress] = useState(0);
   const [submitted, setSubmitted] = useState(false); // State to track if answers have been submitted
+  const [check, setCheck] = useState(false);
+  const [gptReport, setGptReport] = useState("");
 
   const openai = new OpenAI({
     apiKey: props.apiKey,
@@ -224,6 +177,14 @@ function BQPage(props: Props): JSX.Element {
     setProgress(percentage);
   };
 
+  const handleReturn = () => {
+    setSubmitted(false);
+  }
+
+  const handleResponseCheck = () => {
+    setSubmitted(true);
+  }
+
   const handleSubmitBasicAnswers = async () => {
     const userContent = answers
       .map((answer, index) => `${questions[index].question}: ${answer}`)
@@ -236,8 +197,7 @@ function BQPage(props: Props): JSX.Element {
           {
             role: "system",
             content:
-              "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices with descriptions and why these jobs were a good match. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",
-          },
+            "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices formatted as follows: job name,pay rate, description, and why matched. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",          },
           {
             role: "user",
             content: userContent,
@@ -252,8 +212,10 @@ function BQPage(props: Props): JSX.Element {
 
       const careerReport = response.choices[0].message.content || "";
       console.log("Career Report:", careerReport);
+      setGptReport(careerReport);
 
-      setSubmitted(true); // Update state to indicate answers have been submitted
+     // Update state to indicate answers have been submitted
+     setCheck(true);
     } catch (error) {
       console.error("Error generating career insights:", error);
       // Handle error or display error message
@@ -274,10 +236,24 @@ function BQPage(props: Props): JSX.Element {
           <ul>
             {questions.map((question, index) => (
               <li key={question.question}>
-                <strong>{question.question}</strong>: {answers[index]}
+                <strong>{question.question}</strong>
+                <br></br>
+                 {answers[index]}
               </li>
             ))}
           </ul>
+          <div>
+            <br></br>
+            <p>{gptReport}</p>
+          <Button
+                className="Return to Quiz"
+                onClick={handleReturn}
+              >Return to Quiz </Button>
+              <Button
+                className="getResponse"
+                onClick={handleSubmitBasicAnswers}
+              >Get My Results </Button>
+              </div>
         </div>
       ) : (
         <div>
@@ -331,14 +307,14 @@ function BQPage(props: Props): JSX.Element {
             ) : (
               <Button
                 className="BasicSubmitButton"
-                onClick={handleSubmitBasicAnswers}
-              >
-                Submit Basic Answers
+                onClick={handleResponseCheck}
+              >Submit Basic Answers
               </Button>
             )}
           </div>
         </div>
       )}
+
     </div>
   );
 }

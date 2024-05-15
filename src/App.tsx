@@ -27,7 +27,7 @@ if (prevKey !== null) {
 function App(): JSX.Element {
   const [key, setKey] = useState<string>(keyData); //for api key input
   //setting states for each page
-  // const[project, setProject] = useState<string[]>(["creative roles", "analytical roles", "leadership roles", "hands-on roles", "customer service roles"]) //options for detailed question #4
+ 
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -74,7 +74,7 @@ function App(): JSX.Element {
               Submit
             </li>
           </div>
-          <li className="TaskbarHeader" onClick={() => setPage("HomePage")}> What Do I Do?
+          <li className="TaskbarHeader" onClick={() => setPage("HomePage")}> Jobspresso
           </li>
         </ul>
       </div>
