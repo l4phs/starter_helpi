@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (56 ms)
+  ✕ renders learn react link (61 ms)
 
   ● renders learn react link
 
@@ -225,22 +225,22 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |   12.12 |    14.58 |    9.75 |   12.59 |                   
+All files            |   10.82 |       14 |    8.33 |   11.18 |                   
  src                 |   32.14 |    43.75 |   11.11 |   32.14 |                   
   App.tsx            |   52.94 |    58.33 |   14.28 |   52.94 | 26,36-43,54-79    
   index.tsx          |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/Pages           |    6.73 |        0 |    9.37 |    7.07 |                   
+ src/Pages           |     6.2 |        0 |    7.69 |    6.45 |                   
   BQPage.tsx         |       0 |        0 |       0 |       0 | 26-298            
-  DQPage.tsx         |       0 |        0 |       0 |       0 | 21-223            
+  DQPage.tsx         |       0 |        0 |       0 |       0 | 25-281            
   HomePage.tsx       |   33.33 |        0 |      50 |      40 | 13-21,117-121     
   LoadingPage.tsx    |       0 |      100 |       0 |       0 | 9                 
-  ResultPage.tsx     |   33.33 |      100 |       0 |   33.33 | 10-14             
+  ResultPage.tsx     |      10 |      100 |       0 |      10 | 23-42,46-75       
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.267 s
+Time:        3.282 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
