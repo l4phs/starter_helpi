@@ -1,0 +1,17 @@
+.LoadingBackground {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3d2a19;
+}
+
+.Gif {
+    background-image: url("Loading.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 600px; /* Adjust the size as needed */
+    height: 600px; /* Adjust the size as needed */
+}
