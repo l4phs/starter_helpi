@@ -129,7 +129,6 @@
   border: 1px transparent;
   z-index: 9;
   transition: all 0.3s ease; 
-
 }
 .BQButton:hover {
   background-color: #3d2a19;
