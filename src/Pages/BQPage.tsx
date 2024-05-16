@@ -226,7 +226,10 @@ function BQPage(props: Props): JSX.Element {
     <div className="BQPage">
       <div className="Background"></div>
       <h1 className="BQH">Basic Questions</h1> 
-      <h3 className = "Description"> Welcome to the Basic Quiz!  </h3>
+      <h3 className = "Description"> 
+      <p>Welcome to the Basic Questions! There are 18 total questions but you can answer as many or as few as you would like!</p>
+      <p> The more questions you answer, the more accurate your results will be!</p>
+      <p>You will be able to review your answers and go back and change any of them before you submit your results.</p> </h3>
       {submitted ? (
         // Display submitted answers if submitted is true
         <div className="SubmittedAnswers">
