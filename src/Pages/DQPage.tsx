@@ -244,68 +244,74 @@ function DQPage(props: Props): JSX.Element {
       console.log("Career Report:", careerReport);
       props.setGptReport(careerReport); // Set GPT report in parent state
 
-
-    // Update state to indicate answers have been submitted
-    setCheck(true);
-   } catch (error) {
-     console.error("Error generating career insights:", error);
-     // Handle error or display error message
-   }
-   finally{
-    props.setPage("ResultPage");
-   }
- };
-
+      // Update state to indicate answers have been submitted
+      setCheck(true);
+    } catch (error) {
+      console.error("Error generating career insights:", error);
+      // Handle error or display error message
+    } finally {
+      props.setPage("ResultPage");
+    }
+  };
 
   return (
     <div className="Dbody">
       {submitted ? (
         // Display submitted answers if submitted is true
         <div>
-        <div className="resultBackgroundDetailed"></div>
-        <div className="SubmittedAnswers">
-          <h2 className="resultsHeader">Your Responses</h2>
-          <span className="Description">
-          <p>There are buttons at the bottom to change your answers OR move on to view your personally curated results! </p>
-          </span>
-          <span className="resultsPageDetailed">
-            {detailedQuestions.map((question, index) => (
-              <p className="resultformatDetailed" key={question.question}>
-                <strong>{question.question}</strong>
-                <br></br>
-                {answers[index]}
-              <br></br>
+          <div className="resultBackgroundDetailed"></div>
+          <div className="SubmittedAnswers">
+            <h2 className="resultsHeader">Your Responses</h2>
+            <span className="Description">
+              <p>
+                There are buttons at the bottom to change your answers OR move
+                on to view your personally curated results!{" "}
               </p>
-            ))}
-          </span>
-          <div>
-            <Button className="returnButtonDetailed" onClick={handleReturn}>
-              Return to Quiz{" "}
-            </Button>
-            <Button className="resultSubmitButtonDetailed" onClick={handleSubmitDetailAnswers}>
-              Collect My Brew{" "}
-            </Button>
+            </span>
+            <div className="resultsContainer">
+              <span className="resultsPageDetailed">
+                {detailedQuestions.map((question, index) => (
+                  <p className="resultformatDetailed" key={question.question}>
+                    <strong>{question.question}</strong>
+                    <br></br>
+                    {answers[index]}
+                    <br></br>
+                  </p>
+                ))}
+              </span>
+            </div>
+            <div>
+              <Button className="returnButtonDetailed" onClick={handleReturn}>
+                Return to Quiz{" "}
+              </Button>
+              <Button
+                className="resultSubmitButtonDetailed"
+                onClick={handleSubmitDetailAnswers}
+              >
+                Collect My Brew{" "}
+              </Button>
             </div>
           </div>
         </div>
       ) : (
         <div>
-           <div className="background"></div>
-      <div className="DQH">Detailed Questions</div>
-      <h3 className="Description">
-        <p>
-          Welcome to the Detailed Questions! There are 13 total questions but
-          you can answer as many or as few as you would like!
-        </p>
-        <p>
-          {" "}
-          The more questions you answer, the more accurate your results will be!
-        </p>
-        <p>
-          You will be able to review your answers and go back and change any of
-          them before you submit your results.
-        </p>{" "}
-      </h3>
+          <div className="background"></div>
+          <div className="DQH">Detailed Questions</div>
+          <h3 className="Description">
+            <p>
+              Welcome to the Detailed Questions! There are 13 total questions
+              but you can answer as many or as few as you would like!
+            </p>
+            <p>
+              {" "}
+              The more questions you answer, the more accurate your results will
+              be!
+            </p>
+            <p>
+              You will be able to review your answers and go back and change any
+              of them before you submit your results.
+            </p>{" "}
+          </h3>
           <div className="ProgressBarBQ">
             <div
               className="ActiveProgressBQ"
@@ -326,19 +332,19 @@ function DQPage(props: Props): JSX.Element {
                 {detailedQuestions[currentQuestionIndex].answers?.map(
                   (answer) => (
                     <section className="radio-list">
-                    <div className="radio-list">
-                    <li className="radio-item" key={answer}>
-                      <input
-                        type="radio"
-                        id={answer}
-                        name={`question${currentQuestionIndex}`}
-                        value={answer}
-                        checked={answers[currentQuestionIndex] === answer}
-                        onChange={() => handleAnswerChange(answer)}
-                      />
-                      <label htmlFor={answer}>{answer}</label>
-                    </li>
-                    </div>
+                      <div className="radio-list">
+                        <li className="radio-item" key={answer}>
+                          <input
+                            type="radio"
+                            id={answer}
+                            name={`question${currentQuestionIndex}`}
+                            value={answer}
+                            checked={answers[currentQuestionIndex] === answer}
+                            onChange={() => handleAnswerChange(answer)}
+                          />
+                          <label htmlFor={answer}>{answer}</label>
+                        </li>
+                      </div>
                     </section>
                   )
                 )}
@@ -351,6 +357,7 @@ function DQPage(props: Props): JSX.Element {
               />
             )}
           </div>
+          <div className="buttonContainer">
             <Button
               className="detPrevButton"
               onClick={handlePrevious}
@@ -363,13 +370,11 @@ function DQPage(props: Props): JSX.Element {
                 Next
               </Button>
             ) : (
-              <Button
-                className="detSubmitButton"
-                onClick={handleResponseCheck}
-              >
+              <Button className="detSubmitButton" onClick={handleResponseCheck}>
                 Submit Your Answers
               </Button>
             )}
+          </div>
         </div>
       )}
     </div>

@@ -92,7 +92,7 @@
 .detNextButton {
   position: absolute;
   top: 85vh;
-  left: 105vh;
+  left: 55vw;
   margin-top: 20vh;
   height: 8vh;
   bottom: 20px;
@@ -121,7 +121,7 @@
 .detSubmitButton {
   position: absolute;
   top: 85vh;
-  left: 105vh;
+  left: 52vw;
   margin-top: 20vh;
   height: 8vh;
   bottom: 20px;
@@ -150,7 +150,7 @@
 .detPrevButton {
   position: absolute;
   top: 85vh;
-  left: 70vh;
+  left: 40vw;
   margin-top: 20vh;
   height: 8vh;
   bottom: 0px; /* Adjust the vertical position from the bottom */
@@ -290,6 +290,13 @@ label {
 }
 
 /*setting css for the submitted answers*/
+.resultsContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .resultBackgroundDetailed{
   height: 220vh;
@@ -312,12 +319,17 @@ label {
 
 .resultsPageDetailed{
   position: absolute;
-  top: 35vh;
+  top: 30vh;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  left: 28vh;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .resultformatDetailed{
-  z-index: 0;
+  z-index: 1;
   background-color: #c3c795;
   border-radius: 1.5em;
   padding-top: 10px;
@@ -325,7 +337,10 @@ label {
   padding-left: 20px;
   padding-right: 20px;
   color: #50542a;
-  text-shadow:1px 1px 10px #ffffff, 1px 1px 10px #d3d4c9;
+  text-shadow: 1px 1px 10px #ffffff, 1px 1px 10px #d3d4c9;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 600px; /* Optional: to limit the width of the result boxes */
 }
 
 .resultSubmitButtonDetailed {
