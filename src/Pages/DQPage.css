@@ -61,15 +61,15 @@
 
 .textboxclassDQ {
   position: absolute;
-  top: 43vh;
-  height: 40px;
+  top: 18vh;
+  height: 20vh;
   width: 60vh;
   font-size: 20px;
   font-family: "Josefin Sans";
-  left: 50vw;
-  background-color: #3c2918;
-  color: #fee4c3;
-  /* text-align: center; */
+  left: 27vw;
+  background-color: #ad8774;
+  color: #3c2918;
+  text-align: center; 
 }
 
 .QuestionHeader {

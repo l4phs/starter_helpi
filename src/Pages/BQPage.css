@@ -180,13 +180,13 @@
 .textboxclassBQ {
   position: absolute;
   margin-top: 10px;
-  top: 41vh;
-  height: 40px;
-  width: 60vh;
+  top: 15vh;
+  height: 10vh;
+  width: 15vw;
   font-size: 20px;
   font-family: "Josefin Sans";
   left: 35vw;
-  background-color: #3c2918;
+  background-color: #ad8774;
   color: #fee4c3;
   text-align: center;
 }

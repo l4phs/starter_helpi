@@ -345,6 +345,7 @@ function DQPage(props: Props): JSX.Element {
               </ul>
             ) : (
               <textarea
+                className="textboxclassDQ"
                 value={answers[currentQuestionIndex] || ""}
                 onChange={(e) => handleAnswerChange(e.target.value)}
                 placeholder="Please enter your answer here."

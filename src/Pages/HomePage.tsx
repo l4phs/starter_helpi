@@ -59,35 +59,42 @@ function HomePage({ setPage }: Props): JSX.Element {
       <br></br>
         <b>An example of a question you may see:</b>
           <br></br>
+          <br></br>
           What location would you prefer to live in?
           <br></br>
-          <input type="radio" 
+          <ul style={{listStyleType:"none"}}>
+          <li><input type="radio" 
           value={"Suburban"}
           name="Suburban"
-            />
-            Suburban
-            <input type="radio" 
+            />{" "}
+            Suburban </li>
+           
+            <li><input type="radio" 
           value={"Suburban"}
           name="Suburban"
-            />
-            Urban
-          <br></br>
-          <input type="radio" 
+            />{" "}
+            Urban</li>
+         
+          <li><input type="radio" 
           value={"Suburban"}
           name="Suburban"
-            />
-          City 
-          <input type="radio" 
+            />{" "}
+          City </li>
+         
+          <li><input type="radio" 
           value={"Suburban"}
           name="Suburban"
-            />
+            />{" "}
           Coastal Town
+          </li>
+          </ul>
       </div>
 
               <div className="DQDiscriptions">
                 <h1>Detailed Quiz!</h1>
                 Take your career exploration to new heights with our Advanced
                 Career Path Quiz! 
+                <br></br>
                 <br></br>
                 Designed for those seeking in-depth insights, this quiz
         assesses your skills, values, and goals.
@@ -97,6 +104,7 @@ function HomePage({ setPage }: Props): JSX.Element {
                 <br></br>
                 <br></br>
                 <b>An example of a question you may see:</b>
+        <br></br>
         <br></br>
         What kind of work environment do you prefer?
         <br></br>
