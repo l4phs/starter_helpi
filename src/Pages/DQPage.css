@@ -88,6 +88,116 @@
 
 }
 
+/*setting buttons for each quiz page*/
+.detNextButton {
+  position: absolute;
+  top: 85vh;
+  left: 105vh;
+  margin-top: 20vh;
+  height: 8vh;
+  bottom: 20px;
+  width: 100px; 
+  padding: 10px;
+  background-color: #3c2918;
+  color: #fee4c3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 3;
+}
+.detNextButton:hover {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.detNextButton:visted {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.detNextButton:focus {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+
+.detSubmitButton {
+  position: absolute;
+  top: 85vh;
+  left: 105vh;
+  margin-top: 20vh;
+  height: 8vh;
+  bottom: 20px;
+  width: fit-content; 
+  padding: 10px;
+  background-color: #3c2918;
+  color: #fee4c3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 3;
+}
+.detSubmitButton:hover {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.detSubmitButton:visted {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.detSubmitButton:focus {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+
+.detPrevButton {
+  position: absolute;
+  top: 85vh;
+  left: 70vh;
+  margin-top: 20vh;
+  height: 8vh;
+  bottom: 0px; /* Adjust the vertical position from the bottom */
+  width: 100px; /* Adjust the width as needed */
+  padding: 2px;
+  background-color: #3c2918;
+  color: #fee4c3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 3;
+}
+.detPrevButton:hover {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.detPrevButton:visited {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.detPrevButton:focus {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+
+.detPrevButton:disabled {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+
+.detailedQuestionContainer {
+  text-align: center;
+  font-size: 20px;
+  font-family: "Lilita One";
+  position: absolute;
+  top: 55vh; /* Adjust this value to move the container downward */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  width: 85%;
+  background-color: #fff3e4;
+  height: 60vh;
+  border-radius: 1.5em;
+  padding-top: 10px;
+  color: #3c2918;
+  /* margin: auto; */
+}
+
 .DQH {
 
   position: absolute;
@@ -114,35 +224,6 @@
   /* text-align: center; */
 }
 
-.NextButton {
-  position: absolute;
-  top: 75vh;
-  background-color: #3c2918;
-  color: #fee4c3;
-  left: 55vw;
-  transition: all 0.3s ease; 
-
-}
-.NextButton:hover {
-  background-color: #fee4c3;
-  color: #3c2918;
-  transform: scale(1.1);
-}
-
-.PrevButton {
-  position: absolute;
-  top: 75vh;
-  background-color: #3c2918;
-  color: #fee4c3;
-  right: 55vw;
-  transition: all 0.3s ease; 
-}
-.PrevButton:hover {
-  background-color: #fee4c3;
-  color: #3c2918;
-  transform: scale(1.1);
-}
-
 .options {
   position: absolute;
   top: 43vh;
@@ -151,20 +232,33 @@
   font-size: 20px;
 }
 
-.Submit-Button {
+.detailSubmitButton {
   position: absolute;
-  top: 95vh;
-  width: auto; /* Adjust the width as needed */
-  height: 61px;
+  height: 53px;
+  left: 55vw;
+  top: 83vh;
+  margin-top: 12vh; 
+  bottom: 20px; /* Adjust the vertical position from the bottom */
+  width: 30vh; /* Adjust the width as needed */
+  padding: 10px;
   background-color: #3c2918;
   color: #fee4c3;
-  left: 55vw;
-  transition: all 0.3s ease; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.Submit-Button:hover {
+
+.detailSubmitButton:hover {
   background-color: #fee4c3;
   color: #3c2918;
-  transform: scale(1.1);
+}
+.detailSubmitButton:visted {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.detailSubmitButton:focus {
+  background-color: #fee4c3;
+  color: #3c2918;
 }
 
 .ProgressBar {
@@ -172,7 +266,7 @@
   border-radius: 1.5em;
 
   left: 5vw;
-  top: 26vh;
+  top: 22vh;
   height: 6vh;
   width: 90vw;
   background-color: #3c2918;
@@ -194,4 +288,102 @@
 label {
   margin-left: 10px;
 }
+
+/*setting css for the submitted answers*/
+
+.resultBackgroundDetailed{
+  height: 220vh;
+  background-image: url(MatchaBQ.jpg);
+  filter: blur(5px);
+  background-size: cover;
+  z-index: 10;
+}
+
+.resultsHeaderDetailed{
+  font-size: 50px;
+  font-family: "Lilita One";
+  font-weight: bold;
+  position: absolute;
+  top: 13vh;
+  text-align: center;
+  left: 68vh;
+  text-shadow:1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
+}
+
+.resultsPageDetailed{
+  position: absolute;
+  top: 35vh;
+  text-align: center;
+  left: 28vh;
+}
+.resultformatDetailed{
+  z-index: 0;
+  background-color: #c3c795;
+  border-radius: 1.5em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #50542a;
+  text-shadow:1px 1px 10px #ffffff, 1px 1px 10px #d3d4c9;
+}
+
+.resultSubmitButtonDetailed {
+  position: absolute;
+  height: 55px;
+  left: 55vw;
+  top: 190vh;
+  margin-top: 12vh; 
+  bottom: 20px; /* Adjust the vertical position from the bottom */
+  width: 30vh; /* Adjust the width as needed */
+  padding: 10px;
+  background-color: #3c2918;
+  color: #fee4c3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.resultSubmitButtonDetailed:hover {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.resultSubmitButtonDetailed:visted {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.resultSubmitButtonDetailed:focus {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+
+.returnButtonDetailed {
+  position: absolute;
+  height: 55px;
+  left: 30vw;
+  top: 190vh;
+  margin-top: 12vh; 
+  bottom: 20px; /* Adjust the vertical position from the bottom */
+  width: 30vh; /* Adjust the width as needed */
+  padding: 10px;
+  background-color: #3c2918;
+  color: #fee4c3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.returnButtonDetailed:hover {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.returnButtonDetailed:visted {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.returnButtonDetailed:focus {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+
 

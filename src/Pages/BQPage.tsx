@@ -25,7 +25,7 @@ function BQPage(props: Props): JSX.Element {
   console.log("API Key:", props.apiKey);
 
   const questions: Question[] = [
-    //25 questions total
+    //18 questions total
     {
       question:
         "Would you prefer working from home, in an office / on site, or hybrid? (pick one)",
@@ -35,7 +35,7 @@ function BQPage(props: Props): JSX.Element {
     {
       question:
         "What salary would you not feel comfortable earning less than? (pick one)",
-      answers: ["50K", "70K", "100K", "160K", "200K"],
+      answers: ["50K", "70K","100K", "160K"],
       type: "multiple choice",
     },
     {
@@ -66,8 +66,8 @@ function BQPage(props: Props): JSX.Element {
     },
     {
       question:
-        "Please select your response to the following statement: I work well in fast paced environments",
-      answers: ["Yes", "No"],
+        "I work well in fast paced environments",
+      answers: ["True", "False"],
       type: "multiple choice",
     },
     {
@@ -118,7 +118,7 @@ function BQPage(props: Props): JSX.Element {
     },
     {
       question:
-        "Please select your level of agreement with the following statement: I prefer jobs that require a lot of attention to detail",
+        "I prefer jobs that require a lot of attention to detail",
       answers: ["True", "False"],
       type: "multiple choice",
     },
@@ -129,7 +129,7 @@ function BQPage(props: Props): JSX.Element {
     },
     {
       question:
-        "Please select your level of agreement with the following statement: I prefer consistent work hours over a flexible schedule.",
+        "I prefer consistent work hours over a flexible schedule.",
       answers: ["True", "False"],
       type: "multiple choice",
     },
@@ -224,11 +224,16 @@ function BQPage(props: Props): JSX.Element {
 
   return (
     <div className="BQPage">
-      <div className="Background"></div>
+      
       {submitted ? (
         // Display submitted answers if submitted is true
+        <div>
+        <div className="resultBackground"></div>
         <div className="SubmittedAnswers">
-          <h2 className="resultsHeader">Submitted Answers</h2>
+          <h2 className="resultsHeader">Your Responses</h2>
+          <span className="Description">
+          <p>There are buttons at the bottom to change your answers OR move on to view your personally curated results! </p>
+          </span>
           <span className="resultsPage">
             {questions.map((question, index) => (
               <p className="resultformat" key={question.question}>
@@ -240,18 +245,25 @@ function BQPage(props: Props): JSX.Element {
             ))}
           </span>
           <div>
-            <br></br>
-            <p>{gptReport}</p>
-            <Button className="Return to Quiz" onClick={handleReturn}>
-              Return to Quiz{" "}
-            </Button>
-            <Button className="getResponse" onClick={handleSubmitBasicAnswers}>
-              Get My Results{" "}
-            </Button>
-          </div>
+          <Button
+                className="returnButton"
+                onClick={handleReturn}
+              >Return to Quiz </Button>
+              <Button
+                className="resultSubmitButton"
+                onClick={handleSubmitBasicAnswers}
+              >Collect My Brew </Button>
+              </div>
+        </div>
         </div>
       ) : (
         <div>
+          <div className="Background"></div>
+          <h1 className="BQH">Basic Questions</h1> 
+      <h3 className = "Description"> 
+      <p>Welcome to the Basic Questions! There are 18 total questions but you can answer as many or as few as you would like!</p>
+      <p> The more questions you answer, the more accurate your results will be!</p>
+      <p>You will be able to review your answers and go back and change any of them before you submit your results.</p> </h3>
           <h1 className="BQH">Basic Questions</h1>
           <h3 className="Description">
             <p>
@@ -280,9 +292,12 @@ function BQPage(props: Props): JSX.Element {
           <div className="QuestionContainer">
             <h3>{questions[currentQuestionIndex].question}</h3>
             {questions[currentQuestionIndex].type === "multiple choice" ? (
-              <ul className="Ul-BQ">
+              
+              <ul className="Ul-BQ" style={{paddingLeft:"0px"}}>
                 {questions[currentQuestionIndex].answers?.map((answer) => (
-                  <li key={answer}>
+                  <section className="radio-list">
+                    <div className="radio-list">
+                  <li className="radio-item" key={answer}>
                     <input
                       type="radio"
                       id={answer}
@@ -293,6 +308,8 @@ function BQPage(props: Props): JSX.Element {
                     />
                     <label htmlFor={answer}>{answer}</label>
                   </li>
+                  </div>
+                  </section>
                 ))}
               </ul>
             ) : (
@@ -319,8 +336,7 @@ function BQPage(props: Props): JSX.Element {
               <Button
                 className="BasicSubmitButton"
                 onClick={handleResponseCheck}
-              >
-                Submit Basic Answers
+              >Submit Your Answers
               </Button>
             )}
           </div>
