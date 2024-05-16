@@ -225,24 +225,20 @@ function BQPage(props: Props): JSX.Element {
   return (
     <div className="BQPage">
       <div className="Background"></div>
-      <h1 className="BQH">Basic Questions</h1> 
-      <h3 className = "Description"> 
-      <p>Welcome to the Basic Questions! There are 18 total questions but you can answer as many or as few as you would like!</p>
-      <p> The more questions you answer, the more accurate your results will be!</p>
-      <p>You will be able to review your answers and go back and change any of them before you submit your results.</p> </h3>
       {submitted ? (
         // Display submitted answers if submitted is true
         <div className="SubmittedAnswers">
-          <h2>Submitted Answers</h2>
-          <ul>
+          <h2 className="resultsHeader">Submitted Answers</h2>
+          <span className="resultsPage">
             {questions.map((question, index) => (
-              <li key={question.question}>
+              <p className="resultformat" key={question.question}>
                 <strong>{question.question}</strong>
                 <br></br>
                  {answers[index]}
-              </li>
+                 <br></br>
+              </p>
             ))}
-          </ul>
+            </span>
           <div>
             <br></br>
             <p>{gptReport}</p>
@@ -258,6 +254,11 @@ function BQPage(props: Props): JSX.Element {
         </div>
       ) : (
         <div>
+          <h1 className="BQH">Basic Questions</h1> 
+      <h3 className = "Description"> 
+      <p>Welcome to the Basic Questions! There are 18 total questions but you can answer as many or as few as you would like!</p>
+      <p> The more questions you answer, the more accurate your results will be!</p>
+      <p>You will be able to review your answers and go back and change any of them before you submit your results.</p> </h3>
           <div className="ProgressBarBQ">
             <div
               className="ActiveProgressBQ"
