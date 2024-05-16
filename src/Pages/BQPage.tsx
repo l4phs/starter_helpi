@@ -3,6 +3,7 @@
 //import { Button } from "react-bootstrap";
 import { useState } from "react";
 import "./BQPage.css";
+import "./LoadingPage"
 import OpenAI from "openai";
 import { Button } from "react-bootstrap";
 
@@ -12,6 +13,7 @@ import { Button } from "react-bootstrap";
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
   apiKey: string; // Add apiKey as a prop
+  setGptReport: (report: string) => void; // Added prop to set GPT report
 }
 
 interface Question {
@@ -191,13 +193,14 @@ function BQPage(props: Props): JSX.Element {
       .join("\n");
 
     try {
+      props.setPage("LoadingPage");
       const response = await openai.chat.completions.create({
         model: "gpt-4-turbo",
         messages: [
           {
             role: "system",
             content:
-            "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices formatted as follows: job name,pay rate, description, and why matched. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",          },
+            "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices formatted as follows: job name,pay rate, description, and why matched. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",},
           {
             role: "user",
             content: userContent,
@@ -212,13 +215,16 @@ function BQPage(props: Props): JSX.Element {
 
       const careerReport = response.choices[0].message.content || "";
       console.log("Career Report:", careerReport);
-      setGptReport(careerReport);
+      props.setGptReport(careerReport); // Set GPT report in parent state
 
      // Update state to indicate answers have been submitted
      setCheck(true);
     } catch (error) {
       console.error("Error generating career insights:", error);
       // Handle error or display error message
+    }
+    finally{
+      props.setPage("ResultPage");
     }
   };
 
@@ -270,7 +276,7 @@ function BQPage(props: Props): JSX.Element {
           <div className="QuestionContainer">
             <h3>{questions[currentQuestionIndex].question}</h3>
             {questions[currentQuestionIndex].type === "multiple choice" ? (
-              <ul className="Ul-BQ" style={{ listStyleType: "none", paddingLeft: "0px"}}>
+              <ul className="Ul-BQ">
                 {questions[currentQuestionIndex].answers?.map((answer) => (
                   <li key={answer}>
                     <input
