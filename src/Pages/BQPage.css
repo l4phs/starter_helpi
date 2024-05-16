@@ -1,7 +1,12 @@
 .Bbody {
   height: 100vh;
   width: 100vw;
-  /* background-image: url("BKGBase.png"); */
+  background-color: #fee4c3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide the scroll bars but allow scrolling */
 }
 
 .Bbody .text {
@@ -14,14 +19,14 @@
   left: 11vw;
 }
 
-.Background{
+.Background {
   height: 125vh;
   background-image: url(MatchaBQ.jpg);
   filter: blur(5px);
   background-size: cover;
   z-index: 10;
+  overflow: hidden; /* Hide the scroll bars but allow scrolling */
 }
-
 
 .BasicQuestions-List {
   top: 15vw;
@@ -32,7 +37,8 @@
   background-color: #3c2918;
   left: -1vw;
 }
-.Ul-BQ{
+
+.Ul-BQ {
   text-align: left;
   display: table;
   margin-right: auto;
@@ -50,8 +56,8 @@
   margin: auto;
   text-align: center;
   color: #3c2918;
-  text-shadow:1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
-  /* background-color: red; */
+  text-shadow: 1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
+  overflow: hidden; /* Hide the scroll bars but allow scrolling */
 }
 
 .BQB {
@@ -85,94 +91,35 @@
   text-align: center;
 }
 
-.NextButton {
+.ButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 74vh;
-  left: 100vh;
-  margin-top: 20vh;
-  height: 8vh;
-  bottom: 20px;
-  width: 100px; 
-  padding: 10px;
-  background-color: #3c2918;
-  color: #fee4c3;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 3;
-}
-.NextButton:hover {
-  background-color: #fee4c3;
-  color: #3c2918;
-}
-.NextButton:visted {
-  background-color: #fee4c3;
-  color: #3c2918;
-}
-.NextButton:focus {
-  background-color: #fee4c3;
-  color: #3c2918;
+  width: 100%;
+  bottom: -25px; /* Adjust this value as needed */
 }
 
-.PrevButton {
-  position: absolute;
-  top: 74vh;
-  left: 70vh;
-  margin-top: 20vh;
-  height: 8vh;
-  bottom: 0px; /* Adjust the vertical position from the bottom */
-  width: 100px; /* Adjust the width as needed */
-  padding: 2px;
+.NextButton, .PrevButton, .BasicSubmitButton {
+  height: 53px;
+  width: fit-content;
+  padding: 10px, 40px;
   background-color: #3c2918;
   color: #fee4c3;
-  border: none;
+  border: 1px transparent;
   border-radius: 5px;
   cursor: pointer;
+  margin: 0 10px; /* Add some space between the buttons */
   z-index: 3;
 }
-.PrevButton:hover {
-  background-color: #fee4c3;
-  color: #3c2918;
-}
-.PrevButton:visited {
-  background-color: #fee4c3;
-  color: #3c2918;
-}
-.PrevButton:focus {
+
+.NextButton:hover, .PrevButton:hover, .BasicSubmitButton:hover,
+.NextButton:focus, .PrevButton:focus, .BasicSubmitButton:focus {
   background-color: #fee4c3;
   color: #3c2918;
 }
 
 .PrevButton:disabled {
-  background-color: #fee4c3;
-  color: #3c2918;
-}
-
-.BasicSubmitButton {
-  position: absolute;
-  height: 53px;
-  left: 53vw;
-  top: 82vh;
-  margin-top: 12vh; 
-  bottom: 20px; /* Adjust the vertical position from the bottom */
-  width: 30vh; /* Adjust the width as needed */
-  padding: 10px;
-  background-color: #3c2918;
-  color: #fee4c3;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.BasicSubmitButton:hover {
-  background-color: #fee4c3;
-  color: #3c2918;
-}
-.BasicSubmitButton:visted {
-  background-color: #fee4c3;
-  color: #3c2918;
-}
-.BasicSubmitButton:focus {
   background-color: #fee4c3;
   color: #3c2918;
 }
@@ -194,7 +141,6 @@
 .ProgressBarBQ {
   position: absolute;
   border-radius: 1.5em;
-
   left: 5vw;
   top: 46vh;
   height: 6vh;
@@ -206,27 +152,13 @@
   position: absolute;
   align-self: center;
   border-radius: 1.5em;
-  transition: width 0.3s ease-in-out; /* Adjust the duration and timing function as needed */
+  transition: width 0.3s ease-in-out;
   left: 0.6vw;
   top: 1vh;
   height: 4vh;
   max-width: 98.5%;
   min-width: 0.5%;
   background-color: #fee4c3;
-}
-
-/*
-//putting in styalizing things and will edit later
-*/
-
-.Bbody {
-  height: 100vh;
-  width: 100vw;
-  background-color: #fee4c3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .QuestionHeader {
@@ -241,8 +173,7 @@
   text-align: center;
   font-family: "Josefin Sans";
   color: #3c2918;
-  text-shadow:1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
-
+  text-shadow: 1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
 }
 
 .QuestionContainer {
@@ -250,8 +181,8 @@
   font-size: 20px;
   font-family: "Lilita One";
   position: absolute;
-  top: 55vh; /* Adjust this value to move the container downward */
-  left: 50%; /* Center horizontally */
+  top: 55vh;
+  left: 50%;
   transform: translateX(-50%);
   width: 85%;
   background-color: #fff3e4;
@@ -259,7 +190,16 @@
   border-radius: 1.5em;
   padding-top: 10px;
   color: #3c2918;
-  /* margin: auto; */
+  overflow: auto;
+}
+
+.QuestionContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.QuestionContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .QuestionText {
@@ -305,39 +245,56 @@
   text-align: center;
   font-family: "Lilita One";
   color: #000000;
-  text-shadow:1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
-
+  text-shadow: 1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
 }
 
-/*setting css for the submitted answers*/
+.resultsContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-.resultBackground{
+.resultBackground {
   height: 280vh;
+  width: 100vw;
   background-image: url(MatchaBQ.jpg);
   filter: blur(5px);
   background-size: cover;
-  z-index: 10;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.resultsHeader{
+.resultsHeader {
   font-size: 50px;
   font-family: "Lilita One";
   font-weight: bold;
   position: absolute;
-  top: 13vh;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
   text-align: center;
-  left: 68vh;
-  text-shadow:1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
 }
 
-.resultsPage{
+.resultsPage {
   position: absolute;
-  top: 35vh;
+  top: 30vh;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  left: 35vh;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* z-index: ; */
 }
-.resultformat{
-  z-index: 0;
+
+.resultformat {
+  z-index: 1;
   background-color: #c3c795;
   border-radius: 1.5em;
   padding-top: 10px;
@@ -345,15 +302,44 @@
   padding-left: 20px;
   padding-right: 20px;
   color: #50542a;
-  text-shadow:1px 1px 10px #ffffff, 1px 1px 10px #d3d4c9;
+  text-shadow: 1px 1px 10px #ffffff, 1px 1px 10px #d3d4c9;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 600px; /* Optional: to limit the width of the result boxes */
 }
+
+.resultButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 20px; */
+}
+
+.resultSubmitButton, .returnButton {
+  height: 55px;
+  /* width: 200px; Optional: to increase the width of the buttons */
+  /* padding: 10px; */
+  background-color: #3c2918;
+  color: #fee4c3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.resultSubmitButton:hover, .resultSubmitButton:focus,
+.returnButton:hover, .returnButton:focus {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+
 
 
 .resultSubmitButton {
   position: absolute;
   height: 55px;
-  left: 55vw;
   top: 250vh;
+  right: 65vh;
   margin-top: 12vh; 
   bottom: 20px; /* Adjust the vertical position from the bottom */
   width: 30vh; /* Adjust the width as needed */
@@ -363,6 +349,8 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 .resultSubmitButton:hover {
@@ -407,65 +395,75 @@
   color: #3c2918;
 }
 
+
 /*stylizing radio buttons*/
 
 .radio-section {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
+
 .radio-item [type="radio"] {
-	display: none;
+  display: none;
 }
+
 .radio-item + .radio-item {
-	margin-top: 15px;
+  margin-top: 17px;
 }
+
 .radio-item label {
-	display: block;
-	padding: 10px 45px;
-	background: #8c6958;
-  color:#fee4c3;
-	border: 2px solid rgba(255, 255, 255, 0.1);
-	border-radius: 8px;
-	cursor: pointer;
-	font-size: 18px;
-	font-weight: 400;
-	min-width: 250px;
-	white-space: nowrap;
-	position: relative;
-	transition: 0.4s ease-in-out 0s;
+  display: block;
+  padding: 10px 45px;
+  background: #8c6958;
+  color: #fee4c3;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  min-width: 250px;
+  white-space: nowrap;
+  position: relative;
+  transition: 0.4s ease-in-out 0s;
 }
+
 .radio-item label:after,
 .radio-item label:before {
-	content: "";
-	position: absolute;
-	border-radius: 50%;
+  content: "";
+  position: absolute;
+  border-radius: 50%;
 }
+
 /*color of radio buttons*/
+
 .radio-item label:after {
-	height: 19px;
-	width: 19px;
-	border: 2px solid #ffffff;
-	left: 19px;
-	top: calc(50% - 12px);
+  height: 19px;
+  width: 19px;
+  border: 2px solid #ffffff;
+  left: 18px;
+  top: calc(50% - 9.5px);
 }
+
 .radio-item label:before {
-	background: #fee4c3;
-	height: 18px;
-	width: 18px;
-	left: 19.5px;
-	top: calc(50%-5px);
-	transform: scale(5);
-	opacity: 0;
-	visibility: hidden;
-	transition: 0.4s ease-in-out 0s;
+  background: #fee4c3;
+  height: 15px;
+  width: 15px;
+  left: 20px;
+  top: calc(50% - 7.5px);
+  transform: scale(1);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease-in-out 0s;
 }
+
 .radio-item [type="radio"]:checked ~ label {
-	border-color: #fee4c3;
+  border-color: #fee4c3;
 }
+
 .radio-item [type="radio"]:checked ~ label::before {
-	opacity: 1;
-	visibility: visible;
-	transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.19);
 }
