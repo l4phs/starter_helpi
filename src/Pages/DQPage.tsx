@@ -5,107 +5,110 @@ import "./DQPage.css";
 import OpenAI from "openai";
 //commiting all changes
 
+
 interface Props {
-  setPage: (page: string) => void; // Define the type of setPage prop
-  apiKey: string;
+ setPage: (page: string) => void; // Define the type of setPage prop
+ apiKey: string;
+ setGptReport: (report: string) => void; // Added prop to set GPT report
 }
 
+
 interface Question {
-  id: number;
-  question: string;
-  answers: string[] | null;
-  type: "short answer" | "multiple choice" | "checkbox";
+ id: number;
+ question: string;
+ answers: string[] | null;
+ type: "short answer" | "multiple choice" | "checkbox";
 }
+
 
 function DQPage(props: Props): JSX.Element {
   console.log("API Key:", props.apiKey);
 
 const detailedQuestions: Question [] = [
-
 {
-  id: 1,
-  question: "What kind of work environment do you prefer? Describe your ideal workplace.",
-  answers: null,
-  type: "short answer"
-}, 
-{
-  id: 2,
-  question: "What values are most important to you in your career? (E.G., creativity, financial stability, work-life balance",
-  answers: null,
-  type: "short answer"
+ id: 1,
+ question: "What kind of work environment do you prefer? Describe your ideal workplace.",
+ answers: null,
+ type: "short answer"
 },
 {
-  id: 3,
-  question: "How important is job stability to you?",
-  answers: ["Not at all", "Slighly important", "Neutral about it", "Somewhat important", "Extremely important"],
-  type: "multiple choice"
-}, 
-{
-  id: 4,
-  question: "What kind of roles or projects do you enjoy the most?",
-  answers: ["Creative roles", "Analytical roles", "Leadership roles", "Hands-on roles", "Customer Service roles"],
-  type: "multiple choice"
-}, 
-{
-  id: 5,
-  question: "How often do you rely on data and facts when making a decision?",
-  answers: ["Never", "Some of the time", "Half of the time", "Most of the time", "Almost exclusively"],
-  type: "multiple choice"
+ id: 2,
+ question: "What values are most important to you in your career? (E.G., creativity, financial stability, work-life balance",
+ answers: null,
+ type: "short answer"
 },
 {
-  id: 6,
-  question: "How do you feel about presenting to groups?",
-  answers: ["Extremely uncomfortable", "Mostly uncomfortable", "Neutral about it", "Mostly comfortable ", "Extremely comfortable"],
-  type: "multiple choice"
+ id: 3,
+ question: "How important is job stability to you?",
+ answers: ["Not at all", "Slighly important", "Neutral about it", "Somewhat important", "Extremely important"],
+ type: "multiple choice"
 },
 {
-  id: 7,
-  question: "What skills do you enjoy using the most in your work?",
-  answers: ["Communication and Writing", "Critical Thinking and Analysis", "Time management and organization", "Technical skills (i.e, coding or engineering", "Creative skills (i.e, design, art, music)"],
-  type: "multiple choice"
+ id: 4,
+ question: "What kind of roles or projects do you enjoy the most?",
+ answers: ["Creative roles", "Analytical roles", "Leadership roles", "Hands-on roles", "Customer Service roles"],
+ type: "multiple choice"
 },
 {
-  id: 8,
-  question: "Describe a professional goal that you have set for yourself. What steps are you taking to achieve it?",
-  answers: null,
-  type: "short answer"
+ id: 5,
+ question: "How often do you rely on data and facts when making a decision?",
+ answers: ["Never", "Some of the time", "Half of the time", "Most of the time", "Almost exclusively"],
+ type: "multiple choice"
 },
 {
-  id: 9,
-  question: "What types of jobs or career fields interest you the most? Select all that apply",
-  answers: ["Working with animals", "Medical and healthcare fields", "Mathematics and analytics", "Engineering and technology", "Creative and artistic fields", "Science and research", "Businesss and finance", "Education and teaching", "Writing and communication", "Law and legal professions", "Social services and advocacy", "Trades and skilled labor", "Hospitality and tourism", "Sales and customer service"],
-  type: "checkbox"
+ id: 6,
+ question: "How do you feel about presenting to groups?",
+ answers: ["Extremely uncomfortable", "Mostly uncomfortable", "Neutral about it", "Mostly comfortable ", "Extremely comfortable"],
+ type: "multiple choice"
 },
 {
-  id: 10,
-  question: "How open are you to trying new methods and approaches to your work?",
-  answers: ["Not open at all", "Slightly open", "Neutral about it", "Mostly open ", "Extremely open"],
-  type: "multiple choice"
+ id: 7,
+ question: "What skills do you enjoy using the most in your work?",
+ answers: ["Communication and Writing", "Critical Thinking and Analysis", "Time management and organization", "Technical skills (i.e, coding or engineering", "Creative skills (i.e, design, art, music)"],
+ type: "multiple choice"
 },
 {
-  id: 11,
-  question:
-    "How would you rate your ability to learn new skills? (pick one)",
-  answers: ["Excellent", "Good", "Average", "Below average", "Poor"],
-  type: "multiple choice",
+ id: 8,
+ question: "Describe a professional goal that you have set for yourself. What steps are you taking to achieve it?",
+ answers: null,
+ type: "short answer"
 },
 {
-  id: 12,
-  question: "List three activities you enjoy:",
-  answers: null,
-  type: "short answer",
+ id: 9,
+ question: "What types of jobs or career fields interest you the most? Select all that apply",
+ answers: ["Working with animals", "Medical and healthcare fields", "Mathematics and analytics", "Engineering and technology", "Creative and artistic fields", "Science and research", "Businesss and finance", "Education and teaching", "Writing and communication", "Law and legal professions", "Social services and advocacy", "Trades and skilled labor", "Hospitality and tourism", "Sales and customer service"],
+ type: "checkbox"
 },
 {
-  id: 13,
-  question: "How do you prefer to spend your workday?",
-  answers: [
-    "Solving problems",
-    "Meeting with colleagues",
-    "Creating new ideas",
-    "Following established procedures",
-    "Completing designated tasks"
-  ],
-  type: "multiple choice",
+ id: 10,
+ question: "How open are you to trying new methods and approaches to your work?",
+ answers: ["Not open at all", "Slightly open", "Neutral about it", "Mostly open ", "Extremely open"],
+ type: "multiple choice"
+},
+{
+ id: 11,
+ question:
+   "How would you rate your ability to learn new skills? (pick one)",
+ answers: ["Excellent", "Good", "Average", "Below average", "Poor"],
+ type: "multiple choice",
+},
+{
+ id: 12,
+ question: "List three activities you enjoy:",
+ answers: null,
+ type: "short answer",
+},
+{
+ id: 13,
+ question: "How do you prefer to spend your workday?",
+ answers: [
+   "Solving problems",
+   "Meeting with colleagues",
+   "Creating new ideas",
+   "Following established procedures",
+   "Completing designated tasks"
+ ],
+ type: "multiple choice",
 },
 ];
 
@@ -117,175 +120,191 @@ const [check, setCheck] = useState(false);
 const [submitted, setSubmitted] = useState(false); // State to track if answers have been submitted
 
 const [answers, setAnswers] = useState<(string | null)[]>(
-  Array(detailedQuestions.length).fill(null)
+ Array(detailedQuestions.length).fill(null)
 );
   const openai = new OpenAI({ apiKey: props.apiKey, dangerouslyAllowBrowser: true });
 
-  const handleNext = () => {
-    if (currentQuestionIndex < detailedQuestions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    }
-  };
+ const handleNext = () => {
+   if (currentQuestionIndex < detailedQuestions.length - 1) {
+     setCurrentQuestionIndex(currentQuestionIndex + 1);
+   }
+ };
 
-  const handlePrevious = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
-    }
-  };
 
-  const handleAnswerChange = (selectedAnswer: string) => {
-    const updatedAnswers = [...answers];
-    updatedAnswers[currentQuestionIndex] = selectedAnswer;
-    setAnswers(updatedAnswers);
+ const handlePrevious = () => {
+   if (currentQuestionIndex > 0) {
+     setCurrentQuestionIndex(currentQuestionIndex - 1);
+   }
+ };
 
-    const answeredCount = updatedAnswers.filter((answer) => answer !== null)
-      .length;
-    const totalQuestions = detailedQuestions.length;
-    const percentage = (answeredCount / totalQuestions) * 100;
-    setProgress(percentage);
-  };
 
-  const handleReturn = () => {
-    setSubmitted(false);
-  }
+ const handleAnswerChange = (selectedAnswer: string) => {
+   const updatedAnswers = [...answers];
+   updatedAnswers[currentQuestionIndex] = selectedAnswer;
+   setAnswers(updatedAnswers);
 
-  const handleResponseCheck = () => {
-    setSubmitted(true);
-  }
 
-  const handleSubmitDetailAnswers = async () => {
-    const userContent = answers
-      .map((answer, index) => `${detailedQuestions[index].question}: ${answer}`)
-      .join("\n");
+   const answeredCount = updatedAnswers.filter((answer) => answer !== null)
+     .length;
+   const totalQuestions = detailedQuestions.length;
+   const percentage = (answeredCount / totalQuestions) * 100;
+   setProgress(percentage);
+ };
 
-    try {
-      const response = await openai.chat.completions.create({
-        model: "gpt-4-turbo",
-        messages: [
-          {
-            role: "system",
-            content:
-            "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices formatted as follows: job name,pay rate, description, and why matched. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",          },
-          {
-            role: "user",
-            content: userContent,
-          },
-        ],
-        temperature: 1,
-        max_tokens: 1000,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-      });
 
-      const careerReport = response.choices[0].message.content || "";
-      console.log("Career Report:", careerReport);
-      setGptReport(careerReport);
+ const handleReturn = () => {
+   setSubmitted(false);
+ }
 
-     // Update state to indicate answers have been submitted
-     setCheck(true);
-    } catch (error) {
-      console.error("Error generating career insights:", error);
-      // Handle error or display error message
-    }
-  };
 
-  return (
-    <div className="Dbody">
-      <div className="background"></div>
-      <div className="DQH">Detailed Questions</div>
-      <h3 className = "Description"> 
-      <p>Welcome to the Detailed Questions! There are 13 total questions but you can answer as many or as few as you would like!</p>
-      <p> The more questions you answer, the more accurate your results will be!</p>
-      <p>You will be able to review your answers and go back and change any of them before you submit your results.</p> </h3>
-      {submitted ? (
-        // Display submitted answers if submitted is true
-        <div className="SubmittedAnswers">
-          <h2>Submitted Answers</h2>
-          <ul>
-            {detailedQuestions.map((question, index) => (
-              <li key={question.question}>
-                <strong>{question.question}</strong>
-                <br></br>
-                 {answers[index]}
-              </li>
-            ))}
-          </ul>
-          <div>
-            <br></br>
-            <p>{gptReport}</p>
-          <Button
-                className="Return to Quiz"
-                onClick={handleReturn}
-              >Return to Quiz </Button>
-              <Button
-                className="getResponse"
-                onClick={handleSubmitDetailAnswers}
-              >Collect My Brew </Button>
-              </div>
-        </div>
-      ) : (
-        <div>
-          <div className="ProgressBarBQ">
-            <div
-              className="ActiveProgressBQ"
-              style={{ width: `${progress}%` }}
-            ></div>
-          </div>
-          <div className="QuestionHeader">
-            Question {currentQuestionIndex + 1} of {detailedQuestions.length}
-          </div>
-          <div className="QuestionContainer">
-            <h3>{detailedQuestions[currentQuestionIndex].question}</h3>
-            {detailedQuestions[currentQuestionIndex].type === "multiple choice" ? (
-              <ul className="Ul-BQ" style={{ listStyleType: "none", paddingLeft: "0px"}}>
-                {detailedQuestions[currentQuestionIndex].answers?.map((answer) => (
-                  <li key={answer}>
-                    <input
-                      type="radio"
-                      id={answer}
-                      name={`question${currentQuestionIndex}`}
-                      value={answer}
-                      checked={answers[currentQuestionIndex] === answer}
-                      onChange={() => handleAnswerChange(answer)}
-                    />
-                    <label htmlFor={answer}>{answer}</label>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <textarea
-                value={answers[currentQuestionIndex] || ""}
-                onChange={(e) => handleAnswerChange(e.target.value)}
-                placeholder="Please enter your answer here."
-              />
-            )}
-          </div>
-          <div className="ButtonContainer">
-            <Button
-              className="PrevButton"
-              onClick={handlePrevious}
-              disabled={currentQuestionIndex === 0}
-            >
-              Previous
-            </Button>
-            {currentQuestionIndex < detailedQuestions.length - 1 ? (
-              <Button className="NextButton" onClick={handleNext}>
-                Next
-              </Button>
-            ) : (
-              <Button
-                className="DetailedSubmitButton"
-                onClick={handleResponseCheck}
-              >Submit Your Answers
-              </Button>
-            )}
-          </div>
-        </div>
-      )}
+ const handleResponseCheck = () => {
+   setSubmitted(true);
+ }
 
-    </div>
-  );
+
+ const handleSubmitDetailAnswers = async () => {
+   const userContent = answers
+     .map((answer, index) => `${detailedQuestions[index].question}: ${answer}`)
+     .join("\n");
+
+
+   try {
+    props.setPage("LoadingPage");
+     const response = await openai.chat.completions.create({
+       model: "gpt-4-turbo",
+       messages: [
+         {
+           role: "system",
+           content:
+           "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices formatted as follows: job name,pay rate, description, and why matched. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",          },
+         {
+           role: "user",
+           content: userContent,
+         },
+       ],
+       temperature: 1,
+       max_tokens: 1000,
+       top_p: 1,
+       frequency_penalty: 0,
+       presence_penalty: 0,
+     });
+
+
+     const careerReport = response.choices[0].message.content || "";
+     console.log("Career Report:", careerReport);
+     props.setGptReport(careerReport); // Set GPT report in parent state
+
+
+    // Update state to indicate answers have been submitted
+    setCheck(true);
+   } catch (error) {
+     console.error("Error generating career insights:", error);
+     // Handle error or display error message
+   }
+   finally{
+    props.setPage("ResultPage");
+   }
+ };
+
+
+ return (
+   <div className="Dbody">
+     <div className="background"></div>
+     {submitted ? (
+       // Display submitted answers if submitted is true
+       <div className="SubmittedAnswers">
+         <h2>Submitted Answers</h2>
+         <ul>
+           {detailedQuestions.map((question, index) => (
+             <li key={question.question}>
+               <strong>{question.question}</strong>
+               <br></br>
+                {answers[index]}
+             </li>
+           ))}
+         </ul>
+         <div>
+           <br></br>
+           <p>{gptReport}</p>
+         <Button
+               className="Return to Quiz"
+               onClick={handleReturn}
+             >Return to Quiz </Button>
+             <Button
+               className="getResponse"
+               onClick={handleSubmitDetailAnswers}
+             >Collect My Brew </Button>
+             </div>
+       </div>
+     ) : (
+       <div>
+        <div className="DQH">Detailed Questions</div>
+     <h3 className = "Description">
+     <p>Welcome to the Detailed Questions! There are 13 total questions but you can answer as many or as few as you would like!</p>
+     <p> The more questions you answer, the more accurate your results will be!</p>
+     <p>You will be able to review your answers and go back and change any of them before you submit your results.</p> </h3>
+         <div className="ProgressBarBQ">
+           <div
+             className="ActiveProgressBQ"
+             style={{ width: `${progress}%` }}
+           ></div>
+         </div>
+         <div className="QuestionHeader">
+           Question {currentQuestionIndex + 1} of {detailedQuestions.length}
+         </div>
+         <div className="QuestionContainer">
+           <h3>{detailedQuestions[currentQuestionIndex].question}</h3>
+           {detailedQuestions[currentQuestionIndex].type === "multiple choice" ? (
+             <ul className="Ul-BQ" style={{ listStyleType: "none", paddingLeft: "0px"}}>
+               {detailedQuestions[currentQuestionIndex].answers?.map((answer) => (
+                 <li key={answer}>
+                   <input
+                     type="radio"
+                     id={answer}
+                     name={`question${currentQuestionIndex}`}
+                     value={answer}
+                     checked={answers[currentQuestionIndex] === answer}
+                     onChange={() => handleAnswerChange(answer)}
+                   />
+                   <label htmlFor={answer}>{answer}</label>
+                 </li>
+               ))}
+             </ul>
+           ) : (
+             <textarea
+               value={answers[currentQuestionIndex] || ""}
+               onChange={(e) => handleAnswerChange(e.target.value)}
+               placeholder="Please enter your answer here."
+             />
+           )}
+         </div>
+         <div className="ButtonContainer">
+           <Button
+             className="PrevButton"
+             onClick={handlePrevious}
+             disabled={currentQuestionIndex === 0}
+           >
+             Previous
+           </Button>
+           {currentQuestionIndex < detailedQuestions.length - 1 ? (
+             <Button className="NextButton" onClick={handleNext}>
+               Next
+             </Button>
+           ) : (
+             <Button
+               className="DetailedSubmitButton"
+               onClick={handleResponseCheck}
+             >Submit Your Answers
+             </Button>
+           )}
+         </div>
+       </div>
+     )}
+
+
+   </div>
+ );
 }
+
 
 export default DQPage;

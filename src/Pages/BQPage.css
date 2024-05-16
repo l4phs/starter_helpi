@@ -37,6 +37,7 @@
   display: table;
   margin-right: auto;
   margin-left: auto;
+  list-style: none;
 }
 
 .BQH {
@@ -143,9 +144,9 @@
 
 .BasicSubmitButton {
   position: absolute;
-  height: 55px;
+  height: 53px;
   left: 55vw;
-  top: 83.5vh;
+  top: 83vh;
   margin-top: 12vh; 
   bottom: 20px; /* Adjust the vertical position from the bottom */
   width: 30vh; /* Adjust the width as needed */
@@ -189,7 +190,7 @@
   border-radius: 1.5em;
 
   left: 5vw;
-  top: 45vh;
+  top: 47vh;
   height: 6vh;
   width: 90vw;
   background-color: #3c2918;
@@ -225,7 +226,6 @@
 .QuestionHeader {
   position: absolute;
   border-radius: 1.5em;
-  /* height: ; */
   top: 50vh;
   font-size: 25px;
   font-weight: 600;
@@ -303,20 +303,35 @@
 
 }
 
+/*setting css for the submitted answers*/
+
+.resultBackground{
+  height: 250vh;
+  background-image: url(MatchaBQ.jpg);
+  filter: blur(5px);
+  background-size: cover;
+  z-index: 10;
+}
+
 .resultsHeader{
+  font-size: 50px;
+  font-family: "Lilita One";
+  font-weight: bold;
   position: absolute;
-  top: 27vh;
+  top: 13vh;
   text-align: center;
-  left: 60vh;
+  left: 68vh;
+  text-shadow:1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
 }
 
 .resultsPage{
   position: absolute;
   top: 35vh;
   text-align: center;
-  left: 30vh;
+  left: 37vh;
 }
 .resultformat{
+  z-index: 0;
   background-color: #c3c795;
   border-radius: 1.5em;
   padding-top: 10px;
@@ -324,3 +339,123 @@
   text-shadow:1px 1px 10px #ffffff, 1px 1px 10px #d3d4c9;
 }
 
+.resultSubmitButton {
+  position: absolute;
+  height: 55px;
+  left: 55vw;
+  top: 223vh;
+  margin-top: 12vh; 
+  bottom: 20px; /* Adjust the vertical position from the bottom */
+  width: 30vh; /* Adjust the width as needed */
+  padding: 10px;
+  background-color: #3c2918;
+  color: #fee4c3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.resultSubmitButton:hover {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.resultSubmitButton:visted {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.resultSubmitButton:focus {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+
+.returnButton {
+  position: absolute;
+  height: 55px;
+  left: 30vw;
+  top: 223vh;
+  margin-top: 12vh; 
+  bottom: 20px; /* Adjust the vertical position from the bottom */
+  width: 30vh; /* Adjust the width as needed */
+  padding: 10px;
+  background-color: #3c2918;
+  color: #fee4c3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.returnButton:hover {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.returnButton:visted {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+.returnButton:focus {
+  background-color: #fee4c3;
+  color: #3c2918;
+}
+
+/*stylizing radio buttons*/
+
+.radio-section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+.radio-item [type="radio"] {
+	display: none;
+}
+.radio-item + .radio-item {
+	margin-top: 15px;
+}
+.radio-item label {
+	display: block;
+	padding: 10px 45px;
+	background: #8c6958;
+  color:#fee4c3;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 400;
+	min-width: 250px;
+	white-space: nowrap;
+	position: relative;
+	transition: 0.4s ease-in-out 0s;
+}
+.radio-item label:after,
+.radio-item label:before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+}
+/*color of radio buttons*/
+.radio-item label:after {
+	height: 19px;
+	width: 19px;
+	border: 2px solid #ffffff;
+	left: 19px;
+	top: calc(50% - 12px);
+}
+.radio-item label:before {
+	background: #fee4c3;
+	height: 18px;
+	width: 18px;
+	left: 19.5px;
+	top: calc(50%-5px);
+	transform: scale(5);
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.4s ease-in-out 0s;
+}
+.radio-item [type="radio"]:checked ~ label {
+	border-color: #fee4c3;
+}
+.radio-item [type="radio"]:checked ~ label::before {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+}

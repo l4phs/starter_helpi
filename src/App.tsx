@@ -5,6 +5,8 @@ import { Form } from "react-bootstrap";
 import HomePage from "./Pages/HomePage";
 import BQPage from "./Pages/BQPage";
 import DQPage from "./Pages/DQPage";
+import LoadingPage from "./Pages/LoadingPage";
+import ResultPage from "./Pages/ResultPage"; 
 
 <style>
   @import
@@ -25,9 +27,9 @@ if (prevKey !== null) {
 }
 
 function App(): JSX.Element {
+  const [gptReport, setGptReport] = useState("");
   const [key, setKey] = useState<string>(keyData); //for api key input
   //setting states for each page
- 
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -74,16 +76,24 @@ function App(): JSX.Element {
               Submit
             </li>
           </div>
-          <li className="TaskbarHeader" onClick={() => setPage("HomePage")}> Jobspresso
+          <li className="TaskbarHeader" onClick={() => setPage("HomePage")}>
+            {" "}
+            Jobspresso
           </li>
         </ul>
       </div>
 
       {page === "HomePage" && <HomePage setPage={setPage} />}
 
-      {page === "BQPage" && <BQPage setPage={setPage} apiKey={key}/>} 
+      {page === "BQPage" && <BQPage setPage={setPage} apiKey={key} setGptReport={setGptReport}/>}
 
-      {page === "DQPage" && <DQPage setPage={setPage} apiKey={key} />}
+      {page === "DQPage" && <DQPage setPage={setPage} apiKey={key} setGptReport={setGptReport}/>}
+
+      {page === "LoadingPage" && <LoadingPage setPage={setPage} />}
+
+      {page === "ResultPage" && (
+        <ResultPage gptReport={gptReport} setPage={setPage} />
+      )}
     </React.Fragment>
   );
 }

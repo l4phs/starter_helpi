@@ -1,4 +1,13 @@
-
-.ResultBody {
-    font-family: "Lilita One";
-}
+.Result-page {
+    font-family: 'Varela Round', sans-serif;
+    padding: 20px;
+  }
+  
+  .job-profile {
+    margin: 20px 0;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  
