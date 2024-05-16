@@ -87,7 +87,7 @@ function App(): JSX.Element {
 
       {page === "BQPage" && <BQPage setPage={setPage} apiKey={key} setGptReport={setGptReport}/>}
 
-      {page === "DQPage" && <DQPage setPage={setPage} apiKey={key} />}
+      {page === "DQPage" && <DQPage setPage={setPage} apiKey={key} setGptReport={setGptReport}/>}
 
       {page === "LoadingPage" && <LoadingPage setPage={setPage} />}
 
