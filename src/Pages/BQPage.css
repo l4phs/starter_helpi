@@ -86,6 +86,9 @@
 }
 
 .NextButton {
+  position: absolute;
+  top: 74vh;
+  left: 100vh;
   margin-top: 20vh;
   height: 8vh;
   bottom: 20px;
@@ -112,6 +115,9 @@
 }
 
 .PrevButton {
+  position: absolute;
+  top: 74vh;
+  left: 70vh;
   margin-top: 20vh;
   height: 8vh;
   bottom: 0px; /* Adjust the vertical position from the bottom */
@@ -145,8 +151,8 @@
 .BasicSubmitButton {
   position: absolute;
   height: 53px;
-  left: 55vw;
-  top: 83vh;
+  left: 53vw;
+  top: 82vh;
   margin-top: 12vh; 
   bottom: 20px; /* Adjust the vertical position from the bottom */
   width: 30vh; /* Adjust the width as needed */
@@ -190,7 +196,7 @@
   border-radius: 1.5em;
 
   left: 5vw;
-  top: 47vh;
+  top: 46vh;
   height: 6vh;
   width: 90vw;
   background-color: #3c2918;
@@ -306,7 +312,7 @@
 /*setting css for the submitted answers*/
 
 .resultBackground{
-  height: 250vh;
+  height: 280vh;
   background-image: url(MatchaBQ.jpg);
   filter: blur(5px);
   background-size: cover;
@@ -328,22 +334,26 @@
   position: absolute;
   top: 35vh;
   text-align: center;
-  left: 37vh;
+  left: 35vh;
 }
 .resultformat{
   z-index: 0;
   background-color: #c3c795;
   border-radius: 1.5em;
   padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: #50542a;
   text-shadow:1px 1px 10px #ffffff, 1px 1px 10px #d3d4c9;
 }
+
 
 .resultSubmitButton {
   position: absolute;
   height: 55px;
   left: 55vw;
-  top: 223vh;
+  top: 250vh;
   margin-top: 12vh; 
   bottom: 20px; /* Adjust the vertical position from the bottom */
   width: 30vh; /* Adjust the width as needed */
@@ -372,7 +382,7 @@
   position: absolute;
   height: 55px;
   left: 30vw;
-  top: 223vh;
+  top: 250vh;
   margin-top: 12vh; 
   bottom: 20px; /* Adjust the vertical position from the bottom */
   width: 30vh; /* Adjust the width as needed */
