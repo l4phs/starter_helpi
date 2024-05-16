@@ -3,10 +3,9 @@
 //import { Button } from "react-bootstrap";
 import { useState } from "react";
 import "./BQPage.css";
-import "./LoadingPage"
+import "./LoadingPage";
 import OpenAI from "openai";
 import { Button } from "react-bootstrap";
-
 
 //Code written with the assistance of Gemini AI.
 
@@ -36,7 +35,7 @@ function BQPage(props: Props): JSX.Element {
     {
       question:
         "What salary would you not feel comfortable earning less than? (pick one)",
-      answers: ["50K", "70K","100K", "160K", "200K"],
+      answers: ["50K", "70K", "100K", "160K", "200K"],
       type: "multiple choice",
     },
     {
@@ -78,12 +77,7 @@ function BQPage(props: Props): JSX.Element {
     },
     {
       question: "What is the maximum amount of hours you would prefer to work?",
-      answers: [
-        "30 Hrs",
-        "40 Hrs",
-        "60 Hrs",
-        "As many hours as needed",
-      ],
+      answers: ["30 Hrs", "40 Hrs", "60 Hrs", "As many hours as needed"],
       type: "multiple choice",
     },
     {
@@ -181,11 +175,11 @@ function BQPage(props: Props): JSX.Element {
 
   const handleReturn = () => {
     setSubmitted(false);
-  }
+  };
 
   const handleResponseCheck = () => {
     setSubmitted(true);
-  }
+  };
 
   const handleSubmitBasicAnswers = async () => {
     const userContent = answers
@@ -200,7 +194,8 @@ function BQPage(props: Props): JSX.Element {
           {
             role: "system",
             content:
-            "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices formatted as follows: job name,pay rate, description, and why matched. Then generate a short list of jobs that did not match the answers provided. Have a sweet closer about coffee",},
+              "You are a career genie helping lead to the greatest career choices while implementing your love for coffee. Give a detailed paragraph analysis of the answers given and then the top 3 job choices formatted as follows: job name,pay rate, description, and why matched. Have a sweet closer about coffee. If all the answers are null use the top 3 most popular jobs.\nformat it like this\n\n**Career Report:** Based on your answers, you seem to prefer a work environment that is structured yet dynamic, set on-site with a preference for consistent working hours, and oriented for active collaboration in small groups. The ideal pace is brisk but not high-pressure, and a role that requires attention to detail is a good fit. You seek a position with a minimum salary of $100K, no travel, and the opportunity to work in casual attire. Considering these attributes, here are the top career choices for you:\n\n**JOB NAME #1: Marketing Manager**\n**DESCRIPTION:** Oversee promotional activities, manage marketing campaigns, and work closely with small teams to enhance brand awareness.\n**WHY MATCHED:** This position involves detailed planning and execution, aligns well with working in small groups, and offers the possibility of on-site work during regular business hours in a dynamic environment.\n**PAY RATE:** $100K-$130K annually\n\n**JOB NAME #2: UX/UI Designer**\n**DESCRIPTION:** Design and enhance the user experience and interface for digital products, ensuring that they are accessible and appealing.\n**WHY MATCHED:** Requires exceptional attention to detail and periodic updates to match evolving user needs, fitting well with your preference for engaging work that allows for creativity in a small group setting.\n**PAY RATE:** $85K-$120K annually\n\n**JOB NAME #3: Project Manager**\n**DESCRIPTION:** Coordinate and oversee projects from initiation to completion, ensuring they adhere to timelines, scope, and budget, primarily collaborating with small teams.\n**WHY MATCHED:** Emphasizes structured work hours and involves active participation in managing tasks and team activities, matching your desire for an energetic yet formal work rhythm.\n**PAY RATE:** $90K-$115K annually\n\n**Closer:**Regardless of the path you choose, may each workday be as rich and invigorating as a perfectly brewed cup of coffee, refreshing and rewarding in every way. Cheers to finding a career that feels just right!",
+          },
           {
             role: "user",
             content: userContent,
@@ -217,13 +212,12 @@ function BQPage(props: Props): JSX.Element {
       console.log("Career Report:", careerReport);
       props.setGptReport(careerReport); // Set GPT report in parent state
 
-     // Update state to indicate answers have been submitted
-     setCheck(true);
+      // Update state to indicate answers have been submitted
+      setCheck(true);
     } catch (error) {
       console.error("Error generating career insights:", error);
       // Handle error or display error message
-    }
-    finally{
+    } finally {
       props.setPage("ResultPage");
     }
   };
@@ -240,31 +234,40 @@ function BQPage(props: Props): JSX.Element {
               <p className="resultformat" key={question.question}>
                 <strong>{question.question}</strong>
                 <br></br>
-                 {answers[index]}
-                 <br></br>
+                {answers[index]}
+                <br></br>
               </p>
             ))}
-            </span>
+          </span>
           <div>
             <br></br>
             <p>{gptReport}</p>
-          <Button
-                className="Return to Quiz"
-                onClick={handleReturn}
-              >Return to Quiz </Button>
-              <Button
-                className="getResponse"
-                onClick={handleSubmitBasicAnswers}
-              >Get My Results </Button>
-              </div>
+            <Button className="Return to Quiz" onClick={handleReturn}>
+              Return to Quiz{" "}
+            </Button>
+            <Button className="getResponse" onClick={handleSubmitBasicAnswers}>
+              Get My Results{" "}
+            </Button>
+          </div>
         </div>
       ) : (
         <div>
-          <h1 className="BQH">Basic Questions</h1> 
-      <h3 className = "Description"> 
-      <p>Welcome to the Basic Questions! There are 18 total questions but you can answer as many or as few as you would like!</p>
-      <p> The more questions you answer, the more accurate your results will be!</p>
-      <p>You will be able to review your answers and go back and change any of them before you submit your results.</p> </h3>
+          <h1 className="BQH">Basic Questions</h1>
+          <h3 className="Description">
+            <p>
+              Welcome to the Basic Questions! There are 18 total questions but
+              you can answer as many or as few as you would like!
+            </p>
+            <p>
+              {" "}
+              The more questions you answer, the more accurate your results will
+              be!
+            </p>
+            <p>
+              You will be able to review your answers and go back and change any
+              of them before you submit your results.
+            </p>{" "}
+          </h3>
           <div className="ProgressBarBQ">
             <div
               className="ActiveProgressBQ"
@@ -316,13 +319,13 @@ function BQPage(props: Props): JSX.Element {
               <Button
                 className="BasicSubmitButton"
                 onClick={handleResponseCheck}
-              >Submit Basic Answers
+              >
+                Submit Basic Answers
               </Button>
             )}
           </div>
         </div>
       )}
-
     </div>
   );
 }
