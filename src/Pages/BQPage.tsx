@@ -230,16 +230,17 @@ function BQPage(props: Props): JSX.Element {
       {submitted ? (
         // Display submitted answers if submitted is true
         <div className="SubmittedAnswers">
-          <h2>Submitted Answers</h2>
-          <ul>
+          <h2 className="resultsHeader">Submitted Answers</h2>
+          <span className="resultsPage">
             {questions.map((question, index) => (
-              <li key={question.question}>
+              <p className="resultformat" key={question.question}>
                 <strong>{question.question}</strong>
                 <br></br>
                  {answers[index]}
-              </li>
+                 <br></br>
+              </p>
             ))}
-          </ul>
+          </span>
           <div>
             <br></br>
             <p>{gptReport}</p>
@@ -250,7 +251,7 @@ function BQPage(props: Props): JSX.Element {
               <Button
                 className="getResponse"
                 onClick={handleSubmitBasicAnswers}
-              >Get My Results </Button>
+              >Collect My Brew </Button>
               </div>
         </div>
       ) : (
@@ -306,7 +307,7 @@ function BQPage(props: Props): JSX.Element {
               <Button
                 className="BasicSubmitButton"
                 onClick={handleResponseCheck}
-              >Submit Basic Answers
+              >Submit Your Answers
               </Button>
             )}
           </div>

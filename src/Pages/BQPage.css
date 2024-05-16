@@ -277,7 +277,6 @@
 .BQH {
   position: absolute;
   border-radius: 1.5em;
-
   top: 15vh;
   font-size: 35px;
   font-weight: 600;
@@ -304,5 +303,26 @@
   color: #000000;
   text-shadow:1px 1px 10px #fee4c3, 1px 1px 10px #fee4c3;
 
+}
+
+.resultsHeader{
+  position: absolute;
+  top: 27vh;
+  text-align: center;
+  left: 60vh;
+}
+
+.resultsPage{
+  position: absolute;
+  top: 35vh;
+  text-align: center;
+  left: 30vh;
+}
+.resultformat{
+  background-color: #c3c795;
+  border-radius: 1.5em;
+  padding-top: 10px;
+  color: #50542a;
+  text-shadow:1px 1px 10px #ffffff, 1px 1px 10px #d3d4c9;
 }
 

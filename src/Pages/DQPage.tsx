@@ -19,11 +19,6 @@ interface Question {
 
 function DQPage(props: Props): JSX.Element {
   console.log("API Key:", props.apiKey);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [gptReport, setGptReport] = useState("");
- 
-  const [progress, setProgress] = useState(0);
-  const [check, setCheck] = useState(false);
 
 const detailedQuestions: Question [] = [
 
@@ -114,10 +109,17 @@ const detailedQuestions: Question [] = [
 },
 ];
 
+const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+const [gptReport, setGptReport] = useState("");
+
+const [progress, setProgress] = useState(0);
+const [check, setCheck] = useState(false);
+const [submitted, setSubmitted] = useState(false); // State to track if answers have been submitted
+
 const [answers, setAnswers] = useState<(string | null)[]>(
   Array(detailedQuestions.length).fill(null)
 );
-  const openai = new OpenAI({ apiKey: "key", dangerouslyAllowBrowser: true });
+  const openai = new OpenAI({ apiKey: props.apiKey, dangerouslyAllowBrowser: true });
 
   const handleNext = () => {
     if (currentQuestionIndex < detailedQuestions.length - 1) {
@@ -142,6 +144,14 @@ const [answers, setAnswers] = useState<(string | null)[]>(
     const percentage = (answeredCount / totalQuestions) * 100;
     setProgress(percentage);
   };
+
+  const handleReturn = () => {
+    setSubmitted(false);
+  }
+
+  const handleResponseCheck = () => {
+    setSubmitted(true);
+  }
 
   const handleSubmitDetailAnswers = async () => {
     const userContent = answers
@@ -184,61 +194,92 @@ const [answers, setAnswers] = useState<(string | null)[]>(
     <div className="Dbody">
       <div className="background"></div>
       <div className="DQH">Detailed Questions</div>
-      <div className="ProgressBarBQ">
-        <div
-          className="ActiveProgressBQ"
-          style={{ width: `${progress}%` }}
-        ></div>
-      </div>
-      <div className="QuestionHeader">
-        <div>
-          Question {currentQuestionIndex + 1} of {detailedQuestions.length}
-        </div>
-      </div>
-      <div className="QuestionContainer">
-        <h3>{detailedQuestions[currentQuestionIndex].question}</h3>
-        {detailedQuestions[currentQuestionIndex].type === "multiple choice" ? (
-          <ul className="Ul-DQ">
-            {detailedQuestions[currentQuestionIndex].answers?.map((answer) => (
-              <ul key={answer}>
-                <input
-                  type="radio"
-                  id={answer}
-                  name={`question${currentQuestionIndex}`}
-                  value={answer}
-                  checked={answers[currentQuestionIndex] === answer}
-                  onChange={() => handleAnswerChange(answer)}
-                />
-                <label htmlFor={answer}>{answer}</label>
-              </ul>
+      {submitted ? (
+        // Display submitted answers if submitted is true
+        <div className="SubmittedAnswers">
+          <h2>Submitted Answers</h2>
+          <ul>
+            {detailedQuestions.map((question, index) => (
+              <li key={question.question}>
+                <strong>{question.question}</strong>
+                <br></br>
+                 {answers[index]}
+              </li>
             ))}
           </ul>
-        ) : (
-          <textarea
-            value={answers[currentQuestionIndex] || ""}
-            onChange={(e) => handleAnswerChange(e.target.value)}
-            placeholder="Please enter your answer here."
-          />
-        )}
-      </div>
-      <div className="ButtonContainer">
-        <Button
-          className="PrevButton"
-          onClick={handlePrevious}
-          disabled={currentQuestionIndex === 0}
-        >
-          Previous
-        </Button>
-        {currentQuestionIndex < detailedQuestions.length - 1 ? (
-          <Button className="NextButton" onClick={handleNext}>
-            Next
-          </Button>
-        ) : (
-          <Button className="Submit-Button" onClick={handleSubmitDetailAnswers}>
-            Submit Answers
-          </Button>
-        )}
-      </div>
+          <div>
+            <br></br>
+            <p>{gptReport}</p>
+          <Button
+                className="Return to Quiz"
+                onClick={handleReturn}
+              >Return to Quiz </Button>
+              <Button
+                className="getResponse"
+                onClick={handleSubmitDetailAnswers}
+              >Collect My Brew </Button>
+              </div>
+        </div>
+      ) : (
+        <div>
+          <div className="ProgressBarBQ">
+            <div
+              className="ActiveProgressBQ"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+          <div className="QuestionHeader">
+            Question {currentQuestionIndex + 1} of {detailedQuestions.length}
+          </div>
+          <div className="QuestionContainer">
+            <h3>{detailedQuestions[currentQuestionIndex].question}</h3>
+            {detailedQuestions[currentQuestionIndex].type === "multiple choice" ? (
+              <ul className="Ul-BQ" style={{ listStyleType: "none", paddingLeft: "0px"}}>
+                {detailedQuestions[currentQuestionIndex].answers?.map((answer) => (
+                  <li key={answer}>
+                    <input
+                      type="radio"
+                      id={answer}
+                      name={`question${currentQuestionIndex}`}
+                      value={answer}
+                      checked={answers[currentQuestionIndex] === answer}
+                      onChange={() => handleAnswerChange(answer)}
+                    />
+                    <label htmlFor={answer}>{answer}</label>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <textarea
+                value={answers[currentQuestionIndex] || ""}
+                onChange={(e) => handleAnswerChange(e.target.value)}
+                placeholder="Please enter your answer here."
+              />
+            )}
+          </div>
+          <div className="ButtonContainer">
+            <Button
+              className="PrevButton"
+              onClick={handlePrevious}
+              disabled={currentQuestionIndex === 0}
+            >
+              Previous
+            </Button>
+            {currentQuestionIndex < detailedQuestions.length - 1 ? (
+              <Button className="NextButton" onClick={handleNext}>
+                Next
+              </Button>
+            ) : (
+              <Button
+                className="DetailedSubmitButton"
+                onClick={handleResponseCheck}
+              >Submit Your Answers
+              </Button>
+            )}
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
