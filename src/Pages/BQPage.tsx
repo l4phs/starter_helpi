@@ -7,8 +7,6 @@ import "./LoadingPage";
 import OpenAI from "openai";
 import { Button } from "react-bootstrap";
 
-//Code written with the assistance of Gemini AI.
-
 interface Props {
   setPage: (page: string) => void; // Define the type of setPage prop
   apiKey: string; // Add apiKey as a prop
@@ -260,7 +258,7 @@ function BQPage(props: Props): JSX.Element {
       ) : (
         <div>
           <div className="Background"></div>
-          <h1 className="BQH">Basic Questions</h1>
+          <h1 data-testid="BQtitle" className="BQH">Basic Questions</h1>
           <h3 className="Description">
             <p>
               Welcome to the Basic Questions! There are 18 total questions but
@@ -302,6 +300,7 @@ function BQPage(props: Props): JSX.Element {
             Question {currentQuestionIndex + 1} of {questions.length}
           </div>
           <div className="QuestionContainer">
+            {/* A mapping pattern made with the assitance of ChatGPT to display each of the questions and it's answers/text box in the questions array. */}
             <h3>{questions[currentQuestionIndex].question}</h3>
             {questions[currentQuestionIndex].type === "multiple choice" ? (
               <ul className="Ul-BQ" style={{ paddingLeft: "0px" }}>
@@ -312,6 +311,7 @@ function BQPage(props: Props): JSX.Element {
                         <input
                           type="radio"
                           id={answer}
+                          data-testid={answer}
                           name={`question${currentQuestionIndex}`}
                           value={answer}
                           checked={answers[currentQuestionIndex] === answer}

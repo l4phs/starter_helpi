@@ -296,7 +296,7 @@ function DQPage(props: Props): JSX.Element {
       ) : (
         <div>
           <div className="background"></div>
-          <div className="DQH">Detailed Questions</div>
+          <div data-testid="DQtitle" className="DQH">Detailed Questions</div>
           <h3 className="Description">
             <p>
               Welcome to the Detailed Questions! There are 13 total questions
@@ -322,6 +322,7 @@ function DQPage(props: Props): JSX.Element {
             Question {currentQuestionIndex + 1} of {detailedQuestions.length}
           </div>
           <div className="detailedQuestionContainer">
+            {/* A mapping pattern made with the assitance of ChatGPT to display each of the questions and it's answers/text box in the questions array. */}
             <h3>{detailedQuestions[currentQuestionIndex].question}</h3>
             {detailedQuestions[currentQuestionIndex].type ===
             "multiple choice" ? (
@@ -337,6 +338,7 @@ function DQPage(props: Props): JSX.Element {
                           <input
                             type="radio"
                             id={answer}
+                            data-testid={answer}
                             name={`question${currentQuestionIndex}`}
                             value={answer}
                             checked={answers[currentQuestionIndex] === answer}

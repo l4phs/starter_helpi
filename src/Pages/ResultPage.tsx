@@ -80,7 +80,7 @@ const ResultPage: React.FC<ResultProps> = ({ gptReport, setPage }) => {
 
   return (
     <div className="result-page">
-      <div className="ResultsHeader">
+      <div data-testid = "Results Page Header" className="ResultsHeader">
         <strong>An Analysis of Your Answers</strong>
         <p className="careerReport" style={{ top: "50vh" }}>
           {parsedReport.careerReport}
